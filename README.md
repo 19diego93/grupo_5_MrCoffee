@@ -3,7 +3,7 @@
 
 #### Integrantes
 
-- Manu
+- Mauro
 - Sebas
 - Diego
 
