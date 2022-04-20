@@ -15,7 +15,7 @@
 > 2. Definir la temática del Market Place
 >   - ¿Qué productos o servicios brindará nuestro sitio? Venta de café listo para beber y comida realacionada a la cafeteria.
 >   - ¿Quién será nuestra audiencia objetivo? Dirigido a personas de entre 16 y 60 años.
->   - ¿Cómo ajustaremos nuestra oferta a ese público?
+>   - ¿Cómo ajustaremos nuestra oferta a ese publico?
 >   
 > 3. Buscar inspiración en referentes del mercado
 > - <https://www.blackriflecoffee.com/>
