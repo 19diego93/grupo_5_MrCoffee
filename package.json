@@ -1,0 +1,22 @@
+{
+  "name": "grupo_5_mrcoffee",
+  "version": "1.0.0",
+  "description": "#### Integrantes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/19diego93/grupo_5_MrCoffee.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/19diego93/grupo_5_MrCoffee/issues"
+  },
+  "homepage": "https://github.com/19diego93/grupo_5_MrCoffee#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
