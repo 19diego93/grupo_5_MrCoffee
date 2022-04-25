@@ -3,9 +3,9 @@
 
 #### Integrantes
 
-- Mauro
-- Sebas
-- Diego
+- Mauro Villanueva
+- Marcelo Sebastian Suarez
+- Diego Vallejo 
 
 > ##### Consignas
 >
