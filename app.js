@@ -13,7 +13,7 @@ const publicPath = path.join(__dirname, 'public/');
 
 // Puertos
 app.listen(3000,()=>{
-    console.log('SyntaxError');
+    console.log('Servidor Prendido');
 });
 
 app.use(express.static(publicPath));
