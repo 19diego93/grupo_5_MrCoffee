@@ -11,6 +11,8 @@ const indexHtml = path.join(__dirname, 'views/index.html')
 // Public
 const publicPath = path.join(__dirname, 'public/');
 
+
+
 // Puertos
 app.listen(3000,()=>{
     console.log('SyntaxError');

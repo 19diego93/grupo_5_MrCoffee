@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/19diego93/grupo_5_MrCoffee#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.18.0"
   }
 }
