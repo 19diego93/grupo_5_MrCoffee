@@ -1,23 +1,21 @@
-// Express - Path
 const express = require('express');
 const path = require('path');
-
-// APP
 const app = express();
+const port = 3000;
 
-// Views - Html
-const indexHtml = path.join(__dirname, 'views/index.html')
+// Views
+const viewsIndex = path.join(__dirname, 'views/index.html')
 
-// Public
+
+// Static
 const publicPath = path.join(__dirname, 'public/');
-
-// Puertos
-app.listen(3000,()=>{
-    console.log('Servidor Prendido');
-});
-
 app.use(express.static(publicPath));
 
+// Puertos
+app.listen(port,()=>{
+    console.log(`MrCoffee listening at http://localhost:${port}`)
+})
+
 app.get('/', (req,res) => {
-    res.sendFile(indexHtml)
+    res.sendFile(viewsIndex)
 })
