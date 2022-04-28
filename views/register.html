@@ -20,12 +20,25 @@
 
         <!--Formulario de registro sin servidor aún-->
         <form action="aca va lo de php que todavia no vimos ">
-            <label for="fname">Nombre </label><br>
-            <input type="text" id="fname" name="fname"><br>
-            <label for="lname">Apellido </label><br>
-            <input type="text" id="lname" name="lname">
-            <input type="submit" value="Registrar">
-          
+
+            <ul>
+                <li>
+                    <label for="fname" placeholder="Nombre">Nombre </label>
+                    <input type="text" id="fname" name="fname">
+                </li>
+                <li>
+                    <label for="mail" placeholder="superheroe@MrCoffee.com">Correo electrónico </label>
+                    <input type="email" id="mail" name="mail">
+                </li>
+                <li>
+                    <label for="psw" placeholder="Contraseña">Contraseña</label>
+                    <input type="password" id="psw" name="psw">
+                </li>
+                <li class="button">
+                    <button type="submit">Registrar</button>
+                  </li>
+            </ul>
+
         </form>
         <!--Botón redirecciónador al login-->
         <button onclick="document.location='login'"> Tengo una cuenta </button>
