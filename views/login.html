@@ -1,79 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ingresa</title>
-    <script src="https://kit.fontawesome.com/54588310a9.js" crossorigin="anonymous"></script>
-</head>
-<body>
-
+    <!-- Icons -->
+    <script
+      src="https://kit.fontawesome.com/54588310a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <header>
-        <div><img src="img/MrCoffee.png" alt="Logo MrCoffee"></div>
+      <div><img src="img/MrCoffee.png" alt="Logo MrCoffee" /></div>
     </header>
 
     <main>
+      <h2>Registrate</h2>
 
-        <h2>Registrate</h2>
+      <!--Formulario de registro sin servidor aún-->
+      <form action="aca va lo de php que todavia no vimos ">
+        <ul>
+          <li>
+            <label for="mail" placeholder="superheroe@MrCoffee.com"
+              >Correo electrónico
+            </label>
+            <input type="email" id="mail" name="mail" />
+          </li>
+          <li>
+            <label for="psw" placeholder="Contraseña">Contraseña</label>
+            <input type="password" id="psw" name="psw" />
+          </li>
+          <li class="button">
+            <button type="submit">Iniciar sesión</button>
+          </li>
+        </ul>
+      </form>
 
-        <!--Formulario de registro sin servidor aún-->
-        <form action="aca va lo de php que todavia no vimos ">
+      <h3><a href="">¿Olvidaste tu Contraseña?</a></h3>
+      <!--Redirección a definir-->
 
-            <ul>
-                <li>
-                    <label for="mail" placeholder="superheroe@MrCoffee.com">Correo electrónico </label>
-                    <input type="email" id="mail" name="mail">
-                </li>
-                <li>
-                    <label for="psw" placeholder="Contraseña">Contraseña</label>
-                    <input type="password" id="psw" name="psw">
-                </li>
-                <li class="button">
-                    <button type="submit">Iniciar sesión</button>
-                  </li>
-            </ul>
-        </form>
-
-        <h3><a href="">¿Olvidaste tu Contraseña?</a></h3><!--Redirección a definir-->
-
-        <h3><a href="">Políticas de Privacidad</a></h3><!--Redirección a definir-->
-
+      <h3><a href="">Políticas de Privacidad</a></h3>
+      <!--Redirección a definir-->
     </main>
 
     <footer>
-        <nav>
-            <ul>
-                <h3>Mr.Coffee</h3>
-                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-            </ul>
-            <ul>
-                <h4>Sobre nosotors</h4>
-                <li><a href="">Nuestra historia</a></li>
-                <li><a href="">Nuestra misión</a></li>
-                <li><a href="">Nuestra café</a></li>
-            </ul>
-            <ul>
-                <h4>Atención al cliente</h4>
-                <li><a href="">Contacto</a></li>
-                <li><a href="">Medios de pago</a></li>
-                <li><a href="">Defensa de los consumidores</a></li>
-            </ul>
-        </nav>
+      <h4>Mr Coffee</h4>
+      <ul class="Redes">
+        <li>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </li>
+      </ul>
+      <h4>Sobre nosotors</h4>
+      <ul class="links">
+        <li><a href="#">Nuestra historia</a></li>
+        <li><a href="#">Nuestra misión</a></li>
+        <li><a href="#">Nuestra café</a></li>
+      </ul>
+      <h4>Atención al cliente</h4>
+      <ul class="links">
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Medios de pago</a></li>
+        <li><a href="#">Defensa de los consumidores</a></li>
+      </ul>
 
-        <div>
-            <button><i class="fa-solid fa-location-dot"></i>Localizar tiendas</button>
-            <button><i class="fa-brands fa-github"></i>Proyecto</button>
-        </div>
+      <div class="Buttons">
+        <button>
+          <i class="fa-solid fa-location-dot"></i>
+          <p>Localizar tiendas</p>
+        </button>
+        <button>
+          <i class="fa-brands fa-github"></i>
+          <p>Proyecto</p>
+        </button>
+      </div>
 
-        <div>
-            <a href="">Aviso de privacidad</a>|<a href="">Condiciones de uso</a>
-            <p>© 2022 MrCoffee Todos los derechos reservados</p>
-        </div>
-
+      <div class="end">
+        <a href="">Aviso de privacidad</a>
+        <a href="">Condiciones de uso</a>
+        <p>© 2022 Mr Coffee</p>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>
