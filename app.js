@@ -9,7 +9,7 @@ const viewsRegister = path.join(__dirname, "views/register.html");
 const viewsLogin = path.join(__dirname, "views/login.html");
 const viewsShoppingCart = path.join(__dirname, "views/shoppingcart.html");
 const viewsCheckout = path.join(__dirname, "views/checkout.html");
-const viewsForgotten = path.join(__dirname, "views/olvidastecontra.html")
+const viewsForgotten = path.join(__dirname, "views/olvidastecontra.html");
 const viewsPepe = path.join(__dirname, "views/pepe.html");
 // Static
 const publicPath = path.join(__dirname, "public/");
