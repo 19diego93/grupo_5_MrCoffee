@@ -1,4 +1,5 @@
 document.getElementById("search").addEventListener("click", mostrar_buscador);
+document.getElementById("search-2").addEventListener("click", mostrar_buscador);
 document
   .getElementById("cover-ctn-search")
   .addEventListener("click", ocultar_buscador);
