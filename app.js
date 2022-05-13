@@ -1,53 +1,70 @@
+//' Express | Path | Puerto
 const express = require("express");
 const path = require("path");
 const app = express();
 const port = 3000;
 
-// Views
-const viewsIndex = path.join(__dirname, "views/index.html");
-const viewsRegister = path.join(__dirname, "views/register.html");
-const viewsLogin = path.join(__dirname, "views/login.html");
-const viewsShoppingCart = path.join(__dirname, "views/shoppingcart.html");
+//' Views-Html | Http
 const viewsCheckout = path.join(__dirname, "views/checkout.html");
+const httpCheckout = "/Checkout";
+//!
+const viewsIndex = path.join(__dirname, "views/index.html");
+const httpIndex = "/";
+const httpHome = "/home";
+//!
+const viewsLogin = path.join(__dirname, "views/login.html");
+const httpLogin = "/login";
+//!
 const viewsForgotten = path.join(__dirname, "views/olvidastecontra.html");
-const viewsPepe = path.join(__dirname, "views/pepe.html");
-// Static
+const httpForgotten = "/forgotten";
+//!
+const viewsProductCart = path.join(__dirname, "views/productCart.html");
+const httpProductCart = "/productCart";
+//!
+const viewsProductDetail = path.join(__dirname, "views/productDetail.html");
+const httpProductDetail = "/productDetail";
+//!
+const viewsRegister = path.join(__dirname, "views/register.html");
+const httpRegister = "/register";
+
+//' Static
 const publicPath = path.join(__dirname, "public/");
 app.use(express.static(publicPath));
 
-// Puertos
+//' localhost
 app.listen(port, () => {
   console.log(`MrCoffee listening at http://localhost:${port}`);
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(viewsIndex);
-});
-
-app.get("/home", (req, res) => {
-  res.sendFile(viewsIndex);
-});
-
-app.get("/register", (req, res) => {
-  res.sendFile(viewsRegister);
-});
-
-app.get("/login", (req, res) => {
-  res.sendFile(viewsLogin);
-});
-
-app.get("/shoppingcart", (req, res) => {
-  res.sendFile(viewsShoppingCart);
-});
-
-app.get("/checkout", (req, res) => {
+//' Puertos
+app.get(httpCheckout, (req, res) => {
   res.sendFile(viewsCheckout);
 });
-
-app.get("/forgottenpassword", (req, res) => {
+//!
+app.get(httpIndex, (req, res) => {
+  res.sendFile(viewsIndex);
+});
+//!
+app.get(httpHome, (req, res) => {
+  res.sendFile(viewsIndex);
+});
+//!
+app.get(httpLogin, (req, res) => {
+  res.sendFile(viewsLogin);
+});
+//!
+app.get(httpForgotten, (req, res) => {
   res.sendFile(viewsForgotten);
 });
-
-app.get("/pepe", (req, res) => {
-  res.sendFile(viewsPepe);
+//!
+app.get(httpProductCart, (req, res) => {
+  res.sendFile(viewsProductCart);
+});
+//!
+app.get(httpProductDetail, (req, res) => {
+  res.sendFile(viewsProductDetail);
+});
+//!
+app.get(httpRegister, (req, res) => {
+  res.sendFile(viewsRegister);
 });
