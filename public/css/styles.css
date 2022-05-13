@@ -1,50 +1,90 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
-/* font-family: 'Raleway', sans-serif; */
 
 * {
   box-sizing: border-box;
-}
-/* CUERPO */
-nav{
-  width: 100%;
-  height: 7%;
-  display: flex;
-  background-color: #FFE6D6;
-  position: fixed;
-  border-bottom: ridge;
-}
-.logo{
-  margin-left: 3%;
-  margin-top: 5px;
-}
-img.logo{
-  width: 110px;
-  height: 30px;
-}
-.menu{
-  margin-left: 56%;
-  display:flex;
-  right: 0%;
-  margin-top: 15px;
-}
-i {
-  font-size: 25px;
-}
-body {
-  width: 100%;
-  height: 100%;
   margin: 0;
+  padding: 0;
 }
-main {
-  text-align: center;
-  height: auto;
-  background-color: #ffc29b;
-  width: auto;
-  margin-bottom: 0%;
+/*! a */
+a {
+  text-decoration: none;
 }
-
-img.campaña {
-  top: 50px;
-  margin-top: 10vh;
+/*! Header */
+header {
+  background-color: red;
   width: 100%;
+}
+/*! Header Content */
+.Header-Content {
+  background-color: #fff;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid #000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+}
+/*? favorito */
+.Favorite {
+  margin: 10px;
+}
+.Favorite a {
+  color: #000;
+  font-size: 26px;
+}
+/*? logo */
+.Logo {
+  display: flex;
+  justify-content: center;
+}
+.Logo img {
+  width: 70%;
+}
+/*? configuracion */
+.Config {
+  margin: 10px;
+}
+.Config a {
+  color: #000;
+  font-size: 26px;
+}
+/*! Container Nav*/
+.Container-Nav {
+  background-color: #fff;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 8%;
+  bottom: 0px;
+  border-top: 2px solid #000;
+}
+.Container-Nav ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.Container-Nav ul li {
+  display: flex;
+  font-size: 24px;
+}
+.Container-Nav ul li i {
+  color: #000;
+}
+/*! Main */
+main {
+  font-family: "Raleway", sans-serif;
+  background-color: red;
+  margin-top: 50px;
+}
+/*! Section 1 */
+.Container-Campaign div img {
+  width: 100%;
+}
+/*! Footer */
+footer {
+  background-color: violet;
 }

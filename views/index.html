@@ -1,79 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mr Coffee | Home</title>
+    <!-- Icons -->
+    <script
+      src="https://kit.fontawesome.com/54588310a9.js"
+      crossorigin="anonymous"
+    ></script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width">
-  <title>Mr Coffee | Home </title>
-  
-  <!--- Icons --->
-  <script src="https://kit.fontawesome.com/54588310a9.js" crossorigin="anonymous"></script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-    <nav>
-    <div class="logo"><img class="logo" src="img/MrCoffee.png" alt="Logo" /></div>
-    <div class="menu"><i class="fa-solid fa-bars"></i></div>
-  </nav>
-  </header>
-  <main>
-    <section>
-      <div class="img-campaña">
-        <img src="img/campaña.png" alt="Campaña" class="campaña"></img>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Encabezado -->
+      <div class="Header-Content">
+        <div class="Favorite">
+          <a href="#"><i class="fas fa-bookmark"></i></a>
+        </div>
+        <div class="Logo">
+          <img src="img/MrCoffee.png" alt="Logo"/>
+        </div>
+        <div class="Config">
+          <a href="#"><i class="fas fa-bars"></i></a>
+        </div>
       </div>
-      <h1>¡Conocé todas nuestras variedades!</h1>
-      <button>¡Descubrír!</button>
-    </section>
-  </main>
-  <!-- FOOTER -->
-  <footer>
-    <h4>Mr Coffee</h4>
-    <ul class="Redes">
-      <li>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      </li>
-      <li>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      </li>
-      <li>
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-      </li>
-    </ul>
-    <h4>Sobre nosotors</h4>
-    <ul class="links">
-      <li><a href="#">Nuestra historia</a></li>
-      <li><a href="#">Nuestra misión</a></li>
-      <li><a href="#">Nuestro café</a></li>
-    </ul>
-    <h4>Atención al cliente</h4>
-    <ul class="links">
-      <li><a href="#">Contacto</a></li>
-      <li><a href="#">Medios de pago</a></li>
-      <li><a href="#">Defensa de los consumidores</a></li>
-    </ul>
+      <!-- Navegacion -->
+      <nav class="Container-Nav">
+        <ul>
+          <li>
+            <a href="#"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-basket-shopping"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="Container-Campaign">
+        <div>
+          <img src="img/campaña.png" alt="Campaña"></img>
+        </div>
+        <h1>¡Conocé todas nuestras variedades!</h1>
+        <button>¡Descubrír!</button>
+      </section>
+      <section>
+        <h2>Destacados</h2>
+        <article>
+          <img src="#" alt="" />
+          <!-- Titulo -->
+          <h3>LOREM</h3>
+          <!-- Descripcion -->
+          <p>Lorem ipsum dolor sit amet consectetur</p>
+          <!-- Precio -->
+          <h4>$</h4>
+        </article>
+        <article>
+          <img src="#" alt="" />
+          <!-- Titulo -->
+          <h3>LOREM</h3>
+          <!-- Descripcion -->
+          <p>Lorem ipsum dolor sit amet consectetur</p>
+          <!-- Precio -->
+          <h4>$</h4>
+        </article>
+        <article>
+          <img src="#" alt="" />
+          <!-- Titulo -->
+          <h3>LOREM</h3>
+          <!-- Descripcion -->
+          <p>Lorem ipsum dolor sit amet consectetur</p>
+          <!-- Precio -->
+          <h4>$</h4>
+        </article>
+        <article>
+          <img src="#" alt="" />
+          <!-- Titulo -->
+          <h3>LOREM</h3>
+          <!-- Descripcion -->
+          <p>Lorem ipsum dolor sit amet consectetur</p>
+          <!-- Precio -->
+          <h4>$</h4>
+        </article>
+      </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+      <h5>Mr Coffee</h5>
+      <ul class="Container-Redes">
+        <li>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </li>
+      </ul>
+      <h5>Sobre nosotros</h5>
+      <ul class="Container-links">
+        <li><a href="#">Nuestra historia</a></li>
+        <li><a href="#">Nuestra misión</a></li>
+        <li><a href="#">Nuestro café</a></li>
+      </ul>
+      <h5>Atención al cliente</h5>
+      <ul class="Container-links">
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Medios de pago</a></li>
+        <li><a href="#">Defensa de los consumidores</a></li>
+      </ul>
 
-    <div class="Buttons">
-      <button>
-        <i class="fa-solid fa-location-dot"></i>
-        <p>Localizar tiendas</p>
-      </button>
-      <button>
-        <i class="fa-brands fa-github"></i>
-        <p>Proyecto</p>
-      </button>
-    </div>
+      <div class="Container-Buttons">
+        <button>
+          <i class="fa-solid fa-location-dot"><p>Localizar tiendas</p></i>
+        </button>
+        <button>
+          <i class="fa-brands fa-github"><p>Proyecto</p></i>
+        </button>
+      </div>
 
-    <div class="end">
-      <a href="">Aviso de privacidad</a>
-      <a href="">Condiciones de uso</a>
-      <p>© 2022 Mr Coffee</p>
-    </div>
-  </footer>
-  <!-- JavaScript -->
-  <script src="js/index.js"></script>
-</body>
+      <div class="Container-end">
+        <div>
+          <a href="">Aviso de privacidad</a>
+          <a href="">Condiciones de uso</a>
+        </div>
+        <p>© 2022 Mr Coffee</p>
+      </div>
+    </footer>
+  </body>
 </html>
