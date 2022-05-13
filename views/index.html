@@ -5,50 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mr Coffee | Home</title>
-    <!-- Icons -->
+    <!--! Icons -->
     <script
       src="https://kit.fontawesome.com/54588310a9.js"
       crossorigin="anonymous"
     ></script>
 
-    <!-- CSS -->
+    <!--! CSS -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <header>
-      <!-- Encabezado -->
+      <!--! Encabezado -->
       <div class="Header-Content">
         <div class="Favorite">
           <a href="#"><i class="fas fa-bookmark"></i></a>
         </div>
-        <h1>
-          <a class="Logo">
+        <h1 class="Logo">
             <img src="img/MrCoffee.png" alt="Logo"/>
-          </a>
         </h1>
+        <div class="nav">
+          <ul>
+            <li>
+              <a href="#">Inicio</a>
+            </li>
+            <li>
+              <a href="#" >Tienda</a>
+            </li>
+            <li>
+              <a id="search">Buscar</a>
+            </li>
+            <li>
+              <a href="#">Carrito</a>
+            </li>
+          </ul>
+        </div>
         <div class="Config">
           <a href="#"><i class="fas fa-bars"></i></a>
         </div>
       </div>
-      <!-- Navegacion -->
+      <!--! nav lt - pc -->
+      <div id="ctn-bars-search">
+        <button class="search" id="close-search">
+          <i class="fas fa-times"></i>
+        </button>
+        <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?"/>
+      </div>
+      <!--! Navegacion -->
       <nav class="Container-Nav">
         <ul>
           <li>
             <a href="#"><i class="fa-solid fa-house"></i></a>
           </li>
           <li>
-            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#" id="search-2"><i class="fa-solid fa-magnifying-glass"></i></a>
           </li>
           <li>
             <a href="#"><i class="fa-solid fa-basket-shopping"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
+      <!--! Cerrar buscador -->
+      <div id="cover-ctn-search"></div>
+      <!--! Campaña -->
       <section class="Container-Campaign">
         <div>
           <img src="img/campaña.png" alt="Campaña"></img>
@@ -56,47 +80,40 @@
         <h2>¡Conocé todas nuestras variedades!</h2>
         <button>¡Descubrír!</button>
       </section>
+      <!--! Destacados -->
       <section>
         <h3>Destacados</h3>
         <article>
+          <!--! Imagen -->
           <img src="#" alt="" />
-          <!-- Titulo -->
+          <!--! Titulo -->
           <h4>LOREM</h4>
-          <!-- Descripcion -->
+          <!--! Descripcion -->
           <p>Lorem ipsum dolor sit amet consectetur</p>
-          <!-- Precio -->
+          <!--! Precio -->
+          <h5>$500</h5>
+        </article>
+        <article>
+          <img src="#" alt="" />
+          <h4>LOREM</h4>
+          <p>Lorem ipsum dolor sit amet consectetur</p>
           <h5>$</h5>
         </article>
         <article>
           <img src="#" alt="" />
-          <!-- Titulo -->
           <h4>LOREM</h4>
-          <!-- Descripcion -->
           <p>Lorem ipsum dolor sit amet consectetur</p>
-          <!-- Precio -->
           <h5>$</h5>
         </article>
         <article>
           <img src="#" alt="" />
-          <!-- Titulo -->
           <h4>LOREM</h4>
-          <!-- Descripcion -->
           <p>Lorem ipsum dolor sit amet consectetur</p>
-          <!-- Precio -->
-          <h5>$</h5>
-        </article>
-        <article>
-          <img src="#" alt="" />
-          <!-- Titulo -->
-          <h4>LOREM</h4>
-          <!-- Descripcion -->
-          <p>Lorem ipsum dolor sit amet consectetur</p>
-          <!-- Precio -->
           <h5>$</h5>
         </article>
       </section>
     </main>
-    <!-- FOOTER -->
+    <!--! Pie de pagina -->
     <footer>
       <h5>Mr Coffee</h5>
       <ul class="Container-Redes">
@@ -140,5 +157,7 @@
         <p>© 2022 Mr Coffee</p>
       </div>
     </footer>
+    <!--! JS -->
+    <script src="js/search.js"></script>
   </body>
 </html>
