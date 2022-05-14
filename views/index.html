@@ -24,50 +24,37 @@
         <h1 class="Logo">
             <img src="img/MrCoffee.png" alt="Logo"/>
         </h1>
-        <div class="nav">
-          <ul>
-            <li>
-              <a href="#">Inicio</a>
-            </li>
-            <li>
-              <a href="#" >Tienda</a>
-            </li>
-            <li>
-              <a id="search">Buscar</a>
-            </li>
-            <li>
-              <a href="#">Carrito</a>
-            </li>
-          </ul>
-        </div>
         <div class="Config">
           <a href="#"><i class="fas fa-bars"></i></a>
         </div>
       </div>
-      <!--! nav lt - pc -->
-      <div id="ctn-bars-search">
+      <!-- ! Navegacion -->
+      <nav>
+        <ul>
+          <li>
+            <a href="#"><i class="fa-solid fa-house disNone"></i><p>Inicio</p></a>
+          </li>
+          <li>
+            <a href="#" ><i class="fa-solid fa-basket-shopping disNone"></i><p>Tienda</p></a>
+          </li>
+          <li>
+            <a id="search"><i class="fa-solid fa-magnifying-glass disNone"></i><p>Buscar</p></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-cart-shopping disNone"></i><p>Carrito</p></a>
+          </li>
+          <li class="celNone">
+            <a href="#"><i class="fas fa-bars"></i></a>
+          </li>
+        </ul>
+      </nav>
+      <!--! Buscador -->
+      <form id="ctn-bars-search">
         <button class="search" id="close-search">
           <i class="fas fa-times"></i>
         </button>
         <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?"/>
-      </div>
-      <!--! Navegacion -->
-      <nav class="Container-Nav">
-        <ul>
-          <li>
-            <a href="#"><i class="fa-solid fa-house"></i></a>
-          </li>
-          <li>
-            <a href="#" id="search-2"><i class="fa-solid fa-magnifying-glass"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-solid fa-basket-shopping"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-          </li>
-        </ul>
-      </nav>
+      </form>
     </header>
     <main>
       <!--! Cerrar buscador -->

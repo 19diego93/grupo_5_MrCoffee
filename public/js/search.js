@@ -1,5 +1,4 @@
 document.getElementById("search").addEventListener("click", mostrar_buscador);
-document.getElementById("search-2").addEventListener("click", mostrar_buscador);
 document
   .getElementById("cover-ctn-search")
   .addEventListener("click", ocultar_buscador);
@@ -18,7 +17,7 @@ function mostrar_buscador() {
 }
 
 function ocultar_buscador() {
-  bars_search.style.top = "-30px";
+  bars_search.style.top = "-60px";
   cover_ctn_search.style.display = "none";
   inputSearch.value = "";
 }
