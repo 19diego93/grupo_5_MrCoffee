@@ -1,17 +1,17 @@
 # Mr.Coffee - Grupo 5
 
 ## Temática del sitio
-#### Mr Coffee es un sitio enfocado en la venta de café y comida de manera virtual, al pagar de manera virtual se puede retirar en el local más cercano. Si el cliente desea utilizar efectivo se le mostrara los locales más cercanos a su ubicación
+##### Mr Coffee es un sitio enfocado en la venta de café y comida de manera virtual, al pagar de manera virtual se puede retirar en el local más cercano. Si el cliente desea utilizar efectivo se le mostrara los locales más cercanos a su ubicación
 
 ### Prerrequisitos 📋
-_Se necesita Node.Js para instalar el software_
+Se necesita Node.Js para instalar el software
 
 ```
  https://nodejs.org/es/
 ```
 
 ### Instalación 🔧
-####Este proyecto utiliza Node Express.
+Este proyecto utiliza Node Express.
 
 ```
  npm install express --save
