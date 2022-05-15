@@ -84,7 +84,7 @@ nav ul li a p {
 #search {
   cursor: pointer;
 }
-/*? configuracion */
+/*! configuracion */
 .Config {
   margin-right: 10px;
 }
@@ -114,7 +114,7 @@ nav ul li a p {
   font-size: 12px;
   outline: 0;
 }
-/*? search */
+/*! search */
 .search {
   display: none;
 }
@@ -141,120 +141,6 @@ main {
 footer {
   background-color: violet;
 }
-/*! Header media */
-
-/*! Main del Login y register */
-.contenedor-login,.contenedor-register{
-  display: block;    
-  padding-bottom: 3rem; 
-  background-color: white;
-  min-width: 270px;
-}
-
-
-/*! form del login y register*/
-.form-login,.form-register {
-margin: auto;
-width: 70%;
-max-width: 400px;
-}
-/*! campos del form login y register*/
-.contenedor-campo{
-width: 100%;
-padding: 10px 0px; 
-display: flex;
-flex-direction: column; 
-}
-.campo {  
-width: 85%;
-padding: 10px;  
-border: none;
-font-size: 0.7rem;
-text-align: justify;
-}
-.campo-label{
-font-size: .8rem;
-padding-bottom: 5px;
-color: #AD715C;
-}
-/*! contenedor icono campo */
-.caja-icono-campo{
-border: solid 1px black;
-border-radius: 3px;
-display: flex;
-flex-direction: row;
-justify-content: center;
-
-}
-/*! iconos del login-register*/
-.icono-email,.icono-user,.icono-psw{
-font-size: .8rem;
-font-weight: 600;
-align-self: center;
-}
-
-
-/*! botón del login y register*/
-.contenedor-boton-registrar,.contenedor-boton-ingresar{
-  display: flex;
-  justify-content: center;
-}
-.button-ingresar,.button-registrar{
-width: 100%;
-margin-top: 10px;
-padding: 5px;
-border: none;
-border-radius: 2px;
-background-color: #00b7ff;
-color: white;
-max-width: 320px;
-
-}
-/*! boton tengo cuenta*/
-.contenedor-redirect{
-display: flex;
-justify-content: center;
-margin: auto;
-margin-top: 20px;
-width: 85%;
-}
-.redirect-login{
-padding: .8rem 1.5rem;
-border: solid 1px black;
-border-radius: 2px;
-background-color: #000;
-color: white;
-}
-/*! titulo h2 y su contenedor login y register*/
-.contenedor-titulo {
-margin-top:50px;    
-padding: 20px;
-}
-.contenedor-titulo h2 {
- text-align: center;
- margin-top: 25px;
- color: #76402e;
- font-size: 2.5rem;
-}
-/*! vinculos del login y register*/
-.vinculos-login,.vinculos-register{
- text-align: center;
- margin-top:40px;
- margin-bottom: 10px;
- padding: 10px;
-}
-.olvidaste {   
- font-size: 1.2rem;
- margin-bottom: 20px;
- color: #00b7ff;
-}
-.politicas {
- font-size: 1rem;
- color: #00b7ff;
-}
-
-
-
 @media (min-width: 460px) {
   /*! Tablets */
   .Favorite {
@@ -283,11 +169,6 @@ padding: 20px;
     align-items: center;
     font-size: 16px;
   }
-
-
-
-
-  
 }
 @media (min-width: 768px) {
   /*! Laptops */
@@ -300,11 +181,10 @@ padding: 20px;
   .Favorite {
     display: none;
   }
-  /*! Nav */
+  /*! Nav-D */
   .Container-Nav {
     display: none;
   }
-  /*! Class-Nav */
   header {
     position: fixed;
     width: 100%;
@@ -316,7 +196,7 @@ padding: 20px;
     border-bottom: 2px solid #000;
     z-index: 90;
   }
-  /*! Navegacion */
+  /*! Navegacion-E */
   nav {
     position: unset;
     height: 0;
@@ -354,13 +234,6 @@ padding: 20px;
   .search {
     width: 5%;
   }
-  /*! Main */
-  main {
-    margin-top: 60px;
-  }
-
-
-  
 }
 @media (min-width: 1200px) {
   .disNone {

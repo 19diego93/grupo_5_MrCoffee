@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*! Cuerpo */
+body {
+  font-family: "Raleway", sans-serif;
+}
+/*! Header media */
+
+/*! Main del Login y register */
+.contenedor-login,
+.contenedor-register {
+  display: block;
+  padding-bottom: 3rem;
+  background-color: white;
+  min-width: 270px;
+}
+/*! form del login y register*/
+.form-login,
+.form-register {
+  margin: auto;
+  width: 70%;
+  max-width: 400px;
+}
+/*! campos del form login y register*/
+.contenedor-campo {
+  width: 100%;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.campo {
+  width: 85%;
+  padding: 10px;
+  border: none;
+  font-size: 0.7rem;
+  text-align: justify;
+  outline: 0;
+}
+.campo-label {
+  font-size: 0.8rem;
+  padding-bottom: 5px;
+  color: #ad715c;
+}
+/*! contenedor icono campo */
+.caja-icono-campo {
+  border: solid 1px black;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+/*! iconos del login-register*/
+.icono-email,
+.icono-user,
+.icono-passwd {
+  font-size: 0.8rem;
+  font-weight: 600;
+  align-self: center;
+}
+
+/*! botón del login y register*/
+.contenedor-boton-registrar,
+.contenedor-boton-ingresar {
+  display: flex;
+  justify-content: center;
+}
+.button-ingresar,
+.button-registrar {
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  background-color: #00b7ff;
+  color: white;
+  max-width: 320px;
+}
+/*! boton tengo cuenta*/
+.contenedor-redirect {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 20px;
+  width: 85%;
+}
+.redirect-login {
+  padding: 0.8rem 1.5rem;
+  border: solid 1px black;
+  border-radius: 2px;
+  background-color: #000;
+  color: white;
+}
+/*! titulo h2 y su contenedor login y register*/
+.contenedor-titulo {
+  margin-top: 50px;
+  padding: 20px;
+}
+.contenedor-titulo h2 {
+  text-align: center;
+  margin-top: 25px;
+  color: #76402e;
+  font-size: 2.5rem;
+}
+/*! vinculos del login y register*/
+.vinculos-login,
+.vinculos-register {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.olvidaste {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #00b7ff;
+}
+.politicas {
+  font-size: 1rem;
+  color: #00b7ff;
+}
