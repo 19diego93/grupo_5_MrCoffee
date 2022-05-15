@@ -25,8 +25,7 @@ npm install express --save
 
 ## Consignas 📄
 
-> 1. Crear el repositorio del proyecto y agregar colaboradores
-> <https://github.com/19diego93/grupo_5_MrCoffee.git>
+> 1. Crear el repositorio del proyecto y agregar colaboradores.
 >
 > 2. Definir la temática del Market Place.
 >   - ¿Qué productos o servicios brindará nuestro sitio? 
@@ -34,7 +33,7 @@ npm install express --save
 >   - ¿Cómo ajustaremos nuestra oferta a ese público?
 >   
 > 3. Buscar inspiración en referentes del mercado.
-
+> 
 > - <https://www.blackriflecoffee.com/>
 > - <https://topofthemornincoffee.com/>
 > - <https://www.starbucks.com.ar/>
@@ -42,6 +41,3 @@ npm install express --save
 > - <https://glovoapp.com/es/es/>
 > - <https://www.cafemartinez.com/>
 > - <https://www.instagram.com/>
->
->
->
