@@ -7,14 +7,14 @@
 Se necesita Node.Js para instalar el software
 
 ```
- https://nodejs.org/es/
+https://nodejs.org/es/
 ```
 
 ### Instalación 🔧
 Este proyecto utiliza Node Express.
 
 ```
- npm install express --save
+npm install express --save
 ```
 
 ## Autores ✒️
@@ -23,8 +23,8 @@ Este proyecto utiliza Node Express.
 #### - Diego Vallejo 
 
 
-#### Consignas 📄
->
+## Consignas 📄
+
 > 1. Crear el repositorio del proyecto y agregar colaboradores
 > <https://github.com/19diego93/grupo_5_MrCoffee.git>
 >
