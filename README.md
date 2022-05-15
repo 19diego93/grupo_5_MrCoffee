@@ -1,29 +1,29 @@
 # Mr.Coffee - Grupo 5
 
 ## Temática del sitio
-####Mr Coffee es un sitio enfocado en la venta de café y comida de manera virtual, al pagar de manera virtual se puede retirar en el local más cercano. Si el cliente desea utilizar efectivo se le mostrara los locales más cercanos a su ubicación
+#### Mr Coffee es un sitio enfocado en la venta de café y comida de manera virtual, al pagar de manera virtual se puede retirar en el local más cercano. Si el cliente desea utilizar efectivo se le mostrara los locales más cercanos a su ubicación
 
 ### Prerrequisitos 📋
 _Se necesita Node.Js para instalar el software_
 
 ```
-####https://nodejs.org/es/
+ https://nodejs.org/es/
 ```
 
 ### Instalación 🔧
 ####Este proyecto utiliza Node Express.
 
 ```
-####npm install express --save
+ npm install express --save
 ```
 
 ## Autores ✒️
-####- Mauro Villanueva
-####- Marcelo Sebastian Suarez
-####- Diego Vallejo 
+#### - Mauro Villanueva
+#### - Marcelo Sebastian Suarez
+#### - Diego Vallejo 
 
 
-> #### Consignas 📄
+#### Consignas 📄
 >
 > 1. Crear el repositorio del proyecto y agregar colaboradores
 > <https://github.com/19diego93/grupo_5_MrCoffee.git>
