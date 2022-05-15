@@ -24,7 +24,7 @@ Inicia el proyecto utilizando.
 node app.js
 ```
 #### ¡Atención! ⚠️
-Debes esta parado en la carpeta “grupo_5_MrCoffee”
+Debes estar parado en la carpeta “grupo_5_MrCoffee”
 
 
 ## Autores ✒️
