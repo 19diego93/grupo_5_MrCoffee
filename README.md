@@ -17,6 +17,16 @@ Este proyecto utiliza Node Express.
 npm install express --save
 ```
 
+### Despliega el proyecto 🚀
+Inicia el proyecto utilizando.
+
+```
+node app.js
+```
+#### ¡Atención! ⚠️
+Debes esta parado en la carpeta “grupo_5_MrCoffee”
+
+
 ## Autores ✒️
 #### - Mauro Villanueva
 #### - Marcelo Sebastian Suarez
