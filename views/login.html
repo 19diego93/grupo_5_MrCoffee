@@ -10,40 +10,45 @@
       src="https://kit.fontawesome.com/54588310a9.js"
       crossorigin="anonymous"
     ></script>
+    <!--Css-->
     <link rel="stylesheet" href="css/styles.css" />
+
   </head>
   <body>
-    <header>
-      <div><img src="img/MrCoffee.png" alt="Logo MrCoffee" /></div>
-    </header>
+  
 
-    <main>
-      <h2>Registrate</h2>
+    <main class="contenedor-login">
+      <div class="contenedor-titulo"><h2>Iniciar sesión</h2></div>
 
       <!--Formulario de registro sin servidor aún-->
-      <form action="aca va lo de php que todavia no vimos ">
-        <ul>
-          <li>
-            <label for="mail" placeholder="superheroe@MrCoffee.com"
-              >Correo electrónico
-            </label>
-            <input type="email" id="mail" name="mail" />
-          </li>
-          <li>
-            <label for="psw" placeholder="Contraseña">Contraseña</label>
-            <input type="password" id="psw" name="psw" />
-          </li>
-          <li class="button">
-            <button type="submit">Iniciar sesión</button>
-          </li>
-        </ul>
+      <form action="aca va lo de php que todavia no vimos " method="post" class="form-login">
+        
+          <div class="contenedor-campo">
+            <label for="mail" class="campo-label">Email</label> 
+            <div class="caja-icono-campo"> 
+            <i class="fa-solid fa-envelope icono-email"></i>          
+            <input class="campo" type="email" id="mail" name="mail" placeholder="   icono superheroe@MrCoffee.com" />
+          </div>
+          </div>
+          <div class="contenedor-campo">
+            <label for="psw" class="campo-label">Contraseña</label>
+            <div class="caja-icono-campo">
+            <i class="fa-solid fa-eye-slash icono-psw"></i>
+            <input class="campo" type="password" id="psw" name="psw" placeholder="  Contraseña" />
+          </div>
+          </div>
+          <div class="contenedor-boton-ingresar">
+            <input type="submit" value="Iniciar sesión" class="button-ingresar"/>
+          </div>
+        
       </form>
-
-      <h3><a href="">¿Olvidaste tu Contraseña?</a></h3>
+    <div class="vinculos-login">
+      <a href=""><p class="olvidaste">¿Olvidaste tu Contraseña?</p></a>
       <!--Redirección a definir-->
 
-      <h3><a href="">Políticas de Privacidad</a></h3>
+      <a href=""><p class="politicas">Políticas de Privacidad</p></a>
       <!--Redirección a definir-->
+    </div>
     </main>
 
     <footer>

@@ -5,87 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registrate</title>
-    <script
-      src="https://kit.fontawesome.com/54588310a9.js"
-      crossorigin="anonymous"
-    ></script>
+     <!-- Icons -->
+     <script
+     src="https://kit.fontawesome.com/54588310a9.js"
+     crossorigin="anonymous"
+   ></script>
+   <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header>
-      <div><img src="img/Mrsinsombra.png" alt="Logo MrCoffee" /></div>
-    </header>
+    
 
-    <main>
-      <h2>Registrate</h2>
+    <main class="contenedor-register">
+      <div class="contenedor-titulo"><h2>Registrate</h2></div>
 
       <!--Formulario de registro sin servidor aún-->
-      <form action="aca va lo de php que todavia no vimos ">
-        <ul>
-          <li>
-            <label for="fname" placeholder="Nombre">Nombre </label>
-            <input type="text" id="fname" name="fname" />
-          </li>
-          <li>
-            <label for="mail" placeholder="superheroe@MrCoffee.com"
-              >Correo electrónico
-            </label>
-            <input type="email" id="mail" name="mail" />
-          </li>
-          <li>
-            <label for="psw" placeholder="Contraseña">Contraseña</label>
-            <input type="password" id="psw" name="psw" />
-          </li>
-          <li class="button">
-            <button type="submit">Registrar</button>
-          </li>
-        </ul>
+      <form action="login" method="get" class="form-register">
+        
+          <div class="contenedor-campo">
+            <label class="campo-label" for="fname" >Nombre </label>
+            <div class="caja-icono-campo">
+            <i class="fa-solid fa-user icono-user"></i>
+            <input class="campo" type="text" id="fname" name="fname" placeholder="Tú nombre" />
+            </div>
+          </div>  
+
+          <div class="contenedor-campo">
+            <label class="campo-label" for="mail">Correo electrónico</label>
+            <div class="caja-icono-campo">
+            <i class="fa-solid fa-envelope icono-email"></i>
+            <input class="campo" type="email" id="mail" name="mail" placeholder="superheroe@MrCoffee.com" />
+            </div> 
+          </div>
+          
+          <div class="contenedor-campo">
+            <label class="campo-label" for="psw" >Contraseña</label>
+            <div class="caja-icono-campo">  
+              <i class="fa-solid fa-eye-slash icono-psw"></i>          
+            <input class="campo" type="password" id="psw" name="psw" placeholder="Tú contraseña"/>
+            </div>
+          </div>
+
+            <div class="contenedor-boton-registrar">
+            <input class="button-registrar" type="submit" value="Registrar"/>
+          </div>
+        
       </form>
       <!--Botón redirecciónador al login-->
-      <button onclick="document.location='login'">Tengo una cuenta</button>
-
-      <h3><a href="">Políticas de Privacidad</a></h3>
+    <div class="contenedor-redirect">
+      <button class="redirect-login" onclick="document.location='login'">Tengo una cuenta</button>
+    </div>
+    <div class="vinculos-register">
+      <a href=""><p class="politicas">Políticas de Privacidad</p></a>
       <!--Redirección a definir-->
+    </div>
     </main>
-    <!--¿se mantiene el mismo footer en todas las html?-->
-    <footer>
-      <nav>
-        <ul>
-          <h3>Mr.Coffee</h3>
-          <li>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          </li>
-        </ul>
-        <ul>
-          <h4>Sobre nosotors</h4>
-          <li><a href="">Nuestra historia</a></li>
-          <li><a href="">Nuestra misión</a></li>
-          <li><a href="">Nuestro café</a></li>
-        </ul>
-        <ul>
-          <h4>Atención al cliente</h4>
-          <li><a href="">Contacto</a></li>
-          <li><a href="">Medios de pago</a></li>
-          <li><a href="">Defensa de los consumidores</a></li>
-        </ul>
-      </nav>
 
-      <div>
-        <button>
-          <i class="fa-solid fa-location-dot"></i>Localizar tiendas
-        </button>
-        <button><i class="fa-brands fa-github"></i>Proyecto</button>
-      </div>
-
-      <div>
-        <a href="">Aviso de privacidad</a>|<a href="">Condiciones de uso</a>
-        <p>© 2022 MrCoffee Todos los derechos reservados</p>
-      </div>
-    </footer>
+    
+  
+   
   </body>
 </html>
