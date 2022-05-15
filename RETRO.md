@@ -1,11 +1,11 @@
 # Comenzar a hacer:
-### Reuniones grupales 
+### Reuniones grupales.
 
 # Hacer más:
-### ...
+### Pedir ayuda cuando estamos atascados o no entendemos.
 
 # Continuar haciendo:
-### Seguir comunicandonos por slack
+### Seguir comunicándonos por slack.
 
 # Hacer menos:
 ### ...
