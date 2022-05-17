@@ -4,103 +4,67 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<!-- Título -->
+    <title>Carrito de compras</title>
+<!-- icons -->
     <script
       src="https://kit.fontawesome.com/54588310a9.js"
       crossorigin="anonymous"
     ></script>
-
+<!-- Css -->
     <link rel="stylesheet" href="css/productCart.css" />
 
-    <title>Carrito de compras</title>
   </head>
   <body>
-    <header>
-      <!-- Encabezado -->
-      <div class="header-content">
-        <div class="imagenlogo">
-          <img src="img/MrCoffee.png" alt="Logo" />
+    
+<!--! Main -->
+<main class="contenedor-main-carrito">
+  <div class="contenedor-titulo">
+    <h1 class="titulo-producto">Productos</h1>
+  </div>
+<div class="grid caja-product-descripcion">
+<!--!imagen product y descripcion-->
+<div class="nested-grid">
+  <div class="contenedor-descripcion">
+  <img src="img\product\caffeproducto1.png" alt="producto">
+
+  <div class="descripcion">
+    <p class="Nombre-producto">nombreProducto</p>
+    <p class="descripcion-producto">descripciónProducto</p>
+  </div>
+  </div>
+  <div><p>Unidades</p></div>
+  <div class="contador-cantidad">
+    <button class="contador" type="button"><i class="fa-solid fa-minus"></i></button>
+    <p>cantidad</p>
+    <button class="contador" type="button"><i class="fa-solid fa-plus"></i></button>
+  </div>
+  <div><p>Tamaño</p></div>
+  <div>
+    <select name="tamanio" id="" required>
+      <option value="chico">Chico</option>
+      <option value="mediano">Mediano</option>
+      <option value="grande">Grande</option>
+      </select>
+    </div>
+</div>
+<button type="button" class="eliminar"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<!--! Contenedor total -->
+  <div class="contenedor-sumatoria">
+        
+          <div><p>Total:</p>
+          </div>
+<!-- celda contenedor sumatoria total -->
+          <div><p>Sumatoria de productos</p>
         </div>
-        <ul>
-          <li>
-            <a href="#"><i class="fas fa-bars"></i></a>
-          </li>
-        </ul>
-      </div>
-      <!-- Navegacion -->
-      <nav>
-        <ul>
-          <li>
-            <a href="#"><i class="fa-solid fa-house"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-solid fa-basket-shopping"></i></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+  </div>
+<!--! boton checkout -->
+<div class="contenedor-checkout">  
+<button class="checkout" type="button">Comprar</button>
+</div>
+</main>
 
-    <main>
-      <h1>Carrito</h1>
-      <!--simbolico es complicado hacer el carrito por ahora imaginen que es un producto-->
-      <div>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ad
-          repellendus praesentium molestiae enim aliquid dolore assumenda quae,
-          exercitationem est quisquam sequi accusantium eligendi placeat dolor
-          non accusamus beatae reprehenderit.
-        </p>
-      </div>
-    </main>
-
-    <footer>
-      <h4>Mr Coffee</h4>
-      <ul class="Redes">
-        <li>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        </li>
-      </ul>
-      <h4>Sobre nosotors</h4>
-      <ul class="links">
-        <li><a href="#">Nuestra historia</a></li>
-        <li><a href="#">Nuestra misión</a></li>
-        <li><a href="#">Nuestra café</a></li>
-      </ul>
-      <h4>Atención al cliente</h4>
-      <ul class="links">
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#">Medios de pago</a></li>
-        <li><a href="#">Defensa de los consumidores</a></li>
-      </ul>
-
-      <div class="Buttons">
-        <button>
-          <i class="fa-solid fa-location-dot"></i>
-          <p>Localizar tiendas</p>
-        </button>
-        <button>
-          <i class="fa-brands fa-github"></i>
-          <p>Proyecto</p>
-        </button>
-      </div>
-
-      <div class="end">
-        <a href="">Aviso de privacidad</a>
-        <a href="">Condiciones de uso</a>
-        <p>© 2022 Mr Coffee</p>
-      </div>
-    </footer>
+   
   </body>
 </html>
