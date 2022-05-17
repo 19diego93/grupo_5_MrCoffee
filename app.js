@@ -31,10 +31,6 @@ app.listen(port, () => {
 });
 
 //' Puertos
-app.get(httpCheckout, (req, res) => {
-  res.sendFile(viewsCheckout);
-});
-//!
 app.get(httpIndex, (req, res) => {
   res.sendFile(viewsIndex);
 });
@@ -45,10 +41,6 @@ app.get(httpHome, (req, res) => {
 //!
 app.get(httpLogin, (req, res) => {
   res.sendFile(viewsLogin);
-});
-//!
-app.get(httpForgotten, (req, res) => {
-  res.sendFile(viewsForgotten);
 });
 //!
 app.get(httpProductCart, (req, res) => {
