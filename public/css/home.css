@@ -1,0 +1,9 @@
+/*! Main */
+main {
+  background-color: red;
+  margin-top: 60px;
+}
+/*! Section 1 */
+.Container-Campaign div img {
+  width: 100%;
+}

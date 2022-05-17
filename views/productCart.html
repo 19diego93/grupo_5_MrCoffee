@@ -4,67 +4,120 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Título -->
+    <!-- Título -->
     <title>Carrito de compras</title>
-<!-- icons -->
+    <!-- icons -->
     <script
       src="https://kit.fontawesome.com/54588310a9.js"
       crossorigin="anonymous"
     ></script>
-<!-- Css -->
+    <!-- Css -->
+    <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/productCart.css" />
-
   </head>
   <body>
-    
-<!--! Main -->
-<main class="contenedor-main-carrito">
-  <div class="contenedor-titulo">
-    <h1 class="titulo-producto">Productos</h1>
-  </div>
-<div class="grid caja-product-descripcion">
-<!--!imagen product y descripcion-->
-<div class="nested-grid">
-  <div class="contenedor-descripcion">
-  <img src="img\product\caffeproducto1.png" alt="producto">
-
-  <div class="descripcion">
-    <p class="Nombre-producto">nombreProducto</p>
-    <p class="descripcion-producto">descripciónProducto</p>
-  </div>
-  </div>
-  <div><p>Unidades</p></div>
-  <div class="contador-cantidad">
-    <button class="contador" type="button"><i class="fa-solid fa-minus"></i></button>
-    <p>cantidad</p>
-    <button class="contador" type="button"><i class="fa-solid fa-plus"></i></button>
-  </div>
-  <div><p>Tamaño</p></div>
-  <div>
-    <select name="tamanio" id="" required>
-      <option value="chico">Chico</option>
-      <option value="mediano">Mediano</option>
-      <option value="grande">Grande</option>
-      </select>
-    </div>
-</div>
-<button type="button" class="eliminar"><i class="fa-solid fa-xmark"></i></button>
-</div>
-<!--! Contenedor total -->
-  <div class="contenedor-sumatoria">
-        
-          <div><p>Total:</p>
-          </div>
-<!-- celda contenedor sumatoria total -->
-          <div><p>Sumatoria de productos</p>
+    <header>
+      <!--! Encabezado -->
+      <div class="Header-Content">
+        <div class="Favorite">
+          <a href="#"><i class="fas fa-bookmark"></i></a>
         </div>
-  </div>
-<!--! boton checkout -->
-<div class="contenedor-checkout">  
-<button class="checkout" type="button">Comprar</button>
-</div>
-</main>
+        <h1 class="Logo">
+          <img src="img/MrCoffee.png" alt="Logo" />
+        </h1>
+        <div class="Config">
+          <a href="#"><i class="fas fa-bars"></i></a>
+        </div>
+      </div>
+      <!-- ! Navegacion -->
+      <nav class="nav">
+        <ul>
+          <li>
+            <a href="/home"
+              ><i class="fa-solid fa-house disNone"></i>
+              <p>Inicio</p></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-basket-shopping disNone"></i>
+              <p>Tienda</p></a
+            >
+          </li>
+          <li>
+            <a id="search"
+              ><i class="fa-solid fa-magnifying-glass disNone"></i>
+              <p>Buscar</p></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-cart-shopping disNone"></i>
+              <p>Carrito</p></a
+            >
+          </li>
+          <li class="celNone">
+            <a href="#"><i class="fas fa-bars"></i></a>
+          </li>
+        </ul>
+      </nav>
+      <!--! Buscador -->
+      <form id="ctn-bars-search">
+        <button class="search" id="close-search">
+          <i class="fas fa-times"></i>
+        </button>
+        <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?" />
+      </form>
+    </header>
+    <!--! Main -->
+    <main class="contenedor-main-carrito">
+      <div class="contenedor-titulo">
+        <h1 class="titulo-producto">Productos</h1>
+      </div>
+      <div class="grid caja-product-descripcion">
+        <!--!imagen product y descripcion-->
+        <div class="nested-grid">
+          <div class="contenedor-descripcion">
+            <img src="img\product\caffeproducto1.png" alt="producto" />
 
-   
+            <div class="descripcion">
+              <p class="Nombre-producto">nombreProducto</p>
+              <p class="descripcion-producto">descripciónProducto</p>
+            </div>
+          </div>
+          <div><p>Unidades</p></div>
+          <div class="contador-cantidad">
+            <button class="contador" type="button">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <p>cantidad</p>
+            <button class="contador" type="button">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <div><p>Tamaño</p></div>
+          <div>
+            <select name="tamanio" id="" required>
+              <option value="chico">Chico</option>
+              <option value="mediano">Mediano</option>
+              <option value="grande">Grande</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" class="eliminar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <!--! Contenedor total -->
+      <div class="contenedor-sumatoria">
+        <div><p>Total:</p></div>
+        <!-- celda contenedor sumatoria total -->
+        <div><p>Sumatoria de productos</p></div>
+      </div>
+      <!--! boton checkout -->
+      <div class="contenedor-checkout">
+        <button class="checkout" type="button">Comprar</button>
+      </div>
+    </main>
   </body>
 </html>

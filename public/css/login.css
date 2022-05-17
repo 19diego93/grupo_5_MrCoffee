@@ -1,32 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-/*! Cuerpo */
-body {
-  font-family: "Raleway", sans-serif;
-}
-/*! Header media */
-
-/*! Main del Login y register */
-.contenedor-login,
-.contenedor-register {
+/*! Main */
+.contenedor-login {
   display: block;
   padding-bottom: 3rem;
   background-color: white;
   min-width: 270px;
+  margin-top: 60px;
 }
-/*! form del login y register*/
-.form-login,
-.form-register {
+/*! form */
+.form-login {
   margin: auto;
   width: 70%;
   max-width: 400px;
 }
-/*! campos del form login y register*/
+/*! campos del form */
 .contenedor-campo {
   width: 100%;
   padding: 10px 0px;
@@ -55,7 +41,7 @@ body {
   justify-content: center;
   width: 100%;
 }
-/*! iconos del login-register*/
+/*! iconos */
 .icono-email,
 .icono-user,
 .icono-passwd {
@@ -64,14 +50,12 @@ body {
   align-self: center;
 }
 
-/*! botón del login y register*/
-.contenedor-boton-registrar,
+/*! botón */
 .contenedor-boton-ingresar {
   display: flex;
   justify-content: center;
 }
-.button-ingresar,
-.button-registrar {
+.button-ingresar {
   width: 100%;
   margin-top: 10px;
   padding: 5px;
@@ -81,22 +65,7 @@ body {
   color: white;
   max-width: 320px;
 }
-/*! boton tengo cuenta*/
-.contenedor-redirect {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  margin-top: 20px;
-  width: 85%;
-}
-.redirect-login {
-  padding: 0.8rem 1.5rem;
-  border: solid 1px black;
-  border-radius: 2px;
-  background-color: #000;
-  color: white;
-}
-/*! titulo h2 y su contenedor login y register*/
+/*! titulo h2 y su contenedor */
 .contenedor-titulo {
   margin-top: 50px;
   padding: 20px;
@@ -107,9 +76,8 @@ body {
   color: #76402e;
   font-size: 2.5rem;
 }
-/*! vinculos del login y register*/
-.vinculos-login,
-.vinculos-register {
+/*! vinculos */
+.vinculos-login {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 10px;

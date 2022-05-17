@@ -5,63 +5,130 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registrate</title>
-     <!-- Icons -->
-     <script
-     src="https://kit.fontawesome.com/54588310a9.js"
-     crossorigin="anonymous"
-   ></script>
-   <link rel="stylesheet" href="css/login.css" />
+    <!-- Icons -->
+    <script
+      src="https://kit.fontawesome.com/54588310a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Css -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/register.css" />
   </head>
   <body>
-    
-
+    <header>
+      <!--! Encabezado -->
+      <div class="Header-Content">
+        <div class="Favorite">
+          <a href="#"><i class="fas fa-bookmark"></i></a>
+        </div>
+        <h1 class="Logo">
+          <img src="img/MrCoffee.png" alt="Logo" />
+        </h1>
+        <div class="Config">
+          <a href="#"><i class="fas fa-bars"></i></a>
+        </div>
+      </div>
+      <!-- ! Navegacion -->
+      <nav class="nav">
+        <ul>
+          <li>
+            <a href="/home"
+              ><i class="fa-solid fa-house disNone"></i>
+              <p>Inicio</p></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-basket-shopping disNone"></i>
+              <p>Tienda</p></a
+            >
+          </li>
+          <li>
+            <a id="search"
+              ><i class="fa-solid fa-magnifying-glass disNone"></i>
+              <p>Buscar</p></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-cart-shopping disNone"></i>
+              <p>Carrito</p></a
+            >
+          </li>
+          <li class="celNone">
+            <a href="#"><i class="fas fa-bars"></i></a>
+          </li>
+        </ul>
+      </nav>
+      <!--! Buscador -->
+      <form id="ctn-bars-search">
+        <button class="search" id="close-search">
+          <i class="fas fa-times"></i>
+        </button>
+        <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?" />
+      </form>
+    </header>
     <main class="contenedor-register">
       <div class="contenedor-titulo"><h2>Registrate</h2></div>
 
       <!--Formulario de registro sin servidor aún-->
       <form action="login" method="get" class="form-register">
-        
-          <div class="contenedor-campo">
-            <label class="campo-label" for="fname" >Nombre </label>
-            <div class="caja-icono-campo">
+        <div class="contenedor-campo">
+          <label class="campo-label" for="fname">Nombre </label>
+          <div class="caja-icono-campo">
             <i class="fa-solid fa-user icono-user"></i>
-            <input class="campo" type="text" id="fname" name="fname" placeholder="Tú nombre" />
-            </div>
-          </div>  
+            <input
+              class="campo"
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="Tú nombre"
+            />
+          </div>
+        </div>
 
-          <div class="contenedor-campo">
-            <label class="campo-label" for="mail">Correo electrónico</label>
-            <div class="caja-icono-campo">
+        <div class="contenedor-campo">
+          <label class="campo-label" for="mail">Correo electrónico</label>
+          <div class="caja-icono-campo">
             <i class="fa-solid fa-envelope icono-email"></i>
-            <input class="campo" type="email" id="mail" name="mail" placeholder="superheroe@MrCoffee.com" />
-            </div> 
+            <input
+              class="campo"
+              type="email"
+              id="mail"
+              name="mail"
+              placeholder="superheroe@MrCoffee.com"
+            />
           </div>
-          
-          <div class="contenedor-campo">
-            <label class="campo-label" for="psw" >Contraseña</label>
-            <div class="caja-icono-campo">  
-              <i class="fa-solid fa-eye-slash icono-psw"></i>          
-            <input class="campo" type="password" id="psw" name="psw" placeholder="Tú contraseña"/>
-            </div>
-          </div>
+        </div>
 
-            <div class="contenedor-boton-registrar">
-            <input class="button-registrar" type="submit" value="Registrar"/>
+        <div class="contenedor-campo">
+          <label class="campo-label" for="psw">Contraseña</label>
+          <div class="caja-icono-campo">
+            <i class="fa-solid fa-eye-slash icono-psw"></i>
+            <input
+              class="campo"
+              type="password"
+              id="psw"
+              name="psw"
+              placeholder="Tú contraseña"
+            />
           </div>
-        
+        </div>
+
+        <div class="contenedor-boton-registrar">
+          <input class="button-registrar" type="submit" value="Registrar" />
+        </div>
       </form>
       <!--Botón redirecciónador al login-->
-    <div class="contenedor-redirect">
-      <button class="redirect-login" onclick="document.location='login'">Tengo una cuenta</button>
-    </div>
-    <div class="vinculos-register">
-      <a href=""><p class="politicas">Políticas de Privacidad</p></a>
-      <!--Redirección a definir-->
-    </div>
+      <div class="contenedor-redirect">
+        <button class="redirect-login" onclick="document.location='login'">
+          Tengo una cuenta
+        </button>
+      </div>
+      <div class="vinculos-register">
+        <a href=""><p class="politicas">Políticas de Privacidad</p></a>
+        <!--Redirección a definir-->
+      </div>
     </main>
-
-    
-  
-   
   </body>
 </html>
