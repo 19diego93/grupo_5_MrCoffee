@@ -5,18 +5,12 @@ const app = express();
 const port = 3000;
 
 //' Views-Html | Http
-const viewsCheckout = path.join(__dirname, "views/checkout.html");
-const httpCheckout = "/Checkout";
-//!
 const viewsIndex = path.join(__dirname, "views/index.html");
 const httpIndex = "/";
 const httpHome = "/home";
 //!
 const viewsLogin = path.join(__dirname, "views/login.html");
 const httpLogin = "/login";
-//!
-const viewsForgotten = path.join(__dirname, "views/olvidastecontra.html");
-const httpForgotten = "/forgotten";
 //!
 const viewsProductCart = path.join(__dirname, "views/productCart.html");
 const httpProductCart = "/productCart";
