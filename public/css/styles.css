@@ -159,6 +159,7 @@ body {
 .recibi-noticias {
   display: block;
   color: #fff;
+  font-size: 20px;
 }
 .container-email {
   display: flex;
@@ -241,7 +242,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
 }
 .Container-Buttons button {
   position: relative;
@@ -263,6 +263,9 @@ body {
 }
 .Container-Buttons button p {
   font-size: 1.2rem;
+}
+.Dis-none {
+  display: none;
 }
 .Container-end p {
   margin: 30px 0px;
@@ -290,6 +293,9 @@ body {
   }
   .search i {
     font-size: 16px;
+  }
+  .recibi-noticias {
+    font-size: 28px;
   }
 }
 @media (min-width: 768px) {
@@ -359,6 +365,42 @@ body {
   .footer-Content {
     margin-bottom: -40px;
   }
+  .input-email {
+    width: 60%;
+    font-size: 2rem;
+  }
+  .boton-email {
+    border: none;
+    background-color: #76402e;
+    padding: 13px;
+  }
+  .boton-email i {
+    font-size: 2rem;
+  }
+  .Container-links {
+    width: 535px;
+  }
+  .Container-links i {
+    right: 5%;
+  }
+  .Container-Buttons {
+    flex-direction: row;
+  }
+  .Container-Buttons button {
+    width: 250px;
+  }
+  .Container-end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Container-end .Dis-none {
+    display: flex;
+    color: #fff;
+  }
+  .Container-end p {
+    margin: 15px 15px;
+  }
 }
 @media (min-width: 1200px) {
   .disNone {
@@ -376,5 +418,24 @@ body {
   .nav ul li a i {
     display: flex;
     margin-right: 10px;
+  }
+  .input-email {
+    width: 50%;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
+  .Container-Buttons {
+    flex-direction: column;
+  }
+  .Container-Buttons button {
+    width: 535px;
+  }
+  .footer-button-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
