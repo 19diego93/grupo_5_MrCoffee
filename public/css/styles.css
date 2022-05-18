@@ -142,8 +142,139 @@ body {
   z-index: 7;
 }
 /*! Footer */
-footer {
-  background-color: violet;
+.footer-Content {
+  background-color: #000;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.formulario {
+  background-image: url(/img/fondoForm.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+}
+.recibi-noticias {
+  display: block;
+  color: #fff;
+}
+.container-email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.input-email {
+  border: none;
+  outline: 0;
+  padding: 10px;
+  width: 70%;
+  font-size: 1rem;
+}
+.boton-email {
+  border: none;
+  background-color: #76402e;
+  padding: 10px;
+}
+.boton-email i {
+  font-size: 1rem;
+}
+.Container-Redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Container-Redes li {
+  display: flex;
+  margin: 20px;
+}
+.Container-Redes li a {
+  text-decoration: none;
+  width: 100%;
+  color: #fff;
+}
+.Container-Redes li a i {
+  font-size: 2.5rem;
+}
+.footer-Content h5 {
+  font-size: 2rem;
+  color: #fff;
+  margin: 20px 0px;
+  pointer-events: none;
+}
+.Container-links {
+  position: relative;
+  margin: 15px;
+  padding: 20px;
+  width: 80%;
+  font-family: "Raleway", sans-serif;
+  border: solid 1px #fff;
+  color: #fff;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.Container-links p {
+  font-size: 1rem;
+}
+.Container-links i {
+  position: absolute;
+  font-size: 2rem;
+  top: 25%;
+  right: 2%;
+}
+.links {
+  margin-bottom: 30px;
+  display: none;
+}
+.links li {
+  margin-bottom: 15px;
+}
+.links li a {
+  text-decoration: none;
+  color: #fff;
+}
+.Container-Buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.Container-Buttons button {
+  position: relative;
+  margin: 15px;
+  padding: 20px;
+  width: 80%;
+  font-family: "Raleway", sans-serif;
+  border: solid 1px #fff;
+  color: #fff;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.Container-Buttons button i {
+  position: absolute;
+  font-size: 2rem;
+  top: 25%;
+  left: 4%;
+}
+.Container-Buttons button p {
+  font-size: 1.2rem;
+}
+.Container-end p {
+  margin: 30px 0px;
+}
+.Container-end p a {
+  text-decoration: none;
+  color: #fff;
+}
+.derechos-autor {
+  color: #fff;
+  pointer-events: none;
+  padding-bottom: 20px;
 }
 @media (min-width: 460px) {
   /*! Tablets */
@@ -224,6 +355,9 @@ footer {
   /*? search */
   .search {
     width: 5%;
+  }
+  .footer-Content {
+    margin-bottom: -40px;
   }
 }
 @media (min-width: 1200px) {
