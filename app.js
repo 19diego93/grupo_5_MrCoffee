@@ -20,6 +20,9 @@ const httpProductDetail = "/productDetail";
 //!
 const viewsRegister = path.join(__dirname, "views/register.html");
 const httpRegister = "/register";
+//!
+const viewsProductos = path.join(__dirname, "views/productos.html");
+const httpProductos = "/productos";
 
 //' Static
 const publicPath = path.join(__dirname, "public/");
@@ -30,6 +33,9 @@ app.listen(port, () => {
   console.log(`MrCoffee listening at http://localhost:${port}`);
 });
 
+app.get(httpProductos, (req, res) => {
+  res.sendFile(viewsProductos);
+});
 //' Puertos
 app.get(httpIndex, (req, res) => {
   res.sendFile(viewsIndex);
