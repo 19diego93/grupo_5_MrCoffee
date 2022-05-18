@@ -1,15 +1,22 @@
+/* !body */
+body{
+  min-width: 380px;
+}
 /* ! Main */
 .contenedor-main-carrito {
   background-color: #ffe6d6;
   margin-top: 60px;
+  padding-bottom: 30px;
 }
 /* ! contenedor Titulo */
 .contenedor-titulo {
-  width: 50%;
   margin: auto;
   padding: 1rem 0rem;
   color: #ad715c;
   text-align: center;
+}
+.titulo-producto{
+  font-size: 3rem;
 }
 /* ! contenedor grilla */
 .caja-product-descripcion {
@@ -124,3 +131,11 @@ select {
   color: white;
   border-radius: 4px;
 }
+/* ? Tablets */
+@media (min-width: 460px){}
+
+/* ? Laptops */
+@media (min-width: 768px ){}
+
+/* ? Desktop */
+@media (min-width: 1200px){}

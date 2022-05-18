@@ -76,6 +76,7 @@
       <div class="contenedor-titulo">
         <h1 class="titulo-producto">Productos</h1>
       </div>
+
       <div class="grid caja-product-descripcion">
         <!--!imagen product y descripcion-->
         <div class="nested-grid">
@@ -110,6 +111,41 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
+      <div class="grid caja-product-descripcion">
+        <!--!imagen product y descripcion-->
+        <div class="nested-grid">
+          <div class="contenedor-descripcion">
+            <img src="img\product\caffeproducto1.png" alt="producto" />
+
+            <div class="descripcion">
+              <p class="Nombre-producto">nombreProducto</p>
+              <p class="descripcion-producto">descripciónProducto</p>
+            </div>
+          </div>
+          <div><p>Unidades</p></div>
+          <div class="contador-cantidad">
+            <button class="contador" type="button">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <p>cantidad</p>
+            <button class="contador" type="button">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <div><p>Tamaño</p></div>
+          <div>
+            <select name="tamanio" id="" required>
+              <option value="chico">Chico</option>
+              <option value="mediano">Mediano</option>
+              <option value="grande">Grande</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" class="eliminar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
       <!--! Contenedor total -->
       <div class="contenedor-sumatoria">
         <div><p>Total:</p></div>
@@ -121,7 +157,71 @@
         <button class="checkout" type="button">Comprar</button>
       </div>
     </main>
-    <footer></footer>
+    <!-- ! Footer -->
+    <footer class="footer-Content">
+      <!--! Formulario -->
+      <form action="" class="formulario">
+        <label for="" class="recibi-noticias">RECIBI TODAS NUESTRAS</label>
+        <label for="" class="recibi-noticias">PROMOCIONES Y NOVEDADES</label>
+        <div class="container-email">
+          <input name="newsletter" placeholder="Ingresa tu Correo" type="email" id="newsletter-input" class="input-email">
+        <button class="boton-email">
+          <i class="fas fa-envelope"></i>
+        </button>
+        </div>
+        <ul class="Container-Redes">
+          <li>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+        </ul>
+      </form>
+      <h5>Mr Coffee</h5>
+      <button class="Container-links">
+        <p>Sobre nosotros</p>
+        <i class="fas fa-angle-down"></i>
+      </button>
+      <ul class="links">
+        <li><a href="#">Nuestra historia</a></li>
+        <li><a href="#">Nuestra misión</a></li>
+        <li><a href="#">Nuestro café</a></li>
+      </ul>
+      <button class="Container-links">
+        <p>Atención al cliente</p>
+        <i class="fas fa-angle-down"></i>
+      </button>
+      <ul class="links">
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Medios de pago</a></li>
+        <li><a href="#">Defensa de consumidores</a></li>
+      </ul>
+
+      <div class="Container-Buttons">
+        <button>
+          <i class="fa-solid fa-location-dot brands"></i>
+          <p>Tiendas</p>
+        </button>
+        <button>
+          <i class="fa-brands fa-github"></i>
+          <p>Proyecto</p>
+        </button>
+      </div>
+
+      <div class="Container-end">
+        <p>
+          <a href="">Aviso de privacidad</a>
+        </p>
+        <p>
+          <a href="">Condiciones de uso</a>
+        </p>
+        <p class="derechos-autor">© 2022 Mr Coffee</p>
+      </div>
+    </footer>
     <!--! JS -->
     <script src="js/search.js"></script>
   </body>
