@@ -1,8 +1,15 @@
+/* !body */
+body{
+  min-width: 380px;
+}
 /*! Main */
+a {
+  text-decoration: none;
+}
 .contenedor-login {
   display: block;
   padding-bottom: 3rem;
-  background-color: white;
+  background-color: #FFE6D6;
   min-width: 270px;
   margin-top: 60px;
 }
@@ -34,6 +41,7 @@
 }
 /*! contenedor icono campo */
 .caja-icono-campo {
+  background-color: white;
   border: solid 1px black;
   border-radius: 3px;
   display: flex;
