@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"
     />
-    <title>Gaena | Productos</title>
+    <title>Mr Coffee | Productos</title>
     <script src="public/js/add-price.js"></script>
 
     <link rel="stylesheet" href="css/styles.css" />
@@ -28,6 +28,62 @@
     ></script>
   </head>
   <body>
+    <header>
+      <!--! Encabezado -->
+      <div class="Header-Content">
+        <div class="Favorite">
+          <a href="#"><i class="fas fa-bookmark"></i></a>
+        </div>
+        <h1 class="Logo">
+          <img src="img/MrCoffee.png" alt="Logo" />
+        </h1>
+        <div class="Config">
+          <a href="#"><i class="fas fa-bars"></i></a>
+        </div>
+      </div>
+      <!-- ! Navegacion -->
+      <nav class="nav">
+        <ul>
+          <li>
+            <a href="/home"
+              ><i class="fa-solid fa-house disNone"></i>
+              <p>Inicio</p></a
+            >
+          </li>
+          <li>
+            <a href="/productos"
+              ><i class="fa-solid fa-basket-shopping disNone"></i>
+              <p>Tienda</p></a
+            >
+          </li>
+          <li>
+            <a id="search"
+              ><i class="fa-solid fa-magnifying-glass disNone"></i>
+              <p>Buscar</p></a
+            >
+          </li>
+          <li>
+            <a href="/productCart"
+              ><i class="fa-solid fa-cart-shopping disNone"></i>
+              <p>Carrito</p></a
+            >
+          </li>
+          <li class="celNone">
+            <a href="#"><i class="fas fa-bars"></i></a>
+          </li>
+        </ul>
+      </nav>
+      <!--! Buscador -->
+      <form id="ctn-bars-search">
+        <button class="search" id="close-search">
+          <i class="fas fa-times"></i>
+        </button>
+        <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?" />
+      </form>
+    </header>
+    <main>
+      <!--! Cerrar buscador -->
+      <div id="cover-ctn-search"></div>
         <!-- Productos -->
         <div class="products">
           <div class="product" data-category="Grandes Hilo HOT">
@@ -35,9 +91,9 @@
               <button class="button-add" onclick="add('product-1', 3000)">
                 Agregar
               </button>
-              <a href="#" style="text-decoration: none"
-                ><img src="img/capucchino.png"
-              /></a>
+              <a href="#" style="text-decoration: none">
+                <img src="img/capucchino.png"/>
+              </a>
             </div>
             <h2>cafe</h2>
             <ul class="ctn-price">
@@ -159,7 +215,7 @@
             </ul>
           </div>
         </div>
-
+      </main>
       <footer>
         <!--! Formulario -->
         <form action="" class="formulario">

@@ -157,14 +157,16 @@ body {
   background: rgba(0, 0, 0, 0.5);
   z-index: 7;
 }
+
 /*! Footer */
 footer {
   background-color: #000;
   text-align: center;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 .formulario {
-  background-image: url(/img/fondoForm.png);
+  background-image: url(/img/campaña1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
