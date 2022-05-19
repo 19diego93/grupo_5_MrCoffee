@@ -50,6 +50,7 @@
   object-fit: cover;
   justify-content: center;
   border-radius: 10px;
+  background-color: #ad715c;
 }
 
 .product .ctn-img button {
