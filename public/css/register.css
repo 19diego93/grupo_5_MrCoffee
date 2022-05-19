@@ -1,5 +1,5 @@
 /* !body */
-body{
+body {
   min-width: 380px;
 }
 /*! Main */
@@ -8,7 +8,6 @@ body{
   padding-bottom: 3rem;
   background-color: #ffe6d6;
   min-width: 270px;
-  margin-top: 60px;
 }
 /*! form */
 .form-register {

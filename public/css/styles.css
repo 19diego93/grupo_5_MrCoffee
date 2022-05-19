@@ -9,6 +9,10 @@
 body {
   font-family: "Raleway", sans-serif;
 }
+main {
+  margin-top: 60px;
+  padding-bottom: 60px;
+}
 /*! Colores */
 :root {
   --color-rojo: red;
@@ -67,7 +71,7 @@ body {
 }
 .Config a {
   color: #000;
-  font-size: 28px;
+  font-size: 40px;
   text-decoration: none;
 }
 /*! Navegacion */
@@ -90,7 +94,10 @@ body {
   justify-content: space-around;
 }
 .nav ul li {
+  list-style-type: none;
   display: flex;
+  justify-content: center;
+  align-items: center;
   align-items: center;
   font-size: 24px;
 }
@@ -163,17 +170,23 @@ footer {
   background-color: #000;
   text-align: center;
   margin-bottom: 50px;
-  margin-top: 50px;
 }
 .formulario {
   background-image: url(/img/campaña1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 20px;
   position: relative;
-  bottom: 0;
+  width: 100%;
+  padding: 20px;
 }
+/* .formulario::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+} */
 .recibi-noticias {
   display: block;
   color: #fff;
@@ -185,20 +198,34 @@ footer {
   align-items: center;
   margin-top: 20px;
 }
-.input-email {
+.container-email input {
   border: none;
   outline: 0;
   padding: 10px;
-  width: 70%;
+  width: 60%;
   font-size: 1rem;
 }
-.boton-email {
+.email-icon {
+  background-color: #fff;
+  pointer-events: none;
   border: none;
-  background-color: #76402e;
-  padding: 10px;
+  padding: 11px;
 }
-.boton-email i {
+.email-icon i {
   font-size: 1rem;
+}
+.email-send {
+  background-color: #76402e;
+  cursor: pointer;
+  border: none;
+  padding: 11px;
+}
+.email-send i {
+  font-size: 1rem;
+  transition: 0.3s;
+}
+.email-send:hover i {
+  transform: rotate(60deg);
 }
 .Container-Redes {
   display: flex;
@@ -213,6 +240,7 @@ footer {
   text-decoration: none;
   width: 100%;
   color: #fff;
+  padding: 20px;
 }
 .Container-Redes li a i {
   font-size: 2.5rem;
@@ -352,9 +380,9 @@ footer h5 {
   .disNone {
     display: none;
   }
-  .celNone {
+  .nav ul .celNone {
     display: block;
-    font-size: 26px;
+    font-size: 40px;
   }
   .nav ul li {
     font-size: 20px;
@@ -383,16 +411,20 @@ footer h5 {
   footer {
     margin-bottom: -40px;
   }
-  .input-email {
+  .container-email input {
     width: 60%;
+    font-size: 1.9rem;
+  }
+  .email-icon {
+    padding: 12px;
+  }
+  .email-icon i {
     font-size: 2rem;
   }
-  .boton-email {
-    border: none;
-    background-color: #76402e;
-    padding: 13px;
+  .email-send {
+    padding: 12px;
   }
-  .boton-email i {
+  .email-send i {
     font-size: 2rem;
   }
   .Container-links {
@@ -437,7 +469,7 @@ footer h5 {
     display: flex;
     margin-right: 10px;
   }
-  .input-email {
+  .container-email input {
     width: 50%;
   }
   .buttons {

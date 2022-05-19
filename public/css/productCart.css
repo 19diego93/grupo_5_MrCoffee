@@ -1,11 +1,10 @@
 /* !body */
-body{
+body {
   min-width: 380px;
 }
 /* ! Main */
 .contenedor-main-carrito {
   background-color: #ffe6d6;
-  margin-top: 60px;
   padding-bottom: 30px;
 }
 /* ! contenedor Titulo */
@@ -15,7 +14,7 @@ body{
   color: #ad715c;
   text-align: center;
 }
-.titulo-producto{
+.titulo-producto {
   font-size: 3rem;
 }
 /* ! contenedor grilla */
@@ -132,10 +131,13 @@ select {
   border-radius: 4px;
 }
 /* ? Tablets */
-@media (min-width: 460px){}
+@media (min-width: 460px) {
+}
 
 /* ? Laptops */
-@media (min-width: 768px ){}
+@media (min-width: 768px) {
+}
 
 /* ? Desktop */
-@media (min-width: 1200px){}
+@media (min-width: 1200px) {
+}
