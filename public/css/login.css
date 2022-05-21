@@ -1,5 +1,5 @@
 /* !body */
-body{
+body {
   min-width: 380px;
 }
 /*! Main */
@@ -9,9 +9,8 @@ a {
 .contenedor-login {
   display: block;
   padding-bottom: 3rem;
-  background-color: #FFE6D6;
+  background-color: #ffe6d6;
   min-width: 270px;
-  margin-top: 60px;
 }
 /*! form */
 .form-login {

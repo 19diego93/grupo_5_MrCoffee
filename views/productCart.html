@@ -22,11 +22,13 @@
         <div class="Favorite">
           <a href="#"><i class="fas fa-bookmark"></i></a>
         </div>
-        <h1 class="Logo">
-          <img src="img/MrCoffee.png" alt="Logo" />
-        </h1>
+        <div class="Logo">
+          <a href="">
+            <img src="img/MrCoffee.png" alt="Logo" />
+          </a>
+        </div>
         <div class="Config">
-          <a href="#"><i class="fas fa-bars"></i></a>
+          <a href="#"><i class="fas fa-user-circle"></i></a>
         </div>
       </div>
       <!-- ! Navegacion -->
@@ -39,7 +41,7 @@
             >
           </li>
           <li>
-            <a href="/productos"
+            <a href="/productDetail"
               ><i class="fa-solid fa-basket-shopping disNone"></i>
               <p>Tienda</p></a
             >
@@ -57,7 +59,7 @@
             >
           </li>
           <li class="celNone">
-            <a href="#"><i class="fas fa-bars"></i></a>
+            <a href="#"><i class="fas fa-user-circle"></i></a>
           </li>
         </ul>
       </nav>
@@ -158,33 +160,37 @@
     </main>
     <footer>
       <!--! Formulario -->
-      <form action="" class="formulario">
-        <label for="" class="recibi-noticias">RECIBI TODAS NUESTRAS</label>
-        <label for="" class="recibi-noticias">PROMOCIONES Y NOVEDADES</label>
-        <div class="container-email">
-          <input
-            name="newsletter"
-            placeholder="Ingresa tu Correo"
-            type="email"
-            id="newsletter-input"
-            class="input-email"
-          />
-          <button class="boton-email">
-            <i class="fas fa-envelope"></i>
-          </button>
-        </div>
-        <ul class="Container-Redes">
-          <li>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          </li>
-        </ul>
-      </form>
+      <div class="container-form">
+        <form action="" class="formulario">
+          <label for="" class="recibi-noticias">RECIBI TODAS NUESTRAS</label>
+          <label for="" class="recibi-noticias">PROMOCIONES Y NOVEDADES</label>
+          <div class="container-email">
+            <div class="email-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <input
+              name="newsletter"
+              placeholder="Ingresa tu Correo"
+              type="email"
+              id="newsletter-input"
+            />
+            <button class="email-send">
+              <i class="far fa-paper-plane"></i>
+            </button>
+          </div>
+          <div class="Container-Redes">
+            <a href="#">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
+        </form>
+      </div>
       <h5>Mr Coffee</h5>
       <div class="buttons">
         <div class="footer-button-action">

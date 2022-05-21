@@ -9,6 +9,10 @@
 body {
   font-family: "Raleway", sans-serif;
 }
+main {
+  margin-top: 60px;
+  padding-bottom: 60px;
+}
 /*! Colores */
 :root {
   --color-rojo: red;
@@ -39,6 +43,7 @@ body {
   height: 60px;
   z-index: 60;
 }
+
 /*? favorito */
 .Favorite {
   margin-left: 10px;
@@ -52,23 +57,20 @@ body {
 /*? logo */
 .Logo {
   display: flex;
-  justify-content: center;
-  height: 40%;
-  display: flex;
   align-items: center;
   justify-content: center;
+  height: 10%;
 }
 .Logo img {
   width: 90%;
 }
 /*! configuracion */
 .Config {
-  margin-right: 10px;
+  margin: 0px 10px 0px 10px;
 }
 .Config a {
   color: #000;
-  font-size: 28px;
-  text-decoration: none;
+  font-size: 40px;
 }
 /*! Navegacion */
 .nav {
@@ -91,6 +93,8 @@ body {
 }
 .nav ul li {
   display: flex;
+  justify-content: center;
+  align-items: center;
   align-items: center;
   font-size: 24px;
 }
@@ -119,6 +123,7 @@ body {
   top: -60px;
   width: 100%;
   z-index: 30;
+  transition: 0.4s;
 }
 #ctn-bars-search input {
   background-color: #fff;
@@ -157,25 +162,37 @@ body {
   background: rgba(0, 0, 0, 0.5);
   z-index: 7;
 }
+
 /*! Footer */
 footer {
   background-color: #000;
-  text-align: center;
   margin-bottom: 50px;
 }
-.formulario {
-  background-image: url(/img/fondoForm.png);
+.container-form {
+  background-image: url(/img/campaña1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 20px;
   position: relative;
-  bottom: 0;
+  width: 100%;
+}
+.container-form::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+}
+.formulario {
+  position: relative;
+  width: 100%;
+  padding-top: 40px;
 }
 .recibi-noticias {
   display: block;
   color: #fff;
   font-size: 20px;
+  text-align: center;
 }
 .container-email {
   display: flex;
@@ -183,19 +200,29 @@ footer {
   align-items: center;
   margin-top: 20px;
 }
-.input-email {
+.container-email input {
   border: none;
   outline: 0;
   padding: 10px;
-  width: 70%;
+  width: 60%;
   font-size: 1rem;
 }
-.boton-email {
+.email-icon {
+  background-color: #fff;
+  pointer-events: none;
   border: none;
-  background-color: #76402e;
-  padding: 10px;
+  padding: 11px;
 }
-.boton-email i {
+.email-icon i {
+  font-size: 1rem;
+}
+.email-send {
+  background-color: #76402e;
+  cursor: pointer;
+  border: none;
+  padding: 11px;
+}
+.email-send i {
   font-size: 1rem;
 }
 .Container-Redes {
@@ -203,23 +230,25 @@ footer {
   justify-content: center;
   align-items: center;
 }
-.Container-Redes li {
-  display: flex;
+.Container-Redes a {
   margin: 20px;
-}
-.Container-Redes li a {
-  text-decoration: none;
-  width: 100%;
   color: #fff;
 }
-.Container-Redes li a i {
-  font-size: 2.5rem;
+.Container-Redes a i {
+  font-size: 2rem;
 }
 footer h5 {
   font-size: 2rem;
   color: #fff;
   margin: 20px 0px;
   pointer-events: none;
+  text-align: center;
+}
+.footer-button-action {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Container-links {
   position: relative;
@@ -232,6 +261,9 @@ footer h5 {
   border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Container-links p {
   font-size: 1rem;
@@ -283,8 +315,14 @@ footer h5 {
 .Dis-none {
   display: none;
 }
+.Container-end {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .Container-end p {
-  margin: 30px 0px;
+  margin: 10px;
 }
 .Container-end p a {
   text-decoration: none;
@@ -294,6 +332,7 @@ footer h5 {
   color: #fff;
   pointer-events: none;
   padding-bottom: 20px;
+  text-align: center;
 }
 @media (min-width: 460px) {
   /*! Tablets */
@@ -338,7 +377,7 @@ footer h5 {
     justify-content: center;
     align-items: center;
     border-bottom: 2px solid #000;
-    z-index: 90;
+    z-index: 100;
   }
   /*! Navegacion-E */
   .nav {
@@ -350,9 +389,9 @@ footer h5 {
   .disNone {
     display: none;
   }
-  .celNone {
+  .nav ul .celNone {
     display: block;
-    font-size: 26px;
+    font-size: 40px;
   }
   .nav ul li {
     font-size: 20px;
@@ -365,12 +404,14 @@ footer h5 {
     position: unset;
     background-color: unset;
     border-bottom: unset;
-    z-index: unset;
   }
   .Config {
     display: none;
   }
   /*? Buscador */
+  #ctn-bars-search {
+    transition: 0s;
+  }
   #ctn-bars-search input {
     width: 90%;
   }
@@ -378,19 +419,24 @@ footer h5 {
   .search {
     width: 5%;
   }
+  /*! Pie de pagina */
   footer {
     margin-bottom: -40px;
   }
-  .input-email {
+  .container-email input {
     width: 60%;
+    font-size: 1.9rem;
+  }
+  .email-icon {
+    padding: 12px;
+  }
+  .email-icon i {
     font-size: 2rem;
   }
-  .boton-email {
-    border: none;
-    background-color: #76402e;
-    padding: 13px;
+  .email-send {
+    padding: 12px;
   }
-  .boton-email i {
+  .email-send i {
     font-size: 2rem;
   }
   .Container-links {
@@ -405,20 +451,22 @@ footer h5 {
   .Container-Buttons button {
     width: 250px;
   }
+  .Container-Redes a i {
+    font-size: 2.5rem;
+  }
   .Container-end {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
   }
   .Container-end .Dis-none {
     display: flex;
     color: #fff;
   }
   .Container-end p {
-    margin: 15px 15px;
+    margin: 15px;
   }
 }
 @media (min-width: 1200px) {
+  /*! PC */
   .disNone {
     display: block;
   }
@@ -435,23 +483,13 @@ footer h5 {
     display: flex;
     margin-right: 10px;
   }
-  .input-email {
+  .container-email input {
     width: 50%;
-  }
-  .buttons {
-    display: flex;
-    justify-content: center;
   }
   .Container-Buttons {
     flex-direction: column;
   }
   .Container-Buttons button {
     width: 535px;
-  }
-  .footer-button-action {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
   }
 }

@@ -1,18 +1,25 @@
 # Comenzar a hacer:
-### Crear productos.
-### Cambiar o mejorar los estilos de register y login
+
+### Reuniones para hablar sobre la daily
 
 # Hacer más:
+
 ### Pedir ayuda cuando estamos atascados o no entendemos.
-### Terminar estructura basica de la web
+
 ### Reuniones grupales.
 
+### Dedicarle mas tiempo al proyecto
+
 # Continuar haciendo:
+
 ### Seguir comunicándonos por slack.
-### Dar estilo a las distintas partes de la web.
+
+### Seguir comunicandonos por discord
 
 # Hacer menos:
+
 ### ...
 
 # Dejar de hacer:
+
 ### ...
