@@ -23,9 +23,11 @@
         <div class="Favorite">
           <a href="#"><i class="fas fa-bookmark"></i></a>
         </div>
-        <h1 class="Logo">
-          <img src="img/MrCoffee.png" alt="Logo" />
-        </h1>
+        <div class="Logo">
+          <a href="">
+            <img src="img/MrCoffee.png" alt="Logo" />
+          </a>
+        </div>
         <div class="Config">
           <a href="#"><i class="fas fa-user-circle"></i></a>
         </div>
@@ -40,7 +42,7 @@
             >
           </li>
           <li>
-            <a href="/productos"
+            <a href="/productDetail"
               ><i class="fa-solid fa-basket-shopping disNone"></i>
               <p>Tienda</p></a
             >
@@ -76,36 +78,45 @@
       <!--! Campaña -->
       <section class="Container-Campaign">
         <article class="campaña">
-          <h2 class="">¡Conocé nuestras variedades!</h2>
+          <h1>¡Conocé nuestras variedades!</h1>
           <a href="/productDetail" class="boton-descubrir">
             <p>¡Descubrír!</p>
           </a>
         </article>
+        <article id="wave-effect">
+          <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+            <path
+              d="M-7.77,66.63 C149.99,150.22 349.21,-50.06 514.81,77.49 L500.00,150.22 L0.00,150.22 Z"
+            ></path>
+          </svg>
+        </article>
       </section>
       <!--! Destacados -->
-      <section class="conteiner-products">
-        <article class="product">
-          <div class="product-img">
-            <a href="#" style="text-decoration: none">
-              <img src="img/product/capucchino.png" />
-            </a>
-          </div>
-          <div class="product-desc">
-            <h4>Cappuccino</h4>
-            <p>$3000</p>
-          </div>
-        </article>
-        <article class="product">
-          <div class="product-img">
-            <a href="#" style="text-decoration: none">
-              <img src="img/product/latte.png" />
-            </a>
-          </div>
-          <div class="product-desc">
-            <h4>Latte</h4>
-            <p>$3000</p>
-          </div>
-        </article>
+      <section class="conteiner-featured">
+        <div class="class=conteiner-products">
+          <article class="product">
+            <div class="product-img">
+              <a href="#" style="text-decoration: none">
+                <img src="img/product/capucchino.png" />
+              </a>
+            </div>
+            <div class="product-desc">
+              <h4>Cappuccino</h4>
+              <p>$3000</p>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product-img">
+              <a href="#" style="text-decoration: none">
+                <img src="img/product/latte.png" />
+              </a>
+            </div>
+            <div class="product-desc">
+              <h4>Latte</h4>
+              <p>$3000</p>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
     <footer>
@@ -128,17 +139,17 @@
               <i class="far fa-paper-plane"></i>
             </button>
           </div>
-          <ul class="Container-Redes">
-            <li>
-              <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            </li>
-          </ul>
+          <div class="Container-Redes">
+            <a href="#">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
         </form>
       </div>
       <h5>Mr Coffee</h5>

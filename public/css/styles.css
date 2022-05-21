@@ -43,6 +43,7 @@ main {
   height: 60px;
   z-index: 60;
 }
+
 /*? favorito */
 .Favorite {
   margin-left: 10px;
@@ -56,23 +57,20 @@ main {
 /*? logo */
 .Logo {
   display: flex;
-  justify-content: center;
-  height: 40%;
-  display: flex;
   align-items: center;
   justify-content: center;
+  height: 10%;
 }
 .Logo img {
   width: 90%;
 }
 /*! configuracion */
 .Config {
-  margin-right: 10px;
+  margin: 0px 10px 0px 10px;
 }
 .Config a {
   color: #000;
   font-size: 40px;
-  text-decoration: none;
 }
 /*! Navegacion */
 .nav {
@@ -94,7 +92,6 @@ main {
   justify-content: space-around;
 }
 .nav ul li {
-  list-style-type: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -233,18 +230,12 @@ footer {
   justify-content: center;
   align-items: center;
 }
-.Container-Redes li {
-  display: flex;
+.Container-Redes a {
   margin: 20px;
-}
-.Container-Redes li a {
-  text-decoration: none;
-  width: 100%;
   color: #fff;
-  padding: 20px;
 }
-.Container-Redes li a i {
-  font-size: 2.5rem;
+.Container-Redes a i {
+  font-size: 2rem;
 }
 footer h5 {
   font-size: 2rem;
@@ -460,6 +451,9 @@ footer h5 {
   .Container-Buttons button {
     width: 250px;
   }
+  .Container-Redes a i {
+    font-size: 2.5rem;
+  }
   .Container-end {
     flex-direction: row;
   }
@@ -472,6 +466,7 @@ footer h5 {
   }
 }
 @media (min-width: 1200px) {
+  /*! PC */
   .disNone {
     display: block;
   }

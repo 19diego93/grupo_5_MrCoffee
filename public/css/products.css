@@ -8,8 +8,8 @@
   text-align: center;
   margin: 10px;
   padding: 10px;
-  border: solid 1px black;
   overflow: hidden;
+  background-color: #ffffff;
 }
 .product-img a img {
   width: 80%;
