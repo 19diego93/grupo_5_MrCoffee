@@ -1,0 +1,24 @@
+.conteiner-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product {
+  width: 250px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border: solid 1px black;
+  overflow: hidden;
+}
+.product-img a img {
+  width: 80%;
+  background-color: #1e3932;
+  border-radius: 100%;
+}
+.product-img {
+  width: 100%;
+}
+.product-desc p {
+  margin: 4px;
+}
