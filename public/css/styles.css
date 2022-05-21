@@ -126,6 +126,7 @@ main {
   top: -60px;
   width: 100%;
   z-index: 30;
+  transition: 0.4s;
 }
 #ctn-bars-search input {
   background-color: #fff;
@@ -168,29 +169,33 @@ main {
 /*! Footer */
 footer {
   background-color: #000;
-  text-align: center;
   margin-bottom: 50px;
 }
-.formulario {
+.container-form {
   background-image: url(/img/campaña1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
   width: 100%;
-  padding: 20px;
 }
-/* .formulario::before {
+.container-form::before {
   content: "";
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
   position: absolute;
-} */
+}
+.formulario {
+  position: relative;
+  width: 100%;
+  padding-top: 40px;
+}
 .recibi-noticias {
   display: block;
   color: #fff;
   font-size: 20px;
+  text-align: center;
 }
 .container-email {
   display: flex;
@@ -222,10 +227,6 @@ footer {
 }
 .email-send i {
   font-size: 1rem;
-  transition: 0.3s;
-}
-.email-send:hover i {
-  transform: rotate(60deg);
 }
 .Container-Redes {
   display: flex;
@@ -250,6 +251,13 @@ footer h5 {
   color: #fff;
   margin: 20px 0px;
   pointer-events: none;
+  text-align: center;
+}
+.footer-button-action {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Container-links {
   position: relative;
@@ -262,6 +270,9 @@ footer h5 {
   border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Container-links p {
   font-size: 1rem;
@@ -313,8 +324,14 @@ footer h5 {
 .Dis-none {
   display: none;
 }
+.Container-end {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .Container-end p {
-  margin: 30px 0px;
+  margin: 10px;
 }
 .Container-end p a {
   text-decoration: none;
@@ -324,6 +341,7 @@ footer h5 {
   color: #fff;
   pointer-events: none;
   padding-bottom: 20px;
+  text-align: center;
 }
 @media (min-width: 460px) {
   /*! Tablets */
@@ -368,7 +386,7 @@ footer h5 {
     justify-content: center;
     align-items: center;
     border-bottom: 2px solid #000;
-    z-index: 90;
+    z-index: 100;
   }
   /*! Navegacion-E */
   .nav {
@@ -395,12 +413,14 @@ footer h5 {
     position: unset;
     background-color: unset;
     border-bottom: unset;
-    z-index: unset;
   }
   .Config {
     display: none;
   }
   /*? Buscador */
+  #ctn-bars-search {
+    transition: 0s;
+  }
   #ctn-bars-search input {
     width: 90%;
   }
@@ -408,6 +428,7 @@ footer h5 {
   .search {
     width: 5%;
   }
+  /*! Pie de pagina */
   footer {
     margin-bottom: -40px;
   }
@@ -440,16 +461,14 @@ footer h5 {
     width: 250px;
   }
   .Container-end {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
   }
   .Container-end .Dis-none {
     display: flex;
     color: #fff;
   }
   .Container-end p {
-    margin: 15px 15px;
+    margin: 15px;
   }
 }
 @media (min-width: 1200px) {
@@ -472,20 +491,10 @@ footer h5 {
   .container-email input {
     width: 50%;
   }
-  .buttons {
-    display: flex;
-    justify-content: center;
-  }
   .Container-Buttons {
     flex-direction: column;
   }
   .Container-Buttons button {
     width: 535px;
-  }
-  .footer-button-action {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
   }
 }

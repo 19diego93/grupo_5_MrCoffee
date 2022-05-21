@@ -11,7 +11,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   padding: 20px;
   position: relative;
   width: 100%;
@@ -33,10 +33,10 @@ main {
   /*' Al tener Flex-Direction: column; Se invierte el vertical y horizontal */
   /*' justify-content: center; Aplica a la Y */
   /*' align-items: center; Aplica a la X */
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   text-align: center;
   position: relative;
 }
@@ -91,14 +91,4 @@ main {
   }
 }
 @media (min-width: 768px) {
-  .Container-Campaign {
-    background-attachment: fixed;
-  }
-  .campaña h2 {
-    font-size: 40px;
-  }
-  .boton-descubrir p {
-    font-size: 28px;
-    padding: 10px;
-  }
 }

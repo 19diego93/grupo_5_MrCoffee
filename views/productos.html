@@ -38,7 +38,7 @@
           <img src="img/MrCoffee.png" alt="Logo" />
         </h1>
         <div class="Config">
-          <a href="#"><i class="fas fa-bars"></i></a>
+          <a href="#"><i class="fas fa-user-circle"></i></a>
         </div>
       </div>
       <!-- ! Navegacion -->
@@ -69,7 +69,7 @@
             >
           </li>
           <li class="celNone">
-            <a href="#"><i class="fas fa-bars"></i></a>
+            <a href="#"><i class="fas fa-user-circle"></i></a>
           </li>
         </ul>
       </nav>
@@ -215,22 +215,25 @@
             </ul>
           </div>
         </div>
-      </main>
-      <footer>
-        <!--! Formulario -->
+    </main>
+    <footer>
+      <!--! Formulario -->
+      <div class="container-form">
         <form action="" class="formulario">
           <label for="" class="recibi-noticias">RECIBI TODAS NUESTRAS</label>
           <label for="" class="recibi-noticias">PROMOCIONES Y NOVEDADES</label>
           <div class="container-email">
+            <div class="email-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
             <input
               name="newsletter"
               placeholder="Ingresa tu Correo"
               type="email"
               id="newsletter-input"
-              class="input-email"
             />
-            <button class="boton-email">
-              <i class="fas fa-envelope"></i>
+            <button class="email-send">
+              <i class="far fa-paper-plane"></i>
             </button>
           </div>
           <ul class="Container-Redes">
@@ -245,51 +248,52 @@
             </li>
           </ul>
         </form>
-        <h5>Mr Coffee</h5>
-        <div class="buttons">
-          <div class="footer-button-action">
-            <button class="Container-links">
-              <p>Sobre nosotros</p>
-              <i class="fas fa-angle-down"></i>
-            </button>
-            <ul class="links">
-              <li><a href="#">Nuestra historia</a></li>
-              <li><a href="#">Nuestra misión</a></li>
-              <li><a href="#">Nuestro café</a></li>
-            </ul>
-  
-            <button class="Container-links">
-              <p>Atención al cliente</p>
-              <i class="fas fa-angle-down"></i>
-            </button>
-            <ul class="links">
-              <li><a href="#">Contacto</a></li>
-              <li><a href="#">Medios de pago</a></li>
-              <li><a href="#">Defensa de consumidores</a></li>
-            </ul>
-          </div>
-          <div class="Container-Buttons">
-            <button>
-              <i class="fa-solid fa-location-dot brands"></i>
-              <p>Tiendas</p>
-            </button>
-            <button>
-              <i class="fa-brands fa-github"></i>
-              <p>Proyecto</p>
-            </button>
-          </div>
+      </div>
+      <h5>Mr Coffee</h5>
+      <div class="buttons">
+        <div class="footer-button-action">
+          <button class="Container-links">
+            <p>Sobre nosotros</p>
+            <i class="fas fa-angle-down"></i>
+          </button>
+          <ul class="links">
+            <li><a href="#">Nuestra historia</a></li>
+            <li><a href="#">Nuestra misión</a></li>
+            <li><a href="#">Nuestro café</a></li>
+          </ul>
+
+          <button class="Container-links">
+            <p>Atención al cliente</p>
+            <i class="fas fa-angle-down"></i>
+          </button>
+          <ul class="links">
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Medios de pago</a></li>
+            <li><a href="#">Defensa de consumidores</a></li>
+          </ul>
         </div>
-        <div class="Container-end">
-          <p>
-            <a href="">Aviso de Privacidad</a>
-          </p>
-          <p class="Dis-none">|</p>
-          <p>
-            <a href="">Condiciones de Uso</a>
-          </p>
+        <div class="Container-Buttons">
+          <button>
+            <i class="fa-solid fa-location-dot brands"></i>
+            <p>Tiendas</p>
+          </button>
+          <button>
+            <i class="fa-brands fa-github"></i>
+            <p>Proyecto</p>
+          </button>
         </div>
-        <p class="derechos-autor">© 2022 Mr Coffee</p>
-      </footer>
+      </div>
+      <div class="Container-end">
+        <p>
+          <a href="">Aviso de Privacidad</a>
+        </p>
+        <p class="Dis-none">|</p>
+        <p>
+          <a href="">Condiciones de Uso</a>
+        </p>
+      </div>
+      <p class="derechos-autor">© 2022 Mr Coffee</p>
+    </footer>
     </div>
     <!-- JS search -->
     <script src="public/js/search.js"></script>
