@@ -42,15 +42,15 @@ Productos para el home
 
 ### Qué hizo ayer:
 ```
-
+nada
 ```
 
 ### Si se encontró con algún impedimento:
 ```
-
+no puede acceder a mi pc 
 ```
 
 ### Qué va a hacer hoy:
 ```
-
+voy hacer responsive el productCart
 ```
