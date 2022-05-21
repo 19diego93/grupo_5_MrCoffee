@@ -16,7 +16,7 @@ No hasta ahora.
 
 ### Qué va a hacer hoy:
 ```
-Un carrusel para los productos del Home
+Productos para el home
 ```
 
 
