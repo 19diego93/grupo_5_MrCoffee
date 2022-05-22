@@ -54,6 +54,9 @@ main {
   font-size: 28px;
   text-decoration: none;
 }
+.Favorite a:hover {
+  opacity: 0.6;
+}
 /*? logo */
 .Logo {
   display: flex;
@@ -71,6 +74,9 @@ main {
 .Config a {
   color: #000;
   font-size: 40px;
+}
+.Config a:hover {
+  opacity: 0.6;
 }
 /*! Navegacion */
 .nav {
@@ -101,6 +107,9 @@ main {
 .nav ul li a {
   color: #000;
   text-decoration: none;
+}
+.nav ul li a:hover {
+  opacity: 0.6;
 }
 .nav ul li a p {
   display: none;

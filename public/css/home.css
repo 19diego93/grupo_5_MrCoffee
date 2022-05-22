@@ -75,7 +75,17 @@ main {
   stroke: none;
 }
 /*! Section 2 - Productos Destacados */
-
+.conteiner-featured {
+  margin-top: 30vh;
+}
+.conteiner-featured article h2 {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 35px;
+  margin: 40px;
+  pointer-events: none;
+  border-bottom: 1px solid #999;
+}
 @media (min-width: 460px) {
   /*! Tablets */
   .campaña h1 {
@@ -84,6 +94,15 @@ main {
 }
 @media (min-width: 768px) {
   /*! Laptops */
+  .campaña h1 {
+    font-size: 34px;
+  }
+  .boton-descubrir p {
+    font-size: 30px;
+  }
+  .conteiner-featured article h2 {
+    font-size: 60px;
+  }
 }
 @media (min-width: 1200px) {
   /*! PC */
