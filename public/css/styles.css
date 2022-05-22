@@ -53,9 +53,10 @@ main {
   color: #000;
   font-size: 28px;
   text-decoration: none;
+  transition: 0.3s;
 }
 .Favorite a:hover {
-  opacity: 0.6;
+  color: #00b7ff;
 }
 /*? logo */
 .Logo {
@@ -74,9 +75,10 @@ main {
 .Config a {
   color: #000;
   font-size: 40px;
+  transition: 0.3s;
 }
 .Config a:hover {
-  opacity: 0.6;
+  color: #00b7ff;
 }
 /*! Navegacion */
 .nav {
@@ -107,9 +109,10 @@ main {
 .nav ul li a {
   color: #000;
   text-decoration: none;
+  transition: 0.3s;
 }
 .nav ul li a:hover {
-  opacity: 0.6;
+  color: #00b7ff;
 }
 .nav ul li a p {
   display: none;
@@ -119,6 +122,9 @@ main {
 }
 #search {
   cursor: pointer;
+}
+.selected {
+  color: #00b7ff;
 }
 /*!Buscador*/
 #ctn-bars-search {

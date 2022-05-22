@@ -72,10 +72,10 @@
   border-radius: 10px;
   cursor: pointer;
   font-size: 15px;
+  transition: 0.4s;
 }
 .product-buttons button:hover {
-  background-color: #00b7ff;
-  transition: 0.2s;
+  background-color: #0074a1;
 }
 .product-info {
   background-color: #ad715c;
@@ -88,10 +88,10 @@
   cursor: pointer;
   font-size: 15px;
   text-decoration: none;
+  transition: 0.4s;
 }
 .product-info:hover {
   background-color: #4b2a1e;
-  transition: 0.2s;
 }
 @media (min-width: 460px) {
   /*! Tablets */

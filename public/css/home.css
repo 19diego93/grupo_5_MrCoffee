@@ -49,15 +49,16 @@ main {
   margin: 20px;
   text-decoration: none;
 }
-.boton-descubrir p:hover {
-  background-color: #26acff66;
-}
 .boton-descubrir p {
-  background-color: #26acff;
+  background-color: #00b7ff;
   font-size: 20px;
   padding: 10px;
   border-radius: 10px;
   color: #fff;
+  transition: 0.4s;
+}
+.boton-descubrir p:hover {
+  background-color: #0074a1;
 }
 #wave-effect {
   position: absolute;

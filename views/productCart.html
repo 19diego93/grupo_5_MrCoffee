@@ -41,7 +41,7 @@
             >
           </li>
           <li>
-            <a href="/productDetail"
+            <a href="/productShop"
               ><i class="fa-solid fa-basket-shopping disNone"></i>
               <p>Tienda</p></a
             >
@@ -54,8 +54,8 @@
           </li>
           <li>
             <a href="/productCart"
-              ><i class="fa-solid fa-cart-shopping disNone"></i>
-              <p>Carrito</p></a
+              ><i class="fa-solid fa-cart-shopping disNone selected"></i>
+              <p class="selected">Carrito</p></a
             >
           </li>
           <li class="celNone">
@@ -77,76 +77,76 @@
       <div class="contenedor-titulo">
         <h1 class="titulo-producto">Productos</h1>
       </div>
-    <div class="contenedora-productos">
-      <div class="grid caja-product-descripcion">
-        <!--!imagen product y descripcion-->
-        <div class="nested-grid">
-          <div class="contenedor-descripcion">
-            <img src="img\product-coffee\1.png" alt="producto" />
+      <div class="contenedora-productos">
+        <div class="grid caja-product-descripcion">
+          <!--!imagen product y descripcion-->
+          <div class="nested-grid">
+            <div class="contenedor-descripcion">
+              <img src="img\product-coffee\1.png" alt="producto" />
 
-            <div class="descripcion">
-              <p class="Nombre-producto">nombreProducto</p>
-              <p class="descripcion-producto">descripciónProducto</p>
+              <div class="descripcion">
+                <p class="Nombre-producto">nombreProducto</p>
+                <p class="descripcion-producto">descripciónProducto</p>
+              </div>
+            </div>
+            <div><p>Unidades</p></div>
+            <div class="contador-cantidad">
+              <button class="contador" type="button">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <p>cantidad</p>
+              <button class="contador" type="button">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <div><p>Tamaño</p></div>
+            <div>
+              <select name="tamanio" id="" required>
+                <option value="chico">Chico</option>
+                <option value="mediano">Mediano</option>
+                <option value="grande">Grande</option>
+              </select>
             </div>
           </div>
-          <div><p>Unidades</p></div>
-          <div class="contador-cantidad">
-            <button class="contador" type="button">
-              <i class="fa-solid fa-minus"></i>
-            </button>
-            <p>cantidad</p>
-            <button class="contador" type="button">
-              <i class="fa-solid fa-plus"></i>
-            </button>
-          </div>
-          <div><p>Tamaño</p></div>
-          <div>
-            <select name="tamanio" id="" required>
-              <option value="chico">Chico</option>
-              <option value="mediano">Mediano</option>
-              <option value="grande">Grande</option>
-            </select>
-          </div>
+          <button type="button" class="eliminar">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
-        <button type="button" class="eliminar">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="grid caja-product-descripcion">
-        <!--!imagen product y descripcion-->
-        <div class="nested-grid">
-          <div class="contenedor-descripcion">
-            <img src="img\product-food\1.png" alt="producto" />
+        <div class="grid caja-product-descripcion">
+          <!--!imagen product y descripcion-->
+          <div class="nested-grid">
+            <div class="contenedor-descripcion">
+              <img src="img\product-food\1.png" alt="producto" />
 
-            <div class="descripcion">
-              <p class="Nombre-producto">nombreProducto</p>
-              <p class="descripcion-producto">descripciónProducto</p>
+              <div class="descripcion">
+                <p class="Nombre-producto">nombreProducto</p>
+                <p class="descripcion-producto">descripciónProducto</p>
+              </div>
+            </div>
+            <div><p>Unidades</p></div>
+            <div class="contador-cantidad">
+              <button class="contador" type="button">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <p>cantidad</p>
+              <button class="contador" type="button">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <div><p>Tamaño</p></div>
+            <div>
+              <select name="tamanio" id="" required>
+                <option value="chico">Chico</option>
+                <option value="mediano">Mediano</option>
+                <option value="grande">Grande</option>
+              </select>
             </div>
           </div>
-          <div><p>Unidades</p></div>
-          <div class="contador-cantidad">
-            <button class="contador" type="button">
-              <i class="fa-solid fa-minus"></i>
-            </button>
-            <p>cantidad</p>
-            <button class="contador" type="button">
-              <i class="fa-solid fa-plus"></i>
-            </button>
-          </div>
-          <div><p>Tamaño</p></div>
-          <div>
-            <select name="tamanio" id="" required>
-              <option value="chico">Chico</option>
-              <option value="mediano">Mediano</option>
-              <option value="grande">Grande</option>
-            </select>
-          </div>
+          <button type="button" class="eliminar">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
-        <button type="button" class="eliminar">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
       </div>
-    </div>
       <!--! Contenedor total -->
       <div class="contenedor-sumatoria">
         <div><p>Total:</p></div>
