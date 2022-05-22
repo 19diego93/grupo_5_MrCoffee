@@ -6,6 +6,8 @@
 
 ### Pedir ayuda cuando estamos atascados o no entendemos.
 
+### Reuniones grupales.
+
 ### Dedicarle mas tiempo al proyecto
 
 # Continuar haciendo:
