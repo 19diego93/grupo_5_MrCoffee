@@ -138,7 +138,7 @@ main {
   top: -60px;
   width: 100%;
   z-index: 30;
-  transition: 0.4s;
+  transition: 0.3s;
 }
 #ctn-bars-search input {
   background-color: #fff;
@@ -226,7 +226,7 @@ footer {
   background-color: #fff;
   pointer-events: none;
   border: none;
-  padding: 11px;
+  padding: 10px;
 }
 .email-icon i {
   font-size: 1rem;
@@ -236,6 +236,9 @@ footer {
   cursor: pointer;
   border: none;
   padding: 11px;
+}
+.email-send:hover {
+  background-color: #4b2a1e;
 }
 .email-send i {
   font-size: 1rem;
@@ -248,6 +251,10 @@ footer {
 .Container-Redes a {
   margin: 20px;
   color: #fff;
+  transition: 0.3s;
+}
+.Container-Redes a:hover {
+  color: #00b7ff;
 }
 .Container-Redes a i {
   font-size: 2rem;
@@ -279,6 +286,11 @@ footer h5 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
+}
+.Container-links:hover {
+  border: solid 1px #00b7ff;
+  color: #00b7ff;
 }
 .Container-links p {
   font-size: 1rem;
@@ -317,6 +329,11 @@ footer h5 {
   border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
+  transition: 0.3s;
+}
+.Container-Buttons button:hover {
+  border: solid 1px #00b7ff;
+  color: #00b7ff;
 }
 .Container-Buttons button i {
   position: absolute;
@@ -336,12 +353,17 @@ footer h5 {
   justify-content: center;
   align-items: center;
 }
-.Container-end p {
+.Dis-none {
   margin: 10px;
+  pointer-events: none;
 }
 .Container-end p a {
   text-decoration: none;
   color: #fff;
+  transition: 0.3s;
+}
+.Container-end p a:hover {
+  color: #00b7ff;
 }
 .derechos-autor {
   color: #fff;

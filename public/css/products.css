@@ -11,7 +11,7 @@
   width: 200px;
   height: 240px;
   border-radius: 20px;
-  margin: 20px;
+  margin: 30px;
   transition-duration: 0.4s;
 }
 .product-content:hover {
@@ -20,7 +20,8 @@
 .image {
   position: absolute;
   left: 50%;
-  top: -40px;
+  top: -50px;
+  transform: translate(-50%);
   width: 70%;
   height: 120px;
   background-color: #76402e;
@@ -98,13 +99,11 @@
   .product-content {
     width: 210px;
     height: 240px;
+    margin: 30px;
   }
 }
 @media (min-width: 768px) {
   /*! Laptops */
-}
-@media (min-width: 1200px) {
-  /*! PC */
   .product-content {
     width: 260px;
     height: 280px;
@@ -112,5 +111,9 @@
   .image {
     transform: translate(-50%);
     height: 150px;
+    top: -30px;
   }
+}
+@media (min-width: 1200px) {
+  /*! PC */
 }

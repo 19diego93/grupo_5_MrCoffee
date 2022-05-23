@@ -82,10 +82,11 @@ main {
 .conteiner-featured article h2 {
   text-align: center;
   font-family: "Raleway", sans-serif;
-  font-size: 35px;
+  font-size: 25px;
   margin: 40px;
   pointer-events: none;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid #76402e;
+  color: #76402e;
 }
 @media (min-width: 460px) {
   /*! Tablets */
