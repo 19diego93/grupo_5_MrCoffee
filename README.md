@@ -14,7 +14,7 @@ https://nodejs.org/es/
 Este proyecto utiliza Node Express.
 
 ```
-npm install express --save
+npm i
 ```
 
 ### Despliega el proyecto 🚀
@@ -23,9 +23,6 @@ Inicia el proyecto utilizando.
 ```
 node app.js
 ```
-#### ¡Atención! ⚠️
-Debes estar parado en la carpeta “grupo_5_MrCoffee”
-
 
 ## Autores ✒️
 #### - Mauro Villanueva
