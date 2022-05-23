@@ -1,6 +1,6 @@
 /* !body */
 body {
-  min-width: 380px;
+  min-width: 500px;
 }
 /* ! Main */
 .contenedor-main-carrito {
@@ -19,57 +19,32 @@ body {
 }
 /* ! contenedor grilla */
 .caja-product-descripcion {
-  display: flex;
-  justify-content: center;
-  margin: 20px auto;
-  gap: 0.2em;
-  max-width: 380px;
+  display: grid;
+  grid-template-rows:repeat(3, auto) ;
+  margin: 0px 20px;
 }
-/* ! grillas  */
+/* ! grilla del producto  */
 .nested-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.3em;
-  margin-left: 20px;
-}
-/* ! control grillas */
-.nested-grid > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 3px;
-  border: 1px solid #ad715c;
-  background-color: #ffffff;
-}
-/* !boton eliinar */
-.eliminar {
-  border-radius: 3px;
-  border: 1px solid #ad715c;
-  margin-right: 20px;
-  background-color: #ffffff;
-  padding: 1rem;
-  font-size: 2rem;
-  color: #ad715c;
-}
-/* ! contenedor imagen-descripcion */
-.contenedor-descripcion {
-  grid-column: 1/3;
-  display: flex;
-  flex-flow: column;
-}
-.descripcion {
-  align-self: center;
-  padding: 10px;
-}
-.nombre-producto {
-  font-size: 1.25rem;
-}
-.descripcion-producto {
-  display: none;
-  font-size: 0.8rem;
-}
-
-/* ! imagen producto */
+  grid-template-columns:repeat(2, auto) 15%;
+  grid-template-rows:repeat(3, auto) ;
+  gap: 0.2rem;
+  max-width: 555px;
+  margin: 10px;
+  }
+  /* ! imagen y descripcion */
+  .contenedor-descripcion{
+    grid-column: 1 /  3;
+    grid-row: 1 / 1;
+    background-color: white;
+    border-radius: 7px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ad715c;
+  }
+  /* ! imagen producto */
 .nested-grid img {
   min-width: 100px;
   max-width: 200px;
@@ -77,12 +52,43 @@ body {
   border-radius: 100%;
   margin: 5px 0 5px 5px;
 }
-/* ! contador de unidades */
-.contador-cantidad {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* !Nombre producto */
+.nombre-producto{
+  text-align: center;
+  margin: 10px 0px;
 }
+/* ! descripcion producto */
+.descripcion-producto{
+  display: none;
+ }
+  /* ! contenedor contador cantidad y unidades  */
+  .contador-cantidad{
+  grid-row: 2 / 2;
+  grid-column: 1 / 3;
+  display: grid;
+    grid-template-columns: 50% 50%;
+    gap: inherit;
+  }
+  .texto-unidades{
+    border: 1px solid #ad715c;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    background: white;
+    border-radius: 6px;
+  }
+  .contenedor-contador{
+    border: 1px solid #ad715c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 6px;
+    width: 98%;
+  }
+
 /* !botones de unidades */
 .contador {
   background-color: #ad715c75;
@@ -94,20 +100,55 @@ body {
   color: white;
 }
 
-/* ! selectores de tamaño */
-select {
+/* ! contenedor tamaños y texto tamaño */
+  .contenedor-tamaños{
+    grid-row: 3 / 3;
+  grid-column: 1 / 3;
+  display: grid;
+    grid-template-columns: 50% 50%;
+    gap: inherit;
+  }
+  .texto-tamaño{
+    border: 1px solid #ad715c;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+  }
+  .cajita-tamanio{
+    border: 1px solid #ad715c;
+    border-radius: 6px;
+    width: 98%;
+  }
+  .cajita-tamanio select{
+    border-radius: 6px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+  }
+/* !boton eliinar */
+.eliminar {
   width: 100%;
-  text-align: center;
-  border: none;
-  padding: 10px;
-  font-size: 1rem;
+  height: 100%;
+  border-radius: 6px;
+  border: 1px solid #ad715c;
+  background-color: #ffffff;
+  font-size: 2rem;
+  color: #ad715c;
+}
+.boton-eliminar{
+  grid-row: 1 / span 3;
 }
 /* ! Total */
 .contenedor-sumatoria {
   display: flex;
   justify-content: center;
   margin: 20px auto;
-  max-width: 600px;
+  max-width: 555px;
   gap: 0.2rem;
 }
 .contenedor-sumatoria p {
@@ -134,43 +175,40 @@ select {
 }
 /* ? Tablets */
 @media (min-width: 460px) {
-
-/* ! contenedor imagen-descripcion */
-.contenedor-descripcion {
-  display: flex;
+ /* ! imagen y descripcion */
+  .contenedor-descripcion{
   flex-flow: row;
+  align-items: center;
+  justify-content:space-evenly;
 }
-.descripcion-producto {
+  /* ! descripcion producto */
+.descripcion-producto{
   display: block;
-  font-size: 0.8rem;
-}
-/* ! contenedor grilla */
-.caja-product-descripcion {
-  max-width: 500px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 }
 
 /* ? Laptops */
-@media (min-width: 768px) {
-
-  /* ! contenedor imagen-descripcion */
-.caja-product-descripcion{
-  margin-bottom: 50px;
+@media (min-width: 880px) {
+/* ! grilla del producto  */
+  .nested-grid{
+  width: 100%;
+ margin: 10px;
 }
- .nested-grid{
-   display: grid;
-   grid-template-columns: repeat(4, auto);
-   grid-template-rows: 1fr 1fr;
- }
- .contenedor-descripcion{
-     grid-row: 1 / 3;
- }
 
-
-
-  
+/* ! contenedor grilla */
+  .caja-product-descripcion {
+  display: grid;
+ grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+  }
+  .contenedor-checkout-sumatoria{
+    grid-column: 1/3;
+  }
 }
+
 
 /* ? Desktop */
 @media (min-width: 1200px) {
-}
+ }

@@ -47,17 +47,17 @@ Productos para el home
 ### Qué hizo ayer:
 
 ```
-nada
+hacer responsive el productCart
 ```
 
 ### Si se encontró con algún impedimento:
 
 ```
-no puede acceder a mi pc
+si, estaba muy desordenado el sistema de cajas que use en un principio.
 ```
 
 ### Qué va a hacer hoy:
 
 ```
-voy hacer responsive el productCart
+arreglar el productCart
 ```

@@ -72,93 +72,106 @@
       </form>
     </header>
     <main class="contenedor-main-carrito">
-      <!--! Cerrar buscador -->
+    <!--! Cerrar buscador -->
       <div id="cover-ctn-search"></div>
       <div class="contenedor-titulo">
         <h1 class="titulo-producto">Productos</h1>
       </div>
-      <div class="contenedora-productos">
-        <div class="grid caja-product-descripcion">
-          <!--!imagen product y descripcion-->
-          <div class="nested-grid">
-            <div class="contenedor-descripcion">
-              <img src="img\product-coffee\1.png" alt="producto" />
-
-              <div class="descripcion">
-                <p class="Nombre-producto">nombreProducto</p>
-                <p class="descripcion-producto">descripciónProducto</p>
-              </div>
+    <!--! Contenedor de productos -->
+    <div class="contenedora-productos">
+      <div class="grid caja-product-descripcion">
+      <!--imagen product y descripcion-->
+            <div class="nested-grid">
+                <div class="contenedor-descripcion">
+                  <img src="img\product-food\1.png" alt="producto" />
+                  <div class="descripcion">
+                    <p class="nombre-producto">nombreProducto</p>
+                    <p class="descripcion-producto">descripciónProducto</p>
+                  </div>
+                </div>            
+                <div class="contador-cantidad">
+                  <div class="texto-unidades"><p>Unidades</p></div>
+                  <div class="contenedor-contador">
+                  <button class="contador" type="button">
+                  <i class="fa-solid fa-minus"></i>
+                  </button>              
+                  <p>cantidad</p>
+                  <button class="contador" type="button">
+                  <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                </div>
+                <div class="contenedor-tamaños">
+                <div class="texto-tamaño"><p>Tamaño</p></div>
+                <div class="cajita-tamanio">
+                  <select name="tamanio" id="" required>
+                    <option value="chico">Chico</option>
+                    <option value="mediano">Mediano</option>
+                    <option value="grande">Grande</option>
+                  </select>
+                </div>
+                </div>
+      <!--Boton eliminar-->
+                <div class="boton-eliminar">
+                  <button type="button" class="eliminar">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
             </div>
-            <div><p>Unidades</p></div>
-            <div class="contador-cantidad">
-              <button class="contador" type="button">
+            <div class="nested-grid">
+              <div class="contenedor-descripcion">
+                <img src="img\product-coffee\1.png" alt="producto" />
+                <div class="descripcion">
+                  <p class="nombre-producto">nombreProducto</p>
+                  <p class="descripcion-producto">descripciónProducto</p>
+                </div>
+              </div>            
+              <div class="contador-cantidad">
+                <div class="texto-unidades"><p>Unidades</p></div>
+                <div class="contenedor-contador">
+                <button class="contador" type="button">
                 <i class="fa-solid fa-minus"></i>
-              </button>
-              <p>cantidad</p>
-              <button class="contador" type="button">
+                </button>              
+                <p>cantidad</p>
+                <button class="contador" type="button">
                 <i class="fa-solid fa-plus"></i>
-              </button>
-            </div>
-            <div><p>Tamaño</p></div>
-            <div>
-              <select name="tamanio" id="" required>
-                <option value="chico">Chico</option>
-                <option value="mediano">Mediano</option>
-                <option value="grande">Grande</option>
-              </select>
-            </div>
-          </div>
-          <button type="button" class="eliminar">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-        <div class="grid caja-product-descripcion">
-          <!--!imagen product y descripcion-->
-          <div class="nested-grid">
-            <div class="contenedor-descripcion">
-              <img src="img\product-food\1.png" alt="producto" />
-
-              <div class="descripcion">
-                <p class="Nombre-producto">nombreProducto</p>
-                <p class="descripcion-producto">descripciónProducto</p>
+                </button>
               </div>
-            </div>
-            <div><p>Unidades</p></div>
-            <div class="contador-cantidad">
-              <button class="contador" type="button">
-                <i class="fa-solid fa-minus"></i>
-              </button>
-              <p>cantidad</p>
-              <button class="contador" type="button">
-                <i class="fa-solid fa-plus"></i>
-              </button>
-            </div>
-            <div><p>Tamaño</p></div>
-            <div>
-              <select name="tamanio" id="" required>
-                <option value="chico">Chico</option>
-                <option value="mediano">Mediano</option>
-                <option value="grande">Grande</option>
-              </select>
-            </div>
+              </div>
+              <div class="contenedor-tamaños">
+              <div class="texto-tamaño"><p>Tamaño</p></div>
+              <div class="cajita-tamanio">
+                <select name="tamanio" id="" required>
+                  <option value="chico">Chico</option>
+                  <option value="mediano">Mediano</option>
+                  <option value="grande">Grande</option>
+                </select>
+              </div>
+              </div>
+    <!--Boton eliminar-->
+              <div class="boton-eliminar">
+                <button type="button" class="eliminar">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
           </div>
-          <button type="button" class="eliminar">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-      </div>
+            <div
+            class="contenedor-checkout-sumatoria">
       <!--! Contenedor total -->
-      <div class="contenedor-sumatoria">
-        <div><p>Total:</p></div>
-        <!-- celda contenedor sumatoria total -->
-        <div><p>Sumatoria de productos</p></div>
-      </div>
+            <div class="contenedor-sumatoria">
+              <div><p>Total:</p></div>
+              <!-- celda contenedor sumatoria total -->
+              <div><p>Sumatoria de productos</p></div>
+            </div>
       <!--! boton checkout -->
-      <div class="contenedor-checkout">
-        <button class="checkout" type="button">Comprar</button>
+            <div class="contenedor-checkout">
+              <button class="checkout" type="button">Comprar</button>
+            </div>
+          </div>
       </div>
-    </main>
-    <footer>
+    </div>
+  </main>
+  <footer>
       <!--! Formulario -->
       <div class="container-form">
         <form action="" class="formulario">
@@ -235,7 +248,7 @@
         </p>
       </div>
       <p class="derechos-autor">© 2022 Mr Coffee</p>
-    </footer>
+  </footer>
     <!--! JS -->
     <script src="js/search.js"></script>
   </body>
