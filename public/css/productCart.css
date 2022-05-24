@@ -31,6 +31,7 @@ align-items: center;
   grid-template-rows:repeat(3, auto) ;
   gap: 2rem;
   width: 90%;
+  min-width: 370px;
  }
 /* ! grilla del producto  */
 .nested-grid {
@@ -217,8 +218,9 @@ align-items: center;
 /* ! contenedor grilla */
   .caja-product-descripcion {
   display: grid;
- grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   width: 90%;
+   
   }
   .contenedor-checkout-sumatoria{
     grid-column: 1/3;
