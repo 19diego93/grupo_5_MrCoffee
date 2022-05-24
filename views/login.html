@@ -73,50 +73,54 @@
     <main class="contenedor-login">
       <!--! Cerrar buscador -->
       <div id="cover-ctn-search"></div>
-      <div class="contenedor-titulo"><h2>Iniciar sesión</h2></div>
+      <div class="contenedor-login-titulo">
+      <div class="contenedor-titulo"><h1>¿Que tomamos hoy?</h1></div>
+        <div class="contenedor-form-boton">
+          <p class="login-text">Ingresa</p>
+              <!--Formulario de registro sin servidor aún-->
+              <form
+                action="aca va lo de php que todavia no vimos "
+                method="post"
+                class="form-login"
+              >
+                <div class="contenedor-campo">
+                  <label for="mail" class="campo-label">Email</label>
+                  <div class="caja-icono-campo">
+                    <i class="fa-solid fa-envelope icono-email"></i>
+                    <input
+                      class="campo"
+                      type="email"
+                      id="mail"
+                      name="mail"
+                      placeholder="superheroe@MrCoffee.com"
+                    />
+                  </div>
+                </div>
+                <div class="contenedor-campo">
+                  <label for="passwd" class="campo-label">Contraseña</label>
+                  <div class="caja-icono-campo">
+                    <i class="fa-solid fa-eye-slash icono-passwd"></i>
+                    <input
+                      class="campo"
+                      type="password"
+                      id="passwd"
+                      name="passwd"
+                      placeholder="Contraseña"
+                    />
+                  </div>
+                </div>
+                <div class="contenedor-boton-ingresar">
+                  <input type="submit" value="Iniciar sesión" class="button-ingresar" />
+                </div>
+              </form>
+              <div class="vinculos-login">
+                <a href=""><p class="olvidaste">¿Olvidaste tu Contraseña?</p></a>
+                <!--Redirección a definir-->
 
-      <!--Formulario de registro sin servidor aún-->
-      <form
-        action="aca va lo de php que todavia no vimos "
-        method="post"
-        class="form-login"
-      >
-        <div class="contenedor-campo">
-          <label for="mail" class="campo-label">Email</label>
-          <div class="caja-icono-campo">
-            <i class="fa-solid fa-envelope icono-email"></i>
-            <input
-              class="campo"
-              type="email"
-              id="mail"
-              name="mail"
-              placeholder="superheroe@MrCoffee.com"
-            />
-          </div>
+                <a href=""><p class="politicas">Políticas de Privacidad</p></a>
+                <!--Redirección a definir-->
+              </div>
         </div>
-        <div class="contenedor-campo">
-          <label for="passwd" class="campo-label">Contraseña</label>
-          <div class="caja-icono-campo">
-            <i class="fa-solid fa-eye-slash icono-passwd"></i>
-            <input
-              class="campo"
-              type="password"
-              id="passwd"
-              name="passwd"
-              placeholder="Contraseña"
-            />
-          </div>
-        </div>
-        <div class="contenedor-boton-ingresar">
-          <input type="submit" value="Iniciar sesión" class="button-ingresar" />
-        </div>
-      </form>
-      <div class="vinculos-login">
-        <a href=""><p class="olvidaste">¿Olvidaste tu Contraseña?</p></a>
-        <!--Redirección a definir-->
-
-        <a href=""><p class="politicas">Políticas de Privacidad</p></a>
-        <!--Redirección a definir-->
       </div>
     </main>
     <footer>

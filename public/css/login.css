@@ -10,7 +10,31 @@ a {
   display: block;
   padding-bottom: 3rem;
   background-color: #ffe6d6;
-  min-width: 270px;
+  
+}
+/* !Contenedor de login y titulo */
+.contenedor-login-titulo{
+  
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+}
+/* !contenedor form y boton */
+.contenedor-form-boton{
+  margin-top: 35px;
+  max-width: 370px;
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+}
+/* ! texto: Ingresa */
+.login-text{
+  padding: 20px;
+  text-align: center;
+  color: #76402e;
+  font-size: 2rem;
 }
 /*! form */
 .form-login {
@@ -72,14 +96,16 @@ a {
   color: white;
   max-width: 320px;
 }
-/*! titulo h2 y su contenedor */
+
+/*! titulo h1 y su contenedor */
 .contenedor-titulo {
-  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
   padding: 20px;
 }
-.contenedor-titulo h2 {
+.contenedor-titulo h1 {
   text-align: center;
-  margin-top: 25px;
   color: #76402e;
   font-size: 2.5rem;
 }
@@ -99,3 +125,14 @@ a {
   font-size: 1rem;
   color: #00b7ff;
 }
+
+@media (min-width:768px){
+
+  /* !Contenedor de login y titulo */
+ .contenedor-login-titulo{   
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+ }
+ }

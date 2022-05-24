@@ -73,66 +73,72 @@
     <main class="contenedor-register">
       <!--! Cerrar buscador -->
       <div id="cover-ctn-search"></div>
-      <div class="contenedor-titulo"><h2>Registrate</h2></div>
 
-      <!--Formulario de registro sin servidor aún-->
-      <form action="login" method="get" class="form-register">
-        <div class="contenedor-campo">
-          <label class="campo-label" for="fname">Nombre </label>
-          <div class="caja-icono-campo">
-            <i class="fa-solid fa-user icono-user"></i>
-            <input
-              class="campo"
-              type="text"
-              id="fname"
-              name="fname"
-              placeholder="Tú nombre"
-            />
+    <div class="contenedor-titulo-form-boton">
+      <div class="contenedor-titulo"><h1>Bienvenido a la cafeteria <3</h1></div>
+
+      <div class="contenedor-form-boton" >
+        <p class="register-text">Registrate</p>
+        <!--Formulario de registro sin servidor aún-->
+        <form action="login" method="get" class="form-register">
+          <div class="contenedor-campo">
+            <label class="campo-label" for="fname">Nombre </label>
+            <div class="caja-icono-campo">
+              <i class="fa-solid fa-user icono-user"></i>
+              <input
+                class="campo"
+                type="text"
+                id="fname"
+                name="fname"
+                placeholder="Tú nombre"
+              />
+            </div>
           </div>
-        </div>
 
-        <div class="contenedor-campo">
-          <label class="campo-label" for="mail">Correo electrónico</label>
-          <div class="caja-icono-campo">
-            <i class="fa-solid fa-envelope icono-email"></i>
-            <input
-              class="campo"
-              type="email"
-              id="mail"
-              name="mail"
-              placeholder="superheroe@MrCoffee.com"
-            />
+          <div class="contenedor-campo">
+            <label class="campo-label" for="mail">Correo electrónico</label>
+            <div class="caja-icono-campo">
+              <i class="fa-solid fa-envelope icono-email"></i>
+              <input
+                class="campo"
+                type="email"
+                id="mail"
+                name="mail"
+                placeholder="superheroe@MrCoffee.com"
+              />
+            </div>
           </div>
-        </div>
 
-        <div class="contenedor-campo">
-          <label class="campo-label" for="psw">Contraseña</label>
-          <div class="caja-icono-campo">
-            <i class="fa-solid fa-eye-slash icono-psw"></i>
-            <input
-              class="campo"
-              type="password"
-              id="psw"
-              name="psw"
-              placeholder="Tú contraseña"
-            />
+          <div class="contenedor-campo">
+            <label class="campo-label" for="psw">Contraseña</label>
+            <div class="caja-icono-campo">
+              <i class="fa-solid fa-eye-slash icono-psw"></i>
+              <input
+                class="campo"
+                type="password"
+                id="psw"
+                name="psw"
+                placeholder="Tú contraseña"
+              />
+            </div>
           </div>
-        </div>
 
-        <div class="contenedor-boton-registrar">
-          <input class="button-registrar" type="submit" value="Registrar" />
+          <div class="contenedor-boton-registrar">
+            <input class="button-registrar" type="submit" value="Registrar" />
+          </div>
+        </form>
+        <!--Botón redirecciónador al login-->
+        <div class="contenedor-redirect">
+          <button class="redirect-login" onclick="document.location='login'">
+            Tengo una cuenta
+          </button>
         </div>
-      </form>
-      <!--Botón redirecciónador al login-->
-      <div class="contenedor-redirect">
-        <button class="redirect-login" onclick="document.location='login'">
-          Tengo una cuenta
-        </button>
-      </div>
-      <div class="vinculos-register">
+        <div class="vinculos-register">
         <a href=""><p class="politicas">Políticas de Privacidad</p></a>
         <!--Redirección a definir-->
       </div>
+      </div>
+    </div>
     </main>
     <footer>
       <!--! Formulario -->
