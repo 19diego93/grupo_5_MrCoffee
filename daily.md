@@ -47,17 +47,17 @@ Productos para el home
 ### Qué hizo ayer:
 
 ```
-hacer responsive el productCart
+nada
 ```
 
 ### Si se encontró con algún impedimento:
 
 ```
-si, estaba muy desordenado el sistema de cajas que use en un principio.
+ponerme al dia con la clase en directo complico
 ```
 
 ### Qué va a hacer hoy:
 
 ```
-arreglar el productCart
+modificar la visual del login y register 
 ```
