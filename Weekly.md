@@ -27,19 +27,19 @@ ayudar a los compañeros y cambiar las rutas
 ### Qué hizo esta semana:
 
 ```
-
+Nada
 ```
 
 ### Se encontró con algún impedimento:
 
 ```
-
+Temas laborales ya solucionados y un atraso en la vista de contenidos del playground
 ```
 
 ### Qué va a hacer hoy o esta semana:
 
 ```
-
+Juntarme con mis compañeros y ponerme al dia con mi parte del proyecto (ProductDetail)
 ```
 
 # Diego Vallejo
