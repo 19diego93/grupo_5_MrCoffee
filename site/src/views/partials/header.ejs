@@ -1,0 +1,57 @@
+<header>
+  <!--! Encabezado -->
+  <div class="Header-Content">
+    <div class="Favorite">
+      <a href="#"><i class="fas fa-bookmark"></i></a>
+    </div>
+    <div class="Logo">
+      <a href="/home">
+        <img src="img/MrCoffee.png" alt="Logo" />
+      </a>
+    </div>
+    <div class="Config">
+      <a href="#"><i class="fas fa-user-circle"></i></a>
+    </div>
+  </div>
+  <!-- ! Navegacion -->
+  <nav class="nav">
+    <ul>
+      <li>
+        <a href="/home">
+          <i class="fa-solid fa-house disNone selected"></i>
+          <p class="selected">Inicio</p>
+        </a>
+      </li>
+      <li>
+        <a href="/productShop">
+          <i class="fa-solid fa-basket-shopping disNone"></i>
+          <p>Tienda</p>
+        </a>
+      </li>
+      <li>
+        <a id="search">
+          <i class="fa-solid fa-magnifying-glass disNone"></i>
+          <p>Buscar</p>
+        </a>
+      </li>
+      <li>
+        <a href="/productCart">
+          <i class="fa-solid fa-cart-shopping disNone"></i>
+          <p>Carrito</p>
+        </a>
+      </li>
+      <li class="celNone">
+        <a href="#">
+          <i class="fas fa-user-circle"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!--! Buscador -->
+  <form id="ctn-bars-search">
+    <button class="search" id="close-search">
+      <i class="fas fa-times"></i>
+    </button>
+    <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?" />
+  </form>
+</header>

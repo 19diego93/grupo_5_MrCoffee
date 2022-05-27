@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Título -->
+    <title>Carrito de compras</title>
+    <!-- icons -->
+    <script
+      src="https://kit.fontawesome.com/54588310a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Css -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/productCart.css" />
+  </head>
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <main class="contenedor-main-carrito">
+      <!--! Cerrar buscador -->
+      <div id="cover-ctn-search"></div>
+      <div class="contenedor-titulo">
+        <h1 class="titulo-producto">Productos</h1>
+      </div>
+      <!--! Contenedor de productos -->
+      <div class="contenedora-productos">
+        <div class="grid caja-product-descripcion">
+          <!--imagen product y descripcion-->
+          <div class="nested-grid">
+            <div class="contenedor-descripcion">
+              <img src="img\product-food\1.png" alt="producto" />
+              <div class="descripcion">
+                <p class="nombre-producto">nombreProducto</p>
+                <p class="descripcion-producto">descripciónProducto</p>
+              </div>
+            </div>
+            <div class="contador-cantidad">
+              <div class="texto-unidades"><p>Unidades</p></div>
+              <div class="contenedor-contador">
+                <button class="contador" type="button">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <p>cantidad</p>
+                <button class="contador" type="button">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="contenedor-tamaños">
+              <div class="texto-tamaño"><p>Tamaño</p></div>
+              <div class="cajita-tamanio">
+                <select name="tamanio" id="" required>
+                  <option value="chico">Chico</option>
+                  <option value="mediano">Mediano</option>
+                  <option value="grande">Grande</option>
+                </select>
+              </div>
+            </div>
+            <!--Boton eliminar-->
+            <div class="boton-eliminar">
+              <button type="button" class="eliminar">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          </div>
+          <div class="nested-grid">
+            <div class="contenedor-descripcion">
+              <img src="img\product-coffee\1.png" alt="producto" />
+              <div class="descripcion">
+                <p class="nombre-producto">nombreProducto</p>
+                <p class="descripcion-producto">descripciónProducto</p>
+              </div>
+            </div>
+            <div class="contador-cantidad">
+              <div class="texto-unidades"><p>Unidades</p></div>
+              <div class="contenedor-contador">
+                <button class="contador" type="button">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <p>cantidad</p>
+                <button class="contador" type="button">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="contenedor-tamaños">
+              <div class="texto-tamaño"><p>Tamaño</p></div>
+              <div class="cajita-tamanio">
+                <select name="tamanio" id="" required>
+                  <option value="chico">Chico</option>
+                  <option value="mediano">Mediano</option>
+                  <option value="grande">Grande</option>
+                </select>
+              </div>
+            </div>
+            <!--Boton eliminar-->
+            <div class="boton-eliminar">
+              <button type="button" class="eliminar">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          </div>
+          <div class="contenedor-checkout-sumatoria">
+            <!--! Contenedor total -->
+            <div class="contenedor-sumatoria">
+              <div><p>Total:</p></div>
+              <!-- celda contenedor sumatoria total -->
+              <div><p>Sumatoria de productos</p></div>
+            </div>
+            <!--! boton checkout -->
+            <div class="contenedor-checkout">
+              <button class="checkout" type="button">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+    <!--! JS -->
+    <script src="js/search.js"></script>
+  </body>
+</html>

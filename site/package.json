@@ -4,6 +4,7 @@
   "description": "Trabajo grupal",
   "main": "app.js",
   "scripts": {
+    "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/19diego93/grupo_5_MrCoffee#readme",
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.1"
   },
   "devDependencies": {

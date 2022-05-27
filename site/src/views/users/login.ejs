@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingresa</title>
+    <!-- Icons -->
+    <script
+      src="https://kit.fontawesome.com/54588310a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Css-->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <main class="contenedor-login">
+      <!--! Cerrar buscador -->
+      <div id="cover-ctn-search"></div>
+      <div class="contenedor-login-titulo">
+        <div class="contenedor-titulo"><h1>¿Que tomamos hoy?</h1></div>
+        <div class="contenedor-form-boton">
+          <p class="login-text">Ingresa</p>
+          <!--Formulario de registro sin servidor aún-->
+          <form
+            action="aca va lo de php que todavia no vimos "
+            method="post"
+            class="form-login"
+          >
+            <div class="contenedor-campo">
+              <label for="mail" class="campo-label">Email</label>
+              <div class="caja-icono-campo">
+                <i class="fa-solid fa-envelope icono-email"></i>
+                <input
+                  class="campo"
+                  type="email"
+                  id="mail"
+                  name="mail"
+                  placeholder="superheroe@MrCoffee.com"
+                />
+              </div>
+            </div>
+            <div class="contenedor-campo">
+              <label for="passwd" class="campo-label">Contraseña</label>
+              <div class="caja-icono-campo">
+                <i class="fa-solid fa-eye-slash icono-passwd"></i>
+                <input
+                  class="campo"
+                  type="password"
+                  id="passwd"
+                  name="passwd"
+                  placeholder="Contraseña"
+                />
+              </div>
+            </div>
+            <div class="contenedor-boton-ingresar">
+              <input
+                type="submit"
+                value="Iniciar sesión"
+                class="button-ingresar"
+              />
+            </div>
+          </form>
+          <div class="vinculos-login">
+            <a href=""><p class="olvidaste">¿Olvidaste tu Contraseña?</p></a>
+            <!--Redirección a definir-->
+
+            <a href=""><p class="politicas">Políticas de Privacidad</p></a>
+            <!--Redirección a definir-->
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+    <!--! JS -->
+    <script src="js/search.js"></script>
+  </body>
+</html>
