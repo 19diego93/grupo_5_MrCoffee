@@ -3,8 +3,12 @@ const usersController = {
     res.render("users/login");
   },
   register: (req, res) => {
-    res.render("users/login");
+    res.render("users/register");
   },
+  profile: (req, res) => {
+    res.render("users/profile");
+  },
+ 
 };
 
 module.exports = usersController;

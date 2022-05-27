@@ -47,17 +47,17 @@ Juntarme con mis compañeros y ponerme al dia con mi parte del proyecto (Product
 ### Qué hizo esta semana:
 
 ```
-nada
+reunion grupal, debate sobre el proyecto 
 ```
 
 ### Se encontró con algún impedimento:
 
 ```
-ponerme al dia con la clase en directo complico
+ninguno
 ```
 
 ### Qué va a hacer hoy o esta semana:
 
 ```
-modificar la visual del login y register 
+modificar productCart
 ```

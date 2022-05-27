@@ -1,25 +1,41 @@
 # Comenzar a hacer:
 
-### Reuniones para hablar sobre la daily
+```
+ 
+```
 
 # Hacer más:
 
-### Pedir ayuda cuando estamos atascados o no entendemos.
-
-### Reuniones grupales.
-
-### Dedicarle mas tiempo al proyecto
+```
+ Pedir ayuda cuando estamos atascados o no entendemos.
+```
+```
+ Reuniones grupales.
+```
+```
+ Dedicarle mas tiempo al proyecto
+```
+```
+Reuniones sobre el weekly
+```
 
 # Continuar haciendo:
 
-### Seguir comunicándonos por slack.
-
-### Seguir comunicandonos por discord
+```
+ Seguir comunicándonos por slack.
+```
+```
+ Seguir comunicandonos por discord
+```
 
 # Hacer menos:
 
-### ...
+```
+ ...
+```
 
 # Dejar de hacer:
 
-### ...
+```
+ ...
+```
