@@ -7,19 +7,19 @@
 ### Qué hizo esta semana:
 
 ```
-nada
+reunion grupal, debate sobre el proyecto 
 ```
 
 ### Se encontró con algún impedimento:
 
 ```
-estaba estudiando el nuevo contenido
+ninguno
 ```
 
 ### Qué va a hacer hoy o esta semana:
 
 ```
-ayudar a los compañeros y cambiar las rutas
+terminar las rutas
 ```
 
 # Mauro Villanueva
