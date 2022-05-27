@@ -318,7 +318,7 @@ footer h5 {
   align-items: center;
   flex-direction: column;
 }
-.Container-Buttons button {
+.Container-Buttons a {
   position: relative;
   margin: 15px;
   padding: 20px;
@@ -331,17 +331,17 @@ footer h5 {
   cursor: pointer;
   transition: 0.3s;
 }
-.Container-Buttons button:hover {
+.Container-Buttons a:hover {
   border: solid 1px #00b7ff;
   color: #00b7ff;
 }
-.Container-Buttons button i {
+.Container-Buttons a i {
   position: absolute;
   font-size: 2rem;
   top: 25%;
   left: 4%;
 }
-.Container-Buttons button p {
+.Container-Buttons a p {
   font-size: 1.2rem;
 }
 .Dis-none {
@@ -485,7 +485,7 @@ footer h5 {
   .Container-Buttons {
     flex-direction: row;
   }
-  .Container-Buttons button {
+  .Container-Buttons a {
     width: 250px;
   }
   .Container-Redes a i {
@@ -526,7 +526,7 @@ footer h5 {
   .Container-Buttons {
     flex-direction: column;
   }
-  .Container-Buttons button {
+  .Container-Buttons a {
     width: 535px;
   }
 }

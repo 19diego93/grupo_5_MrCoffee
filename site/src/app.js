@@ -11,7 +11,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 //' Static
-app.use(express.static(path.join(__dirname, "../public/")));
+app.use(express.static("public"));
 
 //' localhost
 app.listen(3000, () => {
@@ -20,6 +20,6 @@ app.listen(3000, () => {
 
 //' Puertos
 app.use("/", mainRouter);
-app.use("/login");
-app.use("/register");
+// app.use("/login");
+// app.use("/register");
 //!
