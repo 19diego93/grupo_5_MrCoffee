@@ -27,7 +27,7 @@ terminar las rutas
 ### Qué hizo esta semana:
 
 ```
-nada
+reunion grupal y debate sobre el proyecto
 ```
 
 ### Se encontró con algún impedimento:
