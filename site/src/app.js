@@ -8,7 +8,11 @@ const app = express();
 const mainRouter = require("./routes/statics/main.js");
 const usersRouter = require("./routes/users/users.js");
 //' Ejs
-app.set("views", path.join(__dirname, "views"));
+app.set(
+  "views",
+
+  path.join(__dirname, "views")
+);
 app.set("view engine", "ejs");
 
 //' Static
