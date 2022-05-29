@@ -7,6 +7,7 @@ const app = express();
 //' Router
 const mainRouter = require("./routes/statics/main.js");
 const usersRouter = require("./routes/users/users.js");
+const productRouter = require("./routes/product/product.js")
 //' Ejs
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -24,4 +25,5 @@ app.use("/", mainRouter);
 app.get("/login", usersRouter);
 app.get("/register", usersRouter);
 app.get("/profile", usersRouter);
+app.get("/productCart",productRouter);
 //!
