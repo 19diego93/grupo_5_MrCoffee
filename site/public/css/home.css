@@ -8,7 +8,7 @@
   padding: 20px;
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 50vh;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
@@ -70,9 +70,6 @@
   stroke: none;
 }
 /*! Section 2 - Productos Destacados */
-.conteiner-featured {
-  margin-top: 30vh;
-}
 .conteiner-featured article h2 {
   text-align: center;
   font-family: "Raleway", sans-serif;
@@ -86,6 +83,17 @@
   /*! Tablets */
   .campaña h1 {
     font-size: 28px;
+  }
+  .conteiner-featured article h2 {
+    border-bottom: 0px;
+  }
+  .container-products-top {
+    background-color: #ececec;
+    padding: 30px 10px;
+    margin: 0px 50px;
+    border-radius: 30px;
+    border-top: 3px solid #76402e;
+    border-bottom: 3px solid #76402e;
   }
 }
 @media (min-width: 768px) {
