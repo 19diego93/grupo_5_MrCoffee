@@ -1,0 +1,259 @@
+/*! Footer */
+footer {
+  background-color: #000;
+  margin-bottom: 50px;
+}
+.container-form {
+  background-image: url(/img/campaña.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+}
+.container-form::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+}
+.formulario {
+  position: relative;
+  width: 100%;
+  padding-top: 40px;
+}
+.recibi-noticias {
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+.container-email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.container-email input {
+  border: none;
+  outline: 0;
+  padding: 10px;
+  width: 60%;
+  font-size: 1rem;
+}
+.email-icon {
+  background-color: #fff;
+  pointer-events: none;
+  border: none;
+  padding: 10px;
+}
+.email-icon i {
+  font-size: 1rem;
+}
+.email-send {
+  background-color: #76402e;
+  cursor: pointer;
+  border: none;
+  padding: 11px;
+}
+.email-send:hover {
+  background-color: #4b2a1e;
+}
+.email-send i {
+  font-size: 1rem;
+}
+.Container-Redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Container-Redes a {
+  margin: 20px;
+  color: #fff;
+  transition: 0.3s;
+}
+.Container-Redes a:hover {
+  color: #00b7ff;
+}
+.Container-Redes a i {
+  font-size: 2rem;
+}
+footer h5 {
+  font-size: 2rem;
+  color: #fff;
+  margin: 20px 0px;
+  pointer-events: none;
+  text-align: center;
+}
+.footer-button-action {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Container-links {
+  position: relative;
+  margin: 15px;
+  padding: 20px;
+  width: 80%;
+  font-family: "Raleway", sans-serif;
+  border: solid 1px #fff;
+  color: #fff;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.Container-links:hover {
+  border: solid 1px #00b7ff;
+  color: #00b7ff;
+}
+.Container-links p {
+  font-size: 1rem;
+}
+.Container-links i {
+  position: absolute;
+  font-size: 2rem;
+  top: 25%;
+  right: 2%;
+}
+.links {
+  margin-bottom: 30px;
+  display: none;
+}
+.links li {
+  margin-bottom: 15px;
+}
+.links li a {
+  text-decoration: none;
+  color: #fff;
+}
+.Container-Buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Container-Buttons a {
+  position: relative;
+  margin: 15px;
+  padding: 20px;
+  width: 80%;
+  font-family: "Raleway", sans-serif;
+  border: solid 1px #fff;
+  color: #fff;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.Container-Buttons a:hover {
+  border: solid 1px #00b7ff;
+  color: #00b7ff;
+}
+.Container-Buttons a i {
+  position: absolute;
+  font-size: 2rem;
+  top: 25%;
+  left: 4%;
+}
+.Container-Buttons a p {
+  font-size: 1.2rem;
+}
+.Dis-none {
+  display: none;
+}
+.Container-end {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Dis-none {
+  margin: 10px;
+  pointer-events: none;
+}
+.Container-end p a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+.Container-end p a:hover {
+  color: #00b7ff;
+}
+.derechos-autor {
+  color: #fff;
+  pointer-events: none;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+@media (min-width: 460px) {
+  /*! Tablets */
+  .recibi-noticias {
+    font-size: 28px;
+  }
+}
+@media (min-width: 768px) {
+  /*! Laptops */
+  footer {
+    margin-bottom: -40px;
+  }
+  .container-email input {
+    width: 60%;
+    font-size: 1.9rem;
+  }
+  .email-icon {
+    padding: 12px;
+  }
+  .email-icon i {
+    font-size: 2rem;
+  }
+  .email-send {
+    padding: 12px;
+  }
+  .email-send i {
+    font-size: 2rem;
+  }
+  .Container-links {
+    width: 535px;
+  }
+  .Container-links i {
+    right: 5%;
+  }
+  .Container-Buttons {
+    flex-direction: row;
+  }
+  .Container-Buttons a {
+    width: 250px;
+  }
+  .Container-Redes a i {
+    font-size: 2.5rem;
+  }
+  .Container-end {
+    flex-direction: row;
+  }
+  .Container-end .Dis-none {
+    display: flex;
+    color: #fff;
+  }
+  .Container-end p {
+    margin: 15px;
+  }
+}
+@media (min-width: 1200px) {
+  /*! PC */
+  .container-email input {
+    width: 50%;
+  }
+  .Container-Buttons {
+    flex-direction: column;
+  }
+  .Container-Buttons a {
+    width: 535px;
+  }
+}

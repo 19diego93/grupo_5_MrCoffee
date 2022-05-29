@@ -1,20 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mr Coffee | Home</title>
-    <!--! Icons -->
-    <script
-      src="https://kit.fontawesome.com/54588310a9.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <!--! CSS -->
-    <link rel="stylesheet" href="/css/styles.css" />
+    <%- include('./partials/head.ejs') %>
     <link rel="stylesheet" href="/css/home.css" />
-    <link rel="stylesheet" href="/css/products.css" />
   </head>
   <body>
     <%- include('./partials/header.ejs') %>
@@ -42,83 +30,16 @@
         <article>
           <h2>DESTACADOS</h2>
         </article>
-        <div class="products">
-          <!--! Productos - CAFE -->
-          <article class="product-content">
-            <div class="details">
-              <a class="image" href="/productDetail">
-                <img src="img/product-coffee/1.png" alt="" />
-              </a>
-              <div class="product-descriptions">
-                <span class="product-Name">Americano</span>
-                <span class="product-Price">$ 1.000</span>
-              </div>
-              <div class="product-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <div class="product-buttons">
-                <button class="product-buy">Comprar</button>
-                <a class="product-info" href="/productDetail">Informacion</a>
-              </div>
-            </div>
-          </article>
-          <article class="product-content">
-            <div class="details">
-              <a class="image" href="/productDetail">
-                <img src="img/product-coffee/2.png" alt="" />
-              </a>
-              <div class="product-descriptions">
-                <span class="product-Name">Cappuccino</span>
-                <span class="product-Price">$ 1.000</span>
-              </div>
-              <div class="product-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-              <div class="product-buttons">
-                <button class="product-buy">Comprar</button>
-                <a class="product-info" href="/productDetail">Informacion</a>
-              </div>
-            </div>
-          </article>
-          <article class="product-content">
-            <div class="details">
-              <a class="image" href="/productDetail">
-                <img src="img/product-coffee/3.png" alt="" />
-              </a>
-              <div class="product-descriptions">
-                <span class="product-Name">Skinny Vainilla Latte</span>
-                <span class="product-Price">$ 1.000</span>
-              </div>
-              <div class="product-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-              <div class="product-buttons">
-                <button class="product-buy">Comprar</button>
-                <a class="product-info" href="/productDetail">Informacion</a>
-              </div>
-            </div>
-          </article>
+        <div class="container-products-top">
           <div class="products">
-            <!--! Productos - Comida -->
+            <!--! Productos - CAFE -->
             <article class="product-content">
               <div class="details">
                 <a class="image" href="/productDetail">
-                  <img src="img/product-food/1.png" alt="" />
+                  <img src="img/product-coffee/1.png" alt="" />
                 </a>
                 <div class="product-descriptions">
-                  <span class="product-Name"> Media luna Rellena </span>
+                  <span class="product-Name">Americano</span>
                   <span class="product-Price">$ 1.000</span>
                 </div>
                 <div class="product-rating">
@@ -137,10 +58,10 @@
             <article class="product-content">
               <div class="details">
                 <a class="image" href="/productDetail">
-                  <img src="img/product-food/2.png" alt="" />
+                  <img src="img/product-coffee/2.png" alt="" />
                 </a>
                 <div class="product-descriptions">
-                  <span class="product-Name">Croissant</span>
+                  <span class="product-Name">Cappuccino</span>
                   <span class="product-Price">$ 1.000</span>
                 </div>
                 <div class="product-rating">
@@ -159,10 +80,10 @@
             <article class="product-content">
               <div class="details">
                 <a class="image" href="/productDetail">
-                  <img src="img/product-food/3.png" alt="" />
+                  <img src="img/product-coffee/3.png" alt="" />
                 </a>
                 <div class="product-descriptions">
-                  <span class="product-Name">Media luna de Chocolate</span>
+                  <span class="product-Name">Skinny Vainilla Latte</span>
                   <span class="product-Price">$ 1.000</span>
                 </div>
                 <div class="product-rating">
@@ -178,6 +99,81 @@
                 </div>
               </div>
             </article>
+            <div class="products">
+              <!--! Productos - Comida -->
+              <article class="product-content">
+                <div class="details">
+                  <a class="image" href="/productDetail">
+                    <img src="img/product-food/1.png" alt="" />
+                  </a>
+                  <div class="product-descriptions">
+                    <span class="product-Name"> Media luna Rellena </span>
+                    <span class="product-Price">$ 1.000</span>
+                  </div>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="product-buttons">
+                    <button class="product-buy">Comprar</button>
+                    <a class="product-info" href="/productDetail"
+                      >Informacion</a
+                    >
+                  </div>
+                </div>
+              </article>
+              <article class="product-content">
+                <div class="details">
+                  <a class="image" href="/productDetail">
+                    <img src="img/product-food/2.png" alt="" />
+                  </a>
+                  <div class="product-descriptions">
+                    <span class="product-Name">Croissant</span>
+                    <span class="product-Price">$ 1.000</span>
+                  </div>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                  </div>
+                  <div class="product-buttons">
+                    <button class="product-buy">Comprar</button>
+                    <a class="product-info" href="/productDetail"
+                      >Informacion</a
+                    >
+                  </div>
+                </div>
+              </article>
+              <article class="product-content">
+                <div class="details">
+                  <a class="image" href="/productDetail">
+                    <img src="img/product-food/3.png" alt="" />
+                  </a>
+                  <div class="product-descriptions">
+                    <span class="product-Name">Media luna de Chocolate</span>
+                    <span class="product-Price">$ 1.000</span>
+                  </div>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                  </div>
+                  <div class="product-buttons">
+                    <button class="product-buy">Comprar</button>
+                    <a class="product-info" href="/productDetail"
+                      >Informacion</a
+                    >
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>

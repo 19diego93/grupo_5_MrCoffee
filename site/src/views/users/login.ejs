@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ingresa</title>
-    <!-- Icons -->
-    <script
-      src="https://kit.fontawesome.com/54588310a9.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--Css-->
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/login.css" />
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/users/login.css" />
   </head>
   <body>
     <%- include('../partials/header.ejs') %>
@@ -20,7 +10,9 @@
       <!--! Cerrar buscador -->
       <div id="cover-ctn-search"></div>
       <div class="contenedor-login-titulo">
-        <div class="contenedor-titulo"><h1>¿Que tomamos hoy?</h1></div>
+        <div class="contenedor-titulo-login">
+          <h1>¿Que tomamos hoy?</h1>
+        </div>
         <div class="contenedor-form-boton">
           <p class="login-text">Ingresa</p>
           <!--Formulario de registro sin servidor aún-->

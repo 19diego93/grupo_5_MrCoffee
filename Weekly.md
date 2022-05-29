@@ -7,7 +7,7 @@
 ### Qué hizo esta semana:
 
 ```
-reunion grupal, debate sobre el proyecto 
+terminar las rutas, agregar ultimos detalles al home y header
 ```
 
 ### Se encontró con algún impedimento:
@@ -19,7 +19,7 @@ ninguno
 ### Qué va a hacer hoy o esta semana:
 
 ```
-terminar las rutas
+arreglar el footer
 ```
 
 # Mauro Villanueva
@@ -27,19 +27,19 @@ terminar las rutas
 ### Qué hizo esta semana:
 
 ```
-Nada
+reunion grupal y debate sobre el proyecto
 ```
 
 ### Se encontró con algún impedimento:
 
 ```
-Temas laborales ya solucionados y un atraso en la vista de contenidos del playground
+Estudiar y repasar contenido de las clases
 ```
 
 ### Qué va a hacer hoy o esta semana:
 
 ```
-Juntarme con mis compañeros y ponerme al dia con mi parte del proyecto (ProductDetail)
+El productDetail
 ```
 
 # Diego Vallejo
@@ -47,7 +47,7 @@ Juntarme con mis compañeros y ponerme al dia con mi parte del proyecto (Product
 ### Qué hizo esta semana:
 
 ```
-reunion grupal, debate sobre el proyecto 
+reunion grupal, debate sobre el proyecto
 ```
 
 ### Se encontró con algún impedimento:
