@@ -8,8 +8,8 @@ const productsCrontroller = require(path.join(
 
 router.get("/", productsCrontroller.productShop);
 
-router.get("/productCart", productsCrontroller.productCart);
+router.get("/cart", productsCrontroller.productCart);
 
-router.get("/", productsCrontroller.productDetail);
+router.get("/detail", productsCrontroller.productDetail);
 
 module.exports = router;

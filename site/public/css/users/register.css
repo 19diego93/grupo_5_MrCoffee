@@ -1,7 +1,3 @@
-/* !body */
-body {
-  min-width: 380px;
-}
 /*! Main */
 .contenedor-register {
   display: block;
@@ -10,8 +6,7 @@ body {
   min-width: 270px;
 }
 /* !Contenedor de titulo boton y form */
-.contenedor-titulo-form-boton{
-  
+.contenedor-titulo-form-boton {
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
@@ -19,7 +14,7 @@ body {
   padding: 10px 30px;
 }
 /* !contenedor form y boton */
-.contenedor-form-boton{
+.contenedor-form-boton {
   margin-top: 35px;
   max-width: 370px;
   background-color: white;
@@ -96,12 +91,11 @@ body {
   margin-top: 20px;
   width: 85%;
 }
-.register-text{
+.register-text {
   text-align: center;
   color: #76402e;
   font-size: 2rem;
   padding: 20px;
-
 }
 .redirect-login {
   padding: 0.8rem 1.5rem;
@@ -111,13 +105,13 @@ body {
   color: white;
 }
 /*! titulo h1 y su contenedor */
-.contenedor-titulo {
-  display: flex;
+.contenedor-titulo-register {
+  display: none;
   justify-content: center;
   margin-top: 15px;
   padding: 20px;
 }
-.contenedor-titulo h1 {
+.contenedor-titulo-register h1 {
   text-align: center;
   color: #76402e;
   font-size: 2.5rem;
@@ -137,14 +131,15 @@ a {
   text-decoration: none;
 }
 
-@media (min-width:768px){
-
- /* !Contenedor de titulo boton y form */
-.contenedor-titulo-form-boton{
-  
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
+@media (min-width: 768px) {
+  /* !laptops */
+  .contenedor-titulo-form-boton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .contenedor-titulo-register {
+    display: flex;
+  }
 }
