@@ -9,7 +9,11 @@ const usersRouter = require("./routes/users/users.js");
 const adminRouter = require("./routes/admin/admin.js");
 const productsRouter = require("./routes/products/products.js");
 //' Ejs
-app.set("views", path.join(__dirname, "views"));
+app.set(
+  "views",
+
+  path.join(__dirname, "views")
+);
 app.set("view engine", "ejs");
 
 //' Static
