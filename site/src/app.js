@@ -23,12 +23,8 @@ app.listen(3000, () => {
 //' Puertos
 app.use("/", mainRouter);
 //! users.js
-app.get("/login", usersRouter);
-app.get("/register", usersRouter);
-app.get("/profile", usersRouter);
+app.use("/user", usersRouter);
 //! admin.js
 app.get("/admin", adminRouter);
 //! productos
-app.get("/productCart", productsRouter);
-app.get("/productDetail", productsRouter);
-app.get("/shop", productsRouter);
+app.use("/product", productsRouter);

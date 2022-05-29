@@ -5,8 +5,8 @@ const productsController = {
   productDetail: (req, res) => {
     res.render("products/productDetail");
   },
-  shop: (req, res) => {
-    res.render("products/shop");
+  productShop: (req, res) => {
+    res.render("products/productShop");
   },
 };
 
