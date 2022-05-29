@@ -7,7 +7,7 @@
 ### Qué hizo esta semana:
 
 ```
-reunion grupal, debate sobre el proyecto 
+terminar las rutas, agregar ultimos detalles al home y header
 ```
 
 ### Se encontró con algún impedimento:
@@ -19,7 +19,7 @@ ninguno
 ### Qué va a hacer hoy o esta semana:
 
 ```
-terminar las rutas
+arreglar el footer
 ```
 
 # Mauro Villanueva
@@ -47,7 +47,7 @@ El productDetail
 ### Qué hizo esta semana:
 
 ```
-reunion grupal, debate sobre el proyecto 
+reunion grupal, debate sobre el proyecto
 ```
 
 ### Se encontró con algún impedimento:
