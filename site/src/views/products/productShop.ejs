@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs') %>
+  <head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/products/productShop.css" />
+  </head>
   <body>
     <%- include('../partials/header.ejs') %>
     <main>
-      <h1>Hola Mundo</h1>
+      <section>
+        <article id="breadcrumb">
+          <div>
+            <a href="/">Inicio</a>
+            <span class="separator">|</span>
+            <span class="page-title">Productos</span>
+          </div>
+        </article>
+        <article></article>
+      </section>
     </main>
     <%- include('../partials/footer.ejs') %>
   </body>

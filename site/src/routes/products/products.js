@@ -10,6 +10,6 @@ router.get("/", productsCrontroller.productShop);
 
 router.get("/cart", productsCrontroller.productCart);
 
-router.get("/detail", productsCrontroller.productDetail);
+router.get("/detail/:id", productsCrontroller.productDetail);
 
 module.exports = router;
