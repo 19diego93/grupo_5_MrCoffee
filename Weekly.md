@@ -7,7 +7,7 @@
 ### Qué hizo esta semana:
 
 ```
-terminar las rutas, agregar ultimos detalles al home y header
+hice el product/shop
 ```
 
 ### Se encontró con algún impedimento:

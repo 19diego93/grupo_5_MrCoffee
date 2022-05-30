@@ -50,7 +50,7 @@
   align-items: center;
 }
 #listFilter {
-  display: flex;
+  display: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -117,19 +117,30 @@
 #listaFiltrarOrden {
   display: none;
 }
+.container-products-product {
+  margin-top: 20px;
+}
 @media (min-width: 460px) {
   /*! Tablets */
 }
 @media (min-width: 768px) {
   /*! Laptops */
+  main {
+    position: relative;
+  }
   .container-filter {
-    width: 50%;
+    width: 400px;
+    height: 100%;
   }
   #filtros-productos {
     width: 98%;
   }
   .container-filter-orden {
-    width: 50%;
+    position: absolute;
+    top: 150px;
+    right: 0;
+    width: 200px;
+    margin-right: 20px;
   }
   #ordenarPor-productos {
     width: 98%;
