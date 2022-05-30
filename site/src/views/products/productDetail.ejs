@@ -7,9 +7,76 @@
   <body>
     <%- include('../partials/header.ejs') %>
     <main>
-      <!--! Cerrar buscador -->
-      <div id="cover-ctn-search"></div>
-      <h1>Hola Mundo</h1>
+      <section class="breadcrumb-content">
+        <article id="breadcrumb">
+          <div>
+            <a href="/">Inicio</a>
+            <span class="separator">|</span>
+            <span class="page-title">Productos</span>
+          </div>
+        </article>
+      </section>
+      <section >
+        <article class="product-detail">
+          <div class="imagen-producto">
+            <img
+              class="capuccino"
+              src="../../img/product-coffee/2.png"
+              alt=""
+            />
+          </div>
+          <div class="form">
+            <form action="">
+              <h1>Capuccino</h1>
+              <div>
+                <p class="price">$1.000</p>
+                <p class="promo-plus">
+                  Suscribite a Coffee Shop Plus y obtene el envio gratis en
+                  todos tus productos!
+                </p>
+              </div>
+              <div class="tamaño-vaso">
+                <p>Tamaño</p>
+                <select name="tamaño" id="" class="tamaño-cafe">
+                  <option value="Small">Small</option>
+                  <option value="Big">Big</option>
+                </select>
+              </div>
+              <div class="cant-unidades">
+                <p class="unidades">Unidades</p>
+                <div class="cantidad-unidades">
+                  <a class="cantidad-control-down">-</a>
+                  <input
+                    type="text"
+                    class="cantidad"
+                    name="cantidad-producto"
+                  />
+                  <a class="cantidad-control-up">+</a>
+                </div>
+              </div>
+              <div class="agregar-al-carrito">
+                <input
+                  id="addToCart"
+                  type="submit"
+                  name="button"
+                  class="agregar-carrito"
+                  value="Agregar al Carrito"
+                  title=""
+                />
+              </div>
+            </form>
+          </div>
+        </article>
+        <article>
+          <div>
+            <h3>Descripcion</h3>
+            <p>
+              Café espresso de cuerpo completo, con una delicada capa de espuma
+              de leche vaporizada . Imágenes referenciales
+            </p>
+          </div>
+        </article>
+      </section>
     </main>
     <%- include('../partials/footer.ejs') %>
     <!--! JS -->

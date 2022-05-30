@@ -1,1 +1,72 @@
+#breadcrumb div {
+  margin: 10px 0px;
+  font-size: 10px;
+}
+#breadcrumb div a {
+  text-decoration: none;
+  color: #000;
+}
+.breadcrumb-content {
+  padding: 5px;
+}
+article {
+  margin: 15px;
+}
+.imagen-producto {
+  border-radius: 5%;
+  text-align: center;
+}
+.capuccino {
+  height: 200px;
+}
+h1 {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+.price {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.promo-plus {
+  font-size: 12px;
+}
+.tamaño-vaso {
+  display: flex;
+  margin-top: 10px;
+}
+.tamaño-cafe {
+  margin-left: 10px;
+}
+.cant-unidades {
+  display: flex;
+  margin-top: 10px;
+}
+.cantidad-unidades {
+  margin-left: 5px;
+  background: #fff;
+  border: 1px solid black;
+  padding: 5px;
+}
+.cantidad {
+  width: 70px;
+  border: none;
+}
+.unidades {
+  display: flex;
+  align-items: center;
+}
+.agregar-al-carrito {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 15px 0px;
+}
+.agregar-carrito {
+  width: 100%;
+  padding: 15px;
+}
 
+@media (min-width: 768px) {
+  /* LAPTOP */
+
+}
