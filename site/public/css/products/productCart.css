@@ -27,7 +27,7 @@
   grid-template-rows: repeat(3, auto);
   gap: 2rem;
   width: 90%;
-  min-width: 370px;
+  min-width: 270px;
 }
 /* ! grilla del producto  */
 .nested-grid {
