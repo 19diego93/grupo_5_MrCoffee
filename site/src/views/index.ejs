@@ -3,7 +3,6 @@
   <head>
     <%- include('./partials/head.ejs') %>
     <link rel="stylesheet" href="/css/home.css" />
-    <link rel="icon" href="/img/mr.png">
   </head>
   <body>
     <%- include('./partials/header.ejs') %>
@@ -14,7 +13,7 @@
       <section class="Container-Campaign">
         <article class="campaña">
           <h1>¡Conocé nuestras variedades!</h1>
-          <a href="/productDetail" class="boton-descubrir">
+          <a href="/product" class="boton-descubrir">
             <p>¡Descubrír!</p>
           </a>
         </article>
@@ -36,9 +35,9 @@
             <!--! Productos - CAFE -->
             <article class="product-content">
               <div class="details">
-                <a class="image" href="/productDetail">
-                  <img src="img/product-coffee/1.png" alt="" />
-                </a>
+                <div class="image">
+                  <img src="/img/product-coffee/1.png" alt="" />
+                </div>
                 <div class="product-descriptions">
                   <span class="product-Name">Americano</span>
                   <span class="product-Price">$ 1.000</span>
@@ -52,15 +51,17 @@
                 </div>
                 <div class="product-buttons">
                   <button class="product-buy">Comprar</button>
-                  <a class="product-info" href="/productDetail">Informacion</a>
+                  <a class="product-info" href="/product/detail">
+                    Informacion
+                  </a>
                 </div>
               </div>
             </article>
             <article class="product-content">
               <div class="details">
-                <a class="image" href="/productDetail">
-                  <img src="img/product-coffee/2.png" alt="" />
-                </a>
+                <div class="image">
+                  <img src="/img/product-coffee/2.png" alt="" />
+                </div>
                 <div class="product-descriptions">
                   <span class="product-Name">Cappuccino</span>
                   <span class="product-Price">$ 1.000</span>
@@ -74,15 +75,17 @@
                 </div>
                 <div class="product-buttons">
                   <button class="product-buy">Comprar</button>
-                  <a class="product-info" href="/productDetail">Informacion</a>
+                  <a class="product-info" href="/product/detail">
+                    Informacion
+                  </a>
                 </div>
               </div>
             </article>
             <article class="product-content">
               <div class="details">
-                <a class="image" href="/productDetail">
-                  <img src="img/product-coffee/3.png" alt="" />
-                </a>
+                <div class="image">
+                  <img src="/img/product-coffee/3.png" alt="" />
+                </div>
                 <div class="product-descriptions">
                   <span class="product-Name">Skinny Vainilla Latte</span>
                   <span class="product-Price">$ 1.000</span>
@@ -96,7 +99,9 @@
                 </div>
                 <div class="product-buttons">
                   <button class="product-buy">Comprar</button>
-                  <a class="product-info" href="/productDetail">Informacion</a>
+                  <a class="product-info" href="/product/detail">
+                    Informacion
+                  </a>
                 </div>
               </div>
             </article>
@@ -104,9 +109,9 @@
               <!--! Productos - Comida -->
               <article class="product-content">
                 <div class="details">
-                  <a class="image" href="/productDetail">
-                    <img src="img/product-food/1.png" alt="" />
-                  </a>
+                  <div class="image">
+                    <img src="/img/product-food/1.png" alt="" />
+                  </div>
                   <div class="product-descriptions">
                     <span class="product-Name"> Media luna Rellena </span>
                     <span class="product-Price">$ 1.000</span>
@@ -120,17 +125,17 @@
                   </div>
                   <div class="product-buttons">
                     <button class="product-buy">Comprar</button>
-                    <a class="product-info" href="/productDetail"
-                      >Informacion</a
-                    >
+                    <a class="product-info" href="/product/detail">
+                      Informacion
+                    </a>
                   </div>
                 </div>
               </article>
               <article class="product-content">
                 <div class="details">
-                  <a class="image" href="/productDetail">
-                    <img src="img/product-food/2.png" alt="" />
-                  </a>
+                  <div class="image">
+                    <img src="/img/product-food/2.png" alt="" />
+                  </div>
                   <div class="product-descriptions">
                     <span class="product-Name">Croissant</span>
                     <span class="product-Price">$ 1.000</span>
@@ -144,17 +149,17 @@
                   </div>
                   <div class="product-buttons">
                     <button class="product-buy">Comprar</button>
-                    <a class="product-info" href="/productDetail"
-                      >Informacion</a
-                    >
+                    <a class="product-info" href="/product/detail">
+                      Informacion
+                    </a>
                   </div>
                 </div>
               </article>
               <article class="product-content">
                 <div class="details">
-                  <a class="image" href="/productDetail">
-                    <img src="img/product-food/3.png" alt="" />
-                  </a>
+                  <div class="image">
+                    <img src="/img/product-food/3.png" alt="" />
+                  </div>
                   <div class="product-descriptions">
                     <span class="product-Name">Media luna de Chocolate</span>
                     <span class="product-Price">$ 1.000</span>
@@ -168,9 +173,9 @@
                   </div>
                   <div class="product-buttons">
                     <button class="product-buy">Comprar</button>
-                    <a class="product-info" href="/productDetail"
-                      >Informacion</a
-                    >
+                    <a class="product-info" href="/product/detail">
+                      Informacion
+                    </a>
                   </div>
                 </div>
               </article>
