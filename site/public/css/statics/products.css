@@ -15,7 +15,7 @@
   transition-duration: 0.4s;
 }
 .product-content:hover {
-  transform: translateY(-20px);
+  transform: translateY(-20px) translateX(-10px);
   box-shadow: 6px 6px 0 5px #00000033;
 }
 .image {
