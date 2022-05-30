@@ -12,9 +12,15 @@
 article {
   margin: 15px;
 }
+.imagen{
+  display: flex;
+  justify-content: center;
+}
 .imagen-producto {
   width: 250px;
   text-align: center;
+  background-color: #76402e;
+  border-radius: 20px;
 }
 .capuccino {
   width: 100%;
@@ -74,9 +80,6 @@ h1 {
 .agregar-carrito:hover {
   background-color: #00b7ff97;
 }
-.description-article {
-  margin-top: 30px;
-}
 .description-article p {
   margin-top: 10px;
   font-size: 11px;
@@ -94,12 +97,12 @@ h1 {
     display: flex;
     justify-content: center;
     margin-top: 50px;
-    margin-bottom: 0%;
   }
   .form {
     width: 450px;
-    border: solid 1px rgba(0, 0, 0, 0.84);
+    border-radius: 20px;
     padding: 10px;
+    margin-left: 10px;
     background-color: #fff;
   }
   .imagen-producto {
@@ -107,26 +110,22 @@ h1 {
     flex-direction: row;
     align-items: center;
     padding: 20px;
-    border: solid 1px rgba(0, 0, 0, 0.84);
-    background-color: #fff;
   }
   .description-article {
-    margin: 0%;
     width: 100%;
     display: flex;
     flex-direction: column;
   }
   .description{
-    width: 700px;
+    width: 710px;
     margin: 0 15px;
     padding: 20px;
     display: flex;
     justify-content: center;
-    border: solid 1px rgba(0, 0, 0, 0.84);
+    border-radius: 20px;
     background-color: #fff;
   }
   .description-article h3{
     font-size: 20px;
   }
-
 }
