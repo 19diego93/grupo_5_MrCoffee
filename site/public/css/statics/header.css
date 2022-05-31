@@ -78,10 +78,12 @@ main {
   color: #000;
   font-size: 40px;
   transition: 0.3s;
+  cursor: pointer;
 }
 .Config a:hover {
   color: #00b7ff;
 }
+
 /*! Navegacion */
 .nav {
   background-color: #fff;
@@ -121,6 +123,7 @@ main {
 }
 .nav ul .celNone {
   display: none;
+  cursor: pointer;
 }
 #search {
   cursor: pointer;
@@ -178,6 +181,7 @@ main {
   left: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 7;
+  cursor: pointer;
 }
 @media (min-width: 460px) {
   /*! Tablets */
