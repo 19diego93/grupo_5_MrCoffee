@@ -7,7 +7,7 @@
 ### Qué hizo esta semana:
 
 ```
-hice el product/shop
+arregle el footer
 ```
 
 ### Se encontró con algún impedimento:
@@ -19,7 +19,7 @@ ninguno
 ### Qué va a hacer hoy o esta semana:
 
 ```
-arreglar el footer
+un desplegable para acceder al login/register y admin create/edit 
 ```
 
 # Mauro Villanueva
