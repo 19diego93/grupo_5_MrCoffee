@@ -6,111 +6,63 @@
     <link rel="stylesheet" href="/css/products/productCart.css" />
   </head>
   <body>
+
     <%- include('../partials/header.ejs') %>
-    <main class="contenedor-main-carrito">
-      <!--! Cerrar buscador -->
-      <div id="cover-ctn-search"></div>
-      <div class="contenedor-titulo">
-        <h1 class="titulo-producto">Productos</h1>
-      </div>
-      <!--! Contenedor de productos -->
-      <div class="contenedora-productos">
-        <div class="grid caja-product-descripcion">
-          <!--imagen product y descripcion-->
-         <div class="nested-grid">
-              <div class="contenedor-descripcion">
-                <img src="/img/product-food/1.png" alt="producto" />
-                <div class="descripcion">
-                  <p class="nombre-producto">nombreProducto</p>
-                  <p class="descripcion-producto">descripciónProducto</p>
+
+  <main class="contenedor-main-carrito">
+    <h1 class="titulo-pagina-carrito">Carrito</h1>
+<div class="cart-section-flex">    
+        <section>
+          <article class="product-container">
+          
+            <div class="imagen-producto">
+              <img
+                class="capuccino"
+                src="../../img/product-coffee/2.png"
+                alt=""
+              />
+            </div>
+          
+            <div class="form-cart">
+              <form action="">
+                <h3>Capuccino</h3>
+                <div>
+                  <p class="price">$1.000</p>
                 </div>
-              </div>
-              <!-- Cantidad Caffee -->
-              <div class="contador-cantidad">
-                <div class="texto-unidades"><p>Unidades</p></div>
-                <div class="contenedor-contador">
-                  <button class="contador" type="button">
-                    <i class="fa-solid fa-minus"></i>
-                  </button>
-                  <input type="number" value="1" readonly />
-                  <button class="contador" type="button">
-                    <i class="fa-solid fa-plus"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- Tamaños caffee -->
-              <div class="contenedor-tamaños">
-                <form action="">
-                <div class="texto-tamaño"><p>Tamaño</p></div>
-                <div class="cajita-tamanio">
-                  <select name="tamanio" id="" required>
-                    <option value="chico">Chico</option>
-                    <option value="mediano">Mediano</option>
-                    <option value="grande">Grande</option>
+                <div class="tamaño-vaso">
+                  <p>Tamaño</p>
+                  <select name="tamaño" id="" class="tamaño-cafe">
+                    <option value="Small">Small</option>
+                    <option value="Big">Big</option>
                   </select>
                 </div>
+                <div class="cant-unidades">
+                  <p class="unidades">Unidades</p>
+                  <div class="cantidad-unidades">
+                    <button>-</button>
+                    <input
+                      type="number"
+                      class="cantidad"
+                      name="cantidad-producto" 
+                      readonly
+                    />
+                    <button>+</button>
+                  </div>
+                </div>
               </form>
-              </div>
-            <!--Boton eliminar-->
-            <div class="boton-eliminar">
-              <form action="Delete">
-              <button type="button" class="eliminar">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
-            </form>
-            </div>
-          </div>
-          <div class="nested-grid">
-            <div class="contenedor-descripcion">
-              <img src="/img/product-coffee/1.png" alt="producto" />
-              <div class="descripcion">
-                <p class="nombre-producto">nombreProducto</p>
-                <p class="descripcion-producto">descripciónProducto</p>
+              <div class="description-article">
+                <h3>Descripción:</h3>
+                <p>
+                  Café espresso de cuerpo completo, con una delicada capa de espuma
+                  de leche vaporizada . Imágenes referenciales.
+                </p>
               </div>
             </div>
-            <div class="contador-cantidad">
-              <div class="texto-unidades"><p>Unidades</p></div>
-              <div class="contenedor-contador">
-                <button class="contador" type="button">
-                  <i class="fa-solid fa-minus"></i>
-                </button>
-                <p>cantidad</p>
-                <button class="contador" type="button">
-                  <i class="fa-solid fa-plus"></i>
-                </button>
-              </div>
-            </div>
-            <div class="contenedor-tamaños">
-              <div class="texto-tamaño"><p>Tamaño</p></div>
-              <div class="cajita-tamanio">
-                <select name="tamanio" id="" required>
-                  <option value="chico">Chico</option>
-                  <option value="mediano">Mediano</option>
-                  <option value="grande">Grande</option>
-                </select>
-              </div>
-            </div>
-            <!--Boton eliminar-->
-            <div class="boton-eliminar">
-              <button type="button" class="eliminar">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
-            </div>
-          </div>
-          <div class="contenedor-checkout-sumatoria">
-            <!--! Contenedor total -->
-            <div class="contenedor-sumatoria">
-              <div><p>Total:</p></div>
-              <!-- celda contenedor sumatoria total -->
-              <div><p>Sumatoria de productos</p></div>
-            </div>
-            <!--! boton checkout -->
-            <div class="contenedor-checkout">
-              <button class="checkout" type="button">Comprar</button>
-            </div>
-          </div>
-        </div>
+        </article>
+        </section>
       </div>
+      </main>
+
     </main>
     <%- include('../partials/footer.ejs') %>
     <!--! JS -->
