@@ -150,6 +150,9 @@ footer h5 {
   background-color: transparent;
   cursor: pointer;
   transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 }
 .Container-Buttons a:hover {
   border: solid 1px #00b7ff;
@@ -255,5 +258,10 @@ footer h5 {
   }
   .Container-Buttons a {
     width: 535px;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

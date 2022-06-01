@@ -125,9 +125,9 @@ main {
 #search {
   cursor: pointer;
 }
-.selected {
+/* .selected {
   color: #00b7ff;
-}
+} */
 /*!Buscador*/
 #ctn-bars-search {
   background-color: #111111;
