@@ -52,23 +52,29 @@
    justify-content: center;
    align-items: center;  
    margin: 10px 0px; 
- }
+  }
  .tamaño-vaso select{
    text-align: center;
    width: 35%;
    padding: 5px;
    margin: 0px 10px;
  }
+ .tamaño-cafe{
+  border: 1px solid black;
+  border-radius: 3px;
+ }
  /* contador unidades */
 .contenedor-unidades-cantidad{
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 10px 0px;
 }
 .contador-unidades{
   display: flex;
   width: 35%;
   border: 1px solid black;
+  border-radius: 3px;
   background-color: white;
   padding: 5px;
   margin: 0px 10px;
@@ -86,9 +92,7 @@
   text-align: center;
   width: 100%;
 }
-.promo-plus{
-  display: none;
-}
+
 /* REmovedor */
 .item-remove{
   position: absolute;
@@ -135,7 +139,7 @@
     font-size: 3.5rem;
   }
   .image-product{
-    width: 40%;
+    width: 45%;
   max-width: 270px;
   background-color: #ad715c;
   border-radius: 20px;
@@ -171,12 +175,7 @@
  .product-name{
     font-size: 1.5rem;
   }
-  .promo-plus{
-    display: block;
-    margin: 10px 0px;
-    font-size: 0.7rem;
-    text-align: center;
-  }
+  
   .item-remove{
     right: 22px;
     top: 14px;
@@ -195,13 +194,25 @@
  .product-container{
    background-color: none;
  }
-  .promo-plus{
-    font-size: .8rem;
-  }
-  .item-remove a{
+.product-name{
+  font-size: 2rem;
+  margin-left: 15px;
+  margin-bottom: 25px;
+}
+.form-cart input,select{
+  font-size: 1rem;
+}
+.subtotal-price{
+  margin: 30px 0px;
+  font-size: 1.2rem;
+}
+.tamaño-vaso,.contenedor-unidades-cantidad{
+  font-size: 1.2rem;
+}
+.item-remove a{
     font-size: 2rem;
   }
-  .item-remove a:hover{
+.item-remove a:hover{
     font-size: 2.2rem;
   }
 }
