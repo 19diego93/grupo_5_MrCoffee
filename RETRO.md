@@ -31,5 +31,5 @@
 # Dejar de hacer:
 
 ```
- ...
+Tenemos que dejar de esperar a ver todo el contenido del curso, e ir codeando a medida que se avanza, de lo contrario nos volveríamos a atrasar.
 ```
