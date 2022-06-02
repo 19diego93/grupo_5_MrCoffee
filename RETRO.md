@@ -1,7 +1,7 @@
 # Comenzar a hacer:
 
 ```
- 
+ Agregar un tablero en trello para la comuicación del equipo,
 ```
 
 # Hacer más:
