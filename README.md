@@ -14,7 +14,8 @@ https://nodejs.org/es/
 
 ### Instalación 🔧
 
-Este proyecto utiliza Node Express.
+Este proyecto utiliza Node Express, Ejs.
+Parado en la carpeta 'site' utiliza el siguiente comando:
 
 ```
 npm i
@@ -22,19 +23,19 @@ npm i
 
 ### Despliega el proyecto 🚀
 
-Parado en la carpeta 'site' utiliza el siguiente comando para iniciar el proyecto:
+Para iniciar el proyecto:
 
 ```
-node src/app.js
+npm start
 ```
 
 ## Autores ✒️
 
-#### - Mauro Villanueva
+#### - [Mauro Villanueva](https://github.com/maurovillanueva)
 
-#### - Marcelo Sebastian Suarez
+#### - [Marcelo Sebastian Suarez](https://github.com/sebastianszz)
 
-#### - Diego Vallejo
+#### - [Diego Vallejo](https://github.com/19diego93)
 
 ## Consignas 📄
 
