@@ -19,7 +19,9 @@
   "homepage": "https://github.com/19diego93/grupo_5_MrCoffee#readme",
   "dependencies": {
     "ejs": "^3.1.8",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "method-override": "^3.0.0",
+    "nodemon": "^2.0.16"
   },
   "devDependencies": {
     "prettier": "2.6.2"
