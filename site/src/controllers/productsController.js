@@ -1,3 +1,9 @@
+const fs = require("fs");
+const path = require("path");
+
+const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
+const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
 const productsController = {
   productCart: (req, res) => {
     res.render("products/productCart");
@@ -6,7 +12,11 @@ const productsController = {
     res.render("products/productDetail");
   },
   productShop: (req, res) => {
-    res.render("products/productShop");
+    let productos = [];
+    products.filter((producto) => {
+      productos.push(producto);
+    });
+    res.render("products/productShop", { productos });
   },
 };
 
