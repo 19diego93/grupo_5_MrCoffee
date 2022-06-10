@@ -14,7 +14,9 @@ const productsController = {
   productShop: (req, res) => {
     let productos = [];
     products.filter((producto) => {
-      productos.push(producto);
+      if (producto.stock > 0) {
+        productos.push(producto);
+      }
     });
     res.render("products/productShop", { productos });
   },

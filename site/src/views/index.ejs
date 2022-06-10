@@ -32,14 +32,15 @@
         <div class="container-products-top">
           <div class="products">
             <!--! Productos - CAFE -->
+            <% for(let i=0; i < coffee.length; i++){ %>
             <article class="product-content">
               <div class="details">
                 <div class="image">
-                  <img src="/img/product-coffee/1.png" alt="" />
+                  <img src="<%= coffee[i].image%>" alt="" />
                 </div>
                 <div class="product-descriptions">
-                  <span class="product-Name">Americano</span>
-                  <span class="product-Price">$ 1.000</span>
+                  <span class="product-Name"><%= coffee[i].name%></span>
+                  <span class="product-Price">$ <%= coffee[i].price%></span>
                 </div>
                 <div class="product-rating">
                   <i class="fas fa-star"></i>
@@ -50,135 +51,46 @@
                 </div>
                 <div class="product-buttons">
                   <button class="product-buy">Comprar</button>
-                  <a class="product-info" href="/product/detail">
+                  <a
+                    class="product-info"
+                    href="/product/detail/<%= coffee[i].id%>"
+                  >
                     Informacion
                   </a>
                 </div>
               </div>
             </article>
+            <% }%>
+            <!--! Productos - Comida -->
+            <% for(let i=0; i < food.length; i++){ %>
             <article class="product-content">
               <div class="details">
                 <div class="image">
-                  <img src="/img/product-coffee/2.png" alt="" />
+                  <img src="<%= food[i].image%>" alt="" />
                 </div>
                 <div class="product-descriptions">
-                  <span class="product-Name">Cappuccino</span>
-                  <span class="product-Price">$ 1.000</span>
+                  <span class="product-Name"><%= food[i].name%></span>
+                  <span class="product-Price">$<%= food[i].price%>0</span>
                 </div>
                 <div class="product-rating">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
+                  <i class="fas fa-star"></i>
                 </div>
                 <div class="product-buttons">
                   <button class="product-buy">Comprar</button>
-                  <a class="product-info" href="/product/detail">
+                  <a
+                    class="product-info"
+                    href="/product/detail/<%= food[i].id%>"
+                  >
                     Informacion
                   </a>
                 </div>
               </div>
             </article>
-            <article class="product-content">
-              <div class="details">
-                <div class="image">
-                  <img src="/img/product-coffee/3.png" alt="" />
-                </div>
-                <div class="product-descriptions">
-                  <span class="product-Name">Skinny Vainilla Latte</span>
-                  <span class="product-Price">$ 1.000</span>
-                </div>
-                <div class="product-rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                </div>
-                <div class="product-buttons">
-                  <button class="product-buy">Comprar</button>
-                  <a class="product-info" href="/product/detail">
-                    Informacion
-                  </a>
-                </div>
-              </div>
-            </article>
-            <div class="products">
-              <!--! Productos - Comida -->
-              <article class="product-content">
-                <div class="details">
-                  <div class="image">
-                    <img src="/img/product-food/1.png" alt="" />
-                  </div>
-                  <div class="product-descriptions">
-                    <span class="product-Name"> Media luna Rellena </span>
-                    <span class="product-Price">$ 1.000</span>
-                  </div>
-                  <div class="product-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="product-buttons">
-                    <button class="product-buy">Comprar</button>
-                    <a class="product-info" href="/product/detail">
-                      Informacion
-                    </a>
-                  </div>
-                </div>
-              </article>
-              <article class="product-content">
-                <div class="details">
-                  <div class="image">
-                    <img src="/img/product-food/2.png" alt="" />
-                  </div>
-                  <div class="product-descriptions">
-                    <span class="product-Name">Croissant</span>
-                    <span class="product-Price">$ 1.000</span>
-                  </div>
-                  <div class="product-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                  <div class="product-buttons">
-                    <button class="product-buy">Comprar</button>
-                    <a class="product-info" href="/product/detail">
-                      Informacion
-                    </a>
-                  </div>
-                </div>
-              </article>
-              <article class="product-content">
-                <div class="details">
-                  <div class="image">
-                    <img src="/img/product-food/3.png" alt="" />
-                  </div>
-                  <div class="product-descriptions">
-                    <span class="product-Name">Media luna de Chocolate</span>
-                    <span class="product-Price">$ 1.000</span>
-                  </div>
-                  <div class="product-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                  <div class="product-buttons">
-                    <button class="product-buy">Comprar</button>
-                    <a class="product-info" href="/product/detail">
-                      Informacion
-                    </a>
-                  </div>
-                </div>
-              </article>
-            </div>
+            <% }%>
           </div>
         </div>
       </section>

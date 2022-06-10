@@ -87,6 +87,8 @@
   transition: height 0.4s;
   height: 0;
 }
+@media (min-width: 460px) {
+}
 @media (min-width: 768px) {
   /*! Laptops */
   .nav-menu {

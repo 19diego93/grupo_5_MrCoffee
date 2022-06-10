@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/statics/products.css" />
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+    <main>
+      <!--! Campaña -->
+      <section class="Container-Campaign">
+        <article class="campaña">
+          <h1>¡ Resultados de la búsqueda: <%= busquedaDelUsuario %>!</h1>
+        </article>
+        <article id="wave-effect">
+          <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+            <path
+              d="M-7.77,66.63 C149.99,150.22 349.21,-50.06 514.81,77.49 L500.00,150.22 L0.00,150.22 Z"
+            ></path>
+          </svg>
+        </article>
+      </section>
+      <!--! Resultados Busqueda -->
+      <section class="conteiner-featured">
+        <div class="">
+          <div class="products">
+            <!--! productos -->
+            <% for(let i = 0; i < resultados.length; i++) {%>
+            <article class="product-content">
+              <div class="details">
+                <div class="image">
+                  <img src="<%= resultados[i].image %>" alt="" />
+                </div>
+                <div class="product-descriptions">
+                  <span class="product-Name"><%= resultados[i].name %></span>
+                  <span class="product-Price">$ <%= resultados[i].price%></span>
+                </div>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="product-buttons">
+                  <button class="product-buy">Comprar</button>
+                  <a
+                    class="product-info"
+                    href="/product/detail/<%= resultados[i].id%>"
+                  >
+                    Informacion
+                  </a>
+                </div>
+              </div>
+            </article>
+            <% }%>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('./partials/footer') %>
+  </body>
+</html>

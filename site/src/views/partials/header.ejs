@@ -5,7 +5,7 @@
       <a href="#"><i class="fas fa-bookmark"></i></a>
     </div>
     <div class="Logo">
-      <a href="/home">
+      <a href="/">
         <img src="/img/MrCoffee.png" alt="Logo" />
       </a>
     </div>
@@ -19,7 +19,7 @@
   <nav class="nav">
     <ul>
       <li>
-        <a href="/home">
+        <a href="/">
           <i class="fa-solid fa-house disNone selected"></i>
           <p class="selected">Inicio</p>
         </a>
@@ -50,11 +50,16 @@
     </ul>
   </nav>
   <!--! Buscador -->
-  <form id="ctn-bars-search">
-    <button class="search" id="close-search">
+  <form action="/search" method="GET" id="ctn-bars-search">
+    <input
+      type="text"
+      id="inputSearch"
+      placeholder="¿Qué deseas buscar?"
+      name="keywords"
+    />
+    <h3 class="search" id="close-search">
       <i class="fas fa-times"></i>
-    </button>
-    <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?" />
+    </h3>
   </form>
 </header>
 <%- include('./menu') %>

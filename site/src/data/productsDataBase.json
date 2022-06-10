@@ -4,37 +4,37 @@
     "image": "/img/coffee/1.png",
     "name": "Skinny Vainilla Latte",
     "description": "Café espresso con leche descremada al vapor y toques de vainilla sin azúcar.",
-    "category": ["Cafe", "Cafés calientes", "Lattes"],
-    "stock": 20,
+    "category": ["Café", "Cafés calientes", "Lattes"],
+    "stock": 0,
     "price": 200,
-    "rating": 5
+    "rating": 4
   },
   {
     "id": 2,
     "image": "/img/coffee/2.png",
     "name": "Vainilla Latte",
     "description": "Café espresso con leche al vapor y toques de vainilla.",
-    "category": ["Cafe", "Cafés calientes", "Lattes"],
+    "category": ["Café", "Cafés calientes", "Lattes"],
     "stock": 20,
     "price": 200,
-    "rating": 4
+    "rating": 3
   },
   {
     "id": 3,
     "image": "/img/coffee/3.png",
     "name": "Latte",
     "description": "Café espresso con leche vaporizada.",
-    "category": ["Cafe", "Cafés calientes", "Lattes"],
+    "category": ["Café", "Cafés calientes", "Lattes"],
     "stock": 20,
     "price": 200,
-    "rating": 4
+    "rating": 3
   },
   {
     "id": 4,
     "image": "/img/coffee/4.png",
     "name": "Dulce de leche Latte",
     "description": "Café espresso con dulce de leche, leche al vapor con crema batida y salsa de caramelo.",
-    "category": ["Cafe", "Cafés calientes", "Lattes"],
+    "category": ["Café", "Cafés calientes", "Lattes"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -44,7 +44,7 @@
     "image": "/img/coffee/5.png",
     "name": "Cappuccino",
     "description": "Café espresso, leche vaporizada y abundante espuma de leche.",
-    "category": ["Cafe", "Cafés calientes", "Cappuccinos"],
+    "category": ["Café", "Cafés calientes", "Cappuccinos"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -54,7 +54,7 @@
     "image": "/img/coffee/6.png",
     "name": "Flat White",
     "description": "Shots de café ristretto con leche vaporizada que finaliza con un punto dibujado en la superficie.",
-    "category": ["Cafe", "Cafés calientes", "Flat White"],
+    "category": ["Café", "Cafés calientes", "Flat White"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -64,7 +64,7 @@
     "image": "/img/coffee/7.png",
     "name": "Americano",
     "description": "Café espresso combinado con agua al mejor estilo americano.",
-    "category": ["Cafe", "Cafés calientes", "Americanos"],
+    "category": ["Café", "Cafés calientes", "Americanos"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -74,7 +74,7 @@
     "image": "/img/coffee/8.png",
     "name": "Latte Macchiato",
     "description": "Leche vaporizada con shots de café espresso que finaliza con un punto dibujado en la superficie.",
-    "category": ["Cafe", "Cafés calientes", "Macchiatos"],
+    "category": ["Café", "Cafés calientes", "Macchiatos"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -84,7 +84,7 @@
     "image": "/img/coffee/9.png",
     "name": "Skinny Caramel Macchiato",
     "description": "Vainilla sin azucar y leche 'manchada' con espresso, finalizada con el característico dibujo de caramelo",
-    "category": ["Cafe", "Cafés calientes", "Macchiatos"],
+    "category": ["Café", "Cafés calientes", "Macchiatos"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -94,7 +94,7 @@
     "image": "/img/coffee/10.png",
     "name": "Caramel Macchiato",
     "description": "Vainilla y leche 'manchada' con espresso, finalizada con el característico dibujo de caramelo.",
-    "category": ["Cafe", "Cafés calientes", "Macchiatos"],
+    "category": ["Café", "Cafés calientes", "Macchiatos"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -104,7 +104,7 @@
     "image": "/img/coffee/11.png",
     "name": "Mocha Blanco",
     "description": "Chocolate blanco, shots de Espresso y leche vaporizada, con crema batida.",
-    "category": ["Cafe", "Cafés calientes", "Mochas"],
+    "category": ["Café", "Cafés calientes", "Mochas"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -114,7 +114,7 @@
     "image": "/img/coffee/12.png",
     "name": "Mocha",
     "description": "Chocolate con café espresso y leche al vapor, con crema batida.",
-    "category": ["Cafe", "Cafés calientes", "Mochas"],
+    "category": ["Café", "Cafés calientes", "Mochas"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -124,7 +124,7 @@
     "image": "/img/coffee/13.png",
     "name": "Café del día con leche",
     "description": "Nuestras mezclas únicas de café en granos preparadas en sistema de filtrado, con una capa de leche vaporizada.",
-    "category": ["Cafe", "Cafés calientes", "Café filtrado"],
+    "category": ["Café", "Cafés calientes", "Café filtrado"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -134,7 +134,7 @@
     "image": "/img/coffee/14.png",
     "name": "Café del día",
     "description": "Nuestras mezclas únicas de café en granos preparadas en sistema de filtrado.",
-    "category": ["Cafe", "Cafés calientes", "Café filtrado"],
+    "category": ["Café", "Cafés calientes", "Café filtrado"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -144,7 +144,7 @@
     "image": "/img/coffee/15.png",
     "name": "Chocolate Caliente",
     "description": "Una deliciosa mezcla de chocolate, vainilla y leche, decorada con crema batida y salsa de chocolate.",
-    "category": ["Cafe", "Cafés calientes", "Chocolates"],
+    "category": ["Café", "Cafés calientes", "Chocolates"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -154,7 +154,7 @@
     "image": "/img/coffee/16.png",
     "name": "Avellana Shaken Espresso con Avena Helado",
     "description": "Café Espresso batido con jarabe de avellana y cubierto con bebida de avena.",
-    "category": ["Cafe", "Cafés helados", "Shaken Espresso"],
+    "category": ["Café", "Cafés helados", "Shaken Espresso"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -164,7 +164,7 @@
     "image": "/img/coffee/17.png",
     "name": "Chocolate Shaken Espresso con Avena Helado",
     "description": "Café Espresso batido con salsa mocha y cubierto con bebida de avena.",
-    "category": ["Cafe", "Cafés helados", "Shaken Espresso"],
+    "category": ["Café", "Cafés helados", "Shaken Espresso"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -174,7 +174,7 @@
     "image": "/img/coffee/18.png",
     "name": "Skinny Caramel Macchiato Helado",
     "description": "Hielo, vainilla sin azúcar y leche descremada 'manchada' con espresso, finalizada con el característico dibujo de caramelo.",
-    "category": ["Cafe", "Cafés helados", "Macchiatos"],
+    "category": ["Café", "Cafés helados", "Macchiatos"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -184,7 +184,7 @@
     "image": "/img/coffee/19.png",
     "name": "Caramel Macchiato Helado",
     "description": "Hielo, vainilla y leche 'manchada' con espresso, finalizada con el característico dibujo de caramelo.",
-    "category": ["Cafe", "Cafés helados", "Macchiatos"],
+    "category": ["Café", "Cafés helados", "Macchiatos"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -194,7 +194,7 @@
     "image": "/img/coffee/20.png",
     "name": "Cappuccino Helado",
     "description": "El balance perfecto entre nuestro café espresso, hielo, leche y abundante espuma de leche.",
-    "category": ["Cafe", "Cafés helados", "Cappuccinos"],
+    "category": ["Café", "Cafés helados", "Cappuccinos"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -204,17 +204,17 @@
     "image": "/img/coffee/21.png",
     "name": "Skinny Vainilla Latte Helado",
     "description": "Delicioso café espresso con leche descremada, hielo y toques de vainilla sin azúcar.",
-    "category": ["Cafe", "Cafés helados", "Lattes"],
+    "category": ["Café", "Cafés helados", "Lattes"],
     "stock": 20,
     "price": 200,
-    "rating": 3.3
+    "rating": 4
   },
   {
     "id": 22,
     "image": "/img/coffee/22.png",
     "name": "Latte Helado",
     "description": "Deliciosa combinación de café espresso con hielo y leche.",
-    "category": ["Cafe", "Cafés helados", "Lattes"],
+    "category": ["Café", "Cafés helados", "Lattes"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -224,7 +224,7 @@
     "image": "/img/coffee/23.png",
     "name": "Vainilla Latte Helado",
     "description": "Delicioso café espresso con leche, hielo y dulces toques de vainilla.",
-    "category": ["Cafe", "Cafés helados", "Lattes"],
+    "category": ["Café", "Cafés helados", "Lattes"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -234,7 +234,7 @@
     "image": "/img/coffee/24.png",
     "name": "Dulce de Leche Latte Helado",
     "description": "Café espresso con delicioso dulce de leche, hielo y leche con un remolino de crema batida y salsa de caramelo.",
-    "category": ["Cafe", "Cafés helados", "Lattes"],
+    "category": ["Café", "Cafés helados", "Lattes"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -244,7 +244,7 @@
     "image": "/img/coffee/25.png",
     "name": "Cold Brew Cold Foam",
     "description": "Bebida helada a base de granos de café colombianos infusionados por 20 horas coronada con una cremosa espuma de leche fría.",
-    "category": ["Cafe", "Cafés helados", "Cold Brews"],
+    "category": ["Café", "Cafés helados", "Cold Brews"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -254,7 +254,7 @@
     "image": "/img/coffee/26.png",
     "name": "Sweet Vainilla Cold Brew",
     "description": "Bebida helada a base de granos de café colombianos infusionados por 20 horas, endulzada con vainilla y finalizada con crema de leche.",
-    "category": ["Cafe", "Cafés helados", "Cold Brews"],
+    "category": ["Café", "Cafés helados", "Cold Brews"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -264,7 +264,7 @@
     "image": "/img/coffee/27.png",
     "name": "Cold Brew",
     "description": "Bebida helada a base de granos de café colombianos infusionados por 20 horas.",
-    "category": ["Cafe", "Cafés helados", "Cold Brews"],
+    "category": ["Café", "Cafés helados", "Cold Brews"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -274,7 +274,7 @@
     "image": "/img/coffee/28.png",
     "name": "Americano Helado",
     "description": "Delicioso café espresso combinado con agua y hielo, al mejor estilo americano.",
-    "category": ["Cafe", "Cafés helados", "Americanos"],
+    "category": ["Café", "Cafés helados", "Americanos"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -284,7 +284,7 @@
     "image": "/img/coffee/29.png",
     "name": "Mocha Blanco Helado",
     "description": "Irresistible combinación de chocolate blanco, shots de espresso, hielo y leche, coronado con crema batida.",
-    "category": ["Cafe", "Cafés helados", "Mochas"],
+    "category": ["Café", "Cafés helados", "Mochas"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -294,7 +294,7 @@
     "image": "/img/coffee/30.png",
     "name": "Mocha Helado",
     "description": "Intenso chocolate con café espresso, hielo y leche, coronado con crema batida.",
-    "category": ["Cafe", "Cafés helados", "Mochas"],
+    "category": ["Café", "Cafés helados", "Mochas"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -304,7 +304,7 @@
     "image": "/img/coffee/31.png",
     "name": "Café del día con Leche Helado",
     "description": "Nuestros exquisitos y selectos granos de café preparados en método filtrado y agregado de hielo para una infusión refrescante.",
-    "category": ["Cafe", "Cafés helados", "Café filtrado"],
+    "category": ["Café", "Cafés helados", "Café filtrado"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -314,7 +314,7 @@
     "image": "/img/coffee/32.png",
     "name": "Café del día Helado",
     "description": "Nuestros exquisitos y selectos granos de café preparados en método filtrado.",
-    "category": ["Cafe", "Cafés helados", "Café filtrado"],
+    "category": ["Café", "Cafés helados", "Café filtrado"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -324,7 +324,7 @@
     "image": "/img/coffee/33.png",
     "name": "Café Frappuccino",
     "description": "Frappuccino a base de café. Dulce y cremosa combinación de café, leche y hielo.",
-    "category": ["Cafe", "Frappuccino", "Frappuccino con café"],
+    "category": ["Café", "Frappuccino", "Frappuccino con café"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -334,7 +334,7 @@
     "image": "/img/coffee/34.png",
     "name": "Caramel Frappuccino",
     "description": "Frappuccino a base de café. Dulce combinación de caramelo, café, leche y hielo, decorado con un remolino de crema batida y topping de caramelo.",
-    "category": ["Cafe", "Frappuccino", "Frappuccino con café"],
+    "category": ["Café", "Frappuccino", "Frappuccino con café"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -344,7 +344,7 @@
     "image": "/img/coffee/35.png",
     "name": "Mocha Blanco Frappuccino",
     "description": "Frappuccino a base de café. Deliciosa mezcla que combina café, leche y chocolate blanco, batido con hielo, coronado con crema batida y salsa de mocha.",
-    "category": ["Cafe", "Frappuccino", "Frappuccino con café"],
+    "category": ["Café", "Frappuccino", "Frappuccino con café"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -354,7 +354,7 @@
     "image": "/img/coffee/36.png",
     "name": "Mocha Frappuccino",
     "description": "Frappuccino a base de café. Deliciosa mezcla que combina café, leche y chocolate, batido con hielo, coronado con crema batida y salsa de mocha.",
-    "category": ["Cafe", "Frappuccino", "Frappuccino con café"],
+    "category": ["Café", "Frappuccino", "Frappuccino con café"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -364,7 +364,7 @@
     "image": "/img/coffee/37.png",
     "name": "Chai Frappuccino",
     "description": "Nuestro Té Chai combinado con leche, hielo molido y una deliciosa terminación de crema batida.",
-    "category": ["Cafe", "Frappuccino", "Frappuccino sin café"],
+    "category": ["Café", "Frappuccino", "Frappuccino sin café"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -374,7 +374,7 @@
     "image": "/img/coffee/38.png",
     "name": "Mocha Creme Frappuccino",
     "description": "Frappuccino a base de crema. Perfecta combinación a base de crema y chocolate, batida con hielo, decorada con crema batida y salsa de chocolate.",
-    "category": ["Cafe", "Frappuccino", "Frappuccino sin café"],
+    "category": ["Café", "Frappuccino", "Frappuccino sin café"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -384,7 +384,7 @@
     "image": "/img/coffee/39.png",
     "name": "Mint Citrus",
     "description": "La base de hierbabuena de este té se complementa con notas de menta fresca y toques de verbena dulce y especiada.",
-    "category": ["Cafe", "Té caliente", "Té Verde"],
+    "category": ["Café", "Té caliente", "Té Verde"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -394,7 +394,7 @@
     "image": "/img/coffee/40.png",
     "name": "Chai",
     "description": "Deliciosa combinación de té y especias, al estilo de los habitantes del Himalaya. Una intensa infusión de canela, jengibre, cardamomo, pimienta negra y anís estrellado.",
-    "category": ["Cafe", "Té caliente", "Té Chai"],
+    "category": ["Café", "Té caliente", "Té Chai"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -404,7 +404,7 @@
     "image": "/img/coffee/41.png",
     "name": "Chai Latte",
     "description": "Nuestro mezcla de té chai y leche perfectamente vaporizada, decorado con una sutil capa de espuma de leche.",
-    "category": ["Cafe", "Té caliente", "Té Chai"],
+    "category": ["Café", "Té caliente", "Té Chai"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -414,7 +414,7 @@
     "image": "/img/coffee/42.png",
     "name": "Youthberry",
     "description": "Una mezcla de té blanco cítrico con toques brillantes de sabor tropical. Con mango, naranja, hibisco y pétalos de rosa. Hay un toque de paraíso en cada sorbo de esta fantástica mezcla.",
-    "category": ["Cafe", "Té caliente", "Infusiones"],
+    "category": ["Café", "Té caliente", "Infusiones"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -424,7 +424,7 @@
     "image": "/img/coffee/43.png",
     "name": "Hibiscus",
     "description": "Las flores de hibisco impregnan esta infusión de una ligera acidez y un extraordinario color rojizo. Brillantes sabores tropicales de papaya y mango con hierba limón cítrica y una pizca de canela.",
-    "category": ["Cafe", "Té caliente", "Infusiones"],
+    "category": ["Café", "Té caliente", "Infusiones"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -434,7 +434,7 @@
     "image": "/img/coffee/44.png",
     "name": "Earl Grey",
     "description": "Una brillante mezcla de tés negros de Sri Lanka con una aromática esencia de bergamota y lavanda.",
-    "category": ["Cafe", "Té caliente", "Té Negro"],
+    "category": ["Café", "Té caliente", "Té Negro"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -444,7 +444,7 @@
     "image": "/img/coffee/45.png",
     "name": "English Breakfast",
     "description": "Mezcla de tés negros: Assam de la India, Ceilán de Sri Lanka y té negro de China. Los tés de Assam añaden toques profundos de malta y té negro y un rico aroma a caramelo. Los tés de Ceilán aportan un sabor brillante y completo, mientras que los de China tienen un sutil toque como recién recién horneado, lo cual hace del English Breakfast una opción única.",
-    "category": ["Cafe", "Té caliente", "Té Negro"],
+    "category": ["Café", "Té caliente", "Té Negro"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -454,17 +454,17 @@
     "image": "/img/coffee/46.png",
     "name": "Shaken Lemonade Hibiscus",
     "description": "Nuestro té de hibiscus combinado con limón y mezclado con hielo.",
-    "category": ["Cafe", "Té helado", "Té Herbal helado"],
+    "category": ["Café", "Té helado", "Té Herbal helado"],
     "stock": 20,
     "price": 200,
-    "rating": 3.3
+    "rating": 4
   },
   {
     "id": 47,
     "image": "/img/coffee/47.png",
     "name": "Shaken Lemonade Green Tea",
     "description": "Nuestro té verde combinado con limón y mezclado con hielo.",
-    "category": ["Cafe", "Té helado", "Té Verde helado"],
+    "category": ["Café", "Té helado", "Té Verde helado"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -474,7 +474,7 @@
     "image": "/img/coffee/48.png",
     "name": "Mango Dragonfruit Limonada",
     "description": "Limonada con Mango Dragon Fruit, el sabor de esta fruta se ha descripto como una mezcla ligeramente dulce entre un kiwi y una pera.",
-    "category": ["Cafe", "Heladas", "Refreshers"],
+    "category": ["Café", "Heladas", "Refreshers"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -484,7 +484,7 @@
     "image": "/img/coffee/49.png",
     "name": "Frutilla Açai",
     "description": "Frutilla, con un toque de açaí, un fruto rojo y exótico que nos recuerda el sabor del cacao y la canela.",
-    "category": ["Cafe", "Heladas", "Refreshers"],
+    "category": ["Café", "Heladas", "Refreshers"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -494,7 +494,7 @@
     "image": "/img/coffee/50.png",
     "name": "Dragon Drink",
     "description": "Leche de coco con Mango Dragon Fruit, el sabor de esta fruta se ha descripto como una mezcla ligeramente dulce entre un kiwi y una pera.",
-    "category": ["Cafe", "Heladas", "Refreshers"],
+    "category": ["Café", "Heladas", "Refreshers"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -504,7 +504,7 @@
     "image": "/img/coffee/51.png",
     "name": "Pink Drink",
     "description": "Frutilla, leche de coco, con un toque de açaí, un fruto rojo y exótico que nos recuerda el sabor del cacao y la canela.",
-    "category": ["Cafe", "Heladas", "Refreshers"],
+    "category": ["Café", "Heladas", "Refreshers"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -514,7 +514,7 @@
     "image": "/img/coffee/52.png",
     "name": "Mango Dragonfruit Frozen Refresher",
     "description": "Una combinación refrescante de mando y dragonfruit con extracto de café verde y hielo molido.",
-    "category": ["Cafe", "Heladas", "Refreshers"],
+    "category": ["Café", "Heladas", "Refreshers"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -524,7 +524,7 @@
     "image": "/img/coffee/53.png",
     "name": "Frutilla Acaí Frozen Refresher",
     "description": "La dulzura de las frutillas combinada con hibiscus, notas de açaí y extracto de café verde con hielo molido.",
-    "category": ["Cafe", "Heladas", "Refreshers"],
+    "category": ["Café", "Heladas", "Refreshers"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -534,7 +534,7 @@
     "image": "/img/coffee/54.png",
     "name": "Mango Dragonfruit",
     "description": "Mango Dragon Fruit, el sabor de esta fruta se ha descripto como una mezcla ligeramente dulce entre un kiwi y una pera.",
-    "category": ["Cafe", "Heladas", "Refreshers"],
+    "category": ["Café", "Heladas", "Refreshers"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -544,7 +544,7 @@
     "image": "/img/coffee/55.png",
     "name": "Frutilla Açai Limonada",
     "description": "Frutilla, limonada, con un toque de açaí, un fruto rojo y exótico que nos recuerda el sabor del cacao y la canela.",
-    "category": ["Cafe", "Heladas", "Refreshers"],
+    "category": ["Café", "Heladas", "Refreshers"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -554,7 +554,7 @@
     "image": "/img/coffee/56.png",
     "name": "Jugo de manzana",
     "description": "Jugo de manzana 300ml.",
-    "category": ["Cafe", "Heladas", "Jugos, aguas y bebidas saborizadas"],
+    "category": ["Café", "Heladas", "Jugos, aguas y bebidas saborizadas"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -564,7 +564,7 @@
     "image": "/img/coffee/57.png",
     "name": "Jugo de naranja",
     "description": "Jugo de naranja 300ml",
-    "category": ["Cafe", "Heladas", "Jugos, aguas y bebidas saborizadas"],
+    "category": ["Café", "Heladas", "Jugos, aguas y bebidas saborizadas"],
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -575,7 +575,7 @@
     "name": "Croissant Relleno con Crema de Avellanas",
     "description": "Croissant con masa de hojaldre y cubierto con una salsa de cacao y avellanas.",
     "category": ["Comida", "Bakery", "Recién horneados"],
-    "stock": 20,
+    "stock": 0,
     "price": 200,
     "rating": 5
   },
