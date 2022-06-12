@@ -12,7 +12,9 @@
           <div>
             <a href="/">Inicio</a>
             <span class="separator">|</span>
-            <span class="page-title">Productos</span>
+            <a href="/products" class="page-title">Productos</a>
+            <span class="separator">|</span>
+            <span class="page-title"><%=product.name%></span>
           </div>
         </article>
       </section>
@@ -20,18 +22,14 @@
         <article class="product-detail">
           <div class="imagen">
             <div class="imagen-producto">
-              <img
-                class="capuccino"
-                src="../../img/product-coffee/2.png"
-                alt=""
-              />
+              <img class="capuccino" src="<%=product.image%>" alt="" />
             </div>
           </div>
           <div class="form">
             <form action="">
-              <h1>Capuccino</h1>
+              <h1><%=product.name%></h1>
               <div>
-                <p class="price">$1.000</p>
+                <p class="price">$<%=product.price%></p>
                 <p class="promo-plus">
                   Suscribite a Coffee Shop Plus y obtene un descuento en todos
                   tus productos!
@@ -73,10 +71,7 @@
           <div class="description">
             <div class="description-article">
               <h3>Descripción:</h3>
-              <p>
-                Café espresso de cuerpo completo, con una delicada capa de
-                espuma de leche vaporizada . Imágenes referenciales.
-              </p>
+              <p><%=product.description%></p>
             </div>
           </div>
         </article>

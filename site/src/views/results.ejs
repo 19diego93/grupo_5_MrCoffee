@@ -58,6 +58,15 @@
           </div>
         </div>
       </section>
+      <section>
+        <% if(resultados.length == []){ %>
+        <div style="display: flex; justify-content: center">
+          <h2 class="products-title" style="color: tomato">
+            No hay productos que coincidan con esa búsqueda
+          </h2>
+        </div>
+        <% } %>
+      </section>
     </main>
     <%- include('./partials/footer') %>
   </body>

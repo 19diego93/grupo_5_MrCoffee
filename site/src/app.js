@@ -29,7 +29,7 @@ const productsRouter = require("./routes/products/products.js");
 app.use("/", mainRouter); //! home
 app.use("/user", usersRouter); //! users.js
 app.use("/admin", adminRouter); //! admin.js
-app.use("/product", productsRouter); //! productos
+app.use("/products", productsRouter); //! productos
 
 //' 404
 app.use((req, res, next) => {

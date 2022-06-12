@@ -6,10 +6,12 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const productsController = {
   productCart: (req, res) => {
-    res.render("products/productCart");
+    let detail = products.filter((producto) => producto.id == req.params.id);
+    res.render("products/productCart", { product: detail });
   },
   productDetail: (req, res) => {
-    res.render("products/productDetail");
+    let detail = products.filter((producto) => producto.id == req.params.id);
+    res.render("products/productDetail", { product: detail[0] });
   },
   productShop: (req, res) => {
     let productos = [];

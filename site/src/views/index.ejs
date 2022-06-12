@@ -12,7 +12,7 @@
       <section class="Container-Campaign">
         <article class="campaña">
           <h1>¡Conocé nuestras variedades!</h1>
-          <a href="/product" class="boton-descubrir">
+          <a href="/products" class="boton-descubrir">
             <p>¡Descubrír!</p>
           </a>
         </article>
@@ -50,10 +50,12 @@
                   <i class="fas fa-star"></i>
                 </div>
                 <div class="product-buttons">
-                  <button class="product-buy">Comprar</button>
+                  <a href="/products/cart/<%= coffee[i].id%>">
+                    <button class="product-buy">Comprar</button>
+                  </a>
                   <a
                     class="product-info"
-                    href="/product/detail/<%= coffee[i].id%>"
+                    href="/products/detail/<%= coffee[i].id%>"
                   >
                     Informacion
                   </a>
@@ -80,10 +82,12 @@
                   <i class="fas fa-star"></i>
                 </div>
                 <div class="product-buttons">
-                  <button class="product-buy">Comprar</button>
+                  <a href="/products/cart/<%= food[i].id%>">
+                    <button class="product-buy">Comprar</button>
+                  </a>
                   <a
                     class="product-info"
-                    href="/product/detail/<%= food[i].id%>"
+                    href="/products/detail/<%= food[i].id%>"
                   >
                     Informacion
                   </a>
