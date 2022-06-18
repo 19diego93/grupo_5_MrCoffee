@@ -8,7 +8,7 @@ const productsCrontroller = require(path.join(
 
 router.get("/", productsCrontroller.productShop);
 
-router.get("/cart/:id", productsCrontroller.productCart);
+router.get("/cart/:id?", productsCrontroller.productCart);
 
 router.get("/detail/:id", productsCrontroller.productDetail);
 

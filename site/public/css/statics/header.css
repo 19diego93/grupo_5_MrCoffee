@@ -17,19 +17,13 @@ main {
 }
 /*! Colores */
 :root {
-  --color-rojo: red;
-  --color-violeta: violet;
-  --color-azul: blue;
-  --color-verde: green;
-  --gold: hsl(48, 100%, 50%);
-  --gold-lighter: hsl(48, 22%, 30%);
-  --gold-darker: hsl(45, 100%, 47%);
-  --silver: hsl(210, 6%, 72%);
-  --silver-lighter: hsl(0, 0%, 26%);
-  --silver-darker: hsl(210, 3%, 61%);
-  --bronze: hsl(28, 38%, 67%);
-  --bronze-lighter: hsl(28, 13%, 27%);
-  --bronze-darker: hsl(28, 31%, 52%);
+  --color-Celeste: #00b7ff;
+  --color-Celeste-Claro: #42c9ff;
+  --color-Marron-Oscuro: #76402e;
+  --color-Marron: #ad715c;
+  --color-Marron-Claro: #ffe6d6;
+  --color-Negro: #000;
+  --color-Blanco: #fff;
 }
 /*! Cabecera de celular y tablets */
 .Header-Content {
