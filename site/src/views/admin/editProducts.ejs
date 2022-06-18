@@ -5,7 +5,38 @@
   </head>
   <body>
     <%- include('../partials/header') %>
-    <main><h1>hola mundo</h1></main>
+    <main>
+      <h1>Editor</h1>
+    
+      <div class="products">
+        <!--! productos -->
+        <% for(let i = 0; i < products.length; i++) {%>
+        <article class="product-content">
+          <div class="details">
+            <div class="image">
+              <img src="<%= products[i].image %>" alt="" />
+            </div>
+            <div class="product-descriptions">
+              <span class="product-Name"><%= products[i].name %></span>
+              <span class="product-Price">$ <%= products[i].price%></span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="product-buttons">
+            <a href="../products/edit/<%= products[i].id %>"><button type="button" class="product-buy">Editar</button></a>
+              
+            </div>
+          </div>
+        </article>
+        <% }%>
+      </div>
+    
+    </main>
     <%- include('../partials/footer') %>
   </body>
 </html>
