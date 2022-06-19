@@ -37,27 +37,28 @@ const productsController = {
 let idProduct = req.params.id;
 let itemEditado = products.map((item) => {
   if (item.id == idProduct){
-   
-    item.name=req.body.name 
-    item.description=req.body.description 
-    // item.category= req.body.category
-    item.stock= req.body.stock
-    item.price= req.body.price
-    item.rating= req.body.rating
-  
-if (req.file){
-  let imgName = req.file.filename;
-      item.image ="/img/"+req.body.place+"/"+imgName;
-     
+   let product = {
+    id:idProduct,
+    name: req.body.name ,
+    image: item.image,
+    description: req.body.description, 
+    category: [req.body.category],
+    stock: req.body.stock,
+    price: req.body.price,
+    rating: req.body.rating,
+   }
+    if (req.file){ 
+      product.image ="/img/"+req.body.place+"/"+req.file.filename;  
+      fsExtra.moveSync(`../public/img/${req.file.filename}`, `../public/img/${req.body.place}/${req.file.filename}`);   
     }
-    
+    return product;
   }
   return item
  
 });
 
 
-fsExtra.moveSync(`../public/img/${req.file.filename}`, `../public/img/${req.body.place}/${req.file.filename}`);
+
 let actualizedProduct = JSON.stringify(itemEditado, null,2);
 		fs.writeFileSync(productsFilePath, actualizedProduct, "utf-8");
 		res.redirect(`/products/detail/${idProduct}`);

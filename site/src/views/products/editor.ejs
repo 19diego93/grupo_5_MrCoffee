@@ -25,7 +25,7 @@
                   </div>
                   <label for="image"></label>
                   <input type="file" name="image">
-                  <label for="type"></label>
+                  <label for="place">Tipo de producto:</label>
                   <input type="text" name="place" placeholder="¿Food or Coffee?">
                 </div>
                 <div class="form">
@@ -52,9 +52,9 @@
                     <label for="description">Descripción</label>
                     <input type="text" name="description" value='<%= productEdit.description %>'>
                     <br>
-                    <!-- <label for="category">Categorias</label> 
-                    <input type="text" name="category" value='<%= productEdit.category %>'>
-                    <br> -->
+                    <label for="category">Categorias: <%= productEdit.category %></label> 
+                    <input type="text" name="category"  placeholder='serparar categorias con ","'>
+                    <br>
                     <label for="stock">Stock</label>
                     <input type="text" name="stock" value='<%= productEdit.stock %>'>
                     <br>
