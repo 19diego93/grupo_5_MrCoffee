@@ -9,7 +9,7 @@ const adminController = {
     res.render("admin/createProducts");
   },
   editProducts: (req, res) => {
-    res.render("admin/editProducts",{products});
+    res.render("admin/editProducts", { products });
   },
 };
 

@@ -92,6 +92,51 @@ h1 {
 .agregar-carrito:hover {
   background-color: #00b7ff97;
 }
+.container-buttons-detail {
+  display: flex;
+  justify-content: space-around;
+}
+.button-edit {
+  width: 50%;
+  margin: 5px;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color-Marron-Oscuro);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-edit:hover {
+  opacity: 0.6;
+}
+.button-edit p {
+  text-decoration: none;
+  color: var(--color-Blanco);
+  text-align: center;
+  font-size: 15px;
+}
+.button-delete {
+  width: 50%;
+  margin: 5px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: red;
+  cursor: pointer;
+  text-align: center;
+}
+.button-delete:hover {
+  opacity: 0.6;
+}
+.button-delete form button {
+  background: none;
+  border: none;
+  color: var(--color-Blanco);
+  font-size: 15px;
+  cursor: pointer;
+}
 .description-article p {
   margin-top: 10px;
   font-size: 11px;
@@ -178,6 +223,18 @@ h1 {
   }
   .container-descrip {
     width: 600px;
+  }
+  .button-edit a {
+    text-decoration: none;
+    color: var(--color-Blanco);
+    font-size: 20px;
+  }
+  .button-delete form button {
+    background: none;
+    border: none;
+    color: var(--color-Blanco);
+    font-size: 20px;
+    cursor: pointer;
   }
 }
 

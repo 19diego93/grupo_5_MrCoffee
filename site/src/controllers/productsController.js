@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const fsExtra = require('fs-extra');
-
+const fsExtra = require("fs-extra");
 
 const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -24,45 +23,44 @@ const productsController = {
     });
     res.render("products/productShop", { productos });
   },
-  edit: (req,res)=>{
+  edit: (req, res) => {
     let idProduct = req.params.id;
-    let productEdit = products.find((item) => item.id == idProduct)
-    res.render("products/editor",{productEdit: productEdit})
+    let productEdit = products.find((item) => item.id == idProduct);
+    res.render("admin/editProducts", { productEdit: productEdit });
   },
   // ! Proceso de edición
-  edited: (req,res) => {
+  edited: (req, res) => {
     const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
-    req.body.id = req.params.id
-let idProduct = req.params.id;
-let itemEditado = products.map((item) => {
-  if (item.id == idProduct){
-   let product = {
-    id:idProduct,
-    name: req.body.name ,
-    image: item.image,
-    description: req.body.description, 
-    category: [req.body.category],
-    stock: req.body.stock,
-    price: req.body.price,
-    rating: req.body.rating,
-   }
-    if (req.file){ 
-      product.image ="/img/"+req.body.place+"/"+req.file.filename;  
-      fsExtra.moveSync(`../public/img/${req.file.filename}`, `../public/img/${req.body.place}/${req.file.filename}`);   
-    }
-    return product;
-  }
-  return item
- 
-});
+    req.body.id = req.params.id;
+    let idProduct = req.params.id;
+    let itemEditado = products.map((item) => {
+      if (item.id == idProduct) {
+        let product = {
+          id: idProduct,
+          name: req.body.name,
+          image: item.image,
+          description: req.body.description,
+          category: [req.body.category],
+          stock: req.body.stock,
+          price: req.body.price,
+          rating: req.body.rating,
+        };
+        if (req.file) {
+          product.image = "/img/" + req.body.place + "/" + req.file.filename;
+          fsExtra.moveSync(
+            `../public/img/${req.file.filename}`,
+            `../public/img/${req.body.place}/${req.file.filename}`
+          );
+        }
+        return product;
+      }
+      return item;
+    });
 
-
-
-let actualizedProduct = JSON.stringify(itemEditado, null,2);
-		fs.writeFileSync(productsFilePath, actualizedProduct, "utf-8");
-		res.redirect(`/products/detail/${idProduct}`);
-
+    let actualizedProduct = JSON.stringify(itemEditado, null, 2);
+    fs.writeFileSync(productsFilePath, actualizedProduct, "utf-8");
+    res.redirect(`/products/detail/${idProduct}`);
   },
 };
 

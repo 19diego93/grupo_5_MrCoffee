@@ -65,6 +65,19 @@
                 />
               </div>
             </form>
+            <div class="container-buttons-detail">
+              <a href="/products/edit/<%=product.id%>" class="button-edit">
+                <p>EDITAR</p>
+              </a>
+              <div class="button-delete">
+                <form
+                  action="/products/delete/<%=product.id%>?_method=DELETE"
+                  method="POST"
+                >
+                  <button type="submit">ELIMINAR</button>
+                </form>
+              </div>
+            </div>
           </div>
         </article>
         <article class="container-descrip">

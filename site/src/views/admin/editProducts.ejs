@@ -5,37 +5,85 @@
   </head>
   <body>
     <%- include('../partials/header') %>
+
     <main>
-      <h1>Editor</h1>
-    
-      <div class="products">
-        <!--! productos -->
-        <% for(let i = 0; i < products.length; i++) {%>
-        <article class="product-content">
-          <div class="details">
-            <div class="image">
-              <img src="<%= products[i].image %>" alt="" />
+      <form
+        class="form-editor"
+        action="/products/<%= productEdit.id %>?_method=PUT"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <section class="breadcrumb-content">
+          <article id="breadcrumb">
+            <div>
+              <span class="page-title"
+                >ID:<%= productEdit.id %>, <%= productEdit.name%></span
+              >
             </div>
-            <div class="product-descriptions">
-              <span class="product-Name"><%= products[i].name %></span>
-              <span class="product-Price">$ <%= products[i].price%></span>
+          </article>
+        </section>
+        <section class="conteiner-section">
+          <article class="product-detail">
+            <div class="imagen">
+              <div class="imagen-producto">
+                <img class="capuccino" src="<%=productEdit.image%>" alt="" />
+              </div>
+              <label for="image"></label>
+              <input type="file" name="image" />
+              <label for="place">Tipo de producto:</label>
+              <input type="text" name="place" placeholder="¿Food or Coffee?" />
             </div>
-            <div class="product-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+            <div class="form">
+              <h1><%=productEdit.name%></h1>
+              <label for="name">Nombre:</label>
+              <input type="text" name="name" value="<%=productEdit.name%>" />
+              <br />
+              <div>
+                <p class="price">$<%=productEdit.price%></p>
+                <label for="price">Precio:</label>
+                <input
+                  type="text"
+                  name="price"
+                  value="<%= productEdit.price %>"
+                />
+                <br />
+              </div>
             </div>
-            <div class="product-buttons">
-            <a href="../products/edit/<%= products[i].id %>"><button type="button" class="product-buy">Editar</button></a>
-              
+          </article>
+          <article class="container-descrip">
+            <div class="description">
+              <div class="description-article">
+                <h3>Descripción:</h3>
+                <p><%=productEdit.description%></p>
+                <label for="description">Descripción</label>
+                <input
+                  type="text"
+                  name="description"
+                  value="<%= productEdit.description %>"
+                />
+                <br />
+                <label for="category"
+                  >Categorias: <%= productEdit.category %></label
+                >
+                <input
+                  type="text"
+                  name="category"
+                  placeholder='serparar categorias con ","'
+                />
+                <br />
+                <label for="stock">Stock</label>
+                <input
+                  type="text"
+                  name="stock"
+                  value="<%= productEdit.stock %>"
+                />
+                <br />
+              </div>
             </div>
-          </div>
-        </article>
-        <% }%>
-      </div>
-    
+          </article>
+        </section>
+        <button type="submit">Editar</button>
+      </form>
     </main>
     <%- include('../partials/footer') %>
   </body>
