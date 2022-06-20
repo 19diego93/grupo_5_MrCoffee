@@ -55,7 +55,7 @@
               <div class="description-article">
                 <h3>Descripción:</h3>
                 <p><%=productEdit.description%></p>
-                <label for="description">Descripción</label>
+                <label for="description">Descripción:</label>
                 <input
                   type="text"
                   name="description"
@@ -63,12 +63,12 @@
                 />
                 <br />
                 <label for="category"
-                  >Categorias: <%= productEdit.category %></label
+                  >Categorias (separar categorias con "," ):</label
                 >
                 <input
                   type="text"
                   name="category"
-                  placeholder='serparar categorias con ","'
+                  value="<%= productEdit.category %>"
                 />
                 <br />
                 <label for="stock">Stock</label>

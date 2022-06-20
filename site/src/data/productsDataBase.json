@@ -1,8 +1,8 @@
 [
   {
     "id": "1",
-    "image": "/img/coffee/1.png",
     "name": "Skinny Vainilla Latte",
+    "image": "/img/coffee/1.png",
     "description": "Café espresso con leche descremada al vapor y toques de vainilla sin azúcar.",
     "category": [
       "Café",
@@ -10,8 +10,7 @@
       "Lattes"
     ],
     "stock": "0",
-    "price": "200",
-    "rating": "4"
+    "price": "200"
   },
   {
     "id": 2,
