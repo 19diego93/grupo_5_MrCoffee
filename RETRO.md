@@ -1,7 +1,7 @@
 # Comenzar a hacer:
 
 ```
- Agregar un tablero en trello para la comuicación del equipo,
+ Tablero trello: https://trello.com/invite/b/GDl9UoXC/ed646b4005cf71990f59d68a718531bd/mrcoffee,
 ```
 
 # Hacer más:
