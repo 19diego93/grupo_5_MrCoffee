@@ -4,6 +4,8 @@
 
 ##### Mr Coffee es un sitio enfocado en la venta de café y comida de manera virtual, al pagar de forma virtual se puede retirar en el local más cercano. Si el cliente desea utilizar efectivo se le mostrara los locales más cercanos a su ubicación. El sitio también está pensado para que desde el local puedan hacer su pedido desde una computadora, de esa forma se haría más eficiente la venta.
 
+## [Trello](https://trello.com/b/GDl9UoXC/mrcoffee)
+
 ### Prerrequisitos 📋
 
 Se necesita Node.Js para instalar el software
