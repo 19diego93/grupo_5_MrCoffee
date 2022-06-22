@@ -32,6 +32,12 @@
   border-radius: 15px;
   width: 100%;
 }
+.imagen-editProducts {
+  width: 160px;
+}
+.imagen-editProducts img {
+  width: 100%;
+}
 .buttonImage-createproduct {
   width: 100%;
   padding: 10px;
@@ -40,6 +46,12 @@
   border-radius: 10px;
   background: #111111d0;
   color: #fff;
+}
+.container-button-editProducts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .button-createProduct {
   background: #111111d0;
@@ -51,6 +63,10 @@
 }
 .button-createProduct:hover {
   opacity: 0.8;
+}
+.red {
+  background-color: rgb(171, 11, 11);
+  border: 2px solid rgb(85, 10, 10);
 }
 .form-editor label {
   margin: 20px;
@@ -131,6 +147,9 @@
   }
   .button-createProduct {
     font-size: 25px;
+  }
+  .imagen-editProducts {
+    width: 250px;
   }
 }
 

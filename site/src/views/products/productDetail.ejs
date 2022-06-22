@@ -70,17 +70,10 @@
               </div>
             </form>
             <div class="container-buttons-detail">
-              <a href="/products/edit/<%=product.id%>" class="button-edit">
+              <a href="/admin/edit/<%=product.id%>" class="button-edit">
                 <p>EDITAR</p>
               </a>
-              <div class="button-delete">
-                <form
-                  action="/admin/<%=product.id%>?_method=DELETE"
-                  method="POST"
-                >
-                  <button type="submit">ELIMINAR</button>
-                </form>
-              </div>
+              <div class="button-delete"><%- include('../admin/delete') %></div>
             </div>
           </div>
         </article>

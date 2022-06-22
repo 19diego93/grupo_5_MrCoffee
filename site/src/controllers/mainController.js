@@ -9,10 +9,10 @@ const mainController = {
     let categoryCoffee = [];
     let categoryFood = [];
     for (let i = 0; i < products.length; i++) {
-      if (products[i].category[0] == "Café" && products[i].stock > 0) {
+      if (products[i].category[0] == "coffee" && products[i].stock > 0) {
         categoryCoffee.push(products[i]);
       }
-      if (products[i].category[0] == "Comida" && products[i].stock > 0) {
+      if (products[i].category[0] == "food" && products[i].stock > 0) {
         categoryFood.push(products[i]);
       }
     }
