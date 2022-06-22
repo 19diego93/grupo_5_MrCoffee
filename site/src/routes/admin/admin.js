@@ -2,10 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const multer = require("multer");
-const adminController = require(path.join(
-  __dirname,
-  "/../../controllers/adminController"
-));
+const adminController = require("../../controllers/adminController");
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path.join(__dirname, "../../../public/img/products"));
@@ -21,5 +18,7 @@ router.get("/create", adminController.viewCreate);
 router.post("/", upload.single("image"), adminController.create);
 
 router.get("/edit", adminController.viewEdit);
+
+router.delete("/:id", adminController.destroy);
 
 module.exports = router;

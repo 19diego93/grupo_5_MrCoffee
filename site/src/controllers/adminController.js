@@ -29,12 +29,28 @@ const adminController = {
     };
 
     allProducts.push(nuevoProduct);
-    let guardar = JSON.stringify(allProducts, null, 2);
-    fs.writeFileSync(productsFilePath, guardar, "utf-8");
+    let Update = JSON.stringify(allProducts, null, 2);
+    fs.writeFileSync(productsFilePath, Update, "utf-8");
     res.redirect("/");
   },
   viewEdit: (req, res) => {
     res.render("admin/editProducts", { products });
+  },
+
+  destroy: (req, res) => {
+    allProducts = products;
+
+    let destroy = req.params.id;
+
+    let destroying = allProducts.filter((product) => {
+      return product.id != destroy;
+    });
+    console.log(destroying);
+
+    let Update = JSON.stringify(destroying, null, 2);
+    fs.writeFileSync(productsFilePath, Update, "utf-8");
+
+    res.redirect("/");
   },
 };
 
