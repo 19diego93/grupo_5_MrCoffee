@@ -36,7 +36,6 @@ const productsController = {
     let idProduct = req.params.id;
     let itemEditado = products.map((item) => {
       if (item.id == idProduct) {
-        
         let product = {
           id: idProduct,
           name: req.body.name,
@@ -49,8 +48,8 @@ const productsController = {
 
         let reqBodyCategory = req.body.category;
         let toArray = reqBodyCategory.split(",");
-        product.category = toArray
-        
+        product.category = toArray;
+
         if (req.file) {
           product.image = "/img/" + req.body.place + "/" + req.file.filename;
           fsExtra.moveSync(

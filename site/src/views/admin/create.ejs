@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/products/create.css" />
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <main class="main-createProduct">
+      <div class="content-form-create">
+      <div class="container-form-createProduct">
+        <h1>Crea un Producto</h1>
+        <br />
+        <br />
+        <form class="form-editor" action="/admin" method="POST" enctype="multipart/form-data">
+          <label for="name">
+            <p>Nombre:</p>
+            <input
+              type="text"
+              name="name"
+              placeholder=" Ej: Chocolate"
+            />
+          </label>
+          <label for="image">
+            <p>Imagen:</p>
+            <div class="buttonImage-createproduct">
+              <input
+                type="file"
+                name="image"
+                accept="image/*"
+              />
+            </div>
+          </label>
+          <label for="description">
+            <p>Descripción:</p>
+            <textarea name="description" id="" cols="20" rows="10" placeholder=" Escriba una descripcion"></textarea>
+          </label>
+          <label for="category">
+            <p>Selecciona el tipo de producto:</p>
+            <select name="category">
+              <option value="coffee">Cafe</option>
+              <option value="food">Comida</option>
+            </select>
+          </label>
+          <label for="category2">
+            <p>Selecciona una Categoria:</p>
+            <select name="category2">
+              <option value="undefined" selected>Ninguna</option>
+              <option value="Americano">Americano</option>
+            </select>
+          </label>
+          <label for="stock">
+            <p>Stock:</p>
+            <input type="number" name="stock" placeholder="0" />
+          </label>
+          <label for="price">
+            <p>Precio:</p>
+            <input type="number" name="price" placeholder="0" />
+          </label>
+          <label for="offer">
+            <p>Oferta:</p>
+            <input type="number" name="offer" placeholder="0" />
+          </label>
+          <input type="submit" class="button-createProduct" value="Crear"></input>
+        </form>
+      </div>
+    </div>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

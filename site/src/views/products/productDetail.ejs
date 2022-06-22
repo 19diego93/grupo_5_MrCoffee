@@ -22,7 +22,11 @@
         <article class="product-detail">
           <div class="imagen">
             <div class="imagen-producto">
-              <img class="capuccino" src="<%=product.image%>" alt="" />
+              <img
+                class="capuccino"
+                src="/img/products/<%=product.image%>"
+                alt="imagen del producto"
+              />
             </div>
           </div>
           <div class="form">
@@ -38,8 +42,8 @@
               <div class="tamaño-vaso">
                 <p>Tamaño</p>
                 <select name="tamaño" id="" class="tamaño-cafe">
-                  <option value="Small">Small</option>
-                  <option value="Big">Big</option>
+                  <option value="Small">mediano</option>
+                  <option value="Big">grande</option>
                 </select>
               </div>
               <div class="cant-unidades">
@@ -66,17 +70,10 @@
               </div>
             </form>
             <div class="container-buttons-detail">
-              <a href="/products/edit/<%=product.id%>" class="button-edit">
+              <a href="/admin/edit/<%=product.id%>" class="button-edit">
                 <p>EDITAR</p>
               </a>
-              <div class="button-delete">
-                <form
-                  action="/products/delete/<%=product.id%>?_method=DELETE"
-                  method="POST"
-                >
-                  <button type="submit">ELIMINAR</button>
-                </form>
-              </div>
+              <div class="button-delete"><%- include('../admin/delete') %></div>
             </div>
           </div>
         </article>

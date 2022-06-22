@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/products/edit.css" />
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <main class="main-createProduct">
+      <div class="content-form-create">
+      <div class="container-form-createProduct">
+        <h1>Editando el Producto</h1>
+        <br />
+        <h2>ID: <%=edit.id%></h2>
+        <br>
+        <form class="form-editor" action="/admin/<%=edit.id%>/update?_method=PUT" method="POST" enctype="multipart/form-data">
+          <label for="name">
+            <p>Nombre:</p>
+            <input
+              type="text"
+              name="name"
+              placeholder="Ej: Americano"
+              value="<%= edit.name%>"
+            />
+          </label>
+          <label for="">
+            <p>Imagen Actual:</p>
+            <div class="imagen-editProducts">
+              <img src="/img/products/<%= edit.image%>" alt="imagen del producto">
+            </div>
+          </label>
+          <label for="image">
+            <p>Cambia la imagen:</p>
+            <div class="buttonImage-createproduct">
+              <input
+                type="file"
+                name="image"
+                accept="image/*"
+              />
+            </div>
+          </label>
+          <label for="description">
+            <p>Descripción:</p>
+            <textarea name="description" id="" cols="20" rows="10" placeholder=" Escriba una descripcion"><%=edit.description%></textarea>
+          </label>
+          <label for="category">
+            <p>Selecciona el tipo de producto:</p>
+            <select name="category">
+              <% if( edit.category[0] == "coffee") { %>
+              <option value="coffee" selected>Café</option>
+              <option value="food">Comida</option>
+              <% } %>
+              <% if( edit.category[0] == "food") { %>
+              <option value="food" selected>Comida</option>
+              <option value="coffee">Café</option>
+              <% } %>
+            </select>
+          </label>
+          <label for="category2">
+            <p>Selecciona una Categoria:</p>
+            <select name="category2">
+              <option value="undefined" selected>Ninguna</option>
+              <option value="Americano">Americano</option>
+            </select>
+          </label>
+          <label for="stock">
+            <p>Stock:</p>
+            <input type="number" name="stock" value="<%=edit.stock%>" placeholder="0"/>
+          </label>
+          <label for="price">
+            <p>Precio:</p>
+            <input type="number" name="price" value="<%=edit.price%>" placeholder="0"/>
+          </label>
+          <label for="offer">
+            <p>Oferta:</p>
+            <input type="number" name="offer" value="<%=edit.offer%>" placeholder="0" minlength="0"/>
+          </label>
+          <div class="container-button-editProducts">
+            <input type="submit" class="button-createProduct" value="Guardar"></input>
+            <input type="reset" class="button-createProduct red" value="Descartar Cambios"></input>
+          </div>
+        </form>
+      </div>
+    </div>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

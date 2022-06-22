@@ -1,0 +1,139 @@
+.main-createProduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: unset;
+}
+.content-form-create {
+  background-color: #171717;
+  width: 100%;
+  padding: 90px 0px 50px 0px;
+  color: #fff;
+}
+
+.container-form-createProduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+.container-form-createProduct h1 {
+  text-align: center;
+}
+.form-editor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 15px;
+  width: 100%;
+}
+.buttonImage-createproduct {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: #111111d0;
+  color: #fff;
+}
+.button-createProduct {
+  background: #111111d0;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  cursor: pointer;
+}
+.button-createProduct:hover {
+  opacity: 0.8;
+}
+.form-editor label {
+  margin: 20px;
+  width: 100%;
+  padding: 5px;
+  margin: 15px;
+  border-bottom: 0.3rem solid #111111d0;
+}
+.form-editor label p {
+  color: #111111d0;
+}
+.form-editor label input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: #111111d0;
+  color: #fff;
+}
+.form-editor label select {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: #111111f3;
+  color: #fff;
+  font-size: 15px;
+}
+.form-editor label textarea {
+  width: 100%;
+  background: #111111d0;
+  color: #fff;
+  border-radius: 10px;
+}
+@media (min-width: 460px) {
+  /*! Tablets */
+  .form-editor label p {
+    font-size: 20px;
+  }
+  .form-editor {
+    width: 90%;
+    padding: 20px;
+  }
+  .form-editor label input {
+    font-size: 15px;
+  }
+  .form-editor label textarea {
+    font-size: 15px;
+  }
+  .button-createProduct {
+    font-size: 15px;
+  }
+  .content-form-create {
+    padding: 90px 20px 50px 20px;
+  }
+}
+@media (min-width: 768px) {
+  /*! LAPTOP */
+  .form-editor label p {
+    font-size: 30px;
+  }
+  .form-editor label input {
+    padding: 15px;
+  }
+  .form-editor label input {
+    font-size: 25px;
+  }
+  .form-editor label textarea {
+    font-size: 25px;
+  }
+  .form-editor label select {
+    font-size: 25px;
+  }
+  .form-editor {
+    width: 80%;
+  }
+  .button-createProduct {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /*! PC */
+}
