@@ -1,16 +1,16 @@
 [
   {
     "id": "1",
-    "name": "Skinny Vainilla Latte",
+    "name": "skinny Vainilla Latte",
     "image": "/img/coffee/1.png",
     "description": "Café espresso con leche descremada al vapor y toques de vainilla sin azúcar.",
+    "stock": "0",
+    "price": 200,
     "category": [
       "Café",
       "Cafés calientes",
       "Lattes"
-    ],
-    "stock": "0",
-    "price": "200"
+    ]
   },
   {
     "id": 2,
@@ -41,18 +41,17 @@
     "rating": 3
   },
   {
-    "id": 4,
-    "image": "/img/coffee/4.png",
+    "id": "4",
     "name": "Dulce de leche Latte",
+    "image": "/img/Coffee/4.png",
     "description": "Café espresso con dulce de leche, leche al vapor con crema batida y salsa de caramelo.",
     "category": [
       "Café",
       "Cafés calientes",
       "Lattes"
     ],
-    "stock": 20,
-    "price": 200,
-    "rating": 3.3
+    "stock": "20",
+    "price": "200"
   },
   {
     "id": 5,
