@@ -1,38 +1,38 @@
-//' Express | Path | Puerto
+//! Express | Path | Puerto
 const express = require("express");
 const path = require("path");
 const app = express();
 const mantenimiento = require("./middlewares/mantenimiento.js");
 
-//' Ejs
+//! Ejs
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-//' Middlewares
+//! Middlewares
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 app.use(mantenimiento);
-//' localhost
+//! localhost
 app.listen(3000, () => {
   console.log(`MrCoffee listening at http://localhost:3000`);
 });
 
-//' Router
-const mainRouter = require("./routes/statics/main.js");
-const usersRouter = require("./routes/users/users.js");
-const adminRouter = require("./routes/admin/admin.js");
-const productsRouter = require("./routes/products/products.js");
+//! Router
+const mainRouter = require("./routes/main.js");
+const usersRouter = require("./routes/users.js");
+const adminRouter = require("./routes/admin.js");
+const productsRouter = require("./routes/products.js");
 
-//' Puertos
-app.use("/", mainRouter); //! home
-app.use("/user", usersRouter); //! users.js
-app.use("/admin", adminRouter); //! admin.js
-app.use("/products", productsRouter); //! productos
+//! Puertos
+app.use("/", mainRouter);
+app.use("/user", usersRouter);
+app.use("/admin", adminRouter);
+app.use("/products", productsRouter);
 
-//' 404
+//! 404
 app.use((req, res, next) => {
   res.status(404).render("not-found");
 });

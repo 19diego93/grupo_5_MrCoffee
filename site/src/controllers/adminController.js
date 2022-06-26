@@ -1,39 +1,61 @@
-const { Console } = require("console");
+//! Extensiones
 const fs = require("fs");
 const path = require("path");
+const { validationResult } = require("express-validator");
 
+//! Archivos
 const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
+//! Controlador
 const adminController = {
+  viewList: (req, res) => {
+    let productos = [];
+    products.filter((producto) => {
+      if (producto.stock < 1) {
+        productos.push(producto);
+      }
+    });
+    res.render("admin/list", { productos });
+  },
   viewCreate: (req, res) => {
     res.render("admin/create");
   },
   create: (req, res) => {
     allProducts = products;
+    let errors = validationResult(req);
 
-    let image = "default-image.png";
+    if (errors.isEmpty()) {
+      let image = "default-image.png";
 
-    if (req.file != undefined) {
-      image = req.file.filename;
+      if (req.file != undefined) {
+        image = req.file.filename;
+      }
+
+      nuevoProduct = {
+        id: Date.now(),
+        name: req.body.name,
+        image: image,
+        description: req.body.description,
+        category: req.body.category,
+        stock: parseInt(req.body.stock),
+        price: parseInt(req.body.price),
+        offer: parseInt(req.body.offer),
+        rating: 0,
+      };
+
+      allProducts.push(nuevoProduct);
+      let update = JSON.stringify(allProducts, null, 2);
+      fs.writeFileSync(productsFilePath, update, "utf-8");
+      res.redirect("/");
+    } else {
+      // errors.mapped() Devuelve un objeto Json con un nombre y un objeto en cada nombre.
+      // errors.array() Devuelve un array de objetos.
+      res.render("admin/create", {
+        errors: errors.mapped(),
+        oldDate: req.body,
+      });
     }
-
-    nuevoProduct = {
-      id: Date.now() + Date.now() * 100,
-      name: req.body.name,
-      image: image,
-      description: req.body.description,
-      category: [req.body.category, req.body.category2],
-      stock: parseInt(req.body.stock),
-      price: parseInt(req.body.price),
-      offer: parseInt(req.body.offer),
-      rating: 0,
-    };
-
-    allProducts.push(nuevoProduct);
-    let update = JSON.stringify(allProducts, null, 2);
-    fs.writeFileSync(productsFilePath, update, "utf-8");
-    res.redirect("/");
   },
   viewEdit: (req, res) => {
     allProducts = products;
@@ -43,70 +65,73 @@ const adminController = {
   },
   update: (req, res) => {
     allProducts = products;
+    let errors = validationResult(req);
 
-    let imagen = allProducts.filter((product) => {
-      if (product.id == req.params.id) {
-        return product.image;
+    if (errors.isEmpty()) {
+      let image = req.body.oldImage;
+
+      if (req.file != undefined) {
+        image = req.file.filename;
+        let filePath = path.resolve(
+          __dirname,
+          "../../public/img/products/" + req.body.oldImage
+        );
+        try {
+          fs.unlinkSync(filePath);
+          // console.log("-----");
+          // console.log("Se borro la imagen :)");
+          // console.log("-----");
+        } catch (error) {
+          console.error("No se pudo eliminar la imagen anterior");
+          console.error(error.message);
+        }
+        //! Otra forma de borrar
+        // fs.unlink(filePath, callback);
+        // function callback(error) {
+        //   if (error) {
+        //     console.log("error al borrar la imagen");
+        //     console.error(error.message);
+        //   } else {
+        //     console.log("Imagen borrada");
+        //   }
+        // }
       }
-    });
-    let image = imagen[0].image;
 
-    let calificacion = allProducts.filter((product) => {
-      if (product.id == req.params.id) {
+      if (!req.body.rating.length > 0) {
+        req.body.rating = 0;
+      }
+
+      editProduct = {
+        id: parseInt(req.params.id),
+        name: req.body.name,
+        image: image,
+        description: req.body.description,
+        category: req.body.category,
+        stock: parseInt(req.body.stock),
+        price: parseInt(req.body.price),
+        offer: parseInt(req.body.offer),
+        rating: parseFloat(req.body.rating),
+      };
+
+      let edited = allProducts.map((product) => {
+        if (product.id == req.params.id) {
+          return (product = editProduct);
+        }
         return product;
-      }
-    });
-    let rating = calificacion[0].rating;
-    console.log(calificacion);
-    if (rating == undefined) {
-      rating = 0;
-    }
+      });
 
-    if (req.file != undefined) {
-      image = req.file.filename;
+      let update = JSON.stringify(edited, null, 2);
+      fs.writeFileSync(productsFilePath, update, "utf-8");
+      res.redirect("/");
+    } else {
+      let edit = allProducts.filter((product) => product.id == req.params.id);
+      res.render("admin/edit", {
+        errors: errors.mapped(),
+        oldDate: req.body,
+        edit: edit[0],
+      });
     }
-    let category = [];
-    if (req.body.category) {
-      category.push(req.body.category);
-    }
-    if (req.body.category2 != "undefined") {
-      category.push(req.body.category2);
-    }
-    editProduct = {
-      id: parseInt(req.params.id),
-      name: req.body.name,
-      image: image,
-      description: req.body.description,
-      category: category,
-      stock: parseInt(req.body.stock),
-      price: parseInt(req.body.price),
-      offer: parseInt(req.body.offer),
-      rating: rating,
-    };
-
-    if (!editProduct.stock > 0) {
-      editProduct.stock = 0;
-    }
-    if (!editProduct.price > 0) {
-      editProduct.price = 0;
-    }
-    if (!editProduct.offer > 0) {
-      editProduct.offer = 0;
-    }
-    console.log(editProduct);
-
-    let edited = allProducts.map((product) => {
-      if (product.id == req.params.id) {
-        return (product = editProduct);
-      }
-      return product;
-    });
-
-    let update = JSON.stringify(edited, null, 2);
-    fs.writeFileSync(productsFilePath, update, "utf-8");
-    res.redirect("/");
   },
-
   destroy: (req, res) => {
     allProducts = products;
 

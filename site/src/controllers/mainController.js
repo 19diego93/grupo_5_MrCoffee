@@ -1,18 +1,21 @@
+//! Extensiones
 const fs = require("fs");
 const path = require("path");
 
+//! Archivos
 const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
+//! Controlador
 const mainController = {
   index: (req, res) => {
     let categoryCoffee = [];
     let categoryFood = [];
     for (let i = 0; i < products.length; i++) {
-      if (products[i].category[0] == "coffee" && products[i].stock > 0) {
+      if (products[i].category == "coffee" && products[i].stock > 0) {
         categoryCoffee.push(products[i]);
       }
-      if (products[i].category[0] == "food" && products[i].stock > 0) {
+      if (products[i].category == "food" && products[i].stock > 0) {
         categoryFood.push(products[i]);
       }
     }
