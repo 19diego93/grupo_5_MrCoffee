@@ -1,5 +1,6 @@
 //! Archivos
 const controller = require("../controllers/usersController");
+const upload = require("./multer/users");
 
 //! Extensiones
 const express = require("express");

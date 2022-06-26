@@ -2,23 +2,11 @@
 const controller = require("../controllers/adminController");
 const creation = require("../controllers/validations/create");
 const edit = require("../controllers/validations/edit");
+const upload = require("./multer/admin");
 
 //! Extensiones
 const express = require("express");
 const router = express.Router();
-const path = require("path");
-const multer = require("multer");
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "../../public/img/products"));
-  },
-  filename: (req, file, cb) => {
-    const newFile = "img-" + Date.now() + path.extname(file.originalname);
-    cb(null, newFile);
-  },
-});
-const upload = multer({ storage });
 
 //! Rutas
 router.get("/list", controller.viewList);
