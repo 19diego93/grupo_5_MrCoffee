@@ -1,182 +1,20 @@
 [
-  {
-    "id": 1,
-    "first_name": "Ali",
-    "last_name": "Urwen",
-    "email": "aurwen0@discuz.net",
-    "password": "9rqAfcfp5VC",
-    "category": "user",
-    "image": "user_1.jpg"
-  },
-  {
-    "id": 2,
-    "first_name": "Renault",
-    "last_name": "Ablewhite",
-    "email": "rablewhite1@youku.com",
-    "password": "yCe3JmW9GRLI",
-    "category": "user",
-    "image": "user_2.jpg"
-  },
-  {
-    "id": 3,
-    "first_name": "Uriah",
-    "last_name": "Capsey",
-    "email": "ucapsey2@fastcompany.com",
-    "password": "yd7q2Nx",
-    "category": "user",
-    "image": "user_3.jpg"
-  },
-  {
-    "id": 4,
-    "first_name": "Burr",
-    "last_name": "McCloughlin",
-    "email": "bmccloughlin3@marketwatch.com",
-    "password": "qdmOv774k5",
-    "category": "user",
-    "image": "user_4.jpg"
-  },
-  {
-    "id": 5,
-    "first_name": "Bald",
-    "last_name": "Impey",
-    "email": "bimpey4@blogs.com",
-    "password": "n8TuxZ3CgibZ",
-    "category": "user",
-    "image": "user_5.jpg"
-  },
-  {
-    "id": 6,
-    "first_name": "Morris",
-    "last_name": "Longley",
-    "email": "mlongley5@oracle.com",
-    "password": "GgHNWhwiaspr",
-    "category": "user",
-    "image": "user_6.jpg"
-  },
-  {
-    "id": 7,
-    "first_name": "Meridith",
-    "last_name": "Checchetelli",
-    "email": "mchecchetelli6@hugedomains.com",
-    "password": "tLWLvtYqpM3V",
-    "category": "user",
-    "image": "user_7.jpg"
-  },
-  {
-    "id": 8,
-    "first_name": "Valentina",
-    "last_name": "Dachey",
-    "email": "vdachey7@vistaprint.com",
-    "password": "0l96RNX",
-    "category": "user",
-    "image": "user_8.jpg"
-  },
-  {
-    "id": 9,
-    "first_name": "Etheline",
-    "last_name": "Baddiley",
-    "email": "ebaddiley8@imageshack.us",
-    "password": "kIpP1z",
-    "category": "user",
-    "image": "user_9.jpg"
-  },
-  {
-    "id": 10,
-    "first_name": "Jodi",
-    "last_name": "Karchewski",
-    "email": "jkarchewski9@naver.com",
-    "password": "Svw3BpP",
-    "category": "user",
-    "image": "user_10.jpg"
-  },
-  {
-    "id": 11,
-    "first_name": "Petronilla",
-    "last_name": "Castanos",
-    "email": "pcastanosa@yellowpages.com",
-    "password": "PTlm9d2RSlTk",
-    "category": "user",
-    "image": "user_11.jpg"
-  },
-  {
-    "id": 12,
-    "first_name": "Tedda",
-    "last_name": "Shivlin",
-    "email": "tshivlinb@netlog.com",
-    "password": "lU0UCI",
-    "category": "user",
-    "image": "user_12.jpg"
-  },
-  {
-    "id": 13,
-    "first_name": "Mayor",
-    "last_name": "Bolstridge",
-    "email": "mbolstridgec@tripod.com",
-    "password": "ZMrnYS",
-    "category": "user",
-    "image": "user_13.jpg"
-  },
-  {
-    "id": 14,
-    "first_name": "Bo",
-    "last_name": "Danforth",
-    "email": "bdanforthd@technorati.com",
-    "password": "vkBTrley",
-    "category": "user",
-    "image": "user_14.jpg"
-  },
-  {
-    "id": 15,
-    "first_name": "Layla",
-    "last_name": "Deary",
-    "email": "ldearye@theglobeandmail.com",
-    "password": "dI74N96wgCr",
-    "category": "user",
-    "image": "user_15.jpg"
-  },
-  {
-    "id": 16,
-    "first_name": "Balduin",
-    "last_name": "Fawlkes",
-    "email": "bfawlkesf@yolasite.com",
-    "password": "3ffJzqiAgXl",
-    "category": "user",
-    "image": "user_16.jpg"
-  },
-  {
-    "id": 17,
-    "first_name": "Dorry",
-    "last_name": "Hackinge",
-    "email": "dhackingeg@seattletimes.com",
-    "password": "KpSRtBt2SKL",
-    "category": "user",
-    "image": "user_17.jpg"
-  },
-  {
-    "id": 18,
-    "first_name": "Maryellen",
-    "last_name": "Rawling",
-    "email": "mrawlingh@gizmodo.com",
-    "password": "IX85lEdko",
-    "category": "user",
-    "image": "user_18.jpg"
-  },
-  {
-    "id": 19,
-    "first_name": "Kim",
-    "last_name": "Beaves",
-    "email": "kbeavesi@1688.com",
-    "password": "ONMCaGxv",
-    "category": "user",
-    "image": "user_19.jpg"
-  },
-  {
-    "id": 20,
-    "first_name": "Lorena",
-    "last_name": "Issacson",
-    "email": "lissacsonj@over-blog.com",
-    "password": "pTI8AlVnMqXl",
-    "category": "user",
-    "image": "user_20.jpg"
-  }
+ {
+  "id": 1,
+  "category": "user",
+  "image": "defaultimg.jpg",
+  "fname": "Diego",
+  "lname": "Vallejo",
+  "mail": "super@Coffee.com",
+  "psw": "$2a$10$YuDtH4A83QybRYHRJVdOBOz7eYQx9nZWW7TE41Vbwed5kV3HZyjtq"
+ },
+ {
+  "id": 2,
+  "category": "user",
+  "image": "defaultimg.jpg",
+  "fname": "DIego",
+  "lname": "Vallejo",
+  "mail": "vallejodiego@live.com",
+  "psw": "$2a$10$w8j36hDvN/3ds82Ny/adH.XVI0ztWmfbGIUEMhospBT96SIySn4CK"
+ }
 ]

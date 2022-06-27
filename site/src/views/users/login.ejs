@@ -15,8 +15,8 @@
           <p class="login-text">Ingresa</p>
           <!--Formulario de registro sin servidor aún-->
           <form
-            action="aca va lo de php que todavia no vimos "
-            method="post"
+            action="/user/login"
+            method="POST"
             class="form-login"
           >
             <div class="contenedor-campo">
@@ -31,6 +31,11 @@
                   placeholder="superheroe@MrCoffee.com"
                 />
               </div>
+              <% if (locals.errors && errors.mail){ %>
+                <div class="text-danger">
+                  <%= errors.mail.msg %>
+                </div>
+                <% } %>
             </div>
             <div class="contenedor-campo">
               <label for="passwd" class="campo-label">Contraseña</label>
@@ -40,7 +45,7 @@
                   class="campo"
                   type="password"
                   id="passwd"
-                  name="passwd"
+                  name="psw"
                   placeholder="Contraseña"
                 />
               </div>
