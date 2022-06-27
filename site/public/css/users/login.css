@@ -53,6 +53,10 @@
   padding-bottom: 5px;
   color: #ad715c;
 }
+/* ! texto error bajo el campo */
+.text-danger {
+  color: red;
+}
 /*! contenedor icono campo */
 .caja-icono-campo {
   background-color: white;
