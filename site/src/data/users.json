@@ -3,18 +3,9 @@
   "id": 1,
   "category": "user",
   "image": "defaultimg.jpg",
-  "fname": "Diego",
-  "lname": "Vallejo",
-  "mail": "super@Coffee.com",
-  "psw": "$2a$10$YuDtH4A83QybRYHRJVdOBOz7eYQx9nZWW7TE41Vbwed5kV3HZyjtq"
- },
- {
-  "id": 2,
-  "category": "user",
-  "image": "defaultimg.jpg",
   "fname": "DIego",
   "lname": "Vallejo",
-  "mail": "vallejodiego@live.com",
-  "psw": "$2a$10$w8j36hDvN/3ds82Ny/adH.XVI0ztWmfbGIUEMhospBT96SIySn4CK"
+  "mail": "super@Coffee.com",
+  "psw": "$2a$10$IUCq8em2lcSHk3lPxfBwqOT07shJo09ID3IOiQEHGLiHS53A6QfDO"
  }
 ]

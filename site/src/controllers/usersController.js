@@ -24,14 +24,14 @@ const usersController = {
   const resultValidation = validationResult(req);
   
   if (resultValidation.errors.length > 0){
-    return res.render("../views/users/register", {
+    return res.render("users/register", {
       errors: resultValidation.mapped(),
       oldData: req.body,
     });
   }
     let userInDb = User.findByField('mail', req.body.mail);
     if (userInDb){
-      return res.render("../views/users/register", {
+      return res.render("users/register", {
         errors:{
           mail:{
             msg:"Este email ya está registrado"
@@ -50,7 +50,7 @@ const usersController = {
   },
 
   login: (req, res) => {
-    res.render("../views/users/login.ejs");
+    res.render("users/login");
   },
 
   // ! proceso de loggeado
