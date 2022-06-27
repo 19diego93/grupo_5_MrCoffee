@@ -47,17 +47,17 @@ El productDetail
 ### Qué hizo esta semana:
 
 ```
-reunion grupal, debate sobre el proyecto
+login y register 
 ```
 
 ### Se encontró con algún impedimento:
 
 ```
-ninguno
+al momento de pulear y pushear se generaron conflictos
 ```
 
 ### Qué va a hacer hoy o esta semana:
 
 ```
-modificar productCart
+agregar validaciones más en register, login y terminar el view del profile
 ```
