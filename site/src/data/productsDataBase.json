@@ -1,25 +1,10 @@
 [
   {
-    "id": 1,
-    "name": "Skinny Vainilla Latte",
-    "image": "1.png",
-    "description": "Café espresso con leche descremada al vapor y toques de vainilla sin azúcar.",
-    "category": [
-      "coffee"
-    ],
-    "stock": 20,
-    "price": 200,
-    "offer": 0,
-    "rating": 0
-  },
-  {
     "id": 2,
     "name": "Vainilla Latte",
     "image": "2.png",
     "description": "Café espresso con leche al vapor y toques de vainilla.",
-    "category": [
-      "coffee"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "offer": 0,
@@ -27,16 +12,13 @@
   },
   {
     "id": 3,
-    "image": "3.png",
     "name": "Latte",
+    "image": "3.png",
     "description": "Café espresso con leche vaporizada.",
-    "category": [
-      "coffee",
-      "Cafés calientes",
-      "Lattes"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
+    "offer": 0,
     "rating": 3
   },
   {
@@ -44,9 +26,7 @@
     "name": "Dulce de leche Latte",
     "image": "4.png",
     "description": "Café espresso con dulce de leche, leche al vapor con crema batida y salsa de caramelo.",
-    "category": [
-      "coffee"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "offer": 0,
@@ -57,9 +37,7 @@
     "name": "Cappuccino",
     "image": "5.png",
     "description": "Café espresso, leche vaporizada y abundante espuma de leche.",
-    "category": [
-      "coffee"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "offer": 0,
@@ -67,58 +45,46 @@
   },
   {
     "id": 6,
+    "name": "0",
     "image": "6.png",
-    "name": "Flat White",
-    "description": "Shots de café ristretto con leche vaporizada que finaliza con un punto dibujado en la superficie.",
-    "category": [
-      "coffee",
-      "Cafés calientes",
-      "Flat White"
-    ],
-    "stock": 20,
-    "price": 200,
-    "rating": 3.3
+    "description": "0",
+    "category": "coffee",
+    "stock": 0,
+    "price": 0,
+    "offer": 0,
+    "rating": 3
   },
   {
     "id": 7,
-    "image": "7.png",
     "name": "Americano",
+    "image": "7.png",
     "description": "Café espresso combinado con agua al mejor estilo americano.",
-    "category": [
-      "coffee",
-      "Cafés calientes",
-      "Americanos"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
-    "rating": 3.3
+    "offer": 0,
+    "rating": 3
   },
   {
     "id": 8,
-    "image": "8.png",
     "name": "Latte Macchiato",
+    "image": "8.png",
     "description": "Leche vaporizada con shots de café espresso que finaliza con un punto dibujado en la superficie.",
-    "category": [
-      "coffee",
-      "Cafés calientes",
-      "Macchiatos"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
-    "rating": 3.3
+    "offer": 0,
+    "rating": 3
   },
   {
     "id": 9,
-    "image": "9.png",
     "name": "Skinny Caramel Macchiato",
+    "image": "9.png",
     "description": "Vainilla sin azucar y leche 'manchada' con espresso, finalizada con el característico dibujo de caramelo",
-    "category": [
-      "coffee",
-      "Cafés calientes",
-      "Macchiatos"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
+    "offer": 0,
     "rating": 3.3
   },
   {
@@ -126,11 +92,7 @@
     "image": "10.png",
     "name": "Caramel Macchiato",
     "description": "Vainilla y leche 'manchada' con espresso, finalizada con el característico dibujo de caramelo.",
-    "category": [
-      "coffee",
-      "Cafés calientes",
-      "Macchiatos"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -140,11 +102,7 @@
     "image": "11.png",
     "name": "Mocha Blanco",
     "description": "Chocolate blanco, shots de Espresso y leche vaporizada, con crema batida.",
-    "category": [
-      "coffee",
-      "Cafés calientes",
-      "Mochas"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -154,11 +112,7 @@
     "image": "12.png",
     "name": "Mocha",
     "description": "Chocolate con café espresso y leche al vapor, con crema batida.",
-    "category": [
-      "coffee",
-      "Cafés calientes",
-      "Mochas"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -168,11 +122,7 @@
     "image": "13.png",
     "name": "Café del día con leche",
     "description": "Nuestras mezclas únicas de café en granos preparadas en sistema de filtrado, con una capa de leche vaporizada.",
-    "category": [
-      "coffee",
-      "Cafés calientes",
-      "Café filtrado"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -182,11 +132,7 @@
     "image": "14.png",
     "name": "Café del día",
     "description": "Nuestras mezclas únicas de café en granos preparadas en sistema de filtrado.",
-    "category": [
-      "coffee",
-      "Cafés calientes",
-      "Café filtrado"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -196,11 +142,7 @@
     "image": "15.png",
     "name": "Chocolate Caliente",
     "description": "Una deliciosa mezcla de chocolate, vainilla y leche, decorada con crema batida y salsa de chocolate.",
-    "category": [
-      "coffee",
-      "Cafés calientes",
-      "Chocolates"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -210,11 +152,7 @@
     "image": "16.png",
     "name": "Avellana Shaken Espresso con Avena Helado",
     "description": "Café Espresso batido con jarabe de avellana y cubierto con bebida de avena.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Shaken Espresso"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -224,9 +162,7 @@
     "name": "Chocolate Shaken Espresso",
     "image": "17.png",
     "description": "Café Espresso batido con salsa mocha y cubierto con bebida de avena helado.",
-    "category": [
-      "coffee"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "offer": 0,
@@ -237,11 +173,7 @@
     "image": "18.png",
     "name": "Skinny Caramel Macchiato Helado",
     "description": "Hielo, vainilla sin azúcar y leche descremada 'manchada' con espresso, finalizada con el característico dibujo de caramelo.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Macchiatos"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -251,11 +183,7 @@
     "image": "19.png",
     "name": "Caramel Macchiato Helado",
     "description": "Hielo, vainilla y leche 'manchada' con espresso, finalizada con el característico dibujo de caramelo.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Macchiatos"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -265,11 +193,7 @@
     "image": "20.png",
     "name": "Cappuccino Helado",
     "description": "El balance perfecto entre nuestro café espresso, hielo, leche y abundante espuma de leche.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Cappuccinos"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -279,11 +203,7 @@
     "image": "21.png",
     "name": "Skinny Vainilla Latte Helado",
     "description": "Delicioso café espresso con leche descremada, hielo y toques de vainilla sin azúcar.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Lattes"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 4
@@ -293,11 +213,7 @@
     "image": "22.png",
     "name": "Latte Helado",
     "description": "Deliciosa combinación de café espresso con hielo y leche.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Lattes"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -307,11 +223,7 @@
     "image": "23.png",
     "name": "Vainilla Latte Helado",
     "description": "Delicioso café espresso con leche, hielo y dulces toques de vainilla.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Lattes"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -321,11 +233,7 @@
     "image": "24.png",
     "name": "Dulce de Leche Latte Helado",
     "description": "Café espresso con delicioso dulce de leche, hielo y leche con un remolino de crema batida y salsa de caramelo.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Lattes"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -335,11 +243,7 @@
     "image": "25.png",
     "name": "Cold Brew Cold Foam",
     "description": "Bebida helada a base de granos de café colombianos infusionados por 20 horas coronada con una cremosa espuma de leche fría.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Cold Brews"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -349,11 +253,7 @@
     "image": "26.png",
     "name": "Sweet Vainilla Cold Brew",
     "description": "Bebida helada a base de granos de café colombianos infusionados por 20 horas, endulzada con vainilla y finalizada con crema de leche.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Cold Brews"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -363,11 +263,7 @@
     "image": "27.png",
     "name": "Cold Brew",
     "description": "Bebida helada a base de granos de café colombianos infusionados por 20 horas.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Cold Brews"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -377,11 +273,7 @@
     "image": "28.png",
     "name": "Americano Helado",
     "description": "Delicioso café espresso combinado con agua y hielo, al mejor estilo americano.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Americanos"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -391,11 +283,7 @@
     "image": "29.png",
     "name": "Mocha Blanco Helado",
     "description": "Irresistible combinación de chocolate blanco, shots de espresso, hielo y leche, coronado con crema batida.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Mochas"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -405,11 +293,7 @@
     "image": "30.png",
     "name": "Mocha Helado",
     "description": "Intenso chocolate con café espresso, hielo y leche, coronado con crema batida.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Mochas"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -419,11 +303,7 @@
     "image": "31.png",
     "name": "Café del día con Leche Helado",
     "description": "Nuestros exquisitos y selectos granos de café preparados en método filtrado y agregado de hielo para una infusión refrescante.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Café filtrado"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -433,11 +313,7 @@
     "image": "32.png",
     "name": "Café del día Helado",
     "description": "Nuestros exquisitos y selectos granos de café preparados en método filtrado.",
-    "category": [
-      "coffee",
-      "Cafés helados",
-      "Café filtrado"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -447,11 +323,7 @@
     "image": "33.png",
     "name": "Café Frappuccino",
     "description": "Frappuccino a base de café. Dulce y cremosa combinación de café, leche y hielo.",
-    "category": [
-      "coffee",
-      "Frappuccino",
-      "Frappuccino con café"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -461,11 +333,7 @@
     "image": "34.png",
     "name": "Caramel Frappuccino",
     "description": "Frappuccino a base de café. Dulce combinación de caramelo, café, leche y hielo, decorado con un remolino de crema batida y topping de caramelo.",
-    "category": [
-      "coffee",
-      "Frappuccino",
-      "Frappuccino con café"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -475,11 +343,7 @@
     "image": "35.png",
     "name": "Mocha Blanco Frappuccino",
     "description": "Frappuccino a base de café. Deliciosa mezcla que combina café, leche y chocolate blanco, batido con hielo, coronado con crema batida y salsa de mocha.",
-    "category": [
-      "coffee",
-      "Frappuccino",
-      "Frappuccino con café"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -489,11 +353,7 @@
     "image": "36.png",
     "name": "Mocha Frappuccino",
     "description": "Frappuccino a base de café. Deliciosa mezcla que combina café, leche y chocolate, batido con hielo, coronado con crema batida y salsa de mocha.",
-    "category": [
-      "coffee",
-      "Frappuccino",
-      "Frappuccino con café"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -503,11 +363,7 @@
     "image": "37.png",
     "name": "Chai Frappuccino",
     "description": "Nuestro Té Chai combinado con leche, hielo molido y una deliciosa terminación de crema batida.",
-    "category": [
-      "coffee",
-      "Frappuccino",
-      "Frappuccino sin café"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -517,11 +373,7 @@
     "image": "38.png",
     "name": "Mocha Creme Frappuccino",
     "description": "Frappuccino a base de crema. Perfecta combinación a base de crema y chocolate, batida con hielo, decorada con crema batida y salsa de chocolate.",
-    "category": [
-      "coffee",
-      "Frappuccino",
-      "Frappuccino sin café"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -531,11 +383,7 @@
     "image": "39.png",
     "name": "Mint Citrus",
     "description": "La base de hierbabuena de este té se complementa con notas de menta fresca y toques de verbena dulce y especiada.",
-    "category": [
-      "coffee",
-      "Té caliente",
-      "Té Verde"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -545,11 +393,7 @@
     "image": "40.png",
     "name": "Chai",
     "description": "Deliciosa combinación de té y especias, al estilo de los habitantes del Himalaya. Una intensa infusión de canela, jengibre, cardamomo, pimienta negra y anís estrellado.",
-    "category": [
-      "coffee",
-      "Té caliente",
-      "Té Chai"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -559,11 +403,7 @@
     "image": "41.png",
     "name": "Chai Latte",
     "description": "Nuestro mezcla de té chai y leche perfectamente vaporizada, decorado con una sutil capa de espuma de leche.",
-    "category": [
-      "coffee",
-      "Té caliente",
-      "Té Chai"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -573,11 +413,7 @@
     "image": "42.png",
     "name": "Youthberry",
     "description": "Una mezcla de té blanco cítrico con toques brillantes de sabor tropical. Con mango, naranja, hibisco y pétalos de rosa. Hay un toque de paraíso en cada sorbo de esta fantástica mezcla.",
-    "category": [
-      "coffee",
-      "Té caliente",
-      "Infusiones"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -587,11 +423,7 @@
     "image": "43.png",
     "name": "Hibiscus",
     "description": "Las flores de hibisco impregnan esta infusión de una ligera acidez y un extraordinario color rojizo. Brillantes sabores tropicales de papaya y mango con hierba limón cítrica y una pizca de canela.",
-    "category": [
-      "coffee",
-      "Té caliente",
-      "Infusiones"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -601,11 +433,7 @@
     "image": "44.png",
     "name": "Earl Grey",
     "description": "Una brillante mezcla de tés negros de Sri Lanka con una aromática esencia de bergamota y lavanda.",
-    "category": [
-      "coffee",
-      "Té caliente",
-      "Té Negro"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -615,11 +443,7 @@
     "image": "45.png",
     "name": "English Breakfast",
     "description": "Mezcla de tés negros: Assam de la India, Ceilán de Sri Lanka y té negro de China. Los tés de Assam añaden toques profundos de malta y té negro y un rico aroma a caramelo. Los tés de Ceilán aportan un sabor brillante y completo, mientras que los de China tienen un sutil toque como recién recién horneado, lo cual hace del English Breakfast una opción única.",
-    "category": [
-      "coffee",
-      "Té caliente",
-      "Té Negro"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -629,11 +453,7 @@
     "image": "46.png",
     "name": "Shaken Lemonade Hibiscus",
     "description": "Nuestro té de hibiscus combinado con limón y mezclado con hielo.",
-    "category": [
-      "coffee",
-      "Té helado",
-      "Té Herbal helado"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 4
@@ -643,11 +463,7 @@
     "image": "47.png",
     "name": "Shaken Lemonade Green Tea",
     "description": "Nuestro té verde combinado con limón y mezclado con hielo.",
-    "category": [
-      "coffee",
-      "Té helado",
-      "Té Verde helado"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -657,11 +473,7 @@
     "image": "48.png",
     "name": "Mango Dragonfruit Limonada",
     "description": "Limonada con Mango Dragon Fruit, el sabor de esta fruta se ha descripto como una mezcla ligeramente dulce entre un kiwi y una pera.",
-    "category": [
-      "coffee",
-      "Heladas",
-      "Refreshers"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -671,11 +483,7 @@
     "image": "49.png",
     "name": "Frutilla Açai",
     "description": "Frutilla, con un toque de açaí, un fruto rojo y exótico que nos recuerda el sabor del cacao y la canela.",
-    "category": [
-      "coffee",
-      "Heladas",
-      "Refreshers"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -685,11 +493,7 @@
     "image": "50.png",
     "name": "Dragon Drink",
     "description": "Leche de coco con Mango Dragon Fruit, el sabor de esta fruta se ha descripto como una mezcla ligeramente dulce entre un kiwi y una pera.",
-    "category": [
-      "coffee",
-      "Heladas",
-      "Refreshers"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -699,11 +503,7 @@
     "image": "51.png",
     "name": "Pink Drink",
     "description": "Frutilla, leche de coco, con un toque de açaí, un fruto rojo y exótico que nos recuerda el sabor del cacao y la canela.",
-    "category": [
-      "coffee",
-      "Heladas",
-      "Refreshers"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -713,11 +513,7 @@
     "image": "52.png",
     "name": "Mango Dragonfruit Frozen Refresher",
     "description": "Una combinación refrescante de mando y dragonfruit con extracto de café verde y hielo molido.",
-    "category": [
-      "coffee",
-      "Heladas",
-      "Refreshers"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -727,11 +523,7 @@
     "image": "53.png",
     "name": "Frutilla Acaí Frozen Refresher",
     "description": "La dulzura de las frutillas combinada con hibiscus, notas de açaí y extracto de café verde con hielo molido.",
-    "category": [
-      "coffee",
-      "Heladas",
-      "Refreshers"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -741,11 +533,7 @@
     "image": "54.png",
     "name": "Mango Dragonfruit",
     "description": "Mango Dragon Fruit, el sabor de esta fruta se ha descripto como una mezcla ligeramente dulce entre un kiwi y una pera.",
-    "category": [
-      "coffee",
-      "Heladas",
-      "Refreshers"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -755,11 +543,7 @@
     "image": "55.png",
     "name": "Frutilla Açai Limonada",
     "description": "Frutilla, limonada, con un toque de açaí, un fruto rojo y exótico que nos recuerda el sabor del cacao y la canela.",
-    "category": [
-      "coffee",
-      "Heladas",
-      "Refreshers"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -769,11 +553,7 @@
     "image": "56.png",
     "name": "Jugo de manzana",
     "description": "Jugo de manzana 300ml.",
-    "category": [
-      "coffee",
-      "Heladas",
-      "Jugos, aguas y bebidas saborizadas"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -783,11 +563,7 @@
     "image": "57.png",
     "name": "Jugo de naranja",
     "description": "Jugo de naranja 300ml",
-    "category": [
-      "coffee",
-      "Heladas",
-      "Jugos, aguas y bebidas saborizadas"
-    ],
+    "category": "coffee",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -797,11 +573,7 @@
     "image": "58.png",
     "name": "Croissant Relleno con Crema de Avellanas",
     "description": "Croissant con masa de hojaldre y cubierto con una salsa de cacao y avellanas.",
-    "category": [
-      "food",
-      "Bakery",
-      "Recién horneados"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 5
@@ -811,27 +583,20 @@
     "image": "59.png",
     "name": "Croissant",
     "description": "Elaborado con masa de hojaldre crujiente y salada, nuestro Croissant se hornea especialmente para vos.",
-    "category": [
-      "food",
-      "Bakery",
-      "Recién horneados"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 4
   },
   {
     "id": 60,
-    "image": "60.png",
     "name": "Chocolate Croissant",
+    "image": "60.png",
     "description": "Exquisita masa de hojaldre rellena de chocolate semiamargo y horneado especialmente para vos.",
-    "category": [
-      "food",
-      "Bakery",
-      "Recién horneados"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
+    "offer": 0,
     "rating": 4
   },
   {
@@ -839,11 +604,7 @@
     "image": "61.png",
     "name": "Medialuna",
     "description": "La clásica medialuna reversionada a la manera de MrCoffee: Crujiente, esponjosa, de mayor tamaño y ¡recién horneada!",
-    "category": [
-      "food",
-      "Bakery",
-      "Recién horneados"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -853,11 +614,7 @@
     "image": "62.png",
     "name": "Medialuna rellena con jamón y queso",
     "description": "Nuestra Mezzaluna recién horneada, rellena con queso tybo y jamón cocido.",
-    "category": [
-      "food",
-      "Bakery",
-      "Recién horneados"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -867,11 +624,7 @@
     "image": "63.png",
     "name": "Trenzado de Ricota y Cítricos",
     "description": "Una delicioso trenzado de masa hojaldrada relleno con ricota y cítricos.",
-    "category": [
-      "food",
-      "Bakery",
-      "Croissants, Rolls & más"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -881,11 +634,7 @@
     "image": "64.png",
     "name": "Croissant Relleno con Crema de Avellanas",
     "description": "Croissant con masa de hojaldre y cubierto con una salsa de cacao y avellanas.",
-    "category": [
-      "food",
-      "Bakery",
-      "Croissants, Rolls & más"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -895,11 +644,7 @@
     "image": "65.png",
     "name": "Croissant",
     "description": "Elaborado con masa de hojaldre crujiente y salada, nuestro Croissant se hornea especialmente para vos.",
-    "category": [
-      "food",
-      "Bakery",
-      "Croissants, Rolls & más"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -909,11 +654,7 @@
     "image": "66.png",
     "name": "Medialuna rellena con jamón y queso",
     "description": "Nuestra Mezzaluna recién horneada, rellena con queso tybo y jamón cocido.",
-    "category": [
-      "food",
-      "Bakery",
-      "Croissants, Rolls & más"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -923,13 +664,10 @@
     "image": "67.png",
     "name": "Double Choco Brownie",
     "description": "Brownie húmedo de chocolate.",
-    "category": [
-      "food",
-      "Bakery",
-      "Croissants, Rolls & más"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
+    "offer": 2,
     "rating": 3.3
   },
   {
@@ -937,11 +675,7 @@
     "image": "68.png",
     "name": "Roll de manzana",
     "description": "Anillo de suave masa horneada relleno con manzana.",
-    "category": [
-      "food",
-      "Bakery",
-      "Croissants, Rolls & más"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -951,11 +685,7 @@
     "image": "69.png",
     "name": "Roll de canela",
     "description": "Anillo de suave masa horneada relleno con canela.",
-    "category": [
-      "food",
-      "Bakery",
-      "Croissants, Rolls & más"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -965,11 +695,7 @@
     "image": "70.png",
     "name": "Donut rellena de Dulce de leche",
     "description": "Donut rellena con dulce de leche y glaseada.",
-    "category": [
-      "food",
-      "Bakery",
-      "Croissants, Rolls & más"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -979,11 +705,7 @@
     "image": "71.png",
     "name": "Chocolate Croissant",
     "description": "Exquisita masa de hojaldre rellena de chocolate semiamargo y horneado especialmente para vos.",
-    "category": [
-      "food",
-      "Bakery",
-      "Croissants, Rolls & más"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -993,11 +715,7 @@
     "image": "72.png",
     "name": "Medialuna",
     "description": "La clásica medialuna reversionada a la manera de Starbucks: Crujiente, esponjosa, de mayor tamaño y ¡recién horneada!",
-    "category": [
-      "food",
-      "Bakery",
-      "Croissants, Rolls & más"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1007,11 +725,7 @@
     "image": "73.png",
     "name": "Cheese Avocado Scon",
     "description": "Nuestro clásico scon de queso con queso crema y avocado.",
-    "category": [
-      "food",
-      "Bakery",
-      "Salados"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1021,11 +735,7 @@
     "image": "74.png",
     "name": "Bagel Avocado Toast",
     "description": "Nuestro clásico Bagel Multicereal con queso crema y avocado.",
-    "category": [
-      "food",
-      "Bakery",
-      "Salados"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1035,11 +745,7 @@
     "image": "75.png",
     "name": "Avocado Toast",
     "description": "Tostada en pan artesanal con queso crema y avocado.",
-    "category": [
-      "food",
-      "Bakery",
-      "Salados"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1049,11 +755,7 @@
     "image": "76.png",
     "name": "Tostada Artesanal",
     "description": "Pan de campo tostado, con queso crema y mermelada de frutos rojos para untar.",
-    "category": [
-      "food",
-      "Bakery",
-      "Salados"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1063,11 +765,7 @@
     "image": "77.png",
     "name": "Scon 4 quesos",
     "description": "Queso pategrás, sardo, reggiano y holanda se combinan en una esponjosa masa tibia.",
-    "category": [
-      "food",
-      "Bakery",
-      "Salados"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1077,11 +775,7 @@
     "image": "78.png",
     "name": "Bagel Multicereal",
     "description": "Pan tostado con variedad de semillas y cereales, acompañado con queso crema y mermelada de frutos rojos para untar.",
-    "category": [
-      "food",
-      "Bakery",
-      "Salados"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1091,11 +785,7 @@
     "image": "79.png",
     "name": "Pan de Queso",
     "description": "Nuestro tradicional pan de queso.",
-    "category": [
-      "food",
-      "Bakery",
-      "Salados"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1105,11 +795,7 @@
     "image": "80.png",
     "name": "Muffin de Arándanos",
     "description": "Suave, dulce y esponjoso Muffin con arándanos y notas cítricas, con una cubierta de crumble.",
-    "category": [
-      "food",
-      "Bakery",
-      "Muffins"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1119,11 +805,7 @@
     "image": "81.png",
     "name": "Muffin de dulce de leche",
     "description": "Exquisito muffin de vainilla con un corazón de dulce de leche.",
-    "category": [
-      "food",
-      "Bakery",
-      "Muffins"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1133,11 +815,7 @@
     "image": "82.png",
     "name": "Muffin de Chocolate",
     "description": "Suave masa de chocolate con chips de chocolate en su interior.",
-    "category": [
-      "food",
-      "Bakery",
-      "Muffins"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1147,11 +825,7 @@
     "image": "83.png",
     "name": "Muffin Choco Chips",
     "description": "Esponjoso y húmedo muffin de vainilla con chips de chocolate.",
-    "category": [
-      "food",
-      "Bakery",
-      "Muffins"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1161,11 +835,7 @@
     "image": "84.png",
     "name": "Banana Loaf Cake",
     "description": "Cake Húmedo de banana combinado con chispas de chocolate.",
-    "category": [
-      "food",
-      "Bakery",
-      "Budines"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1175,11 +845,7 @@
     "image": "85.png",
     "name": "Marble Loaf Cake",
     "description": "Esponjoso cake que combina sabores de vainilla e intenso chocolate.",
-    "category": [
-      "food",
-      "Bakery",
-      "Budines"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1189,11 +855,7 @@
     "image": "86.png",
     "name": "Lemon Pound Cake",
     "description": "Exquisito cake de limon, bañado con un glaseado dulce y cítrico.",
-    "category": [
-      "food",
-      "Bakery",
-      "Budines"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1203,11 +865,7 @@
     "image": "87.png",
     "name": "Cheesecake Frutos Rojos",
     "description": "Cheesecake con cobertura de salsa de frutos rojos.",
-    "category": [
-      "food",
-      "Bakery",
-      "Tortas"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1217,11 +875,7 @@
     "image": "88.png",
     "name": "Cookies Cake",
     "description": "Torta de chocolate cubierta con crema de cookies de chocolate.",
-    "category": [
-      "food",
-      "Bakery",
-      "Tortas"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1231,11 +885,7 @@
     "image": "89.png",
     "name": "Key Lime Pie",
     "description": "Base de masa brisse, relleno de mousse de lima, decorada con crema y lima.",
-    "category": [
-      "food",
-      "Bakery",
-      "Tortas"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1245,11 +895,7 @@
     "image": "90.png",
     "name": "Apple Crumble",
     "description": "Masa de vainilla con relleno de manzanas verdes, cubierto por una exquisita cobertura crocante.",
-    "category": [
-      "food",
-      "Bakery",
-      "Tortas"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1259,11 +905,7 @@
     "image": "91.png",
     "name": "Sándwich con Jamón y Queso en Pan Artesanal",
     "description": "Con un suave y aireado pan artesanal relleno de jamón y queso, este sándwich es una deliciosa opción gluten free.",
-    "category": [
-      "food",
-      "Sándwichs & preparados",
-      "Sándwichs"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1273,11 +915,7 @@
     "image": "92.png",
     "name": "Focaccia Caprese",
     "description": "Pan de focaccia espolvoreado con queso, relleno de tomate, queso y una deliciosa crema de pesto.",
-    "category": [
-      "food",
-      "Sándwichs & preparados",
-      "Sándwichs"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1287,11 +925,7 @@
     "image": "93.png",
     "name": "Sandwich Pollo Multicereal",
     "description": "Ciabatta de pan multicereal rellena de pollo, queso, tomate y mayonesa.",
-    "category": [
-      "food",
-      "Sándwichs & preparados",
-      "Sándwichs"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1301,11 +935,7 @@
     "image": "94.png",
     "name": "Bagel Sandwich",
     "description": "Exquisito bagel multicereal combinado con queso cheddar, panceta y huevo.",
-    "category": [
-      "food",
-      "Sándwichs & preparados",
-      "Sándwichs"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1315,11 +945,7 @@
     "image": "95.png",
     "name": "Sandwich Tres Quesos",
     "description": "Sandwich de pan artesanal relleno con queso muzzarella, parmesano y cheddar.",
-    "category": [
-      "food",
-      "Sándwichs & preparados",
-      "Sándwichs"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1329,11 +955,7 @@
     "image": "96.png",
     "name": "Croque Monsieur",
     "description": "Delicioso sandwich de jamón y queso, combinado con salsa bechamel y queso gratinado.",
-    "category": [
-      "food",
-      "Sándwichs & preparados",
-      "Sándwichs"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
@@ -1343,41 +965,31 @@
     "image": "97.png",
     "name": "Tostado de jamón y queso",
     "description": "Un clásico triángulo de jamón y queso, en pan de miga blanco con semillas de amapola.",
-    "category": [
-      "food",
-      "Sándwichs & preparados",
-      "Sándwichs"
-    ],
+    "category": "food",
     "stock": 20,
     "price": 200,
     "rating": 3.3
   },
   {
     "id": 98,
-    "image": "98.png",
     "name": "Tarta de Puerro",
-    "description": "Deliciosa tarta rellena de puerro, cebolla y queso.",
-    "category": [
-      "food",
-      "Sándwichs & preparados",
-      "Tarta"
-    ],
-    "stock": 20,
-    "price": 200,
+    "image": "98.png",
+    "description": "Deliciosa tarta rellena de puerro y cebolla",
+    "category": "food",
+    "stock": 724,
+    "price": 1600,
+    "offer": 20,
     "rating": 3.3
   },
   {
-    "id": 99,
-    "image": "99.png",
-    "name": "Tarta de Calabaza",
-    "description": "Exquisita tarta con masa integral rellena de calabaza, queso gratinado y semillas.",
-    "category": [
-      "food",
-      "Sándwichs & preparados",
-      "Tarta"
-    ],
-    "stock": 20,
-    "price": 200,
-    "rating": 3.3
+    "id": 1656216308405,
+    "name": "Prueba 1",
+    "image": "img-1656216600133.jpg",
+    "description": "Producto de prueba, modificando imagen y borrando la imagen anterior!!",
+    "category": "coffee",
+    "stock": 347,
+    "price": 7246,
+    "offer": 0,
+    "rating": 0
   }
 ]

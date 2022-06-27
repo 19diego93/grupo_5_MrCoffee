@@ -5,10 +5,10 @@
   padding-bottom: unset;
 }
 .content-form-create {
-  background-color: #171717;
+  background-color: var(--color-Marron-Claro);
   width: 100%;
   padding: 90px 0px 50px 0px;
-  color: #fff;
+  color: var(--color-Blanco);
 }
 
 .container-form-createProduct {
@@ -21,13 +21,18 @@
 }
 .container-form-createProduct h1 {
   text-align: center;
+  color: var(--color-Negro);
+}
+.container-form-createProduct h2 {
+  text-align: center;
+  color: var(--color-Negro);
 }
 .form-editor {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #fff;
+  background-color: var(--color-Blanco);
   padding: 5px;
   border-radius: 15px;
   width: 100%;
@@ -44,8 +49,8 @@
   outline: none;
   border: none;
   border-radius: 10px;
-  background: #111111d0;
-  color: #fff;
+  background: var(--color-Negro-Claro-2);
+  color: var(--color-Blanco);
 }
 .container-button-editProducts {
   display: flex;
@@ -54,29 +59,46 @@
   flex-wrap: wrap;
 }
 .button-createProduct {
-  background: #111111d0;
-  color: #fff;
+  background: var(--color-Negro-Claro-2);
+  color: var(--color-Blanco);
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
   cursor: pointer;
+  border: none;
 }
 .button-createProduct:hover {
   opacity: 0.8;
 }
 .red {
-  background-color: rgb(171, 11, 11);
-  border: 2px solid rgb(85, 10, 10);
+  background-color: var(--color-Rojo-Claro);
+  border: none;
 }
 .form-editor label {
   margin: 20px;
   width: 100%;
   padding: 5px;
-  margin: 15px;
-  border-bottom: 0.3rem solid #111111d0;
+  margin: 25px;
+  border-bottom: 0.3rem solid var(--color-Negro-Claro-2);
+}
+/*! Se activa al colocar informacion erronea */
+.form-editor label .error-msg {
+  color: var(--color-Rojo-Claro);
+  margin-top: 5px;
+}
+.form-editor label .is-invalid {
+  border: 2px solid var(--color-Rojo-Super-Claro);
+  background-image: url(/img/error-input.svg);
+  background-repeat: no-repeat;
+  background-position: right calc(0.575em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+.form-editor label .is-invalid:focus {
+  border-color: var(--color-Rojo-Super-Claro);
+  box-shadow: 0 0 0 0.25rem rgb(220 53 69 / 25%);
 }
 .form-editor label p {
-  color: #111111d0;
+  color: var(--color-Negro-Claro-1);
 }
 .form-editor label input {
   width: 100%;
@@ -84,8 +106,8 @@
   outline: none;
   border: none;
   border-radius: 10px;
-  background: #111111d0;
-  color: #fff;
+  background: var(--color-Negro-Claro-2);
+  color: var(--color-Blanco);
 }
 .form-editor label select {
   width: 100%;
@@ -93,15 +115,16 @@
   outline: none;
   border: none;
   border-radius: 10px;
-  background: #111111f3;
-  color: #fff;
+  background: var(--color-Negro-Claro-2);
+  color: var(--color-Blanco);
   font-size: 15px;
 }
 .form-editor label textarea {
   width: 100%;
-  background: #111111d0;
-  color: #fff;
+  background: var(--color-Negro-Claro-2);
+  color: var(--color-Blanco);
   border-radius: 10px;
+  padding: 10px;
 }
 @media (min-width: 460px) {
   /*! Tablets */

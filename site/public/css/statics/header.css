@@ -23,7 +23,12 @@ main {
   --color-Marron: #ad715c;
   --color-Marron-Claro: #ffe6d6;
   --color-Negro: #000;
+  --color-Negro-Claro-1: #111111f3;
+  --color-Negro-Claro-2: #111111d0;
   --color-Blanco: #fff;
+  --color-Rojo-Super-Claro: rgb(255, 0, 0);
+  --color-Rojo-Claro: rgb(171, 11, 11);
+  --color-rojo-Oscuro: rgb(85, 10, 10);
 }
 /*! Cabecera de celular y tablets */
 .Header-Content {

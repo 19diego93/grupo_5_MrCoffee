@@ -1,9 +1,12 @@
+//! Extensiones
 const fs = require("fs");
 const path = require("path");
 
+//! Archivos
 const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
+//!Controlador
 const productsController = {
   productCart: (req, res) => {
     let detail = products.filter((producto) => producto.id == req.params.id);

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/products/productShop.css" />
+    <link rel="stylesheet" href="/css/statics/products.css" />
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <main>
+      <section id="head-title-product">
+        <article>
+          <div>
+            <h1>Productos</h1>
+          </div>
+        </article>
+      </section>
+      <section>
+        <article id="breadcrumb">
+          <div>
+            <a href="/">Inicio</a>
+            <span class="separator">|</span>
+            <span class="page-title">Productos</span>
+          </div>
+        </article>
+      </section>
+      <!--! FILTROS -->
+      <section class="container-filter">
+        <article id="filtros-productos">
+          <div class="filtro-div">
+            <button>
+              <span>Filtrar</span>
+              <i class="fas fa-sliders-h"></i>
+            </button>
+          </div>
+          <div id="listFilter">
+            <form action="" class="form-container-filters">
+              <div id="title-filter-1">
+                <h3>Filtros</h3>
+                <i class="fas fa-times"></i>
+              </div>
+
+              <div class="entrega-Inmediata-div">
+                <h4>Productos</h4>
+                <label>
+                  <input
+                    class="input-todos"
+                    type="radio"
+                    value="*"
+                    name="filter_product_tag"
+                  />
+                  <span>Todos</span>
+                </label>
+                <label>
+                  <input
+                    class="input-Ofertas"
+                    type="radio"
+                    value="Ofertas"
+                    name="filter_product_tag"
+                  />
+                  <span>En Ofertas</span>
+                </label>
+              </div>
+              <div class="categorias-div">
+                <h4>Cafés</h4>
+                <label>
+                  <input
+                    class="input-Hot-Coffees"
+                    aria-hidden="true"
+                    type="checkbox"
+                    value="coffee-Hot-Coffees"
+                    name="filter_product_cat"
+                  />
+                  <span>Hot Coffees</span>
+                </label>
+                <label>
+                  <input
+                    class="input-Cold-Coffee"
+                    aria-hidden="true"
+                    type="checkbox"
+                    value="coffee-Cold-Coffee"
+                    name="filter_product_tag"
+                  />
+                  <span>Cold Hoffees</span>
+                </label>
+                <label>
+                  <input
+                    class="input-Hot-Drinks"
+                    aria-hidden="true"
+                    type="checkbox"
+                    value="coffee-Hot-Drinks"
+                    name="filter_product_tag"
+                  />
+                  <span>Hot Drinks</span>
+                </label>
+                <label>
+                  <input
+                    class="input-Cold-Drinks"
+                    aria-hidden="true"
+                    type="checkbox"
+                    value="coffee-Cold-Drinks"
+                    name="filter_product_tag"
+                  />
+                  <span>Cold Drinks</span>
+                </label>
+                <label>
+                  <input
+                    class="input-Hot-Teas"
+                    aria-hidden="true"
+                    type="checkbox"
+                    value="coffee-Hot-Teas"
+                    name="filter_product_tag"
+                  />
+                  <span>Hot Teas</span>
+                </label>
+              </div>
+              <div class="categorias-div">
+                <h4>Comida</h4>
+                <label>
+                  <input
+                    class="input-Hot-Breakfast"
+                    aria-hidden="true"
+                    type="checkbox"
+                    value="comida-Hot-Breakfast"
+                    name="filter_product_cat"
+                  />
+                  <span>Hot Breakfast</span>
+                </label>
+                <label>
+                  <input
+                    class="input-Lunch"
+                    aria-hidden="true"
+                    type="checkbox"
+                    value="comida-Lunch"
+                    name="filter_product_tag"
+                  />
+                  <span>Lunch</span>
+                </label>
+                <label>
+                  <input
+                    class="input-Bakery"
+                    aria-hidden="true"
+                    type="checkbox"
+                    value="comida-Bakery"
+                    name="filter_product_tag"
+                  />
+                  <span>Bakery</span>
+                </label>
+                <label>
+                  <input
+                    class="input-Snacks-&-Sweets"
+                    aria-hidden="true"
+                    type="checkbox"
+                    value="comida-Snacks-&-Sweets"
+                    name="filter_product_tag"
+                  />
+                  <span>Snacks & Sweets</span>
+                </label>
+              </div>
+            </form>
+          </div>
+        </article>
+      </section>
+      <section class="container-filter-orden">
+        <article id="ordenarPor-productos">
+          <div class="ordenar-div">
+            <button>
+              <span>Ordenar</span>
+              <i class="fas fa-angle-down"></i>
+            </button>
+          </div>
+          <div id="listaFiltrarOrden">
+            <span>Orden por defecto</span>
+            <span>Ordenar por calificación</span>
+            <span>Ordenar por los últimos</span>
+            <span>Ordenar por precio: alto a bajo</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="container-products-product">
+        <div class="products">
+          <!--! Productos - CAFE -->
+          <% for(i=0; i < productos.length; i++) { %>
+          <article class="product-content">
+            <div class="details">
+              <div class="image">
+                <img src="/img/products/<%=productos[i].image%>" alt="imagen del producto" />
+              </div>
+              <div class="product-descriptions">
+                <span class="product-Name"><%=productos[i].name%></span>
+                <span class="product-Price">$ <%=productos[i].price%></span>
+              </div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="product-buttons">
+                <a href="/products/cart/<%=productos[i].id%>">
+                <button class="product-buy">Comprar</button>
+              </a>
+                <a class="product-info" href="/products/detail/<%=productos[i].id%>">
+                  Informacion
+                </a>
+              </div>
+            </div>
+          </article>
+          <% } %>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
