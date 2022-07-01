@@ -3,6 +3,7 @@
   display: block;
   padding-bottom: 3rem;
   background-color: #ffe6d6;
+  width: 100%;
 }
 /* !Contenedor de login y titulo */
 .contenedor-login-titulo {
@@ -10,7 +11,7 @@
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  padding: 10px 30px;
+  padding: 10px 0px;
 }
 /* !contenedor form y boton */
 .contenedor-form-boton {
@@ -18,7 +19,8 @@
   max-width: 370px;
   background-color: white;
   border-radius: 10px;
-  width: 90%;
+  width: 100%;
+  text-align: center;
 }
 /* ! texto: Ingresa */
 .login-text {
@@ -30,8 +32,8 @@
 /*! form */
 .form-login {
   margin: auto;
-  width: 70%;
-  max-width: 400px;
+  width: 90%;
+  text-align: start;
 }
 /*! campos del form */
 .contenedor-campo {
@@ -44,12 +46,12 @@
   width: 85%;
   padding: 10px;
   border: none;
-  font-size: 0.7rem;
+  font-size: 1rem;
   text-align: justify;
   outline: 0;
 }
 .campo-label {
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding-bottom: 5px;
   color: #ad715c;
 }
@@ -84,12 +86,13 @@
 .button-ingresar {
   width: 100%;
   margin-top: 10px;
-  padding: 5px;
   border: none;
   border-radius: 2px;
   background-color: #00b7ff;
   color: white;
-  max-width: 320px;
+  padding: 15px;
+  max-width: 150px;
+  font-size: 1.2rem;
 }
 
 /*! titulo h1 y su contenedor */
@@ -102,7 +105,7 @@
 .contenedor-titulo-login h1 {
   text-align: center;
   color: #76402e;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 /*! vinculos */
 .vinculos-login {
@@ -124,8 +127,22 @@
   color: #00b7ff;
 }
 
+@media (min-width: 460px) {
+  /*! Tablets */
+  .login-text {
+    font-size: 2rem;
+  }
+  .button-ingresar {
+    max-width: 250px;
+    font-size: 1.4rem;
+  }
+  .contenedor-login-titulo {
+    padding: 10px 10px;
+  }
+}
+
 @media (min-width: 768px) {
-  /* !Laptop */
+  /* !laptops */
   .contenedor-login-titulo {
     display: flex;
     flex-direction: row;
@@ -134,5 +151,11 @@
   }
   .contenedor-titulo-login {
     display: flex;
+  }
+  .contenedor-form-boton {
+    max-width: 420px;
+  }
+  .contenedor-login-titulo {
+    padding: 10px 20px;
   }
 }
