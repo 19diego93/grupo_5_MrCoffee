@@ -3,6 +3,9 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const mantenimiento = require("./middlewares/mantenimiento.js");
+const userLoggedMW = require("./middlewares/userLoggedMW.js");
+//! Session
+const session = require("express-session");
 
 //! Ejs
 app.set("views", path.join(__dirname, "views"));
@@ -15,6 +18,9 @@ app.use(express.json());
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 app.use(mantenimiento);
+app.use(session({ secret: "shh, it's a secret", resave: false, saveUninitialized: false, }));
+// ?este middlewares solo funciona luego de que se inicie la session
+app.use(userLoggedMW);
 //! localhost
 app.listen(3000, () => {
   console.log(`MrCoffee listening at http://localhost:3000`);
@@ -33,6 +39,6 @@ app.use("/admin", adminRouter);
 app.use("/products", productsRouter);
 
 //! 404
-// app.use((req, res, next) => {
-//   res.status(404).render("not-found");
-// });
+app.use((req, res, next) => {
+  res.status(404).render("not-found");
+});

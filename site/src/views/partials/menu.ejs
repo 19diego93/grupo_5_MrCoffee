@@ -3,6 +3,8 @@
     <div id="close-menu">
       <i class="fas fa-times"></i>
     </div>
+    <% if (!locals.isLogged) { %>
+    
     <li class="list__item">
       <div class="list__button">
         <i class="fas fa-address-card"></i>
@@ -16,7 +18,14 @@
         <a href="/user/login" class="nav__link">Ingresa</a>
       </div>
     </li>
-
+    <% } else { %>
+    <li class="list__item">
+      <div class="list__button">
+        <i class="fas fa-sign-in"></i>
+        <a href="/user/logout" class="nav__link">Salir</a>
+      </div>
+    </li>
+    <% } %>
     <li class="list__item">
       <div class="list__button">
         <i class="fas fa-bell"></i>
@@ -35,7 +44,7 @@
 
       <ul class="list__show">
         <li class="list__inside">
-          <a href="#" class="nav__link nav__link--inside">Perfil</a>
+          <a href="/user/profile" class="nav__link nav__link--inside">Perfil</a>
         </li>
         <li class="list__inside">
           <a href="#" class="nav__link nav__link--inside">Favoritos</a>

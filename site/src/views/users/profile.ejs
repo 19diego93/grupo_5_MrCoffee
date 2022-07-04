@@ -7,7 +7,63 @@
   <body>
     <%- include('../partials/header') %>
     <main>
-      <h1>Hola Mundo</h1>
+      <div class="containerTodo container">
+        <h1 class="text-primary text-margin">Tú perfil</h1>
+          <hr>
+      <div class="row">
+        
+        <form class="form-horizontal" role="form" action="" method="post">
+          <!-- left column -->
+          <div class="col-md-3">
+            <div class="text-center">
+              <img src="/img/avatar/<%= user.image %>" class="avatar img-circle img-thumbnail" alt="avatar">
+              <h6 class="text-margin text-miFoto">¿Cambiamos de foto?</h6>
+              
+              <input type="file" class="form-control">
+            </div>
+          </div>
+          
+          <!-- edit form column -->
+          <div class="col-md-9">
+          <div class="personal-info">
+             <h3 class="text-margin">Tus datos</h3>            
+            
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Nombre:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" value="<%= user.fname %>">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Apellido:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" value="<%= user.lname %>">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Email:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" value="<%= user.mail %>">
+                </div>
+              </div>
+              
+              </div>
+              
+              <div class="container-button-editProducts">
+                <input type="submit" class="button-createProduct" value="Editar"></input>
+                <a href="#">
+                  <input type="button" class="button-createProduct blue" value="Cancelar Edicion"></input>
+                </a>
+                <a href="#">
+                  <input type="button" class="button-createProduct red" value="Eliminar perfil"></input>
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <hr>
     </main>
     <%- include('../partials/footer') %>
   </body>

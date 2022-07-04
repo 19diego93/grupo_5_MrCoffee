@@ -1,0 +1,133 @@
+.containerTodo {
+    display: block;
+    width: auto;
+   
+    text-align: center;
+    box-sizing: border-box;
+} 
+hr {
+margin-top: 20px;
+margin-bottom: 20px;
+box-sizing: content-box;
+height: 0;
+}
+.text-margin {
+  margin-top: 20px;
+  margin-bottom: 10px;
+} 
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}   
+.img-circle{
+border-radius: 50%;
+}
+.avatar {
+  min-width: 200px;
+  min-height: 200px;
+}
+.img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  display: inline-block;
+  max-width: 100%;
+}
+img {
+  vertical-align: middle;
+}
+.text-primary{
+ padding-top: 20px;
+}
+.text-miFoto {
+ font-size: 14px;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+}
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.container-botones{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.container-button-editProducts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.button-createProduct {
+  background: var(--color-Negro-Claro-2);
+  color: var(--color-Blanco);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  cursor: pointer;
+  border: none;
+}
+.button-createProduct:hover {
+  opacity: 0.8;
+}
+.red {
+  background-color: var(--color-Rojo-Claro);
+  border: none;
+}
+.blue {
+  background-color:rgb(104, 165, 185);
+  border: none;
+}
+
+  @media (min-width: 460px) {
+    /*! Tablets */
+    
+  }
+  @media (min-width: 768px) {
+    /*! LAPTOP */
+    .container{
+      display: table;
+    }
+    .col-md-3{
+      width: 25%;
+      float: left;
+      position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    }
+    .col-md-9{
+    width: 65%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 30px;
+    padding-right: 15px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    /*! PC */
+    .containerTodo{
+      width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    }
+  }

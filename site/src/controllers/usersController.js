@@ -9,7 +9,6 @@ const usersFilePath = path.join(__dirname, "../data/users.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 const User = require("../models/Users")
 
-
 //! Controlador
 
 const usersController = {
@@ -60,7 +59,9 @@ const usersController = {
       let isOkPassword = bcryptjs.compareSync(req.body.psw, userToLogin.psw);
 
       if (isOkPassword) {
-        return res.redirect("profile")
+        delete userToLogin.psw
+        req.session.userLogged = userToLogin
+        return res.redirect("/")
       }
     
     return res.render("../views/users/login.ejs", {
@@ -81,7 +82,14 @@ const usersController = {
   },
 
   profile: (req, res) => {
-    res.render("users/profile");
+   return res.render("users/profile", {
+    user: req.session.userLogged 
+   });
+  },
+
+  logout: (req,res) => {
+    req.session.destroy();
+    return res.redirect("/")
   },
    
 };
