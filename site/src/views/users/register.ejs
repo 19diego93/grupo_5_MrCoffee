@@ -30,9 +30,7 @@
                 />
               </div>
               <% if (locals.errors && errors.fname){ %>
-              <div class="text-danger">
-                <%= errors.fname.msg %>
-              </div>
+              <div class="text-danger"><%= errors.fname.msg %></div>
               <% } %>
             </div>
             <div class="contenedor-campo">
@@ -49,10 +47,8 @@
                 />
               </div>
               <% if (locals.errors && errors.lname){ %>
-                <div class="text-danger">
-                  <%= errors.lname.msg %>
-                </div>
-                <% } %>
+              <div class="text-danger"><%= errors.lname.msg %></div>
+              <% } %>
             </div>
 
             <div class="contenedor-campo">
@@ -69,10 +65,8 @@
                 />
               </div>
               <% if (locals.errors && errors.mail){ %>
-                <div class="text-danger">
-                  <%= errors.mail.msg %>
-                </div>
-                <% } %>
+              <div class="text-danger"><%= errors.mail.msg %></div>
+              <% } %>
             </div>
 
             <div class="contenedor-campo">
@@ -88,10 +82,27 @@
                 />
               </div>
               <% if (locals.errors && errors.psw){ %>
-                <div class="text-danger">
-                  <%= errors.psw.msg %>
-                </div>
-                <% } %>
+              <div class="text-danger"><%= errors.psw.msg %></div>
+              <% } %>
+            </div>
+
+            <div class="contenedor-campo">
+              <label class="campo-label" for="confirmPsw"
+                >Confirma tu Contraseña</label
+              >
+              <div class="caja-icono-campo">
+                <i class="fa-solid fa-eye-slash icono-psw"></i>
+                <input
+                  class="campo"
+                  type="password"
+                  id="confirmPsw"
+                  name="confirmPsw"
+                  placeholder="Tú contraseña"
+                />
+              </div>
+              <% if (locals.errors && errors.confirmPsw){ %>
+              <div class="text-danger"><%= errors.confirmPsw.msg %></div>
+              <% } %>
             </div>
 
             <div class="contenedor-boton-registrar">

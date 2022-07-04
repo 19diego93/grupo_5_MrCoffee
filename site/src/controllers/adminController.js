@@ -125,6 +125,18 @@ const adminController = {
       res.redirect("/");
     } else {
       let edit = allProducts.filter((product) => product.id == req.params.id);
+      if (req.file) {
+        let filePath = path.resolve(
+          __dirname,
+          "../../public/img/products/" + req.file.filename
+        );
+        try {
+          fs.unlinkSync(filePath);
+        } catch (error) {
+          console.error("No se pudo eliminar la imagen anterior");
+          console.error(error.message);
+        }
+      }
       res.render("admin/edit", {
         errors: errors.mapped(),
         oldDate: req.body,
@@ -136,6 +148,21 @@ const adminController = {
     allProducts = products;
 
     let destroy = req.params.id;
+
+    allProducts.filter((product) => {
+      if (product.id == destroy) {
+        let filePath = path.resolve(
+          __dirname,
+          "../../public/img/products/" + product.image
+        );
+        try {
+          fs.unlinkSync(filePath);
+        } catch (error) {
+          console.error("No se pudo eliminar la imagen anterior");
+          console.error(error.message);
+        }
+      }
+    });
 
     let destroying = allProducts.filter((product) => {
       return product.id != destroy;
