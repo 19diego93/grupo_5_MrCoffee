@@ -52,20 +52,20 @@
             </div>
 
             <div class="contenedor-campo">
-              <label class="campo-label" for="mail">Correo electrónico</label>
+              <label class="campo-label" for="email">Correo electrónico</label>
               <div class="caja-icono-campo">
                 <i class="fa-solid fa-envelope icono-email"></i>
                 <input
                   class="campo"
                   type="email"
-                  id="mail"
-                  name="mail"
+                  id="email"
+                  name="email"
                   placeholder="superheroe@MrCoffee.com"
-                  value="<%= locals.oldData ? oldData.mail : null %>"
+                  value="<%= locals.oldData ? oldData.email : null %>"
                 />
               </div>
-              <% if (locals.errors && errors.mail){ %>
-              <div class="text-danger"><%= errors.mail.msg %></div>
+              <% if (locals.errors && errors.email){ %>
+              <div class="text-danger"><%= errors.email.msg %></div>
               <% } %>
             </div>
 
@@ -77,12 +77,12 @@
                   class="campo"
                   type="password"
                   id="psw"
-                  name="psw"
+                  name="password"
                   placeholder="Tú contraseña"
                 />
               </div>
-              <% if (locals.errors && errors.psw){ %>
-              <div class="text-danger"><%= errors.psw.msg %></div>
+              <% if (locals.errors && errors.password){ %>
+              <div class="text-danger"><%= errors.password.msg %></div>
               <% } %>
             </div>
 

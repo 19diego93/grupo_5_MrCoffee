@@ -49,6 +49,18 @@ const adminController = {
       fs.writeFileSync(productsFilePath, update, "utf-8");
       res.redirect("/");
     } else {
+      if (req.file) {
+        let filePath = path.resolve(
+          __dirname,
+          "../../public/img/products/" + req.file.filename
+        );
+        try {
+          fs.unlinkSync(filePath);
+        } catch (error) {
+          console.error("No se pudo eliminar la imagen anterior");
+          console.error(error.message);
+        }
+      }
       // errors.mapped() Devuelve un objeto Json con un nombre y un objeto en cada nombre.
       // errors.array() Devuelve un array de objetos.
       res.render("admin/create", {

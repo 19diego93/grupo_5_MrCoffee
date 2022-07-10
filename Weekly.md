@@ -7,7 +7,7 @@
 ### Qué hizo esta semana:
 
 ```
-arregle el footer
+mejoras en el controlador de usuarios y validaciones
 ```
 
 ### Se encontró con algún impedimento:
@@ -19,7 +19,7 @@ ninguno
 ### Qué va a hacer hoy o esta semana:
 
 ```
-un desplegable para acceder al login/register y admin create/edit 
+bloquear rutas que sean para administradores.
 ```
 
 # Mauro Villanueva

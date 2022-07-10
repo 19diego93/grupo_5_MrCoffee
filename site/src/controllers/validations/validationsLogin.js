@@ -1,15 +1,23 @@
 const { body } = require("express-validator");
 
-const validations = [
-body("mail")
+module.exports = [
+  body("email")
     .notEmpty()
-    .withMessage("Tienes que escribir un email")
+    .withMessage("Este campo no puede estar vacío.")
     .bail()
     .isEmail()
-    .withMessage("Formato de correo incorrecto "),
-body("psw")
-    .notEmpty()
-    .withMessage("Tienes que escribir una contraseña"),
-];
+    .withMessage("El correo no es válido.")
+    .bail()
+    .isLength({ max: 320 })
+    .withMessage("No puede escribir más de 320 caracteres."),
 
-module.exports = validations;
+  body("password")
+    .notEmpty()
+    .withMessage("Este campo no puede estar vacío.")
+    .bail()
+    .isLength({ min: 8 })
+    .withMessage("Escribe al menos 8 caracteres.")
+    .bail()
+    .isLength({ max: 120 })
+    .withMessage("No puede escribir más de 120 caracteres."),
+];
