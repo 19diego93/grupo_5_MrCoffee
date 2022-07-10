@@ -1,11 +1,20 @@
 [
- {
-  "id": 1,
-  "category": "user",
-  "image": "defaultimg.jpg",
-  "fname": "Diego",
-  "lname": "pirulin",
-  "mail": "super@Coffee.com",
-  "psw": "$2a$10$8smZxHV.nVT.IzJZF8USAOFZFadiHvv7ZHFF6jUXeUGWi5kpDPcBS"
- }
+  {
+    "id": 1,
+    "category": "user",
+    "image": "defaultimg.jpg",
+    "fname": "Diego",
+    "lname": "pirulin",
+    "email": "super@Coffee.com",
+    "password": "$2a$10$8smZxHV.nVT.IzJZF8USAOFZFadiHvv7ZHFF6jUXeUGWi5kpDPcBS"
+  },
+  {
+    "id": 2,
+    "category": "user",
+    "image": "defaultimg.jpg",
+    "fname": "contraseña",
+    "lname": "123456789",
+    "email": "superhero@mrcoffee.com",
+    "password": "$2a$10$8u8iXf4gO8tJBXLh6jLYG.JXWQj4EtsTSnNDGYIwde47eNcXaaayy"
+  }
 ]

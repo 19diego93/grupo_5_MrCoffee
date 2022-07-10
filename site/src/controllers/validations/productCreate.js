@@ -3,7 +3,7 @@ const { body } = require("express-validator");
 const path = require("path");
 
 //! Validacion
-const validation = [
+module.exports = [
   body("name")
     .notEmpty()
     .withMessage("Este campo no puede estar vacío.")
@@ -58,5 +58,3 @@ const validation = [
     .isLength({ max: 2 })
     .withMessage("Máximo de 2 números."),
 ];
-
-module.exports = validation;

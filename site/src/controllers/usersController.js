@@ -71,13 +71,27 @@ const usersController = {
     try {
       if (errors.isEmpty()) {
         let userInDb = User.findByField("email", req.body.email);
+
         if (!userInDb) {
+          if (!req.file) {
+            req.body.image = "defaultimg.jpg";
+          } else {
+            req.body.image = req.file.filename;
+          }
+
           delete req.body.confirmPsw;
-          let userToCreate = {
-            ...req.body,
+
+          let newUser = {
+            id: User.generateId(),
+            category: "user",
+            fname: req.body.fname,
+            lname: req.body.lname,
+            image: req.body.image,
+            email: req.body.email,
             password: bcryptjs.hashSync(req.body.password, 10),
           };
-          User.create(userToCreate);
+
+          User.create(newUser);
           return res.redirect("login");
         } else {
           return res.render("users/register", {
