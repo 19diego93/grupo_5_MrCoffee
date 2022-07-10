@@ -82,10 +82,13 @@ const usersController = {
   },
 
   profile: (req, res) => {
-   return res.render("users/profile", {
+    return res.render("users/profile", {
     user: req.session.userLogged 
-   });
+   });   
   },
+  editProfile: (req, res) => {
+    return res.send("funciona")
+   },
 
   logout: (req,res) => {
     req.session.destroy();

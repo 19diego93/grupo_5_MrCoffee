@@ -22,6 +22,8 @@ router.post("/register", validationsRegister, usersController.processRegister);
 
 router.get("/profile",authMiddleware, usersController.profile);
 
+router.post("/profile/:id",authMiddleware, usersController.editProfile);
+
 router.get("/logout", usersController.logout);
 
 module.exports= router;

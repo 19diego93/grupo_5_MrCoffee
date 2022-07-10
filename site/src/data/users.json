@@ -7,5 +7,15 @@
   "lname": "pirulin",
   "mail": "super@Coffee.com",
   "psw": "$2a$10$8smZxHV.nVT.IzJZF8USAOFZFadiHvv7ZHFF6jUXeUGWi5kpDPcBS"
+ },
+ {
+  "id": 2,
+  "category": "user",
+  "image": "defaultimg.jpg",
+  "fname": "Pirulo",
+  "lname": "Vallejo",
+  "mail": "vallejodiego@live.com",
+  "psw": "$2a$10$Zuoshx4bDHNgZj/F/rm2MunJ/lLg07U78mmeXFILUrfeWd8A2GNcy",
+  "confirmPsw": ""
  }
 ]
