@@ -1,23 +1,60 @@
 const { body } = require("express-validator");
 
-const validations = [
-body("fname")
+module.exports = [
+  body("fname")
     .notEmpty()
-    .withMessage("Tienes que escribir un nombre")
-    .isLength({ max: 40 },{min:3}),
-body("lname")
+    .withMessage("Este campo no puede estar vacío.")
+    .bail()
+    .isLength({ min: 3 })
+    .withMessage("Escribe al menos 3 caracteres.")
+    .bail()
+    .isLength({ max: 40 })
+    .withMessage("No puede escribir más de 40 caracteres."),
+
+  body("lname")
     .notEmpty()
-    .withMessage("Tienes que escribir un apellido")
-    .isLength({ max: 40 },{min:3}),
-body("mail")
+    .withMessage("Este campo no puede estar vacío.")
+    .bail()
+    .isLength({ min: 3 })
+    .withMessage("Escribe al menos 3 caracteres.")
+    .bail()
+    .isLength({ max: 40 })
+    .withMessage("No puede escribir más de 40 caracteres."),
+
+  body("email")
     .notEmpty()
-    .withMessage("Tienes que escribir un email")
+    .withMessage("Este campo no puede estar vacío.")
     .bail()
     .isEmail()
-    .withMessage("Formato de correo incorrecto "),
-body("psw")
-    .notEmpty()
-    .withMessage("Tienes que escribir una contraseña"),
-];
+    .withMessage("El correo no es válido.")
+    .bail()
+    .isLength({ max: 320 })
+    .withMessage("No puede escribir más de 320 caracteres."),
 
-module.exports = validations;
+  body("password")
+    .notEmpty()
+    .withMessage("Este campo no puede estar vacío.")
+    .bail()
+    .isLength({ min: 8 })
+    .withMessage("Escribe al menos 8 caracteres.")
+    .bail()
+    .isLength({ max: 120 })
+    .withMessage("No puede escribir más de 120 caracteres."),
+
+  body("confirmPsw")
+    .notEmpty()
+    .withMessage("Este campo no puede estar vacío.")
+    .custom((value, { req }) => {
+      if (value === req.body.password) {
+        return true;
+      }
+      return false;
+    })
+    .withMessage("Las contraseñas no coinciden.")
+    .bail()
+    .isLength({ min: 8 })
+    .withMessage("Escribe al menos 8 caracteres.")
+    .bail()
+    .isLength({ max: 120 })
+    .withMessage("No puede escribir más de 120 caracteres."),
+];

@@ -6,10 +6,10 @@ const express = require("express");
 const router = express.Router();
 
 //! Rutas
-router.get("/", controller.productShop);
+router.get("/products/", controller.productShop);
 
-router.get("/cart/:id?", controller.productCart);
+router.get("/products/cart/:id?", controller.productCart);
 
-router.get("/detail/:id", controller.productDetail);
+router.get("/products/detail/:id", controller.productDetail);
 
 module.exports = router;

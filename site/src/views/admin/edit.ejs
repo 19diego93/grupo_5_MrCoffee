@@ -19,9 +19,9 @@
             <input
               type="text"
               name="name"
-              placeholder="<%= edit.name%>"
+              placeholder="<%= edit.name %>"
               class="<%= locals.errors && errors.name ? 'is-invalid' : null %>"
-              value="<%= locals.oldDate && oldDate.name ? oldDate.name : '' %>"
+              value="<%= locals.oldDate && oldDate.name ? oldDate.name : edit.name %>"
             />
             <% if (locals.errors && errors.name) { %>
               <p class="error-msg"><%= errors.name.msg %></p>
@@ -54,7 +54,7 @@
           </label>
           <label for="description">
             <p>Descripción:</p>
-            <textarea name="description" id="" cols="20" rows="10" placeholder="<%=edit.description%>" class="<%= locals.errors && errors.description ? 'is-invalid' : null %>"><%= locals.oldDate && oldDate.description ? oldDate.description : '' %></textarea>
+            <textarea name="description" id="" cols="20" rows="10" placeholder="<%=edit.description%>" class="<%= locals.errors && errors.description ? 'is-invalid' : null %>"><%= locals.oldDate && oldDate.description ? oldDate.description : edit.description %></textarea>
             <% if (locals.errors && errors.description) { %>
               <p class="error-msg"><%= errors.description.msg %></p>
             <% } %>
@@ -88,7 +88,7 @@
             <input 
             type="number" 
             name="stock" 
-            value="<%= locals.oldDate && oldDate.stock ? oldDate.stock : '' %>" 
+            value="<%= locals.oldDate && oldDate.stock ? oldDate.stock : edit.stock %>" 
             placeholder="<%= edit && edit.stock ? edit.stock : 0 %>" 
             class="<%= locals.errors && errors.stock ? 'is-invalid' : null %>"/>
             <% if (locals.errors && errors.stock) { %>
@@ -100,7 +100,7 @@
             <input 
             type="number" 
             name="price" 
-            value="<%= locals.oldDate && oldDate.price ? oldDate.price : '' %>"  
+            value="<%= locals.oldDate && oldDate.price ? oldDate.price : edit.price %>"  
             placeholder="<%= edit && edit.price ? edit.price : 0 %>" 
             class="<%= locals.errors && errors.price ? 'is-invalid' : null %>"/>
             <% if (locals.errors && errors.price) { %>
@@ -112,7 +112,7 @@
             <input 
             type="number" 
             name="offer" 
-            value="<%= locals.oldDate && oldDate.offer ? oldDate.offer : '' %>" 
+            value="<%= locals.oldDate && oldDate.offer ? oldDate.offer : edit.offer %>" 
             placeholder="<%= edit && edit.offer ? edit.offer : 0 %>" 
             class="<%= locals.errors && errors.offer ? 'is-invalid' : null %>"
             onKeyPress="if(this.value.length==2) return false;"/>

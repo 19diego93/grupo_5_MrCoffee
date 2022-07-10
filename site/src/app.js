@@ -18,7 +18,13 @@ app.use(express.json());
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 app.use(mantenimiento);
-app.use(session({ secret: "shh, it's a secret", resave: false, saveUninitialized: false, }));
+app.use(
+  session({
+    secret: "shh, it's a secret",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 // ?este middlewares solo funciona luego de que se inicie la session
 app.use(userLoggedMW);
 //! localhost
@@ -34,9 +40,9 @@ const productsRouter = require("./routes/products.js");
 
 //! Puertos
 app.use("/", mainRouter);
-app.use("/user", usersRouter);
-app.use("/admin", adminRouter);
-app.use("/products", productsRouter);
+app.use(usersRouter);
+app.use(adminRouter);
+app.use(productsRouter);
 
 //! 404
 app.use((req, res, next) => {
