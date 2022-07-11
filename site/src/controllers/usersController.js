@@ -31,6 +31,12 @@ const usersController = {
           if (isOkPassword) {
             delete userLogin.password;
             req.session.userLogged = userLogin;
+            if (req.session.userLogged){
+              res.cookie("admin", userLogin.category, {maxAge:1000*60*1 })
+            };
+            if(req.body.recordame){
+              res.cookie("recordame", req.body.email, {maxAge:1000*60*2 })
+            };
             return res.redirect("/");
           } else {
             return res.render("../views/users/login", {
@@ -109,11 +115,12 @@ const usersController = {
     user: req.session.userLogged 
    });   
   },
-  editProfile: (req, res) => {
-    return res.send("funciona")
-   },
-
+  editProfile: (req, res) => { 
+      
+    },
+  
   logout: (req, res) => {
+    res.clearCookie('recordame','admin')
     req.session.destroy();
     return res.redirect("/");
   },

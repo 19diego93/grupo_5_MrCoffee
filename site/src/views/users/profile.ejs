@@ -12,7 +12,7 @@
           <hr>
       <div class="row">
         
-        <form class="form-horizontal" role="form" action="" method="post">
+        <form class="form-horizontal" role="form" action="/user/profile/<%= user.id %>?_method=PUT" method="post">
           <!-- left column -->
           <div class="col-md-3">
             <div class="text-center">
@@ -28,41 +28,41 @@
           <div class="personal-info">
              <h3 class="text-margin">Tus datos</h3>            
             
-              <div class="form-group">
+            <div class="form-group">
                 <label class="col-lg-3 control-label">Nombre:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" value="<%= user.fname %>">
+                  <input class="form-control" type="text" value="<%= user.fname %>" name="fname">
                 </div>
-              </div>
-              <div class="form-group">
+            </div>
+            <div class="form-group">
                 <label class="col-lg-3 control-label">Apellido:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" value="<%= user.lname %>">
+                  <input class="form-control" type="text" value="<%= user.lname %>" name="lname">
                 </div>
-              </div>
-              <div class="form-group">
+            </div>
+            <div class="form-group">
                 <label class="col-lg-3 control-label">Email:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" value="<%= user.email %>">
+                  <input class="form-control" type="text" value="<%= user.email %>" name="email">
                 </div>
-              </div>
+            </div>
               
-              </div>
               
-              <div class="container-button-editProducts">
+              
+            <div class="container-button-editProducts">
                 <input type="submit" class="button-createProduct" value="Editar"></input>
-                <a href="/user/profile/<%= user.id %>">
+                <a href="/">
                   <input type="button" class="button-createProduct blue" value="Cancelar Edicion"></input>
                 </a>
                 <a href="#">
                   <input type="button" class="button-createProduct red" value="Eliminar perfil"></input>
                 </a>
-              </div>
             </div>
+          </div>
           </div>
         </form>
       </div>
-    </div>
+    
     <hr>
     </main>
     <%- include('../partials/footer') %>
