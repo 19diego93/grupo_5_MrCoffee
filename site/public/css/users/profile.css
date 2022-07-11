@@ -1,29 +1,29 @@
 .containerTodo {
-    display: block;
-    width: auto;
-   
-    text-align: center;
-    box-sizing: border-box;
-} 
+  display: block;
+  width: auto;
+
+  text-align: center;
+  box-sizing: border-box;
+}
 hr {
-margin-top: 20px;
-margin-bottom: 20px;
-box-sizing: content-box;
-height: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-sizing: content-box;
+  height: 0;
 }
 .text-margin {
   margin-top: 20px;
   margin-bottom: 10px;
-} 
+}
 
 .container {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
-}   
-.img-circle{
-border-radius: 50%;
+}
+.img-circle {
+  border-radius: 50%;
 }
 .avatar {
   min-width: 200px;
@@ -40,11 +40,12 @@ border-radius: 50%;
 img {
   vertical-align: middle;
 }
-.text-primary{
- padding-top: 20px;
+.text-primary {
+  font-size: 20px;
+  padding-top: 40px;
 }
 .text-miFoto {
- font-size: 14px;
+  font-size: 14px;
 }
 .form-control {
   display: block;
@@ -64,7 +65,7 @@ img {
   margin-bottom: 15px;
   text-align: left;
 }
-.container-botones{
+.container-botones {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -92,42 +93,44 @@ img {
   border: none;
 }
 .blue {
-  background-color:rgb(104, 165, 185);
+  background-color: rgb(104, 165, 185);
   border: none;
 }
 
-  @media (min-width: 460px) {
-    /*! Tablets */
-    
+@media (min-width: 460px) {
+  /*! Tablets */
+  .text-primary {
+    font-size: 35px;
   }
-  @media (min-width: 768px) {
-    /*! LAPTOP */
-    .container{
-      display: table;
-    }
-    .col-md-3{
-      width: 25%;
-      float: left;
-      position: relative;
+}
+@media (min-width: 768px) {
+  /*! LAPTOP */
+  .container {
+    display: table;
+  }
+  .col-md-3 {
+    width: 25%;
+    float: left;
+    position: relative;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
-    }
-    .col-md-9{
+  }
+  .col-md-9 {
     width: 65%;
     float: left;
     position: relative;
     min-height: 1px;
     padding-left: 30px;
     padding-right: 15px;
-    }
   }
-  
-  @media (min-width: 1200px) {
-    /*! PC */
-    .containerTodo{
-      width: 100%;
+}
+
+@media (min-width: 1200px) {
+  /*! PC */
+  .containerTodo {
+    width: 100%;
     margin-left: 0;
     margin-right: 0;
-    }
   }
+}

@@ -15,13 +15,20 @@
         <div class="contenedor-form-boton">
           <p class="register-text">Registrate</p>
           <!--Formulario de registro sin servidor aún-->
-          <form action="register" method="post" class="form-register">
+          <form
+            action="register"
+            method="post"
+            class="form-register"
+            enctype="multipart/form-data"
+          >
             <div class="contenedor-campo">
               <label class="campo-label" for="fname">Nombre </label>
-              <div class="caja-icono-campo">
+              <div
+                class="caja-icono-campo <%= locals.errors && errors.fname ? 'is-invalid' : null %>"
+              >
                 <i class="fa-solid fa-user icono-user"></i>
                 <input
-                  class="campo is-invalid"
+                  class="campo"
                   type="text"
                   id="fname"
                   name="fname"
@@ -35,7 +42,9 @@
             </div>
             <div class="contenedor-campo">
               <label class="campo-label" for="lname">Apellido </label>
-              <div class="caja-icono-campo">
+              <div
+                class="caja-icono-campo <%= locals.errors && errors.lname ? 'is-invalid' : null %>"
+              >
                 <i class="fa-solid fa-user icono-user"></i>
                 <input
                   class="campo"
@@ -52,15 +61,36 @@
             </div>
 
             <div class="contenedor-campo">
+              <label class="campo-label" for="file">Imagen de perfil</label>
+              <div
+                class="caja-icono-campo <%= locals.errors && errors.image ? 'is-invalid' : null %>"
+              >
+                <i class="fas fa-file"></i>
+                <input
+                  class="campo"
+                  id="file"
+                  type="file"
+                  name="image"
+                  accept="image/*"
+                />
+              </div>
+              <% if (locals.errors && errors.image){ %>
+              <div class="text-danger"><%= errors.image.msg %></div>
+              <% } %>
+            </div>
+
+            <div class="contenedor-campo">
               <label class="campo-label" for="email">Correo electrónico</label>
-              <div class="caja-icono-campo">
+              <div
+                class="caja-icono-campo <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+              >
                 <i class="fa-solid fa-envelope icono-email"></i>
                 <input
                   class="campo"
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="superheroe@MrCoffee.com"
+                  placeholder="superhero@MrCoffee.com"
                   value="<%= locals.oldData ? oldData.email : null %>"
                 />
               </div>
@@ -71,7 +101,9 @@
 
             <div class="contenedor-campo">
               <label class="campo-label" for="psw">Contraseña</label>
-              <div class="caja-icono-campo">
+              <div
+                class="caja-icono-campo <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+              >
                 <i class="fa-solid fa-eye-slash icono-psw"></i>
                 <input
                   class="campo"
@@ -90,7 +122,9 @@
               <label class="campo-label" for="confirmPsw"
                 >Confirma tu Contraseña</label
               >
-              <div class="caja-icono-campo">
+              <div
+                class="caja-icono-campo <%= locals.errors && errors.confirmPsw ? 'is-invalid' : null %>"
+              >
                 <i class="fa-solid fa-eye-slash icono-psw"></i>
                 <input
                   class="campo"

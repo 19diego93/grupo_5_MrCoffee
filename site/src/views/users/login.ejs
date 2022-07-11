@@ -17,7 +17,9 @@
           <form action="/user/login" method="POST" class="form-login">
             <div class="contenedor-campo">
               <label for="email" class="campo-label">Email</label>
-              <div class="caja-icono-campo">
+              <div
+                class="caja-icono-campo <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+              >
                 <i class="fa-solid fa-envelope icono-email"></i>
                 <input
                   class="campo"
@@ -34,7 +36,9 @@
             </div>
             <div class="contenedor-campo">
               <label for="passwd" class="campo-label">Contraseña</label>
-              <div class="caja-icono-campo">
+              <div
+                class="caja-icono-campo <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+              >
                 <i class="fa-solid fa-eye-slash icono-passwd"></i>
                 <input
                   class="campo"
@@ -61,9 +65,8 @@
             </div>
           </form>
           <div class="vinculos-login">
-            <a href=""><p class="olvidaste">¿Olvidaste tu Contraseña?</p></a>
-            <!--Redirección a definir-->
-
+            <a href=""><p class="politicas">Crear una cuenta.</p></a>
+            <br />
             <a href=""><p class="politicas">Políticas de Privacidad</p></a>
             <!--Redirección a definir-->
           </div>

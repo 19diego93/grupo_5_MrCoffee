@@ -136,7 +136,9 @@
 a {
   text-decoration: none;
 }
-
+.contenedor-campo .is-invalid {
+  border: 2px solid var(--color-Rojo-Super-Claro);
+}
 @media (min-width: 460px) {
   /*! Tablets */
   .register-text {

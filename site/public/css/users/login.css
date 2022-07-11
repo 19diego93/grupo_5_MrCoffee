@@ -110,7 +110,7 @@
 /*! vinculos */
 .vinculos-login {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 10px;
   padding: 10px;
 }
@@ -119,12 +119,14 @@
 }
 .olvidaste {
   font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: #00b7ff;
+  color: var(--color-Marron);
 }
 .politicas {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #00b7ff;
+}
+.contenedor-campo .is-invalid {
+  border: 2px solid var(--color-Rojo-Super-Claro);
 }
 
 @media (min-width: 460px) {
