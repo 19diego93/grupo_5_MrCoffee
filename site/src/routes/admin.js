@@ -8,13 +8,16 @@ const upload = require("./multer/admin");
 const express = require("express");
 const router = express.Router();
 
-//! Rutas
-router.get("/admin/list", controller.viewList);
+//!Middlewares
+const adminDeRuta = require("../middlewares/adminDeRuta")
 
-router.get("/admin/create", controller.viewCreate);
+//! Rutas
+router.get("/admin/list",adminDeRuta, controller.viewList);
+
+router.get("/admin/create",adminDeRuta, controller.viewCreate);
 router.post("/admin/", upload.single("image"), creation, controller.create);
 
-router.get("/admin/edit/:id", controller.viewEdit);
+router.get("/admin/edit/:id",adminDeRuta, controller.viewEdit);
 router.put(
   "/admin/:id/update",
   upload.single("image"),

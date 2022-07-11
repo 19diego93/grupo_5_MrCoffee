@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 const mantenimiento = require("./middlewares/mantenimiento.js");
 const userLoggedMW = require("./middlewares/userLoggedMW.js");
-const adminMiddleware = require("./middlewares/adminMiddleware.js");
+const adminGlobal = require("./middlewares/adminGlobal.js");
 const cookies = require('cookie-parser');
 //! Session
 const session = require("express-session");
@@ -30,7 +30,7 @@ app.use(
 );
 // ?este middlewares solo funciona luego de que se inicie la session
 app.use(userLoggedMW);
-app.use(adminMiddleware);
+app.use(adminGlobal);
 
 
 //! localhost

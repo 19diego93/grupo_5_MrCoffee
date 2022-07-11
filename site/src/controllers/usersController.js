@@ -134,7 +134,8 @@ const usersController = {
     },
   
   logout: (req, res) => {
-    res.clearCookie('recordame','admin')
+    res.clearCookie('recordame');
+    res.clearCookie('admin');
     req.session.destroy();
     return res.redirect("/");
   },
