@@ -5,7 +5,7 @@ const app = express();
 const mantenimiento = require("./middlewares/mantenimiento.js");
 const userLoggedMW = require("./middlewares/userLoggedMW.js");
 const adminGlobal = require("./middlewares/adminGlobal.js");
-const cookies = require('cookie-parser');
+const cookies = require("cookie-parser");
 //! Session
 const session = require("express-session");
 
@@ -32,7 +32,6 @@ app.use(
 app.use(userLoggedMW);
 app.use(adminGlobal);
 
-
 //! localhost
 app.listen(3000, () => {
   console.log(`MrCoffee listening at http://localhost:3000`);
@@ -43,7 +42,6 @@ const mainRouter = require("./routes/main.js");
 const usersRouter = require("./routes/users.js");
 const adminRouter = require("./routes/admin.js");
 const productsRouter = require("./routes/products.js");
-const { cookie } = require("express-validator");
 
 //! Puertos
 app.use("/", mainRouter);

@@ -35,7 +35,7 @@ footer {
   align-items: center;
   margin-top: 20px;
 }
-.container-email input {
+.container-email #newsletter-input {
   border: none;
   outline: 0;
   padding: 10px;
@@ -51,16 +51,21 @@ footer {
 .email-icon i {
   font-size: 1rem;
 }
-.email-send {
+#email-send {
   background-color: #76402e;
   cursor: pointer;
   border: none;
   padding: 11px;
 }
-.email-send:hover {
+#email-send:hover {
   background-color: #4b2a1e;
 }
-.email-send i {
+#email-send input {
+  display: none;
+  font-family: inherit;
+  -webkit-appearance: none;
+}
+#email-send i {
   font-size: 1rem;
 }
 .Container-Redes {
@@ -206,7 +211,7 @@ footer h5 {
   footer {
     margin-bottom: -40px;
   }
-  .container-email input {
+  .container-email #newsletter-input {
     width: 60%;
     font-size: 1.9rem;
   }
@@ -216,10 +221,10 @@ footer h5 {
   .email-icon i {
     font-size: 2rem;
   }
-  .email-send {
+  #email-send {
     padding: 12px;
   }
-  .email-send i {
+  #email-send i {
     font-size: 2rem;
   }
   .Container-links {
@@ -250,7 +255,7 @@ footer h5 {
 }
 @media (min-width: 1200px) {
   /*! PC */
-  .container-email input {
+  .container-email #newsletter-input {
     width: 50%;
   }
   .Container-Buttons {

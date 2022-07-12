@@ -1,0 +1,19 @@
+/*! Colores */
+:root {
+  --color-Celeste: #00b7ff;
+  --color-Celeste-Claro: #42c9ff;
+  --color-Marron-Oscuro-2: #8c4933;
+  --color-Marron-Oscuro: #76402e;
+  --color-Marron: #ad715c;
+  --color-Marron-Claro: #d1a284;
+  --color-Negro: #000;
+  --color-Negro-Claro-1: #111111f3;
+  --color-Negro-Claro-2: #111111d0;
+  --color-Blanco: #fff;
+  --color-Negro: #000;
+  --color-Blanco-Gastado: #dcdde9;
+  --color-Rojo-Super-Claro: rgb(255, 0, 0);
+  --color-Rojo-Claro: rgb(171, 11, 11);
+  --color-rojo-Oscuro: rgb(85, 10, 10);
+  --color-Verde-Saturado: #3bc472;
+}

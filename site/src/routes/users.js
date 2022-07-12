@@ -7,10 +7,10 @@ const router = express.Router();
 
 // !Middlewares
 const guestMiddleware = require("../middlewares/guestMiddleware");
-const register = require("../controllers/validations/validationsRegister");
+const register = require("./validations/validationsRegister");
 const usersController = require("../controllers/usersController");
 const authMiddleware = require("../middlewares/authMiddleware");
-const login = require("../controllers/validations/validationsLogin");
+const login = require("./validations/validationsLogin");
 
 router.get("/user/login", guestMiddleware, usersController.login);
 
@@ -27,7 +27,7 @@ router.post(
 
 router.get("/user/profile", authMiddleware, usersController.profile);
 
-router.put("/user/profile/:id",authMiddleware, usersController.editProfile);
+router.put("/user/profile/:id", authMiddleware, usersController.editProfile);
 
 router.get("/user/logout", usersController.logout);
 

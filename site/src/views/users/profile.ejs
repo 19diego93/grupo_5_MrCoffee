@@ -7,63 +7,94 @@
   <body>
     <%- include('../partials/header') %>
     <main>
-      <div class="containerTodo container">
-        <h1 class="text-primary text-margin">Tú perfil</h1>
-          <hr>
-      <div class="row">
-        
-        <form class="form-horizontal" role="form" action="/user/profile/<%= user.id %>?_method=PUT" method="post">
-          <!-- left column -->
-          <div class="col-md-3">
-            <div class="text-center">
-              <img src="/img/avatar/<%= user.image %>" class="avatar img-circle img-thumbnail" alt="avatar">
-              <h6 class="text-margin text-miFoto">¿Cambiamos de foto?</h6>
-              
-              <input type="file" class="form-control">
+      <div class="contenedor-perfil">
+        <div class="titulo-perfil">
+          <h2>Perfil</h2>
+        </div>
+
+        <form>
+          <div class="formulario-perfil">
+            <div class="contenedor-img-perfil">
+              <div class="img-perfil">
+                <label for="file">
+                  <picture>
+                    <img src="/img/chicaconcafe.jpeg" alt="imagen de usuario" />
+                  </picture>
+                </label>
+              </div>
+              <div class="boton-nueva-img">
+                <div>
+                  <label for="file">
+                    <p>Subir nueva foto</p>
+                    <input
+                      type="file"
+                      name="image"
+                      id="file"
+                      accept="image/*"
+                    />
+                  </label>
+                </div>
+                <p class="extensiones-img">
+                  Puedes subir archivos de imagen '.jpg' '.jpeg' o '.png' Tamaño
+                  máximo 1mb.
+                </p>
+              </div>
+            </div>
+            <div class="contenedor-input-perfil">
+              <div class="estilos-input">
+                <label for="first_name">Nombre</label>
+                <input
+                  placeholder="Introduzca su nombre"
+                  id="first_name"
+                  name="fname"
+                  type="text"
+                />
+                <img src="/img/check-circle.svg" alt="check-circle" />
+                <img src="/img/exclamation-circle.svg" alt="check-circle" />
+              </div>
+
+              <div class="estilos-input">
+                <label for="last_name">Apellido</label>
+                <input
+                  placeholder="Introduzca su apellido"
+                  id="last_name"
+                  name="lname"
+                  type="text"
+                />
+                <img src="/img/check-circle.svg" alt="check-circle" />
+                <img src="/img/exclamation-circle.svg" alt="check-circle" />
+              </div>
+
+              <div class="estilos-input">
+                <label for="email">Email</label>
+                <input
+                  placeholder="Introduzca su email"
+                  id="email"
+                  name="email"
+                  type="email"
+                />
+                <img src="/img/check-circle.svg" alt="check-circle" />
+                <img src="/img/exclamation-circle.svg" alt="check-circle" />
+              </div>
+
+              <div class="estilos-input">
+                <label for="changePsw">Contraseña</label>
+                <button id="changePsw">Cambia tu contraseña</button>
+              </div>
             </div>
           </div>
-          
-          <!-- edit form column -->
-          <div class="col-md-9">
-          <div class="personal-info">
-             <h3 class="text-margin">Tus datos</h3>            
-            
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Nombre:</label>
-                <div class="col-lg-8">
-                  <input class="form-control" type="text" value="<%= user.fname %>" name="fname">
-                </div>
+
+          <div class="contenedor-botones">
+            <div class="perfil-input-submit">
+              <input type="submit" value="Guardar" />
             </div>
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Apellido:</label>
-                <div class="col-lg-8">
-                  <input class="form-control" type="text" value="<%= user.lname %>" name="lname">
-                </div>
+
+            <div class="perfil-cancelar">
+              <a href="#">Cancelar</a>
             </div>
-            <div class="form-group">
-                <label class="col-lg-3 control-label">Email:</label>
-                <div class="col-lg-8">
-                  <input class="form-control" type="text" value="<%= user.email %>" name="email">
-                </div>
-            </div>
-              
-              
-              
-            <div class="container-button-editProducts">
-                <input type="submit" class="button-createProduct" value="Editar"></input>
-                <a href="/">
-                  <input type="button" class="button-createProduct blue" value="Cancelar Edicion"></input>
-                </a>
-                <a href="#">
-                  <input type="button" class="button-createProduct red" value="Eliminar perfil"></input>
-                </a>
-            </div>
-          </div>
           </div>
         </form>
       </div>
-    
-    <hr>
     </main>
     <%- include('../partials/footer') %>
   </body>

@@ -1,11 +1,20 @@
 [
- {
-  "id": 1,
-  "category": "admin",
-  "image": "defaultimg.jpg",
-  "fname": "Pirulo",
-  "lname": "Vallejo",
-  "email": "asd@asdasd.asd",
-  "password": "$2a$10$uzPs/IzhUqfQTRzqzJRFvuNGsLyDghbDih13BX5Y/G53pliHcNPw6"
- }
+  {
+    "id": 1,
+    "category": "admin",
+    "image": "defaultimg.jpg",
+    "fname": "Pirulo",
+    "lname": "Vallejo",
+    "email": "asd@asdasd.asd",
+    "password": "$2a$10$uzPs/IzhUqfQTRzqzJRFvuNGsLyDghbDih13BX5Y/G53pliHcNPw6"
+  },
+  {
+    "id": 2,
+    "category": "user",
+    "fname": "dsadasda",
+    "lname": "dasdasda",
+    "image": "defaultimg.jpg",
+    "email": "superhero@MrCoffee.com",
+    "password": "$2a$10$smMVqnT7qqvQkyqDMndf0eiCmvhy57anVOThSAn47riLekowiyQhq"
+  }
 ]

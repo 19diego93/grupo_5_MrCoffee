@@ -1,16 +1,9 @@
-const User = require('../models/Users');
+module.exports = (req, res, next) => {
+  res.locals.category = false;
+  let categoria = req.cookies.category;
 
-function adminLogged(req, res, next) {
-    res.locals.admin = false;
-  let categoria = req.cookies.admin  
-    
-  if(categoria === "admin") {
-        res.locals.admin = true;
-    }
-  
-
-    next();
-    
-}
-module.exports = adminLogged;
-
+  if (categoria === "admin") {
+    res.locals.category = true;
+  }
+  next();
+};

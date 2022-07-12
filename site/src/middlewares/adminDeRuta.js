@@ -1,13 +1,10 @@
-const User = require('../models/Users');
-
 function adminRuta(req, res, next) {
-    
-  let categoria = req.cookies.admin  
-    
-  if(!req.session.userLogged && categoria === "admin") {
-        res.redirect("/user/login")
-    }
-      next();
-    
+  let categoria = req.cookies.category;
+
+  if (categoria === "admin") {
+    next();
+  } else {
+    res.redirect("/user/login");
+  }
 }
 module.exports = adminRuta;

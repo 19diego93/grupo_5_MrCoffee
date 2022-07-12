@@ -31,12 +31,16 @@ const usersController = {
           if (isOkPassword) {
             delete userLogin.password;
             req.session.userLogged = userLogin;
-            if (req.session.userLogged){
-              res.cookie("admin", userLogin.category, {maxAge:1000*60*1 })
-            };
-            if(req.body.recordame){
-              res.cookie("recordame", req.body.email, {maxAge:1000*60*2 })
-            };
+            if (req.session.userLogged) {
+              res.cookie("category", userLogin.category, {
+                maxAge: 1000 * 60 * 1,
+              });
+            }
+            if (req.body.recordame) {
+              res.cookie("recordame", req.body.email, {
+                maxAge: 1000 * 60 * 2,
+              });
+            }
             return res.redirect("/");
           } else {
             return res.render("../views/users/login", {
@@ -110,6 +114,13 @@ const usersController = {
           });
         }
       } else {
+        if (req.file) {
+          let filePath = path.resolve(
+            __dirname,
+            "../../public/img/avatar/" + req.file.filename
+          );
+          fs.unlinkSync(filePath);
+        }
         return res.render("users/register", {
           errors: errors.mapped(),
           oldData: req.body,
@@ -126,16 +137,14 @@ const usersController = {
 
   profile: (req, res) => {
     return res.render("users/profile", {
-    user: req.session.userLogged 
-   });   
+      user: req.session.userLogged,
+    });
   },
-  editProfile: (req, res) => { 
-      
-    },
-  
+  editProfile: (req, res) => {},
+
   logout: (req, res) => {
-    res.clearCookie('recordame');
-    res.clearCookie('admin');
+    res.clearCookie("recordame");
+    res.clearCookie("admin");
     req.session.destroy();
     return res.redirect("/");
   },

@@ -1,136 +1,240 @@
-.containerTodo {
-  display: block;
-  width: auto;
-
-  text-align: center;
-  box-sizing: border-box;
-}
-hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  box-sizing: content-box;
-  height: 0;
-}
-.text-margin {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.img-circle {
-  border-radius: 50%;
-}
-.avatar {
-  min-width: 200px;
-  min-height: 200px;
-}
-.img-thumbnail {
-  padding: 4px;
-  line-height: 1.42857143;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  display: inline-block;
-  max-width: 100%;
-}
-img {
-  vertical-align: middle;
-}
-.text-primary {
-  font-size: 20px;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+.contenedor-perfil {
+  width: 100%;
   padding-top: 40px;
+  font-family: "Roboto Mono", monospace;
 }
-.text-miFoto {
-  font-size: 14px;
+.titulo-perfil {
+  margin: 20px;
+  border-bottom: 1px solid var(--color-Marron-Claro);
 }
-.form-control {
+.titulo-perfil h2 {
+  color: var(--color-Marron-Oscuro);
+  text-align: center;
+  font-size: 28px;
+}
+.formulario-perfil {
   display: block;
   width: 100%;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  margin-top: 40px;
 }
-.form-group {
-  margin-bottom: 15px;
-  text-align: left;
-}
-.container-botones {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.container-button-editProducts {
+/*! Imagen */
+.contenedor-img-perfil {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
-.button-createProduct {
-  background: var(--color-Negro-Claro-2);
-  color: var(--color-Blanco);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px;
+.img-perfil {
+  width: 100px;
+  height: 100px;
+}
+.img-perfil picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 2px solid var(--color-Marron-Claro);
+  border-radius: 50%;
+  position: relative;
   cursor: pointer;
-  border: none;
 }
-.button-createProduct:hover {
-  opacity: 0.8;
+.img-perfil picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.red {
-  background-color: var(--color-Rojo-Claro);
-  border: none;
+.boton-nueva-img {
+  padding: 10px;
+  text-align: center;
+  width: 100%;
 }
-.blue {
-  background-color: rgb(104, 165, 185);
+.boton-nueva-img div {
+  display: block;
+}
+.boton-nueva-img div label {
+  background-color: var(--color-Marron-Claro);
+  cursor: pointer;
+  display: inline-block;
+  outline: 0;
+  padding: 6px 16px;
+  position: relative;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+.boton-nueva-img div label p {
+  color: var(--color-Blanco);
+}
+.boton-nueva-img div label input {
+  display: none;
+  font-family: inherit;
+  -webkit-appearance: none;
+}
+.extensiones-img {
+  margin-top: 10px;
+  color: var(--color-Marron-Claro);
+  font-family: initial;
+  pointer-events: none;
+}
+/*! Input's */
+.contenedor-input-perfil {
+  margin-top: 40px;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+.estilos-input {
+  width: 90%;
+  margin: auto;
+  position: relative;
+  margin-bottom: 32px;
+}
+.estilos-input label {
+  color: var(--color-Marron-Oscuro-2);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 10px;
+}
+.estilos-input input {
+  color: var(--color-Marron);
+  width: 100%;
+  border: 1px solid var(--color-Blanco-Gastado);
+  height: 44px;
+  margin-top: 8px;
+  outline: none;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+.estilos-input button {
+  color: var(--color-Blanco);
+  width: 100%;
   border: none;
+  background-color: var(--color-Marron-Claro);
+  height: 44px;
+  margin-top: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.estilos-input img {
+  top: 42px;
+  right: 10px;
+  width: 24px;
+  overflow: hidden;
+  position: absolute;
+  background: var(--color-Blanco);
+  border-radius: 50%;
+}
+.contenedor-botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.perfil-input-submit {
+  width: 95%;
+  display: inline-block;
+  flex-direction: row;
+  position: relative;
+  vertical-align: top;
+}
+.perfil-input-submit input {
+  font-family: "Roboto Mono", monospace;
+  color: var(--color-Blanco);
+  width: 100%;
+  background-color: var(--color-Celeste-Claro);
+  border: none;
+  outline: none;
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+.perfil-cancelar {
+  width: 95%;
+}
+.perfil-cancelar a {
+  display: block;
+  text-align: center;
+  max-width: 100%;
+  color: var(--color-Blanco);
+  text-decoration: none;
+  background-color: var(--color-Rojo-Super-Claro);
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 8px;
 }
 
 @media (min-width: 460px) {
-  /*! Tablets */
-  .text-primary {
-    font-size: 35px;
+  .img-perfil {
+    width: 150px;
+    height: 150px;
+  }
+
+  .estilos-input {
+    width: 400px;
+  }
+
+  .contenedor-botones {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .perfil-input-submit {
+    width: 200px;
+    padding: 10px;
+  }
+
+  .perfil-cancelar {
+    width: 200px;
+    padding: 10px;
   }
 }
 @media (min-width: 768px) {
-  /*! LAPTOP */
-  .container {
-    display: table;
+  .img-perfil {
+    width: 200px;
+    height: 200px;
   }
-  .col-md-3 {
-    width: 25%;
-    float: left;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
+
+  .estilos-input {
+    width: 80%;
   }
-  .col-md-9 {
-    width: 65%;
-    float: left;
-    position: relative;
-    min-height: 1px;
-    padding-left: 30px;
-    padding-right: 15px;
+
+  .perfil-input-submit {
+    width: 300px;
+  }
+
+  .perfil-cancelar {
+    width: 300px;
+  }
+  .contenedor-input-perfil {
+    gap: unset;
+    grid-template-columns: 1fr 1fr;
+  }
+  .perfil-input-submit input {
+    margin-bottom: unset;
   }
 }
 
 @media (min-width: 1200px) {
-  /*! PC */
-  .containerTodo {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+  .formulario-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .estilos-input {
+    width: 90%;
+  }
+
+  .contenedor-botones {
+    justify-content: center;
   }
 }

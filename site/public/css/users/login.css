@@ -128,7 +128,10 @@
 .contenedor-campo .is-invalid {
   border: 2px solid var(--color-Rojo-Super-Claro);
 }
-
+.login-recordarme {
+  margin: 10px 0px;
+  padding: 10px;
+}
 @media (min-width: 460px) {
   /*! Tablets */
   .login-text {
