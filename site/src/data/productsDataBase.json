@@ -77,17 +77,6 @@
     "rating": 3
   },
   {
-    "id": 9,
-    "name": "Skinny Caramel Macchiato",
-    "image": "9.png",
-    "description": "Vainilla sin azucar y leche 'manchada' con espresso, finalizada con el característico dibujo de caramelo",
-    "category": "coffee",
-    "stock": 20,
-    "price": 200,
-    "offer": 0,
-    "rating": 3.3
-  },
-  {
     "id": 10,
     "image": "10.png",
     "name": "Caramel Macchiato",

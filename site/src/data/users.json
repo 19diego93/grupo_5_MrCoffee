@@ -1,20 +1,29 @@
 [
-  {
-    "id": 1,
-    "category": "admin",
-    "image": "defaultimg.jpg",
-    "fname": "Pirulo",
-    "lname": "Vallejo",
-    "email": "asd@asdasd.asd",
-    "password": "$2a$10$uzPs/IzhUqfQTRzqzJRFvuNGsLyDghbDih13BX5Y/G53pliHcNPw6"
-  },
-  {
-    "id": 2,
-    "category": "user",
-    "fname": "dsadasda",
-    "lname": "dasdasda",
-    "image": "defaultimg.jpg",
-    "email": "superhero@MrCoffee.com",
-    "password": "$2a$10$smMVqnT7qqvQkyqDMndf0eiCmvhy57anVOThSAn47riLekowiyQhq"
-  }
+ {
+  "id": 1,
+  "category": "admin",
+  "image": "defaultimg.jpg",
+  "fname": "Pirulo",
+  "lname": "Vallejo",
+  "email": "asd@asdasd.asd",
+  "password": "$2a$10$uzPs/IzhUqfQTRzqzJRFvuNGsLyDghbDih13BX5Y/G53pliHcNPw6"
+ },
+ {
+  "id": 2,
+  "category": "user",
+  "fname": "dsadasda",
+  "lname": "dasdasda",
+  "image": "defaultimg.jpg",
+  "email": "superhero@MrCoffee.com",
+  "password": "$2a$10$smMVqnT7qqvQkyqDMndf0eiCmvhy57anVOThSAn47riLekowiyQhq"
+ },
+ {
+  "id": 3,
+  "category": "user",
+  "fname": "Jhon",
+  "lname": "Salchichon",
+  "image": "img-1657649327837.jpg",
+  "email": "qwe@qwe.qwe",
+  "password": "$2a$10$wPRnJw6m9eMIavBV64lZ1u0EOfN8J6JAcjfxt7.UdrKzpVgIIRHQ6"
+ }
 ]
