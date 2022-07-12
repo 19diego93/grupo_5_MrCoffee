@@ -6,28 +6,28 @@
     <% if (!locals.isLogged) { %>
 
     <li class="list__item">
-      <div class="list__button">
+      <div class="list__button nav__glow">
         <i class="fas fa-address-card"></i>
         <a href="/user/register" class="nav__link">Registrate</a>
       </div>
     </li>
 
     <li class="list__item">
-      <div class="list__button">
+      <div class="list__button nav__glow">
         <i class="fas fa-sign-in"></i>
         <a href="/user/login" class="nav__link">Ingresa</a>
       </div>
     </li>
     <% } else { %>
     <li class="list__item">
-      <div class="list__button">
+      <div class="list__button nav__glow">
         <i class="fas fa-sign-out-alt"></i>
         <a href="/user/logout" class="nav__link">Salir</a>
       </div>
     </li>
     <% } %>
     <li class="list__item">
-      <div class="list__button">
+      <div class="list__button nav__glow">
         <i class="fas fa-bell"></i>
         <a href="#notificaciones" class="nav__link" id="close-menu-2">
           Notificaciones
@@ -36,7 +36,7 @@
     </li>
 
     <li class="list__item list__item--click">
-      <div class="list__button list__button--click">
+      <div class="nav__glow list__button list__button--click">
         <i class="fas fa-cog"></i>
         <p class="nav__link">Usuario</p>
         <i class="fas fa-angle-down list__arrow"></i>
@@ -56,7 +56,7 @@
     </li>
     <% if (locals.category) { %>
     <li class="list__item list__item--click">
-      <div class="list__button list__button--click">
+      <div class="nav__glow list__button list__button--click">
         <i class="fas fa-tools"></i>
         <p class="nav__link">Admin</p>
         <i class="fas fa-angle-down list__arrow"></i>
@@ -77,7 +77,7 @@
     </li>
     <% } %>
     <li class="list__item list__item--click">
-      <div class="list__button list__button--click">
+      <div class="nav__glow list__button list__button--click">
         <i class="fa-solid fa-comment-dots"></i>
         <p class="nav__link">AYUDA</p>
         <i class="fas fa-angle-down list__arrow"></i>
