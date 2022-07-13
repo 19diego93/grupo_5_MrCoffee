@@ -30,16 +30,16 @@ const usersController = {
           return emailDb == emailBody;
         });
 
-        console.log(userLogin);
-
         if (userLogin) {
           let isOkPassword = bcryptjs.compareSync(
             req.body.password,
             userLogin.password
           );
           if (isOkPassword) {
-            req.session.userLogged = userLogin;
+            req.session.userLogged = { ...userLogin };
+
             delete req.session.userLogged.password;
+
             if (req.session.userLogged) {
               res.cookie("category", userLogin.category, {
                 maxAge: 1000 * 60 * 1,
@@ -158,7 +158,11 @@ const usersController = {
       // Todos los usuarios
       let allUsers = users;
 
-      userFound = allUsers.find((user) => user.id == req.session.userLogged.id);
+      let userFound = allUsers.find((user) => {
+        if (user.id == req.session.userLogged.id) {
+          return user;
+        }
+      });
 
       // Consulto si el Email existe en la base de datos
       // Utilizo toUpperCase para hacer los Email mayusculas y comprobar.
@@ -208,16 +212,15 @@ const usersController = {
           email: req.body.email,
           password: userFound.password,
         };
-        console.log(userEdit);
 
         let edited = allUsers.map((user) => {
-          if (user.id == req.params.id) {
+          if (user.id == userEdit.id) {
             return (user = userEdit);
-          } else {
-            return user;
           }
+          return user;
         });
 
+        console.log(edited);
         let update = JSON.stringify(edited, null, " ");
         fs.writeFileSync(usersFilePath, update, "utf-8");
         res.redirect("/");
