@@ -23,12 +23,12 @@ const User = {
 
   findByPk: function (id) {
     let allUsers = this.getData();
-    let userFound = allUsers.find((oneUser) => oneUser.id === id);
+    let userFound = allUsers.find((oneUser) => oneUser.id == id);
     return userFound;
   },
   findByField: function (field, text) {
     let allUsers = this.getData();
-    let userFound = allUsers.find((oneUser) => oneUser[field] === text);
+    let userFound = allUsers.find((oneUser) => oneUser[field] == text);
     return userFound;
   },
 
@@ -38,6 +38,20 @@ const User = {
     allUsers.push(userData);
     fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, " "));
   },
+
+  // edit: (id, object) => {
+  //   let allUsers = this.findAll();
+
+  //   let edited = allUsers.map((user) => {
+  //     if (user.id == id) {
+  //       return (user = object);
+  //     }
+  //     return user;
+  //   });
+
+  //   let update = JSON.stringify(edited, null, " ");
+  //   fs.writeFileSync(this.fileName, update, "utf-8");
+  // },
 
   delete: function (id) {
     let allUsers = this.findAll();

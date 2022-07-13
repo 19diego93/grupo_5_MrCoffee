@@ -113,7 +113,7 @@ const adminController = {
         req.body.rating = 0;
       }
 
-      editProduct = {
+      let editProduct = {
         id: parseInt(req.params.id),
         name: req.body.name,
         image: image,

@@ -140,7 +140,107 @@ const usersController = {
       user: req.session.userLogged,
     });
   },
-  editProfile: (req, res) => {},
+  editProfile: (req, res) => {
+    let errors = validationResult(req);
+
+    // Consulto si NO existen errores
+    if (errors.isEmpty()) {
+      // Todos los usuarios
+      let allUsers = users;
+
+      // Consulto si el Email existe en la base de datos
+      // Utilizo toUpperCase para hacer los Email mayusculas y comprobar.
+      let email = req.body.email.toUpperCase();
+      if (userFound.email == email) {
+        userInDb = false;
+      } else {
+        allUsers.find((oneUser) => {
+          let userDbEmail = oneUser.email.toUpperCase();
+
+          if (userDbEmail == email) {
+            userInDb = true;
+          }
+        });
+      }
+
+      // Consulto si la variable NO me dio TRUE.
+      if (!userInDb) {
+        // Configuracion del guardado de IMG
+        let image;
+        if (req.file) {
+          image = req.file.filename;
+          // let filePath = path.resolve(
+          //   __dirname,
+          //   "../../public/img/avatar/" + req.body.oldImage
+          // );
+          // fs.unlinkSync(filePath);
+        } else {
+          image = "defaultimg.jpg";
+        }
+
+        // let password;
+        // if (!req.body.password === userFound.password) {
+        //   password = req.body.password;
+        // } else {
+        //   userFound.password;
+        // }
+
+        let userEdit = {
+          id: parseInt(req.params.id),
+          category: userFound.category,
+          image: image,
+          fname: req.body.fname,
+          lname: req.body.lname,
+          email: req.body.email,
+          password: userFound.password,
+        };
+
+        let edited = allUsers.map((user) => {
+          if (user.id == req.params.id) {
+            return (user = userEdit);
+          } else {
+            return user;
+          }
+        });
+
+        let update = JSON.stringify(edited, null, " ");
+        fs.writeFileSync(usersFilePath, update, "utf-8");
+        res.redirect("/");
+      } else {
+        // if (req.file) {
+        //   let filePath = path.resolve(
+        //     __dirname,
+        //     "../../public/img/avatar/" + req.file.filename
+        //   );
+        //   fs.unlinkSync(filePath);
+        // }
+
+        return res.render("users/profile", {
+          errors: {
+            email: {
+              msg: "Este email ya está registrado.",
+            },
+          },
+          user: req.session.userLogged,
+          oldDate: req.body,
+        });
+      }
+    } else {
+      // if (req.file) {
+      //   let filePath = path.resolve(
+      //     __dirname,
+      //     "../../public/img/avatar/" + req.file.filename
+      //   );
+      //   fs.unlinkSync(filePath);
+      // }
+
+      return res.render("users/profile", {
+        errors: errors.mapped(),
+        user: req.session.userLogged,
+        oldDate: req.body,
+      });
+    }
+  },
 
   logout: (req, res) => {
     res.clearCookie("recordame");

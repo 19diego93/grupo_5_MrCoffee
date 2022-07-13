@@ -1,5 +1,6 @@
 //! Archivos
 const upload = require("./multer/users");
+const usersController = require("../controllers/usersController");
 
 //! Extensiones
 const express = require("express");
@@ -7,10 +8,11 @@ const router = express.Router();
 
 // !Middlewares
 const guestMiddleware = require("../middlewares/guestMiddleware");
-const register = require("./validations/validationsRegister");
-const usersController = require("../controllers/usersController");
 const authMiddleware = require("../middlewares/authMiddleware");
+
 const login = require("./validations/validationsLogin");
+const register = require("./validations/validationsRegister");
+const profile = require("./validations/validationsProfile");
 
 router.get("/user/login", guestMiddleware, usersController.login);
 
@@ -27,7 +29,12 @@ router.post(
 
 router.get("/user/profile", authMiddleware, usersController.profile);
 
-router.put("/user/profile/:id", authMiddleware, usersController.editProfile);
+router.put(
+  "/user/profile/:id",
+  upload.single("image"),
+  profile,
+  usersController.editProfile
+);
 
 router.get("/user/logout", usersController.logout);
 

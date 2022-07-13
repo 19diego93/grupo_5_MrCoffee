@@ -12,15 +12,16 @@
           <h2>Perfil</h2>
         </div>
 
-        <form>
+        <form action="/user/profile/<%=user.id%>?_method=PUT" method="POST">
           <div class="formulario-perfil">
             <div class="contenedor-img-perfil">
               <div class="img-perfil">
-                <label for="file">
-                  <picture>
-                    <img src="/img/avatar/<%= user.image %>" alt="imagen de usuario" />
-                  </picture>
-                </label>
+                <picture>
+                  <img
+                    src="/img/avatar/<%= user.image %>"
+                    alt="imagen de usuario"
+                  />
+                </picture>
               </div>
               <div class="boton-nueva-img">
                 <div>
@@ -34,10 +35,9 @@
                     />
                   </label>
                 </div>
-                <p class="extensiones-img">
-                  Puedes subir archivos de imagen '.jpg' '.jpeg' o '.png' Tamaño
-                  máximo 1mb.
-                </p>
+                <% if(locals.errors && errors.image){ %>
+                <p class="errors-t"><%= errors.image %></p>
+                <% } %>
               </div>
             </div>
             <div class="contenedor-input-perfil">
@@ -48,9 +48,12 @@
                   id="first_name"
                   name="fname"
                   type="text"
+                  class="<%= locals.errors && errors.fname ? 'is-invalid' : 'is-valid' %>"
+                  value="<%= locals.oldDate && oldDate.fname ? oldDate.fname : user.fname %>"
                 />
-                <img src="/img/check-circle.svg" alt="check-circle" />
-                <img src="/img/exclamation-circle.svg" alt="check-circle" />
+                <% if(locals.errors && errors.fname){ %>
+                <div class="errors-t"><%= errors.fname.msg %></div>
+                <% } %>
               </div>
 
               <div class="estilos-input">
@@ -60,9 +63,12 @@
                   id="last_name"
                   name="lname"
                   type="text"
+                  class="<%= locals.errors && errors.lname ? 'is-invalid' : 'is-valid' %>"
+                  value="<%= locals.oldDate && oldDate.lname ? oldDate.lname : user.lname %>"
                 />
-                <img src="/img/check-circle.svg" alt="check-circle" />
-                <img src="/img/exclamation-circle.svg" alt="check-circle" />
+                <% if(locals.errors && errors.lname){ %>
+                <div class="errors-t"><%= errors.lname.msg %></div>
+                <% } %>
               </div>
 
               <div class="estilos-input">
@@ -72,9 +78,12 @@
                   id="email"
                   name="email"
                   type="email"
+                  class="<%= locals.errors && errors.email ? 'is-invalid' : 'is-valid' %>"
+                  value="<%= locals.oldDate && oldDate.email ? oldDate.email : user.email %>"
                 />
-                <img src="/img/check-circle.svg" alt="check-circle" />
-                <img src="/img/exclamation-circle.svg" alt="check-circle" />
+                <% if(locals.errors && errors.email){ %>
+                <div class="errors-t"><%= errors.email.msg %></div>
+                <% } %>
               </div>
 
               <div class="estilos-input">
@@ -90,7 +99,7 @@
             </div>
 
             <div class="perfil-cancelar">
-              <a href="#">Cancelar</a>
+              <a href="/">Cancelar</a>
             </div>
           </div>
         </form>
