@@ -969,16 +969,5 @@
     "price": 1600,
     "offer": 20,
     "rating": 3.3
-  },
-  {
-    "id": 1656216308405,
-    "name": "Probando",
-    "image": "img-1656216600133.jpg",
-    "description": "Producto de prueba, modificando imagen y borrando la imagen anterior!!",
-    "category": "coffee",
-    "stock": 347,
-    "price": 7246,
-    "offer": 0,
-    "rating": 0
   }
 ]

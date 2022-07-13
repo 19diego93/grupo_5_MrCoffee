@@ -30,7 +30,7 @@ app.use(
 );
 // ?este middlewares solo funciona luego de que se inicie la session
 app.use(userLoggedMW);
-// app.use(adminGlobal);
+app.use(adminGlobal);
 
 //! localhost
 app.listen(3000, () => {
