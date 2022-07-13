@@ -5,35 +5,20 @@ const fs = require("fs");
 const validacion = [
   body("image").custom((value, { req }) => {
     let file = req.file;
-
+    let acceptedExtensions = [".png", ".jpg", ".jpeg"];
     if (file) {
-      let acceptedExtensions = [".png", ".jpg", ".jpeg"];
       let fileExtension = path.extname(file.originalname);
-      if (acceptedExtensions.includes(fileExtension)) {
-        let fileSize = file.size;
-        if (fileSize <= 1200000) {
-          return true;
-        } else {
-          let filePath = path.resolve(
-            __dirname,
-            "../../../public/img/avatar/" + req.file.filename
-          );
-          fs.unlinkSync(filePath);
-          throw new Error("El tamaño debe ser menor a 1MB.");
-        }
-      } else {
-        let filePath = path.resolve(
-          __dirname,
-          "../../../public/img/avatar/" + req.file.filename
-        );
-        fs.unlinkSync(filePath);
+      let fileSize = file.size;
+      if (!acceptedExtensions.includes(fileExtension)) {
         throw new Error(
           `Solo se permiten extensiones ${acceptedExtensions.join(" ")}`
         );
       }
-    } else {
-      return true;
+      if (fileSize > 1200000) {
+        throw new Error("El tamaño debe ser menor a 1MB.");
+      }
     }
+    return true;
   }),
 
   body("fname")

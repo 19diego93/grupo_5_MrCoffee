@@ -18,19 +18,28 @@ const usersController = {
 
   // ! proceso de loggeado
   loginProcess: async (req, res) => {
-    let userLogin = await User.findByField("email", req.body.email);
-
     try {
       let errors = validationResult(req);
       if (errors.isEmpty()) {
+        let allUsers = users;
+
+        let emailBody = req.body.email.toUpperCase();
+
+        let userLogin = allUsers.find((user) => {
+          let emailDb = user.email.toUpperCase();
+          return emailDb == emailBody;
+        });
+
+        console.log(userLogin);
+
         if (userLogin) {
           let isOkPassword = bcryptjs.compareSync(
             req.body.password,
             userLogin.password
           );
           if (isOkPassword) {
-            delete userLogin.password;
             req.session.userLogged = userLogin;
+            delete req.session.userLogged.password;
             if (req.session.userLogged) {
               res.cookie("category", userLogin.category, {
                 maxAge: 1000 * 60 * 1,
@@ -140,6 +149,7 @@ const usersController = {
       user: req.session.userLogged,
     });
   },
+
   editProfile: (req, res) => {
     let errors = validationResult(req);
 
@@ -148,10 +158,14 @@ const usersController = {
       // Todos los usuarios
       let allUsers = users;
 
+      userFound = allUsers.find((user) => user.id == req.session.userLogged.id);
+
       // Consulto si el Email existe en la base de datos
       // Utilizo toUpperCase para hacer los Email mayusculas y comprobar.
       let email = req.body.email.toUpperCase();
-      if (userFound.email == email) {
+      let oldEmail = userFound.email.toUpperCase();
+      let userInDb;
+      if (oldEmail == email) {
         userInDb = false;
       } else {
         allUsers.find((oneUser) => {
@@ -175,7 +189,7 @@ const usersController = {
           // );
           // fs.unlinkSync(filePath);
         } else {
-          image = "defaultimg.jpg";
+          image = userFound.image;
         }
 
         // let password;
@@ -186,7 +200,7 @@ const usersController = {
         // }
 
         let userEdit = {
-          id: parseInt(req.params.id),
+          id: parseInt(userFound.id),
           category: userFound.category,
           image: image,
           fname: req.body.fname,
@@ -194,6 +208,7 @@ const usersController = {
           email: req.body.email,
           password: userFound.password,
         };
+        console.log(userEdit);
 
         let edited = allUsers.map((user) => {
           if (user.id == req.params.id) {
@@ -207,13 +222,13 @@ const usersController = {
         fs.writeFileSync(usersFilePath, update, "utf-8");
         res.redirect("/");
       } else {
-        // if (req.file) {
-        //   let filePath = path.resolve(
-        //     __dirname,
-        //     "../../public/img/avatar/" + req.file.filename
-        //   );
-        //   fs.unlinkSync(filePath);
-        // }
+        if (req.file) {
+          let filePath = path.resolve(
+            __dirname,
+            "../../public/img/avatar/" + req.file.filename
+          );
+          fs.unlinkSync(filePath);
+        }
 
         return res.render("users/profile", {
           errors: {
@@ -226,13 +241,13 @@ const usersController = {
         });
       }
     } else {
-      // if (req.file) {
-      //   let filePath = path.resolve(
-      //     __dirname,
-      //     "../../public/img/avatar/" + req.file.filename
-      //   );
-      //   fs.unlinkSync(filePath);
-      // }
+      if (req.file) {
+        let filePath = path.resolve(
+          __dirname,
+          "../../public/img/avatar/" + req.file.filename
+        );
+        fs.unlinkSync(filePath);
+      }
 
       return res.render("users/profile", {
         errors: errors.mapped(),
@@ -245,6 +260,7 @@ const usersController = {
   logout: (req, res) => {
     res.clearCookie("recordame");
     res.clearCookie("admin");
+    res.clearCookie("category");
     req.session.destroy();
     return res.redirect("/");
   },

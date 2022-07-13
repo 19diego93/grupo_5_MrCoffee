@@ -12,7 +12,11 @@
           <h2>Perfil</h2>
         </div>
 
-        <form action="/user/profile/<%=user.id%>?_method=PUT" method="POST">
+        <form
+          action="/user/profile?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
           <div class="formulario-perfil">
             <div class="contenedor-img-perfil">
               <div class="img-perfil">
@@ -36,7 +40,7 @@
                   </label>
                 </div>
                 <% if(locals.errors && errors.image){ %>
-                <p class="errors-t"><%= errors.image %></p>
+                <p class="errors-t"><%= errors.image.msg %></p>
                 <% } %>
               </div>
             </div>

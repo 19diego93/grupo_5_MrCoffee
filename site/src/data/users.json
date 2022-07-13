@@ -1,38 +1,47 @@
 [
- {
-  "id": 1,
-  "category": "admin",
-  "image": "defaultimg.jpg",
-  "fname": "sebastian",
-  "lname": "Vallejo",
-  "email": "asd@asdasd.asd",
-  "password": "$2a$10$uzPs/IzhUqfQTRzqzJRFvuNGsLyDghbDih13BX5Y/G53pliHcNPw6"
- },
- {
-  "id": 2,
-  "category": "user",
-  "fname": "dsadasda",
-  "lname": "dasdasda",
-  "image": "defaultimg.jpg",
-  "email": "superhero@MrCoffee.com",
-  "password": "$2a$10$smMVqnT7qqvQkyqDMndf0eiCmvhy57anVOThSAn47riLekowiyQhq"
- },
- {
-  "id": 3,
-  "category": "user",
-  "fname": "Jhon",
-  "lname": "Salchichon",
-  "image": "img-1657649327837.jpg",
-  "email": "qwe@qwe.qwe",
-  "password": "$2a$10$wPRnJw6m9eMIavBV64lZ1u0EOfN8J6JAcjfxt7.UdrKzpVgIIRHQ6"
- },
- {
-  "id": 4,
-  "category": "user",
-  "fname": "pepensio",
-  "lname": "pedro",
-  "image": "img-1657682680350.jpg",
-  "email": "asdasda@hdjas.com",
-  "password": "$2a$10$DxaezAhO2OVGO0fCf06wmeVesO.qYpRNOGRnj5IPqoLYw1jITcIla"
- }
+  {
+    "id": 1,
+    "category": "admin",
+    "image": "defaultimg.jpg",
+    "fname": "sebastian",
+    "lname": "Vallejo",
+    "email": "ASD@asdasd.asd",
+    "password": "$2a$10$GKqiBlH2rFKT0YrZEpEZPOT4jqGJ1MtmOsuA3N7yC4u4E74feCLd6"
+  },
+  {
+    "id": 2,
+    "category": "user",
+    "fname": "dsadasda",
+    "lname": "dasdasda",
+    "image": "defaultimg.jpg",
+    "email": "superhero@MrCoffee.com",
+    "password": "$2a$10$GKqiBlH2rFKT0YrZEpEZPOT4jqGJ1MtmOsuA3N7yC4u4E74feCLd6"
+  },
+  {
+    "id": 3,
+    "category": "user",
+    "fname": "Jhon",
+    "lname": "Salchichon",
+    "image": "img-1657649327837.jpg",
+    "email": "qwe@qwe.qwe",
+    "password": "$2a$10$GKqiBlH2rFKT0YrZEpEZPOT4jqGJ1MtmOsuA3N7yC4u4E74feCLd6"
+  },
+  {
+    "id": 4,
+    "category": "user",
+    "image": "img-1657736272330.png",
+    "fname": "pepensioo",
+    "lname": "pedro",
+    "email": "asdasda@hdjas.com",
+    "password": "$2a$10$GKqiBlH2rFKT0YrZEpEZPOT4jqGJ1MtmOsuA3N7yC4u4E74feCLd6"
+  },
+  {
+    "id": 5,
+    "category": "user",
+    "fname": "dasdsd",
+    "lname": "sadasdasdas",
+    "image": "defaultimg.jpg",
+    "email": "adsasadsa@fsaas.com",
+    "password": "$2a$10$GKqiBlH2rFKT0YrZEpEZPOT4jqGJ1MtmOsuA3N7yC4u4E74feCLd6"
+  }
 ]

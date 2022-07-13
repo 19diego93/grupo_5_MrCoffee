@@ -30,7 +30,8 @@ router.post(
 router.get("/user/profile", authMiddleware, usersController.profile);
 
 router.put(
-  "/user/profile/:id",
+  "/user/profile",
+  authMiddleware,
   upload.single("image"),
   profile,
   usersController.editProfile
