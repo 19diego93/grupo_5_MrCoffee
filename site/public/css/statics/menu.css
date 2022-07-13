@@ -28,7 +28,10 @@
   text-decoration: none;
   transition: 0.4s;
 }
-.nav__glow { 
+.nav__link--outside{
+  transition: 0.4s
+}
+.nav__glow{ 
   transition: 0.4s;
 }
 .nav__glow:hover {
@@ -44,9 +47,12 @@
   text-align: left;
 }
 .nav__link--inside:hover {
-  background: #f6f8fa;
+  background: #b4b3b33d;
 }
 
+.nav__link--outside:hover {
+    background: #f6f8fa;
+}
 .list {
   width: 100%;
   height: 100vh;

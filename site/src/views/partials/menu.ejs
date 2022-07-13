@@ -5,28 +5,28 @@
     </div>
     <% if (!locals.isLogged) { %>
 
-    <li class="list__item">
+    <li class="list__item nav__link--outside">
       <div class="list__button nav__glow">
         <i class="fas fa-address-card"></i>
         <a href="/user/register" class="nav__link">Registrate</a>
       </div>
     </li>
 
-    <li class="list__item">
+    <li class="list__item nav__link--outside">
       <div class="list__button nav__glow">
         <i class="fas fa-sign-in"></i>
         <a href="/user/login" class="nav__link">Ingresa</a>
       </div>
     </li>
     <% } else { %>
-    <li class="list__item">
+    <li class="list__item nav__link--outside">
       <div class="list__button nav__glow">
         <i class="fas fa-sign-out-alt"></i>
         <a href="/user/logout" class="nav__link">Salir</a>
       </div>
     </li>
     <% } %>
-    <li class="list__item">
+    <li class="list__item nav__link--outside">
       <div class="list__button nav__glow">
         <i class="fas fa-bell"></i>
         <a href="#notificaciones" class="nav__link" id="close-menu-2">
@@ -35,7 +35,7 @@
       </div>
     </li>
 
-    <li class="list__item list__item--click">
+    <li class="list__item list__item--click nav__link--outside">
       <div class="nav__glow list__button list__button--click">
         <i class="fas fa-cog"></i>
         <p class="nav__link">Usuario</p>
@@ -55,8 +55,8 @@
       </ul>
     </li>
     <% if (locals.category) { %>
-    <li class="list__item list__item--click">
-      <div class="nav__glow list__button list__button--click">
+    <li class="list__item list__item--click nav__link--outside">
+      <div class="nav__glow list__button list__button--click  ">
         <i class="fas fa-tools"></i>
         <p class="nav__link">Admin</p>
         <i class="fas fa-angle-down list__arrow"></i>
@@ -76,7 +76,7 @@
       </ul>
     </li>
     <% } %>
-    <li class="list__item list__item--click">
+    <li class="list__item list__item--click nav__link--outside">
       <div class="nav__glow list__button list__button--click">
         <i class="fa-solid fa-comment-dots"></i>
         <p class="nav__link">AYUDA</p>
