@@ -3,6 +3,7 @@ const { body } = require("express-validator");
 const path = require("path");
 
 //! Validacion
+const exceptedCategory = ["coffee", "food"];
 module.exports = [
   body("name")
     .notEmpty()
@@ -33,7 +34,12 @@ module.exports = [
   body("description")
     .notEmpty()
     .withMessage("Este campo no puede estar vacío."),
-  body("category").notEmpty().withMessage("Debes seleccionar una opcion."),
+  body("category")
+    .notEmpty()
+    .withMessage("Debes seleccionar una opcion.")
+    .bail()
+    .isIn(exceptedCategory)
+    .withMessage("seleccionar al menos una categoría"),
   body("stock")
     .notEmpty()
     .withMessage("Este campo no puede estar vacío.")
