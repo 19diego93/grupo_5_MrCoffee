@@ -33,7 +33,10 @@ module.exports = [
   }),
   body("description")
     .notEmpty()
-    .withMessage("Este campo no puede estar vacío."),
+    .withMessage("Este campo no puede estar vacío.")
+    .bail()
+    .isLength({ max: 120 })
+    .withMessage("Máximo de 40 caracteres."),
   body("category")
     .notEmpty()
     .withMessage("Debes seleccionar una opcion.")

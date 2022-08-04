@@ -48,7 +48,7 @@ const validacion = [
     .isEmail()
     .withMessage("El correo no es válido.")
     .bail()
-    .isLength({ max: 320 })
+    .isLength({ max: 100 })
     .withMessage("No puede escribir más de 320 caracteres."),
 ];
 

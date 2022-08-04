@@ -8,7 +8,7 @@ module.exports = [
     .isEmail()
     .withMessage("El correo no es válido.")
     .bail()
-    .isLength({ max: 320 })
+    .isLength({ max: 100 })
     .withMessage("No puede escribir más de 320 caracteres."),
 
   body("password")
@@ -18,6 +18,6 @@ module.exports = [
     .isLength({ min: 8 })
     .withMessage("Escribe al menos 8 caracteres.")
     .bail()
-    .isLength({ max: 120 })
+    .isLength({ max: 32 })
     .withMessage("No puede escribir más de 120 caracteres."),
 ];
