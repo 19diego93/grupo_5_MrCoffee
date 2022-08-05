@@ -969,5 +969,16 @@
     "price": 1600,
     "offer": 20,
     "rating": 3.3
+  },
+  {
+    "id": 1659736482810,
+    "name": "dasdsa",
+    "image": "img-1659736482796.png",
+    "description": "dsad",
+    "category": "coffee",
+    "stock": 32,
+    "price": 32,
+    "offer": 32,
+    "rating": 0
   }
 ]

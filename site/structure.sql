@@ -81,11 +81,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mrcoffeedb`.`ventas` (
   `id` INT(5) NOT NULL AUTO_INCREMENT,
-  `user_id` INT(5) NOT NULL,
   `fecha` DATETIME NOT NULL,
   `estado` VARCHAR(15) NOT NULL,
   `total` FLOAT NOT NULL,
   `cobrado` DATETIME NOT NULL,
+  `user_id` INT(5) NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`user_id`)
     REFERENCES `mrcoffeedb`.`user` (`id`)
