@@ -8,24 +8,27 @@
 
 ### ¿Qué va a hacer hoy o esta semana?:
 
-# Sebastian Suarez
+# Sebastian Suarez y  Diego Vallejo
 ```
-
-```
-
-
-```
+Armamos la abase de datos su diagrama y estructura sql
 
 ```
 
 
+```
+muchos errores y problemas con MySQL workbench al intentar crear la base de datos
 
 ```
 
+
+
+```
+Terminar el sequelize y CRUD 
+
 ```
 
 
-# Diego Vallejo
+
 ```
 
 ```
