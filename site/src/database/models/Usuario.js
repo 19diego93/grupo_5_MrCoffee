@@ -28,6 +28,10 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(65),
       allowNull: false,
     },
+    id_category_U:{
+      type: dataTypes.BIGINT(5),
+      allowNull: true,
+    },
   };
   let config = {
     timestamps: false,

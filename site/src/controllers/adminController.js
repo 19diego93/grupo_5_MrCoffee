@@ -4,35 +4,44 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 
 //! Archivos
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const db = require("../database/models");
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+//!Modelos
+const Products = db.Product;
 
 //! Controlador
 const adminController = {
   viewList: (req, res) => {
-    let productos = [];
-    products.filter((producto) => {
-      if (producto.stock < 1) {
-        productos.push(producto);
-      }
-    });
-    res.render("admin/list", { productos });
+    Products.findAll({
+      where: {
+        stock: { [Op.eq]: 0 },
+      },
+    })
+      .then((products) => {
+        return res.render("products/productShop", { productos: products });
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   },
   viewCreate: (req, res) => {
     res.render("admin/create");
   },
   create: (req, res) => {
-    allProducts = products;
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      let image = "default-image.png";
+      let image;
 
-      if (req.file != undefined) {
+      if (req.file) {
         image = req.file.filename;
+      } else {
+        image = "default-image.png";
       }
 
-      nuevoProduct = {
+      newProduct = {
         id: Date.now(),
         name: req.body.name,
         image: image,
@@ -44,22 +53,16 @@ const adminController = {
         rating: 0,
       };
 
-      allProducts.push(nuevoProduct);
-      let update = JSON.stringify(allProducts, null, 2);
-      fs.writeFileSync(productsFilePath, update, "utf-8");
-      res.redirect("/");
+      Products.create(newProduct).then((product) => {
+        res.redirect("/products/detail/"+ product.id);
+      });
     } else {
       if (req.file) {
         let filePath = path.resolve(
           __dirname,
           "../../public/img/products/" + req.file.filename
         );
-        try {
-          fs.unlinkSync(filePath);
-        } catch (error) {
-          console.error("No se pudo eliminar la imagen anterior");
-          console.error(error.message);
-        }
+        fs.unlinkSync(filePath);
       }
       // errors.mapped() Devuelve un objeto Json con un nombre y un objeto en cada nombre.
       // errors.array() Devuelve un array de objetos.

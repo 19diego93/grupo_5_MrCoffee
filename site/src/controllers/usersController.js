@@ -25,7 +25,7 @@ const usersController = {
   },
 
   // ! proceso de loggeado
-  loginProcess: async (req, res) => {
+  loginProcess: (req, res) => {
     try {
       let errors = validationResult(req);
 
@@ -34,6 +34,7 @@ const usersController = {
           where: {
             email: { [Op.like]: "%" + req.body.email + "%" },
           },
+          // include: ["User_category"],
         }).then((user) => {
           if (user) {
             let isOkPassword = bcryptjs.compareSync(
@@ -41,6 +42,8 @@ const usersController = {
               user.password
             );
             if (isOkPassword) {
+              console.log(user.id_category_U);
+              console.log(user);
               req.session.userLogged = { ...user };
 
               delete req.session.userLogged.password;

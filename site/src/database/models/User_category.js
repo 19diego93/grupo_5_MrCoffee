@@ -15,6 +15,7 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         timestamps: false,
+        freezeTableName: true,
         }
     const User_category = sequelize.define(alias,cols,config);
 
