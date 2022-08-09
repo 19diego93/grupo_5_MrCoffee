@@ -15,12 +15,11 @@
       <div class="cart-section-flex">
         <section>
           <!-- producto -->
-          <% if(product) { %> <% for(let i=0; i< product.length; i++) { %>
-          <article class="product-container">
+          <!-- <article class="product-container">
             <div class="image-product">
               <img
                 class="capuccino"
-                src="/img/products/<%=product[i].image%>"
+                src="/img/products"
                 alt=""
               />
             </div>
@@ -28,7 +27,7 @@
             <div class="form-cart">
               <form action="">
                 <h3 class="product-name" style="pointer-events: none">
-                  <%=product[i].name%>
+                 
                 </h3>
                 <div class="tamaño-vaso">
                   <p style="pointer-events: none">Tamaño</p>
@@ -53,17 +52,17 @@
                     <button>+</button>
                   </div>
                 </div>
-                <!-- Subtotal -->
+                Subtotal
                 <div class="subtotal-price" style="pointer-events: none">
-                  <p>Subtotal: $<%=product[i].price%></p>
+                  <p>Subtotal: $</p>
                 </div>
                 <div class="item-remove">
                   <a href="">X</a>
                 </div>
               </form>
             </div>
-          </article>
-          <% } %> <% } %>
+          </article> -->
+
           <!-- Checkout -->
           <article class="checkout-total">
             <form action="form-checkout">

@@ -5,6 +5,14 @@ const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
 //! Archivos
+const db = require("../database/models");
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+//!Modelos
+const Usuarios = db.Usuario;
+
+//! Archivos
 const usersFilePath = path.join(__dirname, "../data/users.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 const User = require("../modelos/Users");
@@ -20,62 +28,62 @@ const usersController = {
   loginProcess: async (req, res) => {
     try {
       let errors = validationResult(req);
+
       if (errors.isEmpty()) {
-        let allUsers = users;
+        Usuarios.findOne({
+          where: {
+            email: { [Op.like]: "%" + req.body.email + "%" },
+          },
+        }).then((user) => {
+          if (user) {
+            let isOkPassword = bcryptjs.compareSync(
+              req.body.password,
+              user.password
+            );
+            if (isOkPassword) {
+              req.session.userLogged = { ...user };
 
-        let emailBody = req.body.email.toUpperCase();
+              delete req.session.userLogged.password;
 
-        let userLogin = allUsers.find((user) => {
-          let emailDb = user.email.toUpperCase();
-          return emailDb == emailBody;
-        });
+              if (req.session.userLogged) {
+                res.cookie("category", user.id_category_U, {
+                  maxAge: 1000 * 60 * 1,
+                });
+              }
 
-        if (userLogin) {
-          let isOkPassword = bcryptjs.compareSync(
-            req.body.password,
-            userLogin.password
-          );
-          if (isOkPassword) {
-            req.session.userLogged = { ...userLogin };
+              if (req.body.recordame) {
+                res.cookie("recordame", req.body.email, {
+                  maxAge: 1000 * 60 * 2,
+                });
+              }
 
-            delete req.session.userLogged.password;
-
-            if (req.session.userLogged) {
-              res.cookie("category", userLogin.category, {
-                maxAge: 1000 * 60 * 1,
+              return res.redirect("/");
+            } else {
+              return res.render("users/login", {
+                errors: {
+                  password: { msg: "La contraseña es incorrecta." },
+                },
+                oldDate: req.body,
               });
             }
-            if (req.body.recordame) {
-              res.cookie("recordame", req.body.email, {
-                maxAge: 1000 * 60 * 2,
-              });
-            }
-            return res.redirect("/");
           } else {
-            return res.render("../views/users/login", {
+            return res.render("users/login", {
               errors: {
-                password: { msg: "La contraseña es incorrecta." },
+                email: { msg: "Esta cuenta no existe." },
               },
               oldDate: req.body,
             });
           }
-        } else {
-          return res.render("../views/users/login", {
-            errors: {
-              email: { msg: "Esta cuenta no existe." },
-            },
-            oldDate: req.body,
-          });
-        }
+        });
       } else {
-        return res.render("../views/users/login", {
+        return res.render("users/login", {
           errors: errors.mapped(),
           oldDate: req.body,
         });
       }
     } catch {
-      (err) => {
-        console.log("Hubo un error: ", err);
+      (e) => {
+        console.log("Hubo un error: ", e);
       };
     }
   },

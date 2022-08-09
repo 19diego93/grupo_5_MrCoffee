@@ -10,6 +10,6 @@ router.get("/", controller.list);
 
 router.get("/detail/:id", controller.detail);
 
-router.get("/cart/:id?", controller.cart);
+router.get("/cart", controller.cart);
 
 module.exports = router;
