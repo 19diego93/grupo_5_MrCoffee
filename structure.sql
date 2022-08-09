@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-08-2022 a las 02:42:41
+-- Tiempo de generación: 10-08-2022 a las 00:28:12
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,7 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `mrcoffeedb`
 --
-
 CREATE DATABASE mrcoffeedb;
 USE mrcoffeedb;
 
@@ -56,7 +55,7 @@ CREATE TABLE `products` (
   `price` decimal(6,2) NOT NULL,
   `offer` int(2) DEFAULT 0,
   `rating` decimal(2,1) DEFAULT 0.0,
-  `id_categoryP` int(5) DEFAULT NULL
+  `id_categoryP` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -68,7 +67,7 @@ INSERT INTO `products` (`id`, `name`, `image`, `description`, `stock`, `price`, 
 (2, 'Latte', '2.png', 'Café espresso con leche vaporizada.', 100, '896.00', 0, '5.0', 1),
 (3, 'Dulce de leche Latte', '3.png', 'Café espresso con dulce de leche, leche al vapor con crema batida y salsa de caramelo.', 100, '735.00', 0, '4.0', 1),
 (4, 'Cappuccino', '4.png', 'Café espresso, leche vaporizada y abundante espuma de leche.', 100, '985.00', 0, '2.0', 1),
-(5, 'Americano', '5.png', 'Café espresso combinado con agua al mejor estilo americano.', 0, '531.00', 0, '2.0', 1),
+(5, 'Americano', '5.png', 'Café espresso combinado con agua al mejor estilo americano.', 1, '531.00', 0, '2.0', 1),
 (6, 'Croissant Relleno con Crema de Avellanas', '6.png', 'Croissant con masa de hojaldre y cubierto con una salsa de cacao y avellanas.', 100, '300.00', 0, '2.5', 2),
 (7, 'Croissant', '7.png', 'Elaborado con masa de hojaldre crujiente y salada, nuestro Croissant se hornea especialmente para vos.', 100, '400.00', 0, '4.0', 2),
 (8, 'Chocolate Croissant', '8.png', 'Exquisita masa de hojaldre rellena de chocolate semiamargo y horneado especialmente para vos.', 100, '250.00', 0, '3.5', 2),
@@ -126,7 +125,7 @@ CREATE TABLE `usuario` (
   `image` varchar(21) DEFAULT 'defaultimg.jpg',
   `email` varchar(100) NOT NULL,
   `password` varchar(65) NOT NULL,
-  `id_category_U` int(5) DEFAULT NULL
+  `id_category_U` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
