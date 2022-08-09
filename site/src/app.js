@@ -47,7 +47,7 @@ const productsRouter = require("./routes/products.js");
 app.use("/", mainRouter);
 app.use(usersRouter);
 app.use(adminRouter);
-app.use(productsRouter);
+app.use("/products", productsRouter);
 
 //! 404
 // app.use((req, res, next) => {

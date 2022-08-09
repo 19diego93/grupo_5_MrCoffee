@@ -15,7 +15,7 @@
       <div class="cart-section-flex">
         <section>
           <!-- producto -->
-          <% for(let i=0; i< product.length; i++) { %>
+          <% if(product) { %> <% for(let i=0; i< product.length; i++) { %>
           <article class="product-container">
             <div class="image-product">
               <img
@@ -63,7 +63,7 @@
               </form>
             </div>
           </article>
-          <% } %>
+          <% } %> <% } %>
           <!-- Checkout -->
           <article class="checkout-total">
             <form action="form-checkout">

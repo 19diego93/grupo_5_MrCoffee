@@ -1,29 +1,38 @@
-//! Extensiones
-const fs = require("fs");
-const path = require("path");
-
 //! Archivos
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const db = require("../database/models");
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+//!Modelos
+const Products = db.Product;
 
 //!Controlador
 const productsController = {
-  productCart: (req, res) => {
-    let detail = products.filter((producto) => producto.id == req.params.id);
-    res.render("products/productCart", { product: detail });
-  },
-  productDetail: (req, res) => {
-    let detail = products.filter((producto) => producto.id == req.params.id);
-    res.render("products/productDetail", { product: detail[0] });
-  },
-  productShop: (req, res) => {
-    let productos = [];
-    products.filter((producto) => {
-      if (producto.stock > 0) {
-        productos.push(producto);
-      }
+  list: (req, res) => {
+    Products.findAll({
+      where: {
+        stock: { [Op.gt]: 0 },
+      },
+    }).then((products) => {
+      res.render("products/productShop", { productos: products });
     });
-    res.render("products/productShop", { productos });
+  },
+
+  detail: (req, res) => {
+    Products.findByPk(req.params.id).then((product) => {
+      res.render("products/productDetail", { product });
+    });
+  },
+
+  // ESTO ES SOLO VISUAL
+  // NO Funciona por el motivo de que no hicimos el carrito.
+  cart: (req, res) => {
+    Products.findByPk(req.params.id).then((product) => {
+      // res.send(product);
+      console.log(req.params.id);
+      console.log(product);
+      res.render("products/productCart", { product });
+    });
   },
 };
 

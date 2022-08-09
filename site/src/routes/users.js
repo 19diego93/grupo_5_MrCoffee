@@ -9,7 +9,6 @@ const router = express.Router();
 // !Middlewares
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
-
 const login = require("./validations/validationsLogin");
 const register = require("./validations/validationsRegister");
 const profile = require("./validations/validationsProfile");

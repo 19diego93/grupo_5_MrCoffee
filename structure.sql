@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2022 a las 04:06:21
+-- Tiempo de generación: 09-08-2022 a las 02:42:41
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,6 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `mrcoffeedb`
 --
+
+CREATE DATABASE mrcoffeedb;
+USE mrcoffeedb;
 
 -- --------------------------------------------------------
 
@@ -41,10 +44,10 @@ CREATE TABLE `cart_item` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `product`
+-- Estructura de tabla para la tabla `products`
 --
 
-CREATE TABLE `product` (
+CREATE TABLE `products` (
   `id` int(13) NOT NULL,
   `name` varchar(40) NOT NULL,
   `image` varchar(21) DEFAULT 'default-image.png',
@@ -57,10 +60,10 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `product`
+-- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `product` (`id`, `name`, `image`, `description`, `stock`, `price`, `offer`, `rating`, `id_categoryP`) VALUES
+INSERT INTO `products` (`id`, `name`, `image`, `description`, `stock`, `price`, `offer`, `rating`, `id_categoryP`) VALUES
 (1, 'Vainilla Latte', '1.png', 'Café espresso con leche al vapor y toques de vainilla.', 100, '753.00', 0, '5.0', 1),
 (2, 'Latte', '2.png', 'Café espresso con leche vaporizada.', 100, '896.00', 0, '5.0', 1),
 (3, 'Dulce de leche Latte', '3.png', 'Café espresso con dulce de leche, leche al vapor con crema batida y salsa de caramelo.', 100, '735.00', 0, '4.0', 1),
@@ -162,9 +165,9 @@ ALTER TABLE `cart_item`
   ADD KEY `cart_item_ventas_id_foreign` (`ventas_id`) USING BTREE;
 
 --
--- Indices de la tabla `product`
+-- Indices de la tabla `products`
 --
-ALTER TABLE `product`
+ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `product_id_categoryP_foreign` (`id_categoryP`) USING BTREE;
 
@@ -236,14 +239,14 @@ ALTER TABLE `ventas`
 -- Filtros para la tabla `cart_item`
 --
 ALTER TABLE `cart_item`
-  ADD CONSTRAINT `cart_item_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  ADD CONSTRAINT `cart_item_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   ADD CONSTRAINT `cart_item_ibfk_2` FOREIGN KEY (`ventas_id`) REFERENCES `ventas` (`id`);
 
 --
--- Filtros para la tabla `product`
+-- Filtros para la tabla `products`
 --
-ALTER TABLE `product`
-  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`id_categoryP`) REFERENCES `product_category` (`id`);
+ALTER TABLE `products`
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`id_categoryP`) REFERENCES `product_category` (`id`);
 
 --
 -- Filtros para la tabla `usuario`
