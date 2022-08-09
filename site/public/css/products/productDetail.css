@@ -6,6 +6,10 @@
   text-decoration: none;
   color: #000;
 }
+.producto-sin-stock h2 {
+  color: red;
+  text-align: center;
+}
 .breadcrumb-content {
   padding: 5px;
 }

@@ -18,6 +18,15 @@
           </div>
         </article>
       </section>
+      <% if(product.stock == 0){ %>
+      <section>
+        <br /><br /><br />
+        <div class="producto-sin-stock">
+          <h2>Este producto se encuentra agotado.</h2>
+        </div>
+        <br /><br /><br />
+      </section>
+      <% } %>
       <section class="conteiner-section">
         <article class="product-detail">
           <div class="imagen">

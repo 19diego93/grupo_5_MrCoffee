@@ -4,6 +4,7 @@
     <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/home.css" />
     <link rel="stylesheet" href="/css/statics/products.css" />
+    <link rel="stylesheet" href="/css/results.css" />
   </head>
   <body>
     <%- include('./partials/header') %>
@@ -11,7 +12,7 @@
       <!--! Campaña -->
       <section class="Container-Campaign">
         <article class="campaña">
-          <h1>¡ Resultados de la búsqueda: <%= busquedaDelUsuario %>!</h1>
+          <h1>Resultados de la búsqueda: <%= busquedaDelUsuario %></h1>
         </article>
         <article id="wave-effect">
           <svg viewBox="0 0 500 150" preserveAspectRatio="none">
@@ -26,15 +27,15 @@
         <div class="">
           <div class="products">
             <!--! productos -->
-            <% for(let i = 0; i < resultados.length; i++) {%>
+            <% for(let i = 0; i < results.length; i++) {%>
             <article class="product-content">
               <div class="details">
                 <div class="image">
-                  <img src="/img/products/<%= resultados[i].image %>" alt="" />
+                  <img src="/img/products/<%= results[i].image %>" alt="" />
                 </div>
                 <div class="product-descriptions">
-                  <span class="product-Name"><%= resultados[i].name %></span>
-                  <span class="product-Price">$ <%= resultados[i].price%></span>
+                  <span class="product-Name"><%= results[i].name %></span>
+                  <span class="product-Price">$ <%= results[i].price%></span>
                 </div>
                 <div class="product-rating">
                   <i class="fas fa-star"></i>
@@ -47,7 +48,7 @@
                   <button class="product-buy">Comprar</button>
                   <a
                     class="product-info"
-                    href="/product/detail/<%= resultados[i].id%>"
+                    href="/products/detail/<%= results[i].id%>"
                   >
                     Informacion
                   </a>
@@ -59,12 +60,14 @@
         </div>
       </section>
       <section>
-        <% if(resultados.length == []){ %>
-        <div style="display: flex; justify-content: center">
-          <h2 class="products-title" style="color: tomato">
+        <% if(!results.length > 0){ %>
+        <br /><br /><br /><br /><br />
+        <div>
+          <h2 class="products-title">
             No hay productos que coincidan con esa búsqueda
           </h2>
         </div>
+        <br /><br /><br /><br /><br />
         <% } %>
       </section>
     </main>

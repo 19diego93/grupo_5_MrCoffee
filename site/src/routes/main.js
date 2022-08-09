@@ -6,7 +6,7 @@ const express = require("express");
 const router = express.Router();
 
 //! Rutas
-router.get("/", controller.list);
+router.get("/", controller.index);
 
 router.get("/search", controller.search);
 
