@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-08-2022 a las 01:18:27
+-- Tiempo de generación: 10-08-2022 a las 22:06:06
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,9 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `mrcoffeedb`
 --
-
-CREATE DATABASE mrcoffeedb;
-USE mrcoffeedb;
+CREATE DATABASE IF NOT EXISTS `mrcoffeedb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `mrcoffeedb`;
 
 -- --------------------------------------------------------
 
@@ -30,15 +29,19 @@ USE mrcoffeedb;
 -- Estructura de tabla para la tabla `cart_item`
 --
 
-CREATE TABLE `cart_item` (
-  `id` int(5) NOT NULL,
+DROP TABLE IF EXISTS `cart_item`;
+CREATE TABLE IF NOT EXISTS `cart_item` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
   `precio_venta` decimal(8,2) NOT NULL,
   `cantidad` int(3) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `categoria` varchar(15) NOT NULL,
   `imagen` varchar(21) NOT NULL,
   `product_id` int(13) DEFAULT NULL,
-  `ventas_id` int(5) DEFAULT NULL
+  `ventas_id` int(5) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `cart_item_product_id_foreign` (`product_id`),
+  KEY `cart_item_ventas_id_foreign` (`ventas_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -47,7 +50,8 @@ CREATE TABLE `cart_item` (
 -- Estructura de tabla para la tabla `products`
 --
 
-CREATE TABLE `products` (
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE IF NOT EXISTS `products` (
   `id` int(13) NOT NULL,
   `name` varchar(40) NOT NULL,
   `image` varchar(21) DEFAULT 'default-image.png',
@@ -56,7 +60,9 @@ CREATE TABLE `products` (
   `price` decimal(6,2) NOT NULL,
   `offer` int(2) DEFAULT 0,
   `rating` decimal(2,1) DEFAULT 0.0,
-  `id_categoryP` int(5) NOT NULL
+  `id_categoryP` int(5) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `product_id_categoryP_foreign` (`id_categoryP`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -81,10 +87,12 @@ INSERT INTO `products` (`id`, `name`, `image`, `description`, `stock`, `price`, 
 -- Estructura de tabla para la tabla `product_category`
 --
 
-CREATE TABLE `product_category` (
-  `id` int(5) NOT NULL,
-  `name` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `product_category`;
+CREATE TABLE IF NOT EXISTS `product_category` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `name` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `product_category`
@@ -100,10 +108,12 @@ INSERT INTO `product_category` (`id`, `name`) VALUES
 -- Estructura de tabla para la tabla `user_category`
 --
 
-CREATE TABLE `user_category` (
-  `id` int(5) NOT NULL,
-  `name` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `user_category`;
+CREATE TABLE IF NOT EXISTS `user_category` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `name` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `user_category`
@@ -119,22 +129,25 @@ INSERT INTO `user_category` (`id`, `name`) VALUES
 -- Estructura de tabla para la tabla `usuario`
 --
 
-CREATE TABLE `usuario` (
-  `id` int(5) NOT NULL,
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(40) NOT NULL,
   `last_name` varchar(40) NOT NULL,
   `image` varchar(21) DEFAULT 'defaultimg.jpg',
   `email` varchar(100) NOT NULL,
   `password` varchar(65) NOT NULL,
-  `id_category_U` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_category_U` int(5) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `usuarios_id_category_U_foreign` (`id_category_U`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `first_name`, `last_name`, `image`, `email`, `password`, `id_category_U`) VALUES
-(1, 'Santiago', 'Boquita', 'defaultimg.jpg', 'boquita@santiago.com', '$2a$10$GKqiBlH2rFKT0YrZEpEZPOT4jqGJ1MtmOsuA3N7yC4u4E74feCLd6', 1),
+(1, 'Santiago', 'boquita', 'img-1660161772572.jpg', 'boquita@santiago.com', '$2a$10$GKqiBlH2rFKT0YrZEpEZPOT4jqGJ1MtmOsuA3N7yC4u4E74feCLd6', 1),
 (2, 'Jeremias', 'River', 'defaultimg.jpg', 'river@jeremias.com', '$2a$10$GKqiBlH2rFKT0YrZEpEZPOT4jqGJ1MtmOsuA3N7yC4u4E74feCLd6', 2);
 
 -- --------------------------------------------------------
@@ -143,93 +156,17 @@ INSERT INTO `usuario` (`id`, `first_name`, `last_name`, `image`, `email`, `passw
 -- Estructura de tabla para la tabla `ventas`
 --
 
-CREATE TABLE `ventas` (
-  `id` int(5) NOT NULL,
+DROP TABLE IF EXISTS `ventas`;
+CREATE TABLE IF NOT EXISTS `ventas` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
   `fecha` datetime NOT NULL,
   `estado` varchar(15) NOT NULL,
   `total` decimal(8,2) NOT NULL,
   `cobrado` datetime NOT NULL,
-  `user_id` int(5) DEFAULT NULL
+  `user_id` int(5) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ventas_user_id_foreign` (`user_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `cart_item`
---
-ALTER TABLE `cart_item`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `cart_item_product_id_foreign` (`product_id`),
-  ADD KEY `cart_item_ventas_id_foreign` (`ventas_id`) USING BTREE;
-
---
--- Indices de la tabla `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `product_id_categoryP_foreign` (`id_categoryP`) USING BTREE;
-
---
--- Indices de la tabla `product_category`
---
-ALTER TABLE `product_category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `user_category`
---
-ALTER TABLE `user_category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `usuarios_id_category_U_foreign` (`id_category_U`) USING BTREE;
-
---
--- Indices de la tabla `ventas`
---
-ALTER TABLE `ventas`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `ventas_user_id_foreign` (`user_id`) USING BTREE;
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `cart_item`
---
-ALTER TABLE `cart_item`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `product_category`
---
-ALTER TABLE `product_category`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `user_category`
---
-ALTER TABLE `user_category`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `ventas`
---
-ALTER TABLE `ventas`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
