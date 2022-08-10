@@ -181,15 +181,15 @@
       <section class="container-products-product">
         <div class="products">
           <!--! Productos - CAFE -->
-          <% for(i=0; i < productos.length; i++) { %>
+          <% for(i=0; i < products.length; i++) { %>
           <article class="product-content">
             <div class="details">
               <div class="image">
-                <img src="/img/products/<%=productos[i].image%>" alt="imagen del producto" />
+                <img src="/img/products/<%=products[i].image%>" alt="imagen del producto" />
               </div>
               <div class="product-descriptions">
-                <span class="product-Name"><%=productos[i].name%></span>
-                <span class="product-Price">$ <%=productos[i].price%></span>
+                <span class="product-Name"><%=products[i].name%></span>
+                <span class="product-Price">$ <%=products[i].price%></span>
               </div>
               <div class="product-rating">
                 <i class="fas fa-star"></i>
@@ -199,10 +199,10 @@
                 <i class="fas fa-star"></i>
               </div>
               <div class="product-buttons">
-                <a href="/products/cart/<%=productos[i].id%>">
+                <a href="/products/cart/<%=products[i].id%>">
                 <button class="product-buy">Comprar</button>
               </a>
-                <a class="product-info" href="/products/detail/<%=productos[i].id%>">
+                <a class="product-info" href="/products/detail/<%=products[i].id%>">
                   Informacion
                 </a>
               </div>

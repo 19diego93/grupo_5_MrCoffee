@@ -209,18 +209,12 @@ const usersController = {
             where: { id: User.id },
           });
 
-          res.clearCookie("recordame");
-
           req.session.userLogged.dataValues = { ...userEdit };
 
           delete req.session.userLogged.dataValues.password;
 
           res.cookie("category", userEdit.id_category_U, {
             maxAge: 1000 * 60 * 1,
-          });
-
-          res.cookie("recordame", userEdit.email, {
-            maxAge: 1000 * 60 * 2,
           });
 
           res.redirect("/");

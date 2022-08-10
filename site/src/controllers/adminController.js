@@ -13,18 +13,19 @@ const Products = db.Product;
 
 //! Controlador
 const adminController = {
-  viewList: (req, res) => {
-    Products.findAll({
-      where: {
-        stock: { [Op.eq]: 0 },
-      },
-    })
-      .then((products) => {
-        return res.render("products/productShop", { productos: products });
-      })
-      .catch((e) => {
-        console.log(e);
+  viewList: async (req, res) => {
+    try {
+      let products = await Products.findAll({
+        where: {
+          stock: { [Op.eq]: 0 },
+        },
       });
+      console.log(products.length);
+
+      return res.render("products/productShop", { products });
+    } catch (e) {
+      console.log("Hubo un error: ", e);
+    }
   },
   viewCreate: (req, res) => {
     res.render("admin/create");
@@ -54,7 +55,7 @@ const adminController = {
       };
 
       Products.create(newProduct).then((product) => {
-        res.redirect("/products/detail/"+ product.id);
+        res.redirect("/products/detail/" + product.id);
       });
     } else {
       if (req.file) {
