@@ -88,6 +88,7 @@
   color: white;
   max-width: 150px;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 /*! boton tengo cuenta*/
 .contenedor-redirect {
@@ -108,6 +109,9 @@
   border: solid 1px black;
   border-radius: 2px;
   background-color: #000;
+  color: white;
+}
+.redirect-login a {
   color: white;
 }
 /*! titulo h1 y su contenedor */

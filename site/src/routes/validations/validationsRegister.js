@@ -27,7 +27,7 @@ module.exports = [
     let file = req.file;
 
     if (file) {
-      let acceptedExtensions = [".png", ".jpg", ".jpeg"];
+      let acceptedExtensions = [".png", ".jpg", ".jpeg", ".gif"];
       let fileExtension = path.extname(file.originalname);
       if (acceptedExtensions.includes(fileExtension)) {
         let fileSize = file.size;
@@ -74,7 +74,11 @@ module.exports = [
     .withMessage("Escribe al menos 8 caracteres.")
     .bail()
     .isLength({ max: 65 })
-    .withMessage("No puede escribir más de 65 caracteres."),
+    .withMessage("No puede escribir más de 65 caracteres.")
+    .bail()
+    .custom((value, { req }) => {
+      console.log(value);
+    }),
 
   body("confirmPsw")
     .notEmpty()

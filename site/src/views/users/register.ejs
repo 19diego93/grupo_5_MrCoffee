@@ -145,8 +145,8 @@
           </form>
           <!--Botón redirecciónador al login-->
           <div class="contenedor-redirect">
-            <button class="redirect-login" onclick="document.location='login'">
-              Tengo una cuenta
+            <button class="redirect-login">
+              <a href="/user/login">Tengo una cuenta</a>
             </button>
           </div>
           <div class="vinculos-register">
@@ -158,6 +158,6 @@
     </main>
     <%- include('../partials/footer') %>
     <!--! JS -->
-    <script src="js/search.js"></script>
+    <script src="/js/validations/usersRegister.js"></script>
   </body>
 </html>

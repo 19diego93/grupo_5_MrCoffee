@@ -5,7 +5,7 @@ const fs = require("fs");
 const validacion = [
   body("image").custom((value, { req }) => {
     let file = req.file;
-    let acceptedExtensions = [".png", ".jpg", ".jpeg"];
+    let acceptedExtensions = [".png", ".jpg", ".jpeg", ".gif"];
     if (file) {
       let fileExtension = path.extname(file.originalname);
       let fileSize = file.size;

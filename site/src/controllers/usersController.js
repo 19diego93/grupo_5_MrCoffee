@@ -85,13 +85,13 @@ const usersController = {
 
     try {
       if (errors.isEmpty()) {
-        let emailDb = await Usuarios.findAll({
+        let emailDb = await Usuarios.findOne({
           where: {
-            email: { [Op.like]: "%" + req.body.email + "%" },
+            email: { [Op.like]: `%${req.body.email}%` },
           },
         });
 
-        if (!emailDb.length > 0) {
+        if (!emailDb) {
           if (!req.file) {
             req.body.image = "defaultimg.jpg";
           } else {

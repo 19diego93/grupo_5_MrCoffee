@@ -8,11 +8,14 @@ module.exports = [
     .notEmpty()
     .withMessage("Este campo no puede estar vacío.")
     .bail()
+    .isLength({ min: 5 })
+    .withMessage("Escribe al menos 5 caracteres.")
+    .bail()
     .isLength({ max: 40 })
     .withMessage("Máximo de 40 caracteres."),
   body("image").custom((value, { req }) => {
     let file = req.file;
-    let acceptedExtensions = [".png", ".jpg", ".jpeg"];
+    let acceptedExtensions = [".png", ".jpg", ".jpeg", ".gif"];
     if (file) {
       let fileExtension = path.extname(file.originalname);
       let fileSize = file.size;
@@ -29,7 +32,13 @@ module.exports = [
   }),
   body("description")
     .notEmpty()
-    .withMessage("Este campo no puede estar vacío."),
+    .withMessage("Este campo no puede estar vacío.")
+    .bail()
+    .isLength({ min: 20 })
+    .withMessage("Escribe al menos 20 caracteres.")
+    .bail()
+    .isLength({ max: 120 })
+    .withMessage("Máximo de 120 caracteres."),
   body("category")
     .notEmpty()
     .withMessage("Debes seleccionar una opcion.")
