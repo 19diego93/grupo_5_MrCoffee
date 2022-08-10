@@ -1,8 +1,6 @@
 //! Archivos
 const db = require("../database/models");
-const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-const e = require("express");
 
 //!Modelos
 const Products = db.Product;
@@ -27,6 +25,7 @@ const mainController = {
         order: [["rating", "DESC"]],
         limit: 3,
       });
+
       return res.render("index", { coffee, food });
     } catch (err) {
       console.log(err);
@@ -42,7 +41,7 @@ const mainController = {
         order: [["rating", "DESC"]],
       });
 
-      res.render("results", {
+      return res.render("results", {
         results,
         busquedaDelUsuario: req.query.keywords,
       });

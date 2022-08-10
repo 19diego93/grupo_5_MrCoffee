@@ -8,24 +8,30 @@ const Products = db.Product;
 
 //!Controlador
 const productsController = {
-  list: (req, res) => {
-    Products.findAll({
-      where: {
-        stock: { [Op.gt]: 0 },
-      },
-    }).then((products) => {
-      return res.render("products/productShop", { productos: products });
-    });
+  list: async (req, res) => {
+    try {
+      let products = await Products.findAll({
+        where: {
+          stock: { [Op.gt]: 0 },
+        },
+      });
+      return res.render("products/productShop", { products });
+    } catch (err) {
+      console.log(err);
+    }
   },
 
-  detail: (req, res) => {
-    Products.findByPk(req.params.id).then((product) => {
+  detail: async (req, res) => {
+    try {
+      let product = await Products.findByPk(req.params.id);
+
       return res.render("products/productDetail", { product });
-    });
+    } catch (err) {
+      console.log(err);
+    }
   },
 
   // ESTO ES SOLO VISUAL
-  // NO Funciona por el motivo de que no hicimos el carrito.
   cart: (req, res) => {
     return res.render("products/productCart");
   },
