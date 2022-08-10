@@ -14,19 +14,16 @@ module.exports = [
   body("image").custom((value, { req }) => {
     let file = req.file;
     let acceptedExtensions = [".png", ".jpg", ".jpeg"];
-    if (!file) {
-      throw new Error("Tienes que subir una imagen.");
-    } else {
-      let fileExtension = path.extname(file.originalname);
-      let fileSize = file.size;
-      if (!acceptedExtensions.includes(fileExtension)) {
-        throw new Error(
-          `Solo se permiten extensiones ${acceptedExtensions.join(" ")}`
-        );
-      }
-      if (fileSize > 1200000) {
-        throw new Error("El tamaño debe ser menor a 1MB.");
-      }
+
+    let fileExtension = path.extname(file.originalname);
+    let fileSize = file.size;
+    if (!acceptedExtensions.includes(fileExtension)) {
+      throw new Error(
+        `Solo se permiten extensiones ${acceptedExtensions.join(" ")}`
+      );
+    }
+    if (fileSize > 1200000) {
+      throw new Error("El tamaño debe ser menor a 1MB.");
     }
 
     return true;

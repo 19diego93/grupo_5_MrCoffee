@@ -12,7 +12,7 @@
         <h1>Crea un Producto</h1>
         <br />
         <br />
-        <form class="form-editor" action="/admin" method="POST" enctype="multipart/form-data">
+        <form class="form-editor" action="/admin/" method="POST" enctype="multipart/form-data">
           <label for="name">
             <p>Nombre:</p>
             <input
@@ -60,10 +60,10 @@
               <option value="">Seleciona una opcion</option>
               <option 
               value="coffee" 
-              <%= locals.oldDate && oldDate.category === "coffee" ? 'selected' : ''; %>>Café</option>
+              <%= locals.oldDate && oldDate.category == "coffee" ? 'selected' : ''; %>>Café</option>
               <option 
               value="food" 
-              <%= locals.oldDate && oldDate.category === 'food' ? 'selected' : ''; %>>Comida</option>
+              <%= locals.oldDate && oldDate.category == 'food' ? 'selected' : ''; %>>Comida</option>
             </select>
             <% if (locals.errors && errors.category) { %>
               <p class="error-msg"><%= errors.category.msg %></p>

@@ -5,7 +5,6 @@ const { validationResult } = require("express-validator");
 
 //! Archivos
 const db = require("../database/models");
-const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
 //!Modelos
@@ -20,7 +19,6 @@ const adminController = {
           stock: { [Op.eq]: 0 },
         },
       });
-      console.log(products.length);
 
       return res.render("products/productShop", { products });
     } catch (e) {
@@ -30,7 +28,7 @@ const adminController = {
   viewCreate: (req, res) => {
     res.render("admin/create");
   },
-  create: (req, res) => {
+  create: async (req, res) => {
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
@@ -42,21 +40,28 @@ const adminController = {
         image = "default-image.png";
       }
 
-      newProduct = {
-        id: Date.now(),
+      let categoria;
+
+      if (req.body.category == "coffee") {
+        categoria = 1;
+      } else if (req.body.category == "food") {
+        categoria = 2;
+      }
+
+      let newProduct = {
+        id: 22,
         name: req.body.name,
         image: image,
         description: req.body.description,
-        category: req.body.category,
-        stock: parseInt(req.body.stock),
-        price: parseInt(req.body.price),
-        offer: parseInt(req.body.offer),
+        stock: req.body.stock,
+        price: req.body.price,
+        offer: req.body.offer,
         rating: 0,
+        id_categoryP: categoria,
       };
-
-      Products.create(newProduct).then((product) => {
-        res.redirect("/products/detail/" + product.id);
-      });
+      let product = await Products.create(newProduct);
+      
+      res.redirect("/product/detail/"+product.id);
     } else {
       if (req.file) {
         let filePath = path.resolve(
@@ -74,10 +79,13 @@ const adminController = {
     }
   },
   viewEdit: (req, res) => {
-    allProducts = products;
+    // allProducts = products;
 
-    let edit = allProducts.filter((product) => product.id == req.params.id);
-    res.render("admin/edit", { edit: edit[0] });
+    // let edit = allProducts.filter((product) => product.id == req.params.id);
+    // res.render("admin/edit", { edit: edit[0] });
+    let productEdit = Products.findByPk(req.params.id).then((p) => {
+      res.render("admin/edit", { edit: p });
+    });
   },
   update: (req, res) => {
     allProducts = products;

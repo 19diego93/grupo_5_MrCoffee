@@ -67,10 +67,10 @@
               <option value="" >Seleciona una opcion</option>
               <option 
               value="coffee" 
-              <%= edit.category === 'coffee' ? 'selected' : ''; %>>Café</option>
+              <%= edit.id_categoryP == 'coffee' ? 'selected' : ''; %>>Café</option>
               <option 
               value="food" 
-              <%= edit.category === 'food' ? 'selected' : ''; %>>Comida</option>
+              <%= edit.id_categoryP == 'food' ? 'selected' : ''; %>>Comida</option>
             </select>
             <% if (locals.errors && errors.category) { %>
               <p class="error-msg"><%= errors.category.msg %></p>
