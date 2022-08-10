@@ -6,7 +6,6 @@ const { validationResult } = require("express-validator");
 
 //! Archivos
 const db = require("../database/models");
-const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
 //!Modelos
@@ -96,32 +95,35 @@ const usersController = {
   },
 
   //! proceso de registración
-  processRegister: (req, res) => {
+  processRegister: async (req, res) => {
     let errors = validationResult(req);
+
     try {
       if (errors.isEmpty()) {
-        let userInDb = User.findByField("email", req.body.email);
+        let emailDb = await Usuarios.findAll({
+          where: {
+            email: { [Op.like]: "%" + req.body.email + "%" },
+          },
+        });
 
-        if (!userInDb) {
+        if (!emailDb.length > 0) {
           if (!req.file) {
             req.body.image = "defaultimg.jpg";
           } else {
             req.body.image = req.file.filename;
           }
 
-          delete req.body.confirmPsw;
-
           let newUser = {
-            id: User.generateId(),
-            category: "user",
-            fname: req.body.fname,
-            lname: req.body.lname,
+            first_name: req.body.fname,
+            last_name: req.body.lname,
             image: req.body.image,
             email: req.body.email,
             password: bcryptjs.hashSync(req.body.password, 10),
+            id_category_U: 2,
           };
 
-          User.create(newUser);
+          await Usuarios.create(newUser);
+
           return res.redirect("login");
         } else {
           return res.render("users/register", {
@@ -146,13 +148,9 @@ const usersController = {
           oldData: req.body,
         });
       }
-    } catch {
-      (err) => {
-        console.log("Hubo un error: ", err);
-      };
+    } catch (e) {
+      console.log("Hubo un error: ", e);
     }
-
-    // return res.redirect("login");
   },
 
   profile: (req, res) => {
@@ -161,10 +159,13 @@ const usersController = {
     });
   },
 
-  editProfile: (req, res) => {
-    let errors = validationResult(req);
+  editProfile: async (req, res) => {
+    try {
+      let errors = validationResult(req);
+    } catch (e) {
+      console.log("Hubo un error: ", e);
+    }
 
-    // Consulto si NO existen errores
     if (errors.isEmpty()) {
       // Todos los usuarios
       let allUsers = users;

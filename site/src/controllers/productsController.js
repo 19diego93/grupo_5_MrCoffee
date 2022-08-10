@@ -1,6 +1,5 @@
 //! Archivos
 const db = require("../database/models");
-const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
 //!Modelos
@@ -16,8 +15,8 @@ const productsController = {
         },
       });
       return res.render("products/productShop", { products });
-    } catch (err) {
-      console.log(err);
+    } catch (e) {
+      console.log("Hubo un error: ", e);
     }
   },
 
@@ -26,8 +25,8 @@ const productsController = {
       let product = await Products.findByPk(req.params.id);
 
       return res.render("products/productDetail", { product });
-    } catch (err) {
-      console.log(err);
+    } catch (e) {
+      console.log("Hubo un error: ", e);
     }
   },
 

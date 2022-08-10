@@ -27,8 +27,8 @@ const mainController = {
       });
 
       return res.render("index", { coffee, food });
-    } catch (err) {
-      console.log(err);
+    } catch (e) {
+      console.log("Hubo un error: ", e);
     }
   },
 
@@ -45,8 +45,8 @@ const mainController = {
         results,
         busquedaDelUsuario: req.query.keywords,
       });
-    } catch (err) {
-      console.log(err);
+    } catch (e) {
+      console.log("Hubo un error: ", e);
     }
   },
 };
