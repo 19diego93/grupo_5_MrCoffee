@@ -41,11 +41,9 @@ const usersController = {
               user.password
             );
             if (isOkPassword) {
-              console.log(user.id_category_U);
-              console.log(user);
               req.session.userLogged = { ...user };
 
-              delete req.session.userLogged.password;
+              delete req.session.userLogged.dataValues.password;
 
               if (req.session.userLogged) {
                 res.cookie("category", user.id_category_U, {
@@ -58,7 +56,6 @@ const usersController = {
                   maxAge: 1000 * 60 * 2,
                 });
               }
-
               return res.redirect("/");
             } else {
               return res.render("users/login", {
@@ -155,87 +152,104 @@ const usersController = {
 
   profile: (req, res) => {
     return res.render("users/profile", {
-      user: req.session.userLogged,
+      user: req.session.userLogged.dataValues,
     });
   },
 
   editProfile: async (req, res) => {
     try {
       let errors = validationResult(req);
-    } catch (e) {
-      console.log("Hubo un error: ", e);
-    }
 
-    if (errors.isEmpty()) {
-      // Todos los usuarios
-      let allUsers = users;
-
-      let userFound = allUsers.find((user) => {
-        if (user.id == req.session.userLogged.id) {
-          return user;
-        }
-      });
-
-      // Consulto si el Email existe en la base de datos
-      // Utilizo toUpperCase para hacer los Email mayusculas y comprobar.
-      let email = req.body.email.toUpperCase();
-      let oldEmail = userFound.email.toUpperCase();
-      let userInDb;
-      if (oldEmail == email) {
-        userInDb = false;
-      } else {
-        allUsers.find((oneUser) => {
-          let userDbEmail = oneUser.email.toUpperCase();
-
-          if (userDbEmail == email) {
-            userInDb = true;
-          }
+      if (errors.isEmpty()) {
+        let User = await Usuarios.findOne({
+          where: {
+            id: { [Op.eq]: req.session.userLogged.dataValues.id },
+          },
         });
-      }
 
-      // Consulto si la variable NO me dio TRUE.
-      if (!userInDb) {
-        // Configuracion del guardado de IMG
-        let image;
-        if (req.file) {
-          image = req.file.filename;
-          // let filePath = path.resolve(
-          //   __dirname,
-          //   "../../public/img/avatar/" + req.body.oldImage
-          // );
-          // fs.unlinkSync(filePath);
+        let newEmail = req.body.email;
+        let oldEmail = User.email;
+
+        let userInDb;
+        if (oldEmail == newEmail) {
+          userInDb = false;
         } else {
-          image = userFound.image;
+          let User = await Usuarios.findOne({
+            where: {
+              email: { [Op.eq]: newEmail },
+            },
+          });
+          if (User) {
+            userInDb = true;
+          } else {
+            userInDb = false;
+          }
         }
 
-        // let password;
-        // if (!req.body.password === userFound.password) {
-        //   password = req.body.password;
-        // } else {
-        //   userFound.password;
-        // }
+        if (userInDb != true) {
+          let image;
+          if (req.file) {
+            image = req.file.filename;
 
-        let userEdit = {
-          id: parseInt(userFound.id),
-          category: userFound.category,
-          image: image,
-          fname: req.body.fname,
-          lname: req.body.lname,
-          email: req.body.email,
-          password: userFound.password,
-        };
-
-        let edited = allUsers.map((user) => {
-          if (user.id == userEdit.id) {
-            return (user = userEdit);
+            // if (User.image != "defaultimg.jpg") {
+            //   let filePath = path.resolve(
+            //     __dirname,
+            //     "../../public/img/avatar/" + User.image
+            //   );
+            //   fs.unlinkSync(filePath);
+            // }
+          } else {
+            image = User.image;
           }
-          return user;
-        });
 
-        console.log(edited);
-        let update = JSON.stringify(edited, null, " ");
-        fs.writeFileSync(usersFilePath, update, "utf-8");
-        res.redirect("/");
+          let userEdit = {
+            id: User.id,
+            first_name: req.body.fname,
+            last_name: req.body.lname,
+            image: image,
+            email: req.body.email,
+            password: User.password,
+            id_category_U: User.id_category_U,
+          };
+
+          await Usuarios.update(userEdit, {
+            where: { id: User.id },
+          });
+
+          res.clearCookie("recordame");
+
+          req.session.userLogged.dataValues = { ...userEdit };
+
+          delete req.session.userLogged.dataValues.password;
+
+          res.cookie("category", userEdit.id_category_U, {
+            maxAge: 1000 * 60 * 1,
+          });
+
+          res.cookie("recordame", userEdit.email, {
+            maxAge: 1000 * 60 * 2,
+          });
+
+          res.redirect("/");
+        } else {
+          if (req.file) {
+            let filePath = path.resolve(
+              __dirname,
+              "../../public/img/avatar/" + req.file.filename
+            );
+            fs.unlinkSync(filePath);
+          }
+
+          return res.render("users/profile", {
+            errors: {
+              email: {
+                msg: "Este email ya está registrado.",
+              },
+            },
+            user: req.session.userLogged.dataValues,
+            oldDate: req.body,
+          });
+        }
       } else {
         if (req.file) {
           let filePath = path.resolve(
@@ -246,29 +260,13 @@ const usersController = {
         }
 
         return res.render("users/profile", {
-          errors: {
-            email: {
-              msg: "Este email ya está registrado.",
-            },
-          },
-          user: req.session.userLogged,
+          errors: errors.mapped(),
+          user: req.session.userLogged.dataValues,
           oldDate: req.body,
         });
       }
-    } else {
-      if (req.file) {
-        let filePath = path.resolve(
-          __dirname,
-          "../../public/img/avatar/" + req.file.filename
-        );
-        fs.unlinkSync(filePath);
-      }
-
-      return res.render("users/profile", {
-        errors: errors.mapped(),
-        user: req.session.userLogged,
-        oldDate: req.body,
-      });
+    } catch (e) {
+      console.log("Hubo un error: ", e);
     }
   },
 

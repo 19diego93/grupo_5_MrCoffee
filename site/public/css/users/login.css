@@ -28,6 +28,7 @@
   text-align: center;
   color: #76402e;
   font-size: 2rem;
+  pointer-events: none;
 }
 /*! form */
 .form-login {
@@ -93,6 +94,7 @@
   padding: 15px;
   max-width: 150px;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 /*! titulo h1 y su contenedor */
@@ -101,6 +103,7 @@
   justify-content: center;
   margin-top: 15px;
   padding: 20px;
+  pointer-events: none;
 }
 .contenedor-titulo-login h1 {
   text-align: center;
@@ -131,6 +134,9 @@
 .login-recordarme {
   margin: 10px 0px;
   padding: 10px;
+}
+.recordame {
+  cursor: pointer;
 }
 @media (min-width: 460px) {
   /*! Tablets */

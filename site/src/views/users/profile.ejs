@@ -53,7 +53,7 @@
                   name="fname"
                   type="text"
                   class="<%= locals.errors && errors.fname ? 'is-invalid' : 'is-valid' %>"
-                  value="<%= locals.oldDate && oldDate.fname ? oldDate.fname : user.fname %>"
+                  value="<%= locals.oldDate && oldDate.fname ? oldDate.fname : user.first_name %>"
                 />
                 <% if(locals.errors && errors.fname){ %>
                 <div class="errors-t"><%= errors.fname.msg %></div>
@@ -68,7 +68,7 @@
                   name="lname"
                   type="text"
                   class="<%= locals.errors && errors.lname ? 'is-invalid' : 'is-valid' %>"
-                  value="<%= locals.oldDate && oldDate.lname ? oldDate.lname : user.lname %>"
+                  value="<%= locals.oldDate && oldDate.lname ? oldDate.lname : user.last_name %>"
                 />
                 <% if(locals.errors && errors.lname){ %>
                 <div class="errors-t"><%= errors.lname.msg %></div>
