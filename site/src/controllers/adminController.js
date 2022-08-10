@@ -25,9 +25,11 @@ const adminController = {
       console.log("Hubo un error: ", e);
     }
   },
+
   viewCreate: (req, res) => {
     res.render("admin/create");
   },
+
   create: async (req, res) => {
     let errors = validationResult(req);
 
@@ -47,9 +49,10 @@ const adminController = {
       } else if (req.body.category == "food") {
         categoria = 2;
       }
+      let randomNum = Math.floor(Math.random() * 999999999 + 5);
 
       let newProduct = {
-        id: 22,
+        id: randomNum,
         name: req.body.name,
         image: image,
         description: req.body.description,
@@ -60,8 +63,8 @@ const adminController = {
         id_categoryP: categoria,
       };
       let product = await Products.create(newProduct);
-      
-      res.redirect("/product/detail/"+product.id);
+
+      res.redirect("/products/detail/" + product.id);
     } else {
       if (req.file) {
         let filePath = path.resolve(

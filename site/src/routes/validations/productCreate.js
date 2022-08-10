@@ -15,15 +15,17 @@ module.exports = [
     let file = req.file;
     let acceptedExtensions = [".png", ".jpg", ".jpeg"];
 
-    let fileExtension = path.extname(file.originalname);
-    let fileSize = file.size;
-    if (!acceptedExtensions.includes(fileExtension)) {
-      throw new Error(
-        `Solo se permiten extensiones ${acceptedExtensions.join(" ")}`
-      );
-    }
-    if (fileSize > 1200000) {
-      throw new Error("El tamaño debe ser menor a 1MB.");
+    if (file) {
+      let fileExtension = path.extname(file.originalname);
+      let fileSize = file.size;
+      if (!acceptedExtensions.includes(fileExtension)) {
+        throw new Error(
+          `Solo se permiten extensiones ${acceptedExtensions.join(" ")}`
+        );
+      }
+      if (fileSize > 1200000) {
+        throw new Error("El tamaño debe ser menor a 1MB.");
+      }
     }
 
     return true;
