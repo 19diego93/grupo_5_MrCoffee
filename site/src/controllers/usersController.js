@@ -41,17 +41,12 @@ const usersController = {
 
             delete req.session.userLogged.dataValues.password;
 
-            if (req.session.userLogged) {
-              res.cookie("category", user.id_category_U, {
-                maxAge: 1000 * 60 * 1,
+            if (req.body.recordame) {
+              res.cookie("recordame", req.body.email, {
+                maxAge: 1000 * 60 * 60 * 24,
               });
             }
 
-            if (req.body.recordame) {
-              res.cookie("recordame", req.body.email, {
-                maxAge: 1000 * 60 * 2,
-              });
-            }
             return res.redirect("/");
           } else {
             return res.render("users/login", {
@@ -184,13 +179,13 @@ const usersController = {
           if (req.file) {
             image = req.file.filename;
 
-            // if (User.image != "defaultimg.jpg") {
-            //   let filePath = path.resolve(
-            //     __dirname,
-            //     "../../public/img/avatar/" + User.image
-            //   );
-            //   fs.unlinkSync(filePath);
-            // }
+            if (User.image != "defaultimg.jpg") {
+              let filePath = path.resolve(
+                __dirname,
+                "../../public/img/avatar/" + User.image
+              );
+              fs.unlinkSync(filePath);
+            }
           } else {
             image = User.image;
           }
@@ -212,10 +207,6 @@ const usersController = {
           req.session.userLogged.dataValues = { ...userEdit };
 
           delete req.session.userLogged.dataValues.password;
-
-          res.cookie("category", userEdit.id_category_U, {
-            maxAge: 1000 * 60 * 1,
-          });
 
           res.redirect("/");
         } else {

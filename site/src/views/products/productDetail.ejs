@@ -78,12 +78,15 @@
                 />
               </div>
             </form>
+            <% if (locals.userLogged) { %> <% if
+            (locals.userLogged.dataValues.id_category_U == '1') { %>
             <div class="container-buttons-detail">
               <a href="/admin/edit/<%=product.id%>" class="button-edit">
                 <p>EDITAR</p>
               </a>
               <div class="button-delete"><%- include('../admin/delete') %></div>
             </div>
+            <% } %> <% } %>
           </div>
         </article>
         <article class="container-descrip">

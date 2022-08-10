@@ -1,5 +1,5 @@
 function adminRuta(req, res, next) {
-  let categoria = req.cookies.category;
+  let categoria = req.session.userLogged.dataValues.id_category_U;
 
   if (categoria == "1") {
     next();

@@ -54,9 +54,10 @@
         </li>
       </ul>
     </li>
-    <!--  -->
+    <% if (locals.userLogged) { %> <% if
+    (locals.userLogged.dataValues.id_category_U == '1') { %>
     <li class="list__item list__item--click nav__link--outside">
-      <div class="nav__glow list__button list__button--click  ">
+      <div class="nav__glow list__button list__button--click">
         <i class="fas fa-tools"></i>
         <p class="nav__link">Admin</p>
         <i class="fas fa-angle-down list__arrow"></i>
@@ -75,7 +76,7 @@
         </li>
       </ul>
     </li>
-  
+    <% } %> <% } %>
     <li class="list__item list__item--click nav__link--outside">
       <div class="nav__glow list__button list__button--click">
         <i class="fa-solid fa-comment-dots"></i>
