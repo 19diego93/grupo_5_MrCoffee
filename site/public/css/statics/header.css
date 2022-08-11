@@ -98,7 +98,7 @@ main {
 .nav ul li a {
   color: #000;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 .nav ul li a:hover {
   color: #00b7ff;

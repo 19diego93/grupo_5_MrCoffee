@@ -9,7 +9,11 @@
     <main>
       <div class="contenedor-perfil">
         <div class="titulo-perfil">
-          <h2>Perfil</h2>
+          <h2>Configuraciones</h2>
+          <div class="configs">
+            <a href="/user/profile" class="profile-user">perfil</a>
+            <a href="" class="profile-favorite">favoritos</a>
+          </div>
         </div>
 
         <form
@@ -119,9 +123,7 @@
               </div>
 
               <div class="estilos-input">
-                <label for="confirmNewPassword"
-                  >Repite la nueva contraseña</label
-                >
+                <label for="confirmNewPassword">Repite la contraseña</label>
                 <input
                   placeholder="Repita su nueva contraseña"
                   id="confirmNewPassword"
@@ -138,11 +140,15 @@
 
           <div class="contenedor-botones">
             <div class="perfil-input-submit">
-              <input type="submit" value="Guardar" />
+              <input type="submit" value="Guardar" class="guardar-datos" />
             </div>
 
-            <div class="perfil-cancelar">
-              <a href="/">Cancelar</a>
+            <div class="perfil-input-submit">
+              <input
+                type="reset"
+                value="restablecer"
+                class="restablecer-datos"
+              />
             </div>
           </div>
         </form>

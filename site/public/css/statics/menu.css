@@ -14,9 +14,9 @@
   top: 100px;
   right: 40px;
   cursor: pointer;
-  transition: 0.2s;
-  color: var(--color-Marron);
+  color: var(--color-Marron-Oscuro);
   list-style: none;
+  transition: 0.1s;
 }
 #close-menu:hover {
   color: var(--color-Celeste);
