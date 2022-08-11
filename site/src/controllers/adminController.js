@@ -82,10 +82,6 @@ const adminController = {
     }
   },
   viewEdit: (req, res) => {
-    // allProducts = products;
-
-    // let edit = allProducts.filter((product) => product.id == req.params.id);
-    // res.render("admin/edit", { edit: edit[0] });
     let productEdit = Products.findByPk(req.params.id).then((p) => {
       res.render("admin/edit", { edit: p });
     });
@@ -171,34 +167,30 @@ const adminController = {
       });
     }
   },
-  destroy: (req, res) => {
-    allProducts = products;
+  destroy: async (req, res) => {
+    try {
+      let product = await Products.findByPk(req.params.id);
+      console.log(product);
+      if (product) {
+        await product.destroy();
 
-    let destroy = req.params.id;
-
-    allProducts.filter((product) => {
-      if (product.id == destroy) {
-        let filePath = path.resolve(
-          __dirname,
-          "../../public/img/products/" + product.image
-        );
-        try {
-          fs.unlinkSync(filePath);
-        } catch (error) {
-          console.error("No se pudo eliminar la imagen anterior");
-          console.error(error.message);
+        if (req.file) {
+          if (product.image != "default-image.png") {
+            let filePath = path.resolve(
+              __dirname,
+              "../../public/img/avatar/" + product.image
+            );
+            fs.unlinkSync(filePath);
+          }
         }
+
+        res.redirect("/");
+      } else {
+        console.log("Hubo un error borrando producto");
       }
-    });
-
-    let destroying = allProducts.filter((product) => {
-      return product.id != destroy;
-    });
-
-    let update = JSON.stringify(destroying, null, 2);
-    fs.writeFileSync(productsFilePath, update, "utf-8");
-
-    res.redirect("/");
+    } catch (e) {
+      console.log("Hubo un error: ", e);
+    }
   },
 };
 
