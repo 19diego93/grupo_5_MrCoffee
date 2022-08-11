@@ -25,6 +25,10 @@
   text-decoration: none;
   color: #000;
 }
+.page-title,
+.separator {
+  pointer-events: none;
+}
 /*! Crear productos */
 #button-crearProducto div {
   background-color: red;

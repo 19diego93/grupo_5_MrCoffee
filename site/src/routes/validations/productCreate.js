@@ -17,7 +17,6 @@ module.exports = [
   body("image").custom((value, { req }) => {
     let file = req.file;
     let acceptedExtensions = [".png", ".jpg", ".jpeg", ".gif"];
-
     if (file) {
       let fileExtension = path.extname(file.originalname);
       let fileSize = file.size;
@@ -30,7 +29,6 @@ module.exports = [
         throw new Error("El tamaño debe ser menor a 1MB.");
       }
     }
-
     return true;
   }),
   body("description")
@@ -47,7 +45,7 @@ module.exports = [
     .withMessage("Debes seleccionar una opcion.")
     .bail()
     .isIn(exceptedCategory)
-    .withMessage("seleccionar al menos una categoría"),
+    .withMessage("La categoria seleccionada no existe."),
   body("stock")
     .notEmpty()
     .withMessage("Este campo no puede estar vacío.")
@@ -64,9 +62,6 @@ module.exports = [
     .isInt()
     .withMessage("Este campo debe contener numeros."),
   body("offer")
-    .notEmpty()
-    .withMessage("Este campo no puede estar vacío.")
-    .bail()
     .isInt()
     .withMessage("Este campo debe contener numeros.")
     .isLength({ max: 2 })

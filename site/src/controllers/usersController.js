@@ -53,7 +53,7 @@ const usersController = {
               errors: {
                 password: { msg: "La contraseña es incorrecta." },
               },
-              oldDate: req.body,
+              oldData: req.body,
             });
           }
         } else {
@@ -61,13 +61,13 @@ const usersController = {
             errors: {
               email: { msg: "Esta cuenta no existe." },
             },
-            oldDate: req.body,
+            oldData: req.body,
           });
         }
       } else {
         return res.render("users/login", {
           errors: errors.mapped(),
-          oldDate: req.body,
+          oldData: req.body,
         });
       }
     } catch (e) {
@@ -190,13 +190,46 @@ const usersController = {
             image = User.image;
           }
 
+          let newPassword;
+
+          if (req.body.oldPassword != "") {
+            let isOkPassword = bcryptjs.compareSync(
+              req.body.oldPassword,
+              User.password
+            );
+            if (isOkPassword) {
+              // if()
+              newPassword = bcryptjs.hashSync(req.body.newPassword, 10);
+            } else {
+              if (req.file) {
+                let filePath = path.resolve(
+                  __dirname,
+                  "../../public/img/avatar/" + req.file.filename
+                );
+                fs.unlinkSync(filePath);
+              }
+
+              return res.render("users/profile", {
+                errors: {
+                  oldPassword: {
+                    msg: "La contraseña es incorrecta.",
+                  },
+                },
+                user: req.session.userLogged.dataValues,
+                oldData: req.body,
+              });
+            }
+          } else {
+            newPassword = User.password;
+          }
+
           let userEdit = {
             id: User.id,
             first_name: req.body.fname,
             last_name: req.body.lname,
             image: image,
             email: req.body.email,
-            password: User.password,
+            password: newPassword,
             id_category_U: User.id_category_U,
           };
 
@@ -225,7 +258,7 @@ const usersController = {
               },
             },
             user: req.session.userLogged.dataValues,
-            oldDate: req.body,
+            oldData: req.body,
           });
         }
       } else {
@@ -240,7 +273,7 @@ const usersController = {
         return res.render("users/profile", {
           errors: errors.mapped(),
           user: req.session.userLogged.dataValues,
-          oldDate: req.body,
+          oldData: req.body,
         });
       }
     } catch (e) {
@@ -250,9 +283,8 @@ const usersController = {
 
   logout: (req, res) => {
     res.clearCookie("recordame");
-    res.clearCookie("admin");
-    res.clearCookie("category");
     req.session.destroy();
+
     return res.redirect("/");
   },
 };

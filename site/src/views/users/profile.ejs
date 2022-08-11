@@ -53,7 +53,7 @@
                   name="fname"
                   type="text"
                   class="<%= locals.errors && errors.fname ? 'is-invalid' : 'is-valid' %>"
-                  value="<%= locals.oldDate && oldDate.fname ? oldDate.fname : user.first_name %>"
+                  value="<%= locals.oldData && oldData.fname ? oldData.fname : user.first_name %>"
                 />
                 <% if(locals.errors && errors.fname){ %>
                 <div class="errors-t"><%= errors.fname.msg %></div>
@@ -68,7 +68,7 @@
                   name="lname"
                   type="text"
                   class="<%= locals.errors && errors.lname ? 'is-invalid' : 'is-valid' %>"
-                  value="<%= locals.oldDate && oldDate.lname ? oldDate.lname : user.last_name %>"
+                  value="<%= locals.oldData && oldData.lname ? oldData.lname : user.last_name %>"
                 />
                 <% if(locals.errors && errors.lname){ %>
                 <div class="errors-t"><%= errors.lname.msg %></div>
@@ -83,7 +83,7 @@
                   name="email"
                   type="email"
                   class="<%= locals.errors && errors.email ? 'is-invalid' : 'is-valid' %>"
-                  value="<%= locals.oldDate && oldDate.email ? oldDate.email : user.email %>"
+                  value="<%= locals.oldData && oldData.email ? oldData.email : user.email %>"
                 />
                 <% if(locals.errors && errors.email){ %>
                 <div class="errors-t"><%= errors.email.msg %></div>
@@ -91,8 +91,47 @@
               </div>
 
               <div class="estilos-input">
-                <label for="changePsw">Contraseña</label>
-                <button id="changePsw">Cambia tu contraseña</button>
+                <label for="oldPassword">Contraseña actual</label>
+                <input
+                  placeholder="Introduzca su contraseña actual"
+                  id="oldPassword"
+                  name="oldPassword"
+                  type="password"
+                  class="<%= locals.errors && errors.oldPassword ? 'is-invalid' : 'is-valid' %>"
+                />
+                <% if(locals.errors && errors.oldPassword){ %>
+                <div class="errors-t"><%= errors.oldPassword.msg %></div>
+                <% } %>
+              </div>
+
+              <div class="estilos-input">
+                <label for="newPassword">Nueva contraseña</label>
+                <input
+                  placeholder="Introduzca su nueva contraseña"
+                  id="newPassword"
+                  name="newPassword"
+                  type="password"
+                  class="<%= locals.errors && errors.newPassword ? 'is-invalid' : 'is-valid' %>"
+                />
+                <% if(locals.errors && errors.newPassword){ %>
+                <div class="errors-t"><%= errors.newPassword.msg %></div>
+                <% } %>
+              </div>
+
+              <div class="estilos-input">
+                <label for="confirmNewPassword"
+                  >Repite la nueva contraseña</label
+                >
+                <input
+                  placeholder="Repita su nueva contraseña"
+                  id="confirmNewPassword"
+                  name="confirmNewPassword"
+                  type="password"
+                  class="<%= locals.errors && errors.confirmNewPassword ? 'is-invalid' : 'is-valid' %>"
+                />
+                <% if(locals.errors && errors.confirmNewPassword){ %>
+                <div class="errors-t"><%= errors.confirmNewPassword.msg %></div>
+                <% } %>
               </div>
             </div>
           </div>

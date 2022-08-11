@@ -6,6 +6,9 @@
   text-decoration: none;
   color: #000;
 }
+.page-title {
+  pointer-events: none;
+}
 .producto-sin-stock h2 {
   color: red;
   text-align: center;

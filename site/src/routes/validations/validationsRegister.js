@@ -77,23 +77,30 @@ module.exports = [
     .withMessage("No puede escribir más de 65 caracteres.")
     .bail()
     .custom((value, { req }) => {
-      console.log(value);
-    }),
+      if (value === req.body.confirmPsw) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+    .withMessage("Las contraseñas no coinciden."),
 
   body("confirmPsw")
     .notEmpty()
     .withMessage("Este campo no puede estar vacío.")
-    .custom((value, { req }) => {
-      if (value === req.body.password) {
-        return true;
-      }
-      return false;
-    })
-    .withMessage("Las contraseñas no coinciden.")
     .bail()
     .isLength({ min: 8 })
     .withMessage("Escribe al menos 8 caracteres.")
     .bail()
     .isLength({ max: 65 })
-    .withMessage("No puede escribir más de 65 caracteres."),
+    .withMessage("No puede escribir más de 65 caracteres.")
+    .bail()
+    .custom((value, { req }) => {
+      if (value === req.body.password) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+    .withMessage("Las contraseñas no coinciden."),
 ];

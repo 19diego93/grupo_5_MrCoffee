@@ -1,5 +1,7 @@
+//! Extensiones
 const { body } = require("express-validator");
 
+//! Validacion
 module.exports = [
   body("email")
     .notEmpty()
