@@ -10,8 +10,8 @@ window.addEventListener("load", function () {
     }
 
     if (form.lname.value == "") {
-      let first_name = "el campo del apellido no puede estar vacio";
-      errores.push(first_name);
+      let last_name = "el campo del apellido no puede estar vacio";
+      errores.push(last_name);
     }
 
     if (errores.length > 0) {

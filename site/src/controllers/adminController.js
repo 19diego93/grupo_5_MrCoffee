@@ -86,102 +86,83 @@ const adminController = {
       res.render("admin/edit", { edit: p });
     });
   },
-  update: (req, res) => {
-    allProducts = products;
-    let errors = validationResult(req);
+  update: async (req, res) => {
+    try {
+      let product = await Products.findByPk(req.params.id);
+      let errors = validationResult(req);
 
-    if (errors.isEmpty()) {
-      let image = req.body.oldImage;
+      if (errors.isEmpty()) {
+        let image = product.dataValues.image;
 
-      if (req.file != undefined) {
-        image = req.file.filename;
-        let filePath = path.resolve(
-          __dirname,
-          "../../public/img/products/" + req.body.oldImage
-        );
-        try {
+        if (req.file) {
+          image = req.file.filename;
+          let filePath = path.resolve(
+            __dirname,
+            "../../public/img/products/" + product.dataValues.image
+          );
           fs.unlinkSync(filePath);
-          // console.log("-----");
-          // console.log("Se borro la imagen :)");
-          // console.log("-----");
-        } catch (error) {
-          console.error("No se pudo eliminar la imagen anterior");
-          console.error(error.message);
         }
-        //! Otra forma de borrar
-        // fs.unlink(filePath, callback);
-        // function callback(error) {
-        //   if (error) {
-        //     console.log("error al borrar la imagen");
-        //     console.error(error.message);
-        //   } else {
-        //     console.log("Imagen borrada");
-        //   }
-        // }
-      }
 
-      if (!req.body.rating.length > 0) {
-        req.body.rating = 0;
-      }
-
-      let editProduct = {
-        id: parseInt(req.params.id),
-        name: req.body.name,
-        image: image,
-        description: req.body.description,
-        category: req.body.category,
-        stock: parseInt(req.body.stock),
-        price: parseInt(req.body.price),
-        offer: parseInt(req.body.offer),
-        rating: parseFloat(req.body.rating),
-      };
-
-      let edited = allProducts.map((product) => {
-        if (product.id == req.params.id) {
-          return (product = editProduct);
+        let categoria;
+        if (req.body.category == "coffee") {
+          categoria = 1;
+        } else if (req.body.category == "food") {
+          categoria = 2;
         }
-        return product;
-      });
 
-      let update = JSON.stringify(edited, null, 2);
-      fs.writeFileSync(productsFilePath, update, "utf-8");
-      res.redirect("/");
-    } else {
-      let edit = allProducts.filter((product) => product.id == req.params.id);
-      if (req.file) {
-        let filePath = path.resolve(
-          __dirname,
-          "../../public/img/products/" + req.file.filename
+        let newProduct = {
+          id: product.dataValues.id,
+          name: req.body.name,
+          image: image,
+          description: req.body.description,
+          stock: req.body.stock,
+          price: req.body.price,
+          offer: req.body.offer,
+          rating: 0,
+          id_categoryP: categoria,
+        };
+
+        await Products.update(
+          { ...newProduct },
+          {
+            where: { id: req.params.id },
+          }
         );
-        try {
+
+        res.redirect("/");
+      } else {
+        if (req.file) {
+          let filePath = path.resolve(
+            __dirname,
+            "../../public/img/products/" + req.file.filename
+          );
           fs.unlinkSync(filePath);
-        } catch (error) {
-          console.error("No se pudo eliminar la imagen anterior");
-          console.error(error.message);
         }
+
+        res.render("admin/edit", {
+          errors: errors.mapped(),
+          oldDate: req.body,
+          edit: product,
+        });
       }
-      res.render("admin/edit", {
-        errors: errors.mapped(),
-        oldDate: req.body,
-        edit: edit[0],
-      });
+    } catch (e) {
+      console.log("Hubo un error: ", e);
     }
   },
+
   destroy: async (req, res) => {
     try {
       let product = await Products.findByPk(req.params.id);
-      console.log(product);
+
       if (product) {
         await product.destroy();
 
-        if (req.file) {
-          if (product.image != "default-image.png") {
-            let filePath = path.resolve(
-              __dirname,
-              "../../public/img/avatar/" + product.image
-            );
-            fs.unlinkSync(filePath);
-          }
+        if (product.dataValues.image != "default-image.png") {
+          let filePath = path.resolve(
+            __dirname,
+            "../../public/img/products/" + product.dataValues.image
+          );
+          fs.unlinkSync(filePath);
         }
 
         res.redirect("/");
