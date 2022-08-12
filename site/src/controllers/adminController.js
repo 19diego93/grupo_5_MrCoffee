@@ -118,7 +118,7 @@ const adminController = {
           stock: req.body.stock,
           price: req.body.price,
           offer: req.body.offer,
-          rating: 0,
+          rating: product.dataValues.rating,
           id_categoryP: categoria,
         };
 

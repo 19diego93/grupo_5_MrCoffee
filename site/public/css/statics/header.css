@@ -59,13 +59,15 @@ main {
 .Config {
   margin: 0px 10px 0px 10px;
 }
-.Config a {
+.Config button {
   color: #000;
   font-size: 40px;
   transition: 0.3s;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
-.Config a:hover {
+.Config button:hover {
   color: #00b7ff;
 }
 
@@ -106,10 +108,27 @@ main {
 .nav ul li a p {
   display: none;
 }
+#search {
+  color: #000;
+  text-decoration: none;
+  transition: 0.1s;
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+  font-family: "Raleway", sans-serif;
+}
+#search:hover {
+  color: #00b7ff;
+}
+#search p {
+  display: none;
+  font-size: 20px;
+}
 .nav ul .celNone {
   display: none;
   cursor: pointer;
 }
+
 #search {
   cursor: pointer;
 }
@@ -148,7 +167,7 @@ main {
 /*! search */
 .search {
   position: absolute;
-  right: 10px;
+  right: 20px;
   width: 34px;
   height: 34px;
   cursor: pointer;
@@ -229,12 +248,23 @@ main {
   }
   .nav ul .celNone {
     display: block;
+  }
+  .celNone button {
     font-size: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .celNone button:hover {
+    color: var(--color-Celeste);
   }
   .nav ul li {
     font-size: 20px;
   }
   .nav ul li a p {
+    display: block;
+  }
+  #search p {
     display: block;
   }
   /*! Cabeza */
@@ -256,16 +286,23 @@ main {
   .disNone {
     display: block;
   }
-  .celNone {
-    font-size: 38px;
-  }
   .nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
     color: #000;
   }
+  #search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+  }
   .nav ul li a i {
+    display: flex;
+    margin-right: 10px;
+  }
+  #search i {
     display: flex;
     margin-right: 10px;
   }

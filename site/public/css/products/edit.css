@@ -1,181 +1,377 @@
-.main-createProduct {
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+.product-creation-container {
+  width: 100%;
+  padding-top: 40px;
+  font-family: "Roboto Mono", monospace;
+}
+.title-routes {
+  border-bottom: 1px solid var(--color-Marron-Claro);
+}
+.title-routes h2 {
+  pointer-events: none;
+  color: var(--color-Marron-Oscuro);
+  text-align: center;
+  font-size: 20px;
+}
+.configs {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: unset;
+  flex-direction: column;
 }
-.content-form-create {
-  background-color: var(--color-Marron-Claro);
-  width: 100%;
-  padding: 90px 0px 50px 0px;
+.configs a {
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px;
+  cursor: pointer;
+  width: 150px;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.configs a:hover {
   color: var(--color-Blanco);
+  background-color: var(--color-Marron);
 }
 
-.container-form-createProduct {
+.route-create-product {
+  color: var(--color-Marron-Claro);
+}
+
+.route-stock-products {
+  color: var(--color-Marron-Claro);
+}
+.route-edit-products {
+  color: var(--color-Blanco);
+  background-color: var(--color-Marron-Claro);
+}
+
+.product-creation-container form {
+  border-left: 2px solid var(--color-Marron-Claro);
+}
+.form-product-create {
+  display: block;
+  width: 100%;
+  margin-top: 40px;
+}
+/*! Imagen */
+.contenedor-img-product-create {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.img-product-create {
+  width: 150px;
+  height: 150px;
+}
+.img-product-create picture {
+  display: block;
   width: 100%;
+  height: 100%;
   overflow: hidden;
+  border: 2px solid var(--color-Marron-Claro);
+  border-radius: 50%;
+  position: relative;
 }
-.container-form-createProduct h1 {
+.img-product-create picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.boton-nueva-img {
+  padding: 10px;
   text-align: center;
-  color: var(--color-Negro);
+  width: 100%;
 }
-.container-form-createProduct h2 {
-  text-align: center;
-  color: var(--color-Negro);
+.boton-nueva-img div {
+  display: block;
 }
-.form-editor {
+.boton-nueva-img div label {
+  background-color: var(--color-Marron-Claro);
+  cursor: pointer;
+  display: inline-block;
+  outline: 0;
+  padding: 6px 16px;
+  position: relative;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.boton-nueva-img div label:hover {
+  background-color: var(--color-Marron);
+}
+.boton-nueva-img div label p {
+  color: var(--color-Blanco);
+}
+.boton-nueva-img div label input {
+  display: none;
+  font-family: inherit;
+  -webkit-appearance: none;
+}
+
+/*! Input's */
+.contenedor-input-perfil {
+  margin-top: 40px;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+.estilos-input {
+  width: 90%;
+  height: 130px;
+  position: relative;
+  margin: auto;
+}
+.estilos-input label {
+  color: var(--color-Marron-Oscuro-2);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 10px;
+}
+.estilos-input input {
+  color: var(--color-Marron);
+  width: 100%;
+  border: 1px solid var(--color-Blanco-Gastado);
+  height: 44px;
+  margin-top: 8px;
+  outline: none;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 0.1s;
+}
+.estilos-input input::placeholder {
+  color: var(--color-Marron-Claro);
+}
+.estilos-input input:hover {
+  color: var(--color-Marron-Oscuro-2);
+  background-color: var(--color-Blanco-Oscuro-1);
+  box-shadow: 0 0 0 0.25rem var(--color-Blanco-Gastado);
+}
+.estilos-input textarea {
+  color: var(--color-Marron);
+  width: 100%;
+  border: 1px solid var(--color-Blanco-Gastado);
+  height: 180px;
+  margin-top: 8px;
+  outline: none;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 0.1s;
+}
+.estilos-input textarea::placeholder {
+  color: var(--color-Marron-Claro);
+}
+.estilos-input textarea:hover {
+  color: var(--color-Marron-Oscuro-2);
+  background-color: var(--color-Blanco-Oscuro-1);
+  box-shadow: 0 0 0 0.25rem var(--color-Blanco-Gastado);
+}
+.estilos-input select {
+  color: var(--color-Marron);
+  width: 100%;
+  border: 1px solid var(--color-Blanco-Gastado);
+  height: 44px;
+  margin-top: 8px;
+  outline: none;
+  padding: 2px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 0.1s;
+}
+.estilos-input select::placeholder {
+  color: var(--color-Marron-Claro);
+}
+.estilos-input select:hover {
+  color: var(--color-Marron-Oscuro-2);
+  background-color: var(--color-Blanco-Oscuro-1);
+  box-shadow: 0 0 0 0.25rem var(--color-Blanco-Gastado);
+}
+.estilos-input button {
+  color: var(--color-Blanco);
+  width: 100%;
+  border: none;
+  background-color: var(--color-Marron-Claro);
+  height: 44px;
+  margin-top: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.estilos-input button:hover {
+  background-color: var(--color-Marron);
+}
+.contenedor-botones {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--color-Blanco);
-  padding: 5px;
-  border-radius: 15px;
-  width: 100%;
+  margin-top: 150px;
 }
-.imagen-editProducts {
-  width: 160px;
+.perfil-input-submit {
+  width: 95%;
+  display: inline-block;
+  flex-direction: row;
+  position: relative;
+  vertical-align: top;
 }
-.imagen-editProducts img {
+.perfil-input-submit input {
+  font-family: "Roboto Mono", monospace;
+  color: var(--color-Blanco);
   width: 100%;
-}
-.buttonImage-createproduct {
-  width: 100%;
-  padding: 10px;
+  background-color: var(--color-Marron-Claro);
+  border: none;
   outline: none;
-  border: none;
+  padding: 12px;
+  font-size: 20px;
   border-radius: 10px;
-  background: var(--color-Negro-Claro-2);
-  color: var(--color-Blanco);
-}
-.container-button-editProducts {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.button-createProduct {
-  background: var(--color-Negro-Claro-2);
-  color: var(--color-Blanco);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px;
   cursor: pointer;
-  border: none;
+  margin-bottom: 30px;
+  transition: 0.3s;
 }
-.button-createProduct:hover {
-  opacity: 0.8;
+.perfil-input-submit .guardar-datos:hover {
+  background-color: var(--color-Celeste);
 }
-.red {
+.perfil-input-submit .restablecer-datos:hover {
   background-color: var(--color-Rojo-Claro);
-  border: none;
 }
-.form-editor label {
-  margin: 20px;
-  width: 100%;
-  padding: 5px;
-  margin: 25px;
-  border-bottom: 0.3rem solid var(--color-Negro-Claro-2);
-}
-/*! Se activa al colocar informacion erronea */
-.form-editor label .error-msg {
+
+/*! is invalid */
+.errors-t {
   color: var(--color-Rojo-Claro);
-  margin-top: 5px;
+  font-family: initial;
+  pointer-events: none;
+  margin: 10px 0px;
+  font-size: 18px;
 }
-.form-editor label .is-invalid {
-  border: 2px solid var(--color-Rojo-Super-Claro);
-  background-image: url(/img/error-input.svg);
+.estilos-input .is-invalid {
+  border: 2px solid var(--color-Rojo-Claro);
+  background-image: url(/img/exclamation-circle.svg);
   background-repeat: no-repeat;
   background-position: right calc(0.575em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.form-editor label .is-invalid:focus {
-  border-color: var(--color-Rojo-Super-Claro);
-  box-shadow: 0 0 0 0.25rem rgb(220 53 69 / 25%);
+.estilos-input .is-invalid:focus {
+  border-color: var(--color-Rojo-Claro);
+  box-shadow: 0 0 0 0.25rem var(--color-Rojo-Oscuro-2);
 }
-.form-editor label p {
-  color: var(--color-Negro-Claro-1);
+
+/*! is valid */
+.estilos-input .is-valid {
+  background-image: url(/img/check-circle.svg);
+  background-repeat: no-repeat;
+  background-position: right calc(0.575em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
-.form-editor label input {
-  width: 100%;
-  padding: 10px;
-  outline: none;
-  border: none;
-  border-radius: 10px;
-  background: var(--color-Negro-Claro-2);
-  color: var(--color-Blanco);
+.estilos-input .is-valid:focus {
+  border: 2px solid var(--color-Celeste-Claro);
+  box-shadow: 0 0 0 0.25rem rgb(66 201 255 / 25%);
 }
-.form-editor label select {
-  width: 100%;
-  padding: 10px;
-  outline: none;
-  border: none;
-  border-radius: 10px;
-  background: var(--color-Negro-Claro-2);
-  color: var(--color-Blanco);
-  font-size: 15px;
-}
-.form-editor label textarea {
-  width: 100%;
-  background: var(--color-Negro-Claro-2);
-  color: var(--color-Blanco);
-  border-radius: 10px;
-  padding: 10px;
-}
+
 @media (min-width: 460px) {
-  /*! Tablets */
-  .form-editor label p {
+  .boton-nueva-img div label {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  .title-routes h2 {
+    font-size: 28px;
+  }
+
+  .configs a {
+    width: 250px;
     font-size: 20px;
   }
-  .form-editor {
-    width: 90%;
-    padding: 20px;
+
+  .img-product-create {
+    width: 200px;
+    height: 200px;
   }
-  .form-editor label input {
-    font-size: 15px;
+
+  .estilos-input {
+    width: 400px;
   }
-  .form-editor label textarea {
-    font-size: 15px;
+
+  .contenedor-botones {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
   }
-  .button-createProduct {
-    font-size: 15px;
-  }
-  .content-form-create {
-    padding: 90px 20px 50px 20px;
+
+  .perfil-input-submit {
+    width: 200px;
+    padding: 10px;
   }
 }
+
 @media (min-width: 768px) {
-  /*! LAPTOP */
-  .form-editor label p {
-    font-size: 30px;
+  .boton-nueva-img div label {
+    padding: 8px 20px;
+    font-size: 20px;
   }
-  .form-editor label input {
-    padding: 15px;
-  }
-  .form-editor label input {
-    font-size: 25px;
-  }
-  .form-editor label textarea {
-    font-size: 25px;
-  }
-  .form-editor label select {
-    font-size: 25px;
-  }
-  .form-editor {
+
+  .estilos-input {
     width: 80%;
   }
-  .button-createProduct {
-    font-size: 25px;
+
+  .perfil-input-submit {
+    width: 300px;
   }
-  .imagen-editProducts {
-    width: 250px;
+
+  .contenedor-input-perfil {
+    gap: unset;
+    grid-template-columns: 1fr 1fr;
+  }
+  .perfil-input-submit input {
+    margin-bottom: unset;
+  }
+  .estilos-input input {
+    font-size: 18px;
   }
 }
 
 @media (min-width: 1200px) {
-  /*! PC */
+  .product-creation-container form {
+    padding: 20px 50px;
+    width: 80%;
+  }
+
+  .contenedor-input-perfil {
+    gap: 20px;
+    padding: 0;
+  }
+
+  .estilos-input {
+    width: 100%;
+  }
+
+  .contenedor-botones {
+    justify-content: space-around;
+  }
+
+  .product-creation-container {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .title-routes {
+    width: 20%;
+    margin: none;
+    border-bottom: none;
+  }
+
+  .contenedor-img-product-create {
+    padding: 0px 20px;
+  }
+  .estilos-input select {
+    font-size: 18px;
+  }
+  .estilos-input textarea {
+    font-size: 18px;
+  }
 }

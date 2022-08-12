@@ -45,13 +45,13 @@
                   <span class="product-Name"><%= coffee[i].name%></span>
                   <span class="product-Price">$ <%= coffee[i].price%></span>
                 </div>
+                <% if(coffee[i].rating > 0) { %>
                 <div class="product-rating">
+                  <% for(let e =0; e < coffee[i].rating; e++) { %>
                   <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <% } %>
                 </div>
+                <% } %>
                 <div class="product-buttons">
                   <a href="/products/cart/<%= coffee[i].id%>">
                     <button class="product-buy">Comprar</button>
@@ -80,13 +80,13 @@
                   <span class="product-Name"><%= food[i].name%></span>
                   <span class="product-Price">$<%= food[i].price%>0</span>
                 </div>
+                <% if(food[i].rating > 0) { %>
                 <div class="product-rating">
+                  <% for(let e =0; e < food[i].rating; e++) { %>
                   <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <% } %>
                 </div>
+                <% } %>
                 <div class="product-buttons">
                   <a href="/products/cart/<%= food[i].id%>">
                     <button class="product-buy">Comprar</button>

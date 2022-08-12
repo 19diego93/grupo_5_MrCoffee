@@ -181,7 +181,7 @@
       <section class="container-products-product">
         <div class="products">
           <!--! Productos - CAFE -->
-          <% for(i=0; i < products.length; i++) { %>
+          <% for(let i=0; i < products.length; i++) { %>
           <article class="product-content">
             <div class="details">
               <div class="image">
@@ -191,13 +191,13 @@
                 <span class="product-Name"><%=products[i].name%></span>
                 <span class="product-Price">$ <%=products[i].price%></span>
               </div>
-              <div class="product-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
+              <% if(products[i].rating > 0)  { %>
+                <div class="product-rating">
+                  <% for(let e =0; e < products[i].rating; e++) { %>
+                  <i class="fas fa-star"></i>
+                  <% } %>
+                </div>
+                <% } %>
               <div class="product-buttons">
                 <a href="/products/cart">
                 <button class="product-buy">Comprar</button>
