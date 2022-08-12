@@ -67,13 +67,15 @@
   background-color: #00b7ff;
   color: #fff;
   border: none;
-  padding: 10px;
   margin-right: 5px;
   margin-left: 5px;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 15px;
   transition: 0.4s;
+}
+.product-buttons .product-buy {
+  padding: 8px;
 }
 .product-buttons button:hover {
   background-color: #0074a1;
@@ -82,10 +84,10 @@
   background-color: #ad715c;
   color: #fff;
   border: none;
-  padding: 10px;
+  padding: 6px;
   margin-right: 5px;
   margin-left: 5px;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 15px;
   text-decoration: none;
@@ -112,6 +114,12 @@
     transform: translate(-50%);
     height: 150px;
     top: -40px;
+  }
+  .product-buttons .product-buy {
+    padding: 12px;
+  }
+  .product-info {
+    padding: 10px;
   }
 }
 @media (min-width: 1200px) {

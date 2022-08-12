@@ -20,7 +20,7 @@ const adminController = {
         },
       });
 
-      return res.render("products/productShop", { products });
+      return res.render("admin/list", { products });
     } catch (e) {
       console.log("Hubo un error: ", e);
     }

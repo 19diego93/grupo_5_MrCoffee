@@ -47,9 +47,6 @@ module.exports = [
     .isIn(exceptedCategory)
     .withMessage("La categoria seleccionada no existe."),
   body("stock")
-    .notEmpty()
-    .withMessage("Este campo no puede estar vacío.")
-    .bail()
     .isInt()
     .withMessage("Este campo debe contener numeros.")
     .bail()

@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+.product-list-container {
+  width: 100%;
+  padding-top: 40px;
+  font-family: "Roboto Mono", monospace;
+}
+.title-routes {
+  border-bottom: 1px solid var(--color-Marron-Claro);
+}
+.title-routes h2 {
+  pointer-events: none;
+  color: var(--color-Marron-Oscuro);
+  text-align: center;
+  font-size: 20px;
+}
+.configs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.configs a {
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px;
+  cursor: pointer;
+  width: 150px;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.configs a:hover {
+  color: var(--color-Blanco);
+  background-color: var(--color-Marron);
+}
+.route-stock-products {
+  color: var(--color-Blanco);
+  background-color: var(--color-Marron-Claro);
+}
+
+.route-create-product {
+  color: var(--color-Marron-Claro);
+}
+
+.container-view {
+  border-left: 2px solid var(--color-Marron-Claro);
+  margin-bottom: 100px;
+}
+
+.container-products-product {
+  margin: 20px 0px;
+}
+@media (min-width: 460px) {
+  .title-routes h2 {
+    font-size: 28px;
+  }
+
+  .configs a {
+    width: 250px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1200px) {
+  .product-list-container {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .title-routes {
+    width: 20%;
+    border-bottom: none;
+  }
+
+  .container-view {
+    width: 80%;
+  }
+}

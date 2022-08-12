@@ -6,123 +6,155 @@
   </head>
   <body>
     <%- include('../partials/header') %>
-    <main class="main-createProduct">
-      <div class="content-form-create">
-      <div class="container-form-createProduct">
-        <h1>Crea un Producto</h1>
-        <br />
-        <br />
-        <form class="form-editor" action="/admin/" method="POST" enctype="multipart/form-data">
-          <label for="name">
-            <p>Nombre:</p>
-            <input
-              type="text"
-              name="name"
-              placeholder=" Ej: Chocolate"
-              class="<%= locals.errors && errors.name ? 'is-invalid' : null %>"
-              value="<%= locals.oldDate && oldDate.name ? oldDate.name : '' %>"
-            />
-            <% if (locals.errors && errors.name) { %>
-              <p class="error-msg"><%= errors.name.msg %></p>
-            <% } %>
-          </label>
-          
-          <label for="image">
-            <p>Imagen:</p>
-            <div class="buttonImage-createproduct">
+    <main>
+      <div class="product-creation-container">
+        <div class="title-routes">
+          <h2>Rutas</h2>
+          <div class="configs">
+            <a href="/admin/create" class="route-create-product"
+              >Crear Producto</a
+            >
+            <a href="/admin/list" class="route-stock-products"
+              >Productos Agotados</a
+            >
+          </div>
+        </div>
+
+        <form action="/admin/" method="POST" enctype="multipart/form-data">
+          <div class="form-product-create">
+            <div class="contenedor-img-product-create">
+              <div class="img-product-create">
+                <picture>
+                  <img
+                    src="/img/products/default-image.png"
+                    alt="imagen predeterminado de los productos"
+                  />
+                </picture>
+              </div>
+              <div class="boton-nueva-img">
+                <div>
+                  <label for="file">
+                    <p>Subir nueva archivo</p>
+                    <input
+                      type="file"
+                      name="image"
+                      id="file"
+                      accept="image/*"
+                      class="<%= locals.errors && errors.image ? 'is-invalid' : null %>"
+                    />
+                  </label>
+                </div>
+                <% if (locals.errors && errors.image) { %>
+                <p class="errors-t"><%= errors.image.msg %></p>
+                <% } %>
+              </div>
+            </div>
+            <div class="contenedor-input-perfil">
+              <div class="estilos-input">
+                <label for="name">Nombre</label>
+                <input
+                  placeholder="Introduzca el nombre"
+                  id="name"
+                  name="name"
+                  type="text"
+                  class="<%= locals.errors && errors.name ? 'is-invalid' : '' %>"
+                  value="<%= locals.oldDate && oldDate.name ? oldDate.name : '' %>"
+                />
+                <% if(locals.errors && errors.name){ %>
+                <div class="errors-t"><%= errors.name.msg %></div>
+                <% } %>
+              </div>
+
+              <div class="estilos-input">
+                <label for="category">Seleciona una categoria</label>
+                <select id="category" name="category" class="<%= locals.errors && errors.category ? 'is-invalid' : '' %>">
+                  <option value="">Seleciona una opcion</option>
+                  <option 
+                  value="coffee" 
+                  <%= locals.oldDate && oldDate.category == "coffee" ? 'selected' : ''; %>>Café</option>
+                  <option 
+                  value="food" 
+                  <%= locals.oldDate && oldDate.category == 'food' ? 'selected' : ''; %>>Comida</option>
+                </select>
+                <% if(locals.errors && errors.category){ %>
+                <div class="errors-t"><%= errors.category.msg %></div>
+                <% } %>
+              </div>
+
+              <div class="estilos-input">
+                <label for="stock">cantidad de productos</label>
+                <input
+                type="number" 
+                name="stock" 
+                placeholder="0" 
+                class="<%= locals.errors && errors.stock ? 'is-invalid' : '' %>"
+                value="<%= locals.oldDate && oldDate.stock ? oldDate.stock : '' %>"
+                />
+                <% if(locals.errors && errors.stock){ %>
+                <div class="errors-t"><%= errors.stock.msg %></div>
+                <% } %>
+              </div>
+
+              <div class="estilos-input">
+                <label for="price">Precio</label>
+                <input
+                type="number" 
+                name="price" 
+                placeholder="0" 
+                class="<%= locals.errors && errors.price ? 'is-invalid' : '' %>"
+                value="<%= locals.oldDate && oldDate.price ? oldDate.price : '' %>"
+                />
+                <% if(locals.errors && errors.price){ %>
+                <div class="errors-t"><%= errors.price.msg %></div>
+                <% } %>
+              </div>
+
+              <div class="estilos-input">
+                <label for="offer">Oferta</label>
+                <input
+                type="number" 
+                name="offer" 
+                placeholder="0" 
+                class="<%= locals.errors && errors.offer ? 'is-invalid' : '' %>"
+                value="<%= locals.oldDate && oldDate.offer ? oldDate.offer : '' %>"
+                />
+                <% if(locals.errors && errors.offer){ %>
+                <div class="errors-t"><%= errors.offer.msg %></div>
+                <% } %>
+              </div>
+
+              <div class="estilos-input">
+                <label for="description">Descripción:</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  placeholder="Escriba una descripcion"
+                  class="<%= locals.errors && errors.description ? 'is-invalid' : '' %>"
+                >
+<%= locals.oldDate && oldDate.description ? oldDate.description : '' %></textarea
+                >
+                <% if(locals.errors && errors.description){ %>
+                <div class="errors-t"><%= errors.description.msg %></div>
+                <% } %>
+              </div>
+            </div>
+          </div>
+
+          <div class="contenedor-botones">
+            <div class="perfil-input-submit">
+              <input type="submit" value="Guardar" class="guardar-datos" />
+            </div>
+
+            <div class="perfil-input-submit">
               <input
-                type="file"
-                name="image"
-                accept="image/*"
-                class="<%= locals.errors && errors.image ? 'is-invalid' : null %>"
+                type="reset"
+                value="restablecer"
+                class="restablecer-datos"
               />
             </div>
-            <% if (locals.errors && errors.image) { %>
-              <p class="error-msg"><%= errors.image.msg %></p>
-            <% } %>
-          </label>
-          <label for="description">
-            <p>Descripción:</p>
-            <textarea 
-            name="description" 
-            cols="20" 
-            rows="10" 
-            placeholder=" Escriba una descripcion" 
-            class="<%= locals.errors && errors.description ? 'is-invalid' : null %>"
-            ><%= locals.oldDate && oldDate.description ? oldDate.description : '' %></textarea>
-            <% if (locals.errors && errors.description) { %>
-              <p class="error-msg"><%= errors.description.msg %></p>
-            <% } %>
-          </label>
-          <label for="category">
-            <p>Selecciona el tipo de producto:</p>
-            <select name="category" class="<%= locals.errors && errors.category ? 'is-invalid' : null %>">
-              <option value="">Seleciona una opcion</option>
-              <option 
-              value="coffee" 
-              <%= locals.oldDate && oldDate.category == "coffee" ? 'selected' : ''; %>>Café</option>
-              <option 
-              value="food" 
-              <%= locals.oldDate && oldDate.category == 'food' ? 'selected' : ''; %>>Comida</option>
-            </select>
-            <% if (locals.errors && errors.category) { %>
-              <p class="error-msg"><%= errors.category.msg %></p>
-            <% } %>
-          </label>
-          <!-- <label for="category2">
-            <p>Selecciona Categorias:</p>
-            <select name="category2">
-              <option value="undefined" selected>Ninguna</option>
-              <option value="Americano">Americano</option>
-            </select>
-          </label> -->
-          <label for="stock">
-            <p>Stock:</p>
-            <input 
-            type="number" 
-            name="stock" 
-            placeholder="0" 
-            class="<%= locals.errors && errors.stock ? 'is-invalid' : null %>"
-            value="<%= locals.oldDate && oldDate.stock ? oldDate.stock : '' %>" />
-            <% if (locals.errors && errors.stock) { %>
-              <p class="error-msg"><%= errors.stock.msg %></p>
-            <% } %>
-          </label>
-          <label for="price">
-            <p>Precio:</p>
-            <input 
-            type="number" 
-            name="price" 
-            placeholder="0" 
-            class="<%= locals.errors && errors.price ? 'is-invalid' : null %>"
-            value="<%= locals.oldDate && oldDate.price ? oldDate.price : '' %>" 
-            />
-            <% if (locals.errors && errors.price) { %>
-              <p class="error-msg"><%= errors.price.msg %></p>
-            <% } %>
-          </label>
-          <label for="offer">
-            <p>Oferta:</p>
-            <input 
-            type="number" 
-            name="offer" 
-            placeholder="0" 
-            class="<%= locals.errors && errors.offer ? 'is-invalid' : null %>"
-            onKeyPress="if(this.value.length==2) return false;"
-            value="<%= locals.oldDate && oldDate.offer ? oldDate.offer : '' %>" 
-            />
-            <% if (locals.errors && errors.offer) { %>
-              <p class="error-msg"><%= errors.offer.msg %></p>
-            <% } %>
-          </label>
-          <input 
-          type="submit"
-           class="button-createProduct" 
-           value="Crear"
-           ></input>
+          </div>
         </form>
       </div>
-    </div>
     </main>
     <%- include('../partials/footer') %>
   </body>

@@ -18,7 +18,8 @@
   --color-Negro: #000;
   --color-Blanco-Gastado: #dcdde9;
   --color-Rojo-Super-Claro: rgb(255, 0, 0);
-  --color-Rojo-Claro: rgb(171, 11, 11);
-  --color-rojo-Oscuro: rgb(85, 10, 10);
+  --color-Rojo-Claro: #ab0b0b;
+  --color-rojo-Oscuro: #550a0a;
+  --color-Rojo-Oscuro-2: #dc354540;
   --color-Verde-Saturado: #3bc472;
 }
