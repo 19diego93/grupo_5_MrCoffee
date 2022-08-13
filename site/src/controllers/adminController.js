@@ -81,10 +81,11 @@ const adminController = {
       });
     }
   },
-  viewEdit: (req, res) => {
-    let productEdit = Products.findByPk(req.params.id).then((p) => {
-      res.render("admin/edit", { edit: p });
-    });
+  viewEdit: async (req, res) => {
+    let productEdit = await Products.findByPk(req.params.id);
+    productEdit.dataValues.price = Math.round(productEdit.dataValues.price);
+
+    return res.render("admin/edit", { edit: productEdit });
   },
   update: async (req, res) => {
     try {
