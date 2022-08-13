@@ -3,10 +3,18 @@ window.addEventListener("load", function () {
 
   listElements.forEach((listElement) => {
     listElement.addEventListener("click", () => {
-      listElement.classList.toggle("arrow");
+      let myList = listElement;
+      myList.classList.toggle("arrow");
+
+      listElements.forEach((listElementHeight) => {
+        if (myList != listElementHeight) {
+          let menuHeight = listElementHeight.nextElementSibling;
+          menuHeight.style.height = `0px`;
+        }
+      });
 
       let height = 0;
-      let menu = listElement.nextElementSibling;
+      let menu = myList.nextElementSibling;
       if (menu.clientHeight == "0") {
         height = menu.scrollHeight;
       }

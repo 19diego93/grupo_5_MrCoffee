@@ -65,6 +65,14 @@ const usersController = {
           });
         }
       } else {
+        if (req.file) {
+          let filePath = path.resolve(
+            __dirname,
+            "../../public/img/avatar/" + req.file.filename
+          );
+          fs.unlinkSync(filePath);
+        }
+
         return res.render("users/login", {
           errors: errors.mapped(),
           oldData: req.body,
@@ -121,6 +129,14 @@ const usersController = {
           });
         }
       } else {
+        if (req.file) {
+          let filePath = path.resolve(
+            __dirname,
+            "../../public/img/avatar/" + req.file.filename
+          );
+          fs.unlinkSync(filePath);
+        }
+
         return res.render("users/register", {
           errors: errors.mapped(),
           oldData: req.body,
@@ -255,6 +271,14 @@ const usersController = {
           });
         }
       } else {
+        if (req.file) {
+          let filePath = path.resolve(
+            __dirname,
+            "../../public/img/avatar/" + req.file.filename
+          );
+          fs.unlinkSync(filePath);
+        }
+
         return res.render("users/profile", {
           errors: errors.mapped(),
           user: req.session.userLogged.dataValues,

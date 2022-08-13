@@ -1,6 +1,5 @@
 const { body } = require("express-validator");
 const path = require("path");
-const fs = require("fs");
 
 const validacion = [
   body("fname")
@@ -34,19 +33,9 @@ const validacion = [
         if (fileSize <= 1200000) {
           return true;
         } else {
-          let filePath = path.resolve(
-            __dirname,
-            "../../../public/img/avatar/" + req.file.filename
-          );
-          fs.unlinkSync(filePath);
           throw new Error("El tamaño debe ser menor a 1MB.");
         }
       } else {
-        let filePath = path.resolve(
-          __dirname,
-          "../../../public/img/avatar/" + req.file.filename
-        );
-        fs.unlinkSync(filePath);
         throw new Error(
           `Solo se permiten extensiones ${acceptedExtensions.join(" ")}`
         );
