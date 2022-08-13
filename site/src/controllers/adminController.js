@@ -66,13 +66,6 @@ const adminController = {
 
       res.redirect("/products/detail/" + product.id);
     } else {
-      if (req.file) {
-        let filePath = path.resolve(
-          __dirname,
-          "../../public/img/products/" + req.file.filename
-        );
-        fs.unlinkSync(filePath);
-      }
       // errors.mapped() Devuelve un objeto Json con un nombre y un objeto en cada nombre.
       // errors.array() Devuelve un array de objetos.
       res.render("admin/create", {
@@ -132,14 +125,6 @@ const adminController = {
 
         res.redirect("/");
       } else {
-        if (req.file) {
-          let filePath = path.resolve(
-            __dirname,
-            "../../public/img/products/" + req.file.filename
-          );
-          fs.unlinkSync(filePath);
-        }
-
         res.render("admin/edit", {
           errors: errors.mapped(),
           oldDate: req.body,
@@ -168,7 +153,7 @@ const adminController = {
 
         res.redirect("/");
       } else {
-        console.log("Hubo un error borrando producto");
+        console.log("Hubo un error borrando el producto: ", product);
       }
     } catch (e) {
       console.log("Hubo un error: ", e);

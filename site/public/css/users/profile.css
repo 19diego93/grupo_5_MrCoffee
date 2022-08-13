@@ -43,6 +43,9 @@
 .profile-favorite {
   color: var(--color-Marron-Claro);
 }
+.profile-pay-method {
+  color: var(--color-Marron-Claro);
+}
 
 .contenedor-perfil form {
   border-left: 2px solid var(--color-Marron-Claro);
@@ -300,6 +303,7 @@
   }
 
   .contenedor-input-perfil {
+    margin: 20px auto;
     gap: 10px;
     width: 800px;
   }
@@ -316,8 +320,11 @@
     display: flex;
     justify-content: flex-end;
   }
-  .contenedor-perfil .titulo-perfil {
-    width: 100%;
+  .contenedor-perfil form {
+    width: 75%;
+  }
+  .titulo-perfil {
+    width: 25%;
     margin: none;
     border-bottom: none;
   }

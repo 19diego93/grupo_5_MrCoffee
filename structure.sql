@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-08-2022 a las 08:16:41
+-- Tiempo de generación: 13-08-2022 a las 18:02:32
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -54,7 +54,7 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(13) NOT NULL,
   `name` varchar(40) NOT NULL,
-  `image` varchar(21) DEFAULT 'default-image.png',
+  `image` varchar(30) DEFAULT 'default-image.png',
   `description` varchar(120) NOT NULL,
   `stock` int(5) DEFAULT 0,
   `price` decimal(6,2) NOT NULL,
@@ -78,8 +78,8 @@ INSERT INTO `products` (`id`, `name`, `image`, `description`, `stock`, `price`, 
 (6, 'Croissant Relleno con Crema de Avellanas', '6.png', 'Croissant con masa de hojaldre y cubierto con una salsa de cacao y avellanas.', 100, '300.00', 0, '2.5', 2),
 (7, 'Croissant', '7.png', 'Elaborado con masa de hojaldre crujiente y salada, nuestro Croissant se hornea especialmente para vos.', 100, '400.00', 0, '4.0', 2),
 (8, 'Chocolate Croissant', '8.png', 'Exquisita masa de hojaldre rellena de chocolate semiamargo y horneado especialmente para vos.', 100, '250.00', 0, '3.5', 2),
-(9, 'Medialuna', '9.png', 'La clásica medialuna reversionada a la manera de MrCoffee: Crujiente, esponjosa, de mayor tamaño y ¡recién horneada!', 0, '48.00', 1, '3.0', 2),
-(10, 'Medialuna rellena con jamón y queso', '10.png', 'Nuestra Mezzaluna recién horneada, rellena con queso tybo y jamón cocido.', 99, '433.00', 0, '5.0', 2);
+(9, 'Medialuna', '9.png', 'La clásica medialuna reversionada a la manera de MrCoffee: Crujiente, esponjosa, de mayor tamaño y ¡recién horneada!', 1, '48.00', 1, '3.0', 2),
+(10, 'Medialuna rellena con jamón y queso', '10.png', 'Nuestra Mezzaluna recién horneada, rellena con queso tybo y jamón cocido.', 0, '433.00', 0, '5.0', 2);
 
 -- --------------------------------------------------------
 
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(40) NOT NULL,
   `last_name` varchar(40) NOT NULL,
-  `image` varchar(21) DEFAULT 'defaultimg.jpg',
+  `image` varchar(30) DEFAULT 'defaultimg.jpg',
   `email` varchar(100) NOT NULL,
   `password` varchar(65) NOT NULL,
   `id_category_U` int(5) NOT NULL,
@@ -147,8 +147,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `first_name`, `last_name`, `image`, `email`, `password`, `id_category_U`) VALUES
-(1, 'Santiago', 'boquita', 'img-1660161772572.jpg', 'boquita@santiago.com', '$2a$10$xukzG1MQWWTz4c6kPl0Cvu1r/0eJqKdWaSwJCRavNQ3omOixIAaWW', 1),
-(2, 'Jeremias', 'River', 'defaultimg.jpg', 'river@jeremias.com', '$2a$10$GKqiBlH2rFKT0YrZEpEZPOT4jqGJ1MtmOsuA3N7yC4u4E74feCLd6', 2);
+(1, 'Santiago', 'boquita', 'img-1660161772572.jpg', 'boquita@santiago.com', '$2a$10$w8D4Oo/PKv.06amR7M54uuaMyGe8AEO.J..FUC5q6ijb57mLcONGK', 1),
+(2, 'Jeremias', 'River', 'img-1660360317331.gif', 'river@jeremias.com', '$2a$10$GKqiBlH2rFKT0YrZEpEZPOT4jqGJ1MtmOsuA3N7yC4u4E74feCLd6', 2);
 
 -- --------------------------------------------------------
 

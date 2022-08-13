@@ -24,6 +24,16 @@
 #close-menu i {
   font-size: 40px;
 }
+.nav__link-a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  color: var(--color-Marron-Oscuro);
+  transition: 0.4s;
+  width: 100%;
+}
+
 .nav__link {
   color: var(--color-Gris-Claro-2);
   display: block;
@@ -40,7 +50,8 @@
   color: var(--color-Marron-Oscuro);
 }
 .nav__glow:hover,
-.nav__glow:hover .nav__link {
+.nav__glow:hover .nav__link,
+.nav__glow:hover .nav__link-a {
   color: var(--color-Celeste);
 }
 

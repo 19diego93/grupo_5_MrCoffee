@@ -7,30 +7,36 @@
 
     <li class="list__item nav__link--outside">
       <div class="list__button nav__glow">
-        <i class="fas fa-address-card"></i>
-        <a href="/user/register" class="nav__link">Registrate</a>
+        <a href="/user/register" class="nav__link-a">
+          <i class="fas fa-address-card"></i>
+          <p class="nav__link">Registrate</p>
+        </a>
       </div>
     </li>
 
     <li class="list__item nav__link--outside">
       <div class="list__button nav__glow">
-        <i class="fas fa-sign-in"></i>
-        <a href="/user/login" class="nav__link">Ingresa</a>
+        <a href="/user/login" class="nav__link-a">
+          <i class="fas fa-sign-in"></i>
+          <p class="nav__link">Ingresa</p>
+        </a>
       </div>
     </li>
     <% } else { %>
     <li class="list__item nav__link--outside">
       <div class="list__button nav__glow">
-        <i class="fas fa-sign-out-alt"></i>
-        <a href="/user/logout" class="nav__link">Salir</a>
+        <a href="/user/logout" class="nav__link-a">
+          <i class="fas fa-sign-out-alt"></i>
+          <p class="nav__link">Salir</p>
+        </a>
       </div>
     </li>
     <% } %>
     <li class="list__item nav__link--outside">
       <div class="list__button nav__glow">
-        <i class="fas fa-bell"></i>
-        <a href="#notificaciones" class="nav__link" id="close-menu-2">
-          Notificaciones
+        <a href="#notificaciones" class="nav__link-a">
+          <i class="fas fa-bell"></i>
+          <p class="nav__link" id="close-menu-2">Notificaciones</p>
         </a>
       </div>
     </li>
