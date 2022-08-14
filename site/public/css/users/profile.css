@@ -148,7 +148,7 @@
   transition: 0.1s;
 }
 .estilos-input input::placeholder {
-  color: var(--color-Marron-Claro);
+  color: var(--color-Blanco-Oscuro-2);
 }
 .estilos-input input:hover {
   color: var(--color-Marron-Oscuro-2);
