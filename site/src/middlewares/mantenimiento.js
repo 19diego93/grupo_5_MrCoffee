@@ -1,14 +1,14 @@
-module.exports = (req, res, next) => {
-  let enMantenimiento = false;
+function mantenimiento(req, res, next) {
   try {
+    let enMantenimiento = false;
     if (enMantenimiento == true) {
-      res.render("mantenimiento");
+      res.render("mantenimiento", { title: "│ Pagina en mantenimiento" });
     } else {
       next();
     }
-  } catch {
-    (err) => {
-      console.log("Hubo un error: ", err);
-    };
+  } catch (e) {
+    console.log("Hubo un error: ", e);
   }
-};
+}
+
+module.exports = mantenimiento;

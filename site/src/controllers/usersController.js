@@ -14,7 +14,7 @@ const Usuarios = db.Usuario;
 //! Controlador
 const usersController = {
   login: (req, res) => {
-    return res.render("users/login");
+    return res.render("users/login", { title: "│ Inicia sesion" });
   },
 
   // ! proceso de loggeado
@@ -54,6 +54,7 @@ const usersController = {
                 password: { msg: "La contraseña es incorrecta." },
               },
               oldData: req.body,
+              title: "│ Inicia sesion",
             });
           }
         } else {
@@ -62,6 +63,7 @@ const usersController = {
               email: { msg: "Esta cuenta no existe." },
             },
             oldData: req.body,
+            title: "│ Inicia sesion",
           });
         }
       } else {
@@ -76,6 +78,7 @@ const usersController = {
         return res.render("users/login", {
           errors: errors.mapped(),
           oldData: req.body,
+          title: "│ Inicia sesion",
         });
       }
     } catch (e) {
@@ -84,7 +87,7 @@ const usersController = {
   },
 
   register: (req, res) => {
-    return res.render("users/register");
+    return res.render("users/register", { title: "│ Crea una cuenta" });
   },
 
   //! proceso de registración
@@ -126,6 +129,7 @@ const usersController = {
               },
             },
             oldData: req.body,
+            title: "│ Crea una cuenta",
           });
         }
       } else {
@@ -140,6 +144,7 @@ const usersController = {
         return res.render("users/register", {
           errors: errors.mapped(),
           oldData: req.body,
+          title: "│ Crea una cuenta",
         });
       }
     } catch (e) {
@@ -150,6 +155,7 @@ const usersController = {
   profile: (req, res) => {
     return res.render("users/profile", {
       user: req.session.userLogged.dataValues,
+      title: "│ Perfil",
     });
   },
 
@@ -226,6 +232,7 @@ const usersController = {
                 },
                 user: req.session.userLogged.dataValues,
                 oldData: req.body,
+                title: "│ Perfil",
               });
             }
           } else {
@@ -268,6 +275,7 @@ const usersController = {
             },
             user: req.session.userLogged.dataValues,
             oldData: req.body,
+            title: "│ Perfil",
           });
         }
       } else {
@@ -283,6 +291,7 @@ const usersController = {
           errors: errors.mapped(),
           user: req.session.userLogged.dataValues,
           oldData: req.body,
+          title: "│ Perfil",
         });
       }
     } catch (e) {

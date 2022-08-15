@@ -20,14 +20,17 @@ const adminController = {
         },
       });
 
-      return res.render("admin/list", { products });
+      return res.render("admin/list", {
+        products,
+        title: "│ Productos agotados",
+      });
     } catch (e) {
       console.log("Hubo un error: ", e);
     }
   },
 
   viewCreate: (req, res) => {
-    res.render("admin/create");
+    res.render("admin/create", { title: "│ Creación de productos" });
   },
 
   create: async (req, res) => {
@@ -79,6 +82,7 @@ const adminController = {
       res.render("admin/create", {
         errors: errors.mapped(),
         oldDate: req.body,
+        title: "│ Creación de productos",
       });
     }
   },
@@ -86,7 +90,10 @@ const adminController = {
     let productEdit = await Products.findByPk(req.params.id);
     productEdit.dataValues.price = Math.round(productEdit.dataValues.price);
 
-    return res.render("admin/edit", { edit: productEdit });
+    return res.render("admin/edit", {
+      edit: productEdit,
+      title: "│ Edición de productos",
+    });
   },
   update: async (req, res) => {
     try {
@@ -145,6 +152,7 @@ const adminController = {
           errors: errors.mapped(),
           oldDate: req.body,
           edit: product,
+          title: "│ Edición de productos",
         });
       }
     } catch (e) {

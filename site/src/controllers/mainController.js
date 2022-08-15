@@ -26,7 +26,7 @@ const mainController = {
         limit: 3,
       });
 
-      return res.render("index", { coffee, food });
+      return res.render("index", { coffee, food, title: "" });
     } catch (e) {
       console.log("Hubo un error: ", e);
     }
@@ -44,6 +44,7 @@ const mainController = {
       return res.render("results", {
         results,
         busquedaDelUsuario: req.query.keywords,
+        title: "│ Resultados",
       });
     } catch (e) {
       console.log("Hubo un error: ", e);

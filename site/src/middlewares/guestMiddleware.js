@@ -1,13 +1,13 @@
-module.exports = (req, res, next) => {
+function guestMiddleware(req, res, next) {
   try {
     if (req.session.userLogged) {
       return res.redirect("/user/profile");
     } else {
       next();
     }
-  } catch {
-    (err) => {
-      console.log("Hubo un error: ", err);
-    };
+  } catch (e) {
+    console.log("Hubo un error: ", e);
   }
-};
+}
+
+module.exports = guestMiddleware;
