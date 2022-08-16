@@ -55,19 +55,17 @@ const validacion = [
     .isLength({ max: 100 })
     .withMessage("No puede escribir más de 100 caracteres."),
 
-  body("oldPassword").custom((value, { req }) => {
-    if (value != "") {
-      if (req.body.newPassword != "" && req.body.confirmNewPassword != "") {
+  body("oldPassword")
+    .custom((value, { req }) => {
+      if (value.length >= 8) {
         return true;
       } else {
-        throw new Error(
-          "Los campos de nueva contraseña no pueden estar vacios."
-        );
+        throw new Error("Introduce tu contraseña.");
       }
-    } else {
-      return true;
-    }
-  }),
+    })
+    .bail()
+    .isLength({ max: 65 })
+    .withMessage("No puede escribir más de 65 caracteres."),
 
   body("newPassword")
     .custom((value, { req }) => {
@@ -83,7 +81,7 @@ const validacion = [
             throw new Error("Las contraseñas no coinciden.");
           }
         } else {
-          throw new Error("Introduce tu contraseña anterior.");
+          throw new Error("Tu contraseña anterior es incorrecta.");
         }
       } else {
         return true;
@@ -107,7 +105,7 @@ const validacion = [
             throw new Error("Las contraseñas no coinciden.");
           }
         } else {
-          throw new Error("Introduce tu contraseña anterior.");
+          throw new Error("Tu contraseña anterior es incorrecta.");
         }
       } else {
         return true;

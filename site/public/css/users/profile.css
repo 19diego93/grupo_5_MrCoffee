@@ -142,7 +142,7 @@
   height: 44px;
   margin-top: 8px;
   outline: none;
-  padding: 16px;
+  padding: 10px 35px 10px 10px;
   font-size: 16px;
   border-radius: 8px;
   transition: 0.1s;
@@ -203,6 +203,25 @@
 .perfil-input-submit .restablecer-datos:hover {
   background-color: var(--color-Rojo-Claro);
 }
+.container-message-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.formulario__mensaje-alert {
+  background: var(--color-Marron-Claro-2);
+  padding: 15px;
+  border-radius: 3px;
+  color: var(--color-Negro);
+}
+.formulario__mensaje-error {
+  background: var(--color-Rojo-Super-Claro);
+  padding: 15px;
+  border-radius: 3px;
+  color: var(--color-Negro);
+}
 
 /*! is invalid */
 .errors-t {
@@ -213,6 +232,8 @@
 }
 .estilos-input .is-invalid {
   border: 2px solid var(--color-Rojo-Claro);
+}
+.estilos-input .is-invalid-icon {
   background-image: url(/img/exclamation-circle.svg);
   background-repeat: no-repeat;
   background-position: right calc(0.575em + 0.1875rem) center;
@@ -225,6 +246,9 @@
 
 /*! is valid */
 .estilos-input .is-valid {
+  border: 2px solid var(--color-Celeste-Claro);
+}
+.estilos-input .is-valid-icon {
   background-image: url(/img/check-circle.svg);
   background-repeat: no-repeat;
   background-position: right calc(0.575em + 0.1875rem) center;
@@ -233,6 +257,14 @@
 .estilos-input .is-valid:focus {
   border: 2px solid var(--color-Celeste-Claro);
   box-shadow: 0 0 0 0.25rem rgb(66 201 255 / 25%);
+}
+
+.displayNone {
+  display: none;
+}
+
+.displayBlock {
+  display: block;
 }
 
 @media (min-width: 460px) {
@@ -269,6 +301,10 @@
     width: 200px;
     padding: 10px;
   }
+
+  .container-message-form {
+    padding: 20px 60px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -294,6 +330,10 @@
   }
   .estilos-input input {
     font-size: 18px;
+  }
+
+  .container-message-form {
+    padding: 20px 90px;
   }
 }
 

@@ -205,59 +205,59 @@ const usersController = {
             image = User.image;
           }
 
-          let newPassword;
+          let isOkPassword = bcryptjs.compareSync(
+            req.body.oldPassword,
+            User.password
+          );
 
-          if (req.body.oldPassword != "") {
-            let isOkPassword = bcryptjs.compareSync(
-              req.body.oldPassword,
-              User.password
-            );
-            if (isOkPassword) {
-              // if()
+          if (isOkPassword) {
+            let newPassword;
+
+            if (req.body.newPassword.length > 0) {
               newPassword = bcryptjs.hashSync(req.body.newPassword, 10);
             } else {
-              if (req.file) {
-                let filePath = path.resolve(
-                  __dirname,
-                  "../../public/img/avatar/" + req.file.filename
-                );
-                fs.unlinkSync(filePath);
-              }
-
-              return res.render("users/profile", {
-                errors: {
-                  oldPassword: {
-                    msg: "La contraseña es incorrecta.",
-                  },
-                },
-                user: req.session.userLogged.dataValues,
-                oldData: req.body,
-                title: "│ Perfil",
-              });
+              newPassword = User.password;
             }
+
+            let userEdit = {
+              id: User.id,
+              first_name: req.body.fname,
+              last_name: req.body.lname,
+              image: image,
+              email: req.body.email,
+              password: newPassword,
+              id_category_U: User.id_category_U,
+            };
+
+            await Usuarios.update(userEdit, {
+              where: { id: User.id },
+            });
+
+            req.session.userLogged.dataValues = { ...userEdit };
+
+            delete req.session.userLogged.dataValues.password;
+
+            res.redirect("/");
           } else {
-            newPassword = User.password;
+            if (req.file) {
+              let filePath = path.resolve(
+                __dirname,
+                "../../public/img/avatar/" + req.file.filename
+              );
+              fs.unlinkSync(filePath);
+            }
+
+            return res.render("users/profile", {
+              errors: {
+                oldPassword: {
+                  msg: "La contraseña es incorrecta.",
+                },
+              },
+              user: req.session.userLogged.dataValues,
+              oldData: req.body,
+              title: "│ Perfil",
+            });
           }
-
-          let userEdit = {
-            id: User.id,
-            first_name: req.body.fname,
-            last_name: req.body.lname,
-            image: image,
-            email: req.body.email,
-            password: newPassword,
-            id_category_U: User.id_category_U,
-          };
-
-          await Usuarios.update(userEdit, {
-            where: { id: User.id },
-          });
-
-          req.session.userLogged.dataValues = { ...userEdit };
-
-          delete req.session.userLogged.dataValues.password;
-
-          res.redirect("/");
         } else {
           if (req.file) {
             let filePath = path.resolve(

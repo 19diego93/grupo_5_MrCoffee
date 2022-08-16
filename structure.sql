@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `cart_item` (
   `cantidad` int(3) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `categoria` varchar(15) NOT NULL,
-  `imagen` varchar(21) NOT NULL,
+  `imagen` varchar(30) NOT NULL,
   `product_id` int(13) DEFAULT NULL,
   `ventas_id` int(5) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `last_name` varchar(40) NOT NULL,
   `image` varchar(30) DEFAULT 'defaultimg.jpg',
   `email` varchar(100) NOT NULL,
-  `password` varchar(65) NOT NULL,
+  `password` varchar(80) NOT NULL,
   `id_category_U` int(5) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `usuarios_id_category_U_foreign` (`id_category_U`) USING BTREE
