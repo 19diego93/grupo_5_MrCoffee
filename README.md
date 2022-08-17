@@ -1,14 +1,13 @@
 # Mr.Coffee - Grupo 5
 
 ## Temática del sitio
-
-##### Mr Coffee es un sitio enfocado en la venta de café y comida de manera virtual, al pagar de forma virtual se puede retirar en el local más cercano. Si el cliente desea utilizar efectivo se le mostrara los locales más cercanos a su ubicación. El sitio también está pensado para que desde el local puedan hacer su pedido desde una computadora, de esa forma se haría más eficiente la venta.
+##### MrCoffee es una sucursal enfocada en la venta de café y alimentos, los clientes tienen la opción de pagar los productos y recogerlos en las tiendas más cercanas o pagar su envío. El sitio web también está diseñado para que puedan ordenar desde computadoras en las tiendas, de esta manera, las ventas serán más eficientes.
 
 ## [Trello](https://trello.com/b/GDl9UoXC/mrcoffee)
 
 ### Prerrequisitos 📋
 
-Se necesita Node.Js para instalar el software
+Se necesita Node.Js para instalar el software.
 
 ```
 https://nodejs.org/es/
@@ -16,8 +15,7 @@ https://nodejs.org/es/
 
 ### Instalación 🔧
 
-Este proyecto utiliza Node Express, Ejs.
-Parado en la carpeta 'site' utiliza el siguiente comando:
+Abrir la terminal y pararse en site, luego instala las dependencias con el siguiente comando utiliza el siguiente comando:
 
 ```
 npm i
@@ -32,8 +30,6 @@ npm start
 ```
 
 ## Autores ✒️
-
-#### - [Mauro Villanueva](https://github.com/maurovillanueva)
 
 #### - [Marcelo Sebastian Suarez](https://github.com/sebastianszz)
 
