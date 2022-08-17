@@ -2,45 +2,23 @@
 
 ### La Weekly standup es una reunión que en los equipos de Scrum realizan todos los días, donde cada integrante habla como máximo tres minutos de tres temas puntuales:
 
-### ¿Qué hizo esta semana?:
-
-### ¿Se encontró con algún impedimento?:
-
-### ¿Qué va a hacer hoy o esta semana?:
 
 # Sebastian Suarez y  Diego Vallejo
+
+
+### ¿Qué hizo esta semana?:
 ```
-Armamos la abase de datos su diagrama y estructura sql
-
-```
-
-
-```
-muchos errores y problemas con MySQL workbench al intentar crear la base de datos
-
+algunas que otras correciones y validaciones de prueba.
 ```
 
 
-
+### ¿Se encontró con algún impedimento?:
 ```
-Terminar el sequelize y CRUD 
-
-```
-
-
-
-```
-
+no
 ```
 
 
+### ¿Qué va a hacer hoy o esta semana?:
 ```
-
+terminar las validaciones restantes para la entregra del sprint.
 ```
-
-
-
-```
-
-```
-
