@@ -177,12 +177,12 @@ const usersController = {
         if (oldEmail == newEmail) {
           userInDb = false;
         } else {
-          let User = await Usuarios.findOne({
+          let checkEmail = await Usuarios.findOne({
             where: {
               email: { [Op.eq]: newEmail },
             },
           });
-          if (User) {
+          if (checkEmail) {
             userInDb = true;
           } else {
             userInDb = false;
@@ -190,27 +190,31 @@ const usersController = {
         }
 
         if (userInDb != true) {
-          let image;
-          if (req.file) {
-            image = req.file.filename;
-
-            if (User.image != "defaultimg.jpg") {
-              let filePath = path.resolve(
-                __dirname,
-                "../../public/img/avatar/" + User.image
-              );
-              fs.unlinkSync(filePath);
-            }
-          } else {
-            image = User.image;
-          }
-
           let isOkPassword = bcryptjs.compareSync(
             req.body.oldPassword,
             User.password
           );
 
           if (isOkPassword) {
+            let image;
+            if (req.file) {
+              image = req.file.filename;
+
+              if (User.image != "defaultimg.jpg") {
+                try {
+                  let filePath = path.resolve(
+                    __dirname,
+                    "../../public/img/avatar/" + User.dataValues.image
+                  );
+                  fs.unlinkSync(filePath);
+                } catch (e) {
+                  console.log(e);
+                }
+              }
+            } else {
+              image = User.image;
+            }
+
             let newPassword;
 
             if (req.body.newPassword.length > 0) {
@@ -264,6 +268,7 @@ const usersController = {
               __dirname,
               "../../public/img/avatar/" + req.file.filename
             );
+
             fs.unlinkSync(filePath);
           }
 

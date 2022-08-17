@@ -12,7 +12,7 @@ const campos = {
   first_name: true,
   last_name: true,
   email: true,
-  oldPassword: true,
+  oldPassword: false,
   newPassword: true,
   confirmNewPassword: true,
 };
@@ -255,13 +255,36 @@ formulario.addEventListener("submit", (e) => {
     campos.confirmNewPassword
   ) {
     e.submit();
-  } else {
+  } else if (
+    campos.first_name &&
+    campos.last_name &&
+    campos.email &&
+    !campos.oldPassword &&
+    campos.newPassword &&
+    campos.confirmNewPassword
+  ) {
     e.preventDefault();
+
+    MessageAlert.classList.remove("displayBlock");
+    MessageAlert.classList.add("displayNone");
 
     MessageError.classList.remove("displayNone");
     MessageError.classList.add("displayBlock");
 
+    const errorsMessage = document.querySelector(`.oldPasswordPass`);
+    errorsMessage.classList.remove("displayNone");
+    errorsMessage.classList.add("displayBlock");
+
+    const oldPassword = document.getElementById("oldPassword");
+    oldPassword.classList.remove("is-valid");
+    oldPassword.classList.add("is-invalid");
+  } else {
+    e.preventDefault();
+
     MessageAlert.classList.remove("displayBlock");
     MessageAlert.classList.add("displayNone");
+
+    MessageError.classList.remove("displayNone");
+    MessageError.classList.add("displayBlock");
   }
 });
