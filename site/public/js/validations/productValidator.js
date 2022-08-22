@@ -10,6 +10,7 @@ window.addEventListener("load", function () {
     category: /^[a-zA-Z]+$/,
   };
 
+
   const campos = {
     name: false,
     stock: false,

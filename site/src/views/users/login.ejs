@@ -27,9 +27,8 @@
                   id="email"
                   name="email"
                   placeholder="superhero@MrCoffee.com"
-                  value="<%= locals.oldDate && oldDate.email ? oldDate.email : '' %>"
+                  value="<%= locals.oldData ? oldData.email : null %>"
                 />
-                
               </div>
               <!-- Errores validación db -->
               <% if (locals.errors && errors.email){ %>
@@ -39,7 +38,7 @@
             <!-- Errores validación JS -->
             <div class="text-danger errorEmail"></div>
             <div class="text-danger errorNoEmail"></div>
-            
+
             <div class="contenedor-campo">
               <label for="passwd" class="campo-label">Contraseña</label>
               <div
@@ -91,6 +90,6 @@
     </main>
     <%- include('../partials/footer') %>
     <!--! JS -->
-    <script src="/js/validations/usersLogin.js"></script>
+    <script src="/js/validations/usersLogin.js" type="text/javascript"></script>
   </body>
 </html>
