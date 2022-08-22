@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap");
+/*   font-family: "Noto Sans", sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+/*   font-family: "Raleway", sans-serif; */
 .products {
   display: flex;
   justify-content: center;
@@ -5,18 +9,20 @@
   width: 100%;
   height: 100%;
   padding-top: 20px;
+  font-family: "Raleway", sans-serif;
 }
 .product-content {
-  background-color: #fff;
-  width: 200px;
+  background-color: var(--color-Blanco-1);
+  width: 90%;
   height: 240px;
   border-radius: 20px;
-  margin: 30px;
+  margin-top: 45px;
+  margin-bottom: 45px;
   transition-duration: 0.4s;
 }
 .product-content:hover {
   transform: translateY(-20px) translateX(-10px);
-  box-shadow: 6px 6px 0 5px #00000033;
+  box-shadow: 6px 6px 0 5px var(--color-Negro-Glass);
 }
 .image {
   position: absolute;
@@ -39,7 +45,6 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  padding: 10px;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
@@ -100,15 +105,17 @@
   /*! Tablets */
   .product-content {
     width: 210px;
-    height: 240px;
+    height: 280px;
     margin: 30px;
+  }
+  .details {
+    padding: 10px;
   }
 }
 @media (min-width: 768px) {
   /*! Laptops */
   .product-content {
     width: 260px;
-    height: 280px;
   }
   .image {
     transform: translate(-50%);

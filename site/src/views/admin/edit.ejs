@@ -23,7 +23,7 @@
           </div>
         </div>
 
-        <form class="form-editor" action="/admin/<%=edit.id%>/update?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form id="formulario" class="form-editor" action="/admin/<%=edit.id%>/update?_method=PUT" method="POST" enctype="multipart/form-data">
           <div class="form-product-create">
             <div class="contenedor-img-product-create">
               <div class="img-product-create">
@@ -31,7 +31,7 @@
                   <img
                     id="view-new-upload-img"
                     src="/img/products/<%= edit.image%>"
-                    alt="imagen predeterminado de los productos"
+                    alt="Imagen seleccionada para el producto"
                   />
                 </picture>
               </div>
@@ -61,17 +61,25 @@
                   id="name"
                   name="name"
                   type="text"
-                  class="<%= locals.errors && errors.name ? 'is-invalid' : 'is-valid' %>"
+                  class="<%= locals.errors && errors.name ? 'is-invalid' : null %>"
                   value="<%= locals.oldDate && oldDate.name ? oldDate.name : edit.name %>"
                 />
                 <% if(locals.errors && errors.name){ %>
                 <div class="errors-t"><%= errors.name.msg %></div>
                 <% } %>
+                <div class="errors-t nameVacio nameErrors displayNone">Este campo no puede estar vacío.</div>
+                <div class="errors-t nameMin displayNone nameErrors">
+                  Escribe al menos 5 caracteres.
+                </div>
+                <div class="errors-t nameMax nameErrors displayNone">
+                  No puedes escribir más de 40 caracteres.
+                </div>
+                <div class="errors-t nameCaracters nameErrors displayNone">Caracteres invalidos.</div>
               </div>
 
               <div class="estilos-input">
                 <label for="category">Seleciona una categoria</label>
-                <select id="category" name="category" class="<%= locals.errors && errors.category ? 'is-invalid' : 'is-valid' %>">
+                <select id="category" name="category" class="<%= locals.errors && errors.category ? 'is-invalid' : null %>">
                   <option value="">Seleciona una opcion</option>
                   <option 
                   value="coffee" 
@@ -83,48 +91,74 @@
                 <% if(locals.errors && errors.category){ %>
                 <div class="errors-t"><%= errors.category.msg %></div>
                 <% } %>
+                <div class="errors-t categoryVacio categoryErrors displayNone">Este campo no puede estar vacío.</div>
+                <div class="errors-t categoryMax categoryErrors displayNone">
+                  No puedes escribir más de 40 caracteres.
+                </div>
+                <div class="errors-t categoryCaracters categoryErrors displayNone">Caracteres invalidos.</div>
               </div>
 
               <div class="estilos-input">
                 <label for="stock">cantidad de productos</label>
                 <input
-                type="number" 
+                type="number"
+                id="stock" 
                 name="stock" 
                 placeholder="0" 
-                class="<%= locals.errors && errors.stock ? 'is-invalid' : 'is-valid' %>"
+                class="<%= locals.errors && errors.stock ? 'is-invalid' : null %>"
                 value="<%= locals.oldDate && oldDate.stock ? oldDate.stock : edit.stock %>" 
                 />
                 <% if(locals.errors && errors.stock){ %>
                 <div class="errors-t"><%= errors.stock.msg %></div>
                 <% } %>
+                <div class="errors-t stockVacio stockErrors displayNone">Este campo no puede estar vacío.</div>
+                <div class="errors-t stockMax stockErrors displayNone">
+                  No puedes escribir más de 5 caracteres.
+                </div>
+                <div class="errors-t stockCaracters stockErrors displayNone">Caracteres invalidos.</div>
               </div>
 
               <div class="estilos-input">
                 <label for="price">Precio</label>
                 <input
                 type="number" 
+                id="price"
                 name="price" 
                 placeholder="0" 
-                class="<%= locals.errors && errors.price ? 'is-invalid' : 'is-valid' %>"
+                class="<%= locals.errors && errors.price ? 'is-invalid' : null %>"
                 value="<%= locals.oldDate && oldDate.price ? oldDate.price : edit.price %>"  
                 />
                 <% if(locals.errors && errors.price){ %>
                 <div class="errors-t"><%= errors.price.msg %></div>
                 <% } %>
+                <div class="errors-t priceVacio priceErrors displayNone">Este campo no puede estar vacío.</div>
+                <div class="errors-t priceCaracters priceErrors displayNone">Caracteres invalidos.</div>
+                <div class="errors-t priceMin displayNone priceErrors">
+                  Escribe al menos 2 caracteres.
+                </div>
+                <div class="errors-t priceMax priceErrors displayNone">
+                  No puedes escribir más de 8 caracteres.
+                </div>
               </div>
 
               <div class="estilos-input">
                 <label for="offer">Oferta</label>
                 <input
                 type="number" 
+                id="offer"
                 name="offer" 
                 placeholder="0" 
-                class="<%= locals.errors && errors.offer ? 'is-invalid' : 'is-valid' %>"
+                class="<%= locals.errors && errors.offer ? 'is-invalid' : null %>"
                 value="<%= locals.oldDate && oldDate.offer ? oldDate.offer : edit.offer %>" 
                 />
                 <% if(locals.errors && errors.offer){ %>
                 <div class="errors-t"><%= errors.offer.msg %></div>
                 <% } %>
+                <div class="errors-t offerVacio offerErrors displayNone">Este campo no puede estar vacío.</div>
+                <div class="errors-t offerCaracters offerErrors displayNone">Caracteres invalidos.</div>
+                <div class="errors-t offerMax offerErrors displayNone">
+                  No puedes escribir más de 2 caracteres.
+                </div>
               </div>
 
               <div class="estilos-input">
@@ -133,13 +167,34 @@
                   id="description"
                   name="description"
                   placeholder="Escriba una descripcion"
-                  class="<%= locals.errors && errors.description ? 'is-invalid' : 'is-valid' %>"
+                  class="<%= locals.errors && errors.description ? 'is-invalid' : null %>"
                 ><%= locals.oldDate && oldDate.description ? oldDate.description : edit.description %></textarea
                 >
                 <% if(locals.errors && errors.description){ %>
                 <div class="errors-t"><%= errors.description.msg %></div>
                 <% } %>
+                <div class="errors-t descriptionVacio descriptionErrors displayNone">Este campo no puede estar vacío.</div>
+                <div class="errors-t descriptionMin displayNone descriptionErrors">
+                  Escribe al menos 20 caracteres.
+                </div>
+                <div class="errors-t descriptionMax descriptionErrors displayNone">
+                  No puedes escribir más de 120 caracteres.
+                </div>
+                <div class="errors-t descriptionCaracters descriptionErrors displayNone">Caracteres invalidos.</div>
               </div>
+            </div>
+          </div>
+
+          <div class="container-message-form">
+            <div
+              class="formulario__mensaje-error displayNone"
+              id="formulario__mensaje-error"
+            >
+              <p>
+                <i class="fas fa-exclamation-triangle"></i>
+                <b>Error:</b>
+                Por favor rellena el formulario correctamente.
+              </p>
             </div>
           </div>
 
@@ -161,5 +216,6 @@
     </main>
     <%- include('../partials/footer') %>
     <script src="/js/img-preview.js" type="text/javascript"></script>
+    <script src="/js/validations/productCreate.js" type="text/javascript"></script>
   </body>
 </html>

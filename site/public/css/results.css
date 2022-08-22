@@ -1,4 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap");
+/*   font-family: "Noto Sans", sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+/*   font-family: "Raleway", sans-serif; */
+/* ! Header */
+main {
+  background-color: var(--color-Blanco-2);
+  font-family: "Raleway", sans-serif;
+}
+.Favorite a {
+  color: var(--color-Negro-1);
+}
+.Config button {
+  color: var(--color-Negro-1);
+}
+.nav ul li a {
+  color: var(--color-Negro-1);
+}
+/* ! */
 .products-title {
-  color: red;
+  color: var(--color-Rojo-1);
   text-align: center;
 }

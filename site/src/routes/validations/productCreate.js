@@ -61,14 +61,22 @@ module.exports = [
     .withMessage("Este campo debe contener numeros.")
     .bail()
     .isFloat({ min: 1 })
-    .withMessage("El numero debe ser mayor a 0."),
+    .withMessage("El numero debe ser mayor a 0.")
+    .isLength({ max: 5 })
+    .withMessage("Máximo de 5 números."),
 
   body("price")
     .notEmpty()
     .withMessage("Este campo no puede estar vacío.")
     .bail()
     .isInt()
-    .withMessage("Este campo debe contener numeros."),
+    .withMessage("Este campo debe contener numeros.")
+    .bail()
+    .isLength({ min: 2 })
+    .withMessage("Escribe al menos 2 caracteres.")
+    .bail()
+    .isLength({ max: 8 })
+    .withMessage("Máximo de 8 números."),
 
   body("offer")
     .isInt()

@@ -101,15 +101,23 @@ const adminController = {
       let errors = validationResult(req);
 
       if (errors.isEmpty()) {
-        let image = product.dataValues.image;
-
+        let image;
         if (req.file) {
           image = req.file.filename;
-          let filePath = path.resolve(
-            __dirname,
-            "../../public/img/products/" + product.dataValues.image
-          );
-          fs.unlinkSync(filePath);
+
+          if (product.dataValues.image != "default-image.png") {
+            try {
+              let filePath = path.resolve(
+                __dirname,
+                "../../public/img/products/" + product.dataValues.image
+              );
+              fs.unlinkSync(filePath);
+            } catch (e) {
+              console.log(e);
+            }
+          }
+        } else {
+          image = product.dataValues.image;
         }
 
         let categoria;

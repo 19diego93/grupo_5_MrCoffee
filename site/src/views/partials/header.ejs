@@ -10,8 +10,11 @@
       </a>
     </div>
     <div class="Config">
-      <button id="menu-deploy1">
+      <button id="menu-deploy-1">
         <i class="fas fa-bars"></i>
+      </button>
+      <button id="menu-close-1">
+        <i class="fas fa-times"></i>
       </button>
     </div>
   </div>
@@ -19,13 +22,13 @@
   <nav class="nav">
     <ul>
       <li>
-        <a href="/">
-          <i class="fa-solid fa-house disNone selected"></i>
-          <p class="selected">Inicio</p>
+        <a href="/" id="urlHome">
+          <i class="fa-solid fa-house disNone"></i>
+          <p class="">Inicio</p>
         </a>
       </li>
       <li>
-        <a href="/products">
+        <a href="/products" id="urlProducts">
           <i class="fa-solid fa-basket-shopping disNone"></i>
           <p>Tienda</p>
         </a>
@@ -37,7 +40,7 @@
         </button>
       </li>
       <li>
-        <a href="/products/cart">
+        <a href="/products/cart" id="urlCart">
           <i class="fa-solid fa-cart-shopping disNone"></i>
           <p>Carrito</p>
         </a>
@@ -45,6 +48,9 @@
       <li class="celNone">
         <button id="menu-deploy2">
           <i class="fas fa-bars"></i>
+        </button>
+        <button id="menu-close-2">
+          <i class="fas fa-times"></i>
         </button>
       </li>
     </ul>
@@ -57,7 +63,7 @@
       placeholder="¿Qué deseas buscar?"
       name="keywords"
     />
-    <span class="search" id="close-search"></span>
+    <span id="close-search"></span>
   </form>
 </header>
 <%- include('./menu') %>

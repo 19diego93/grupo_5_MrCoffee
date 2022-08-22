@@ -1,27 +1,52 @@
+/*! Atributos por defecto */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap");
+/*   font-family: "Noto Sans", sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+/*   font-family: "Raleway", sans-serif; */
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+}
 /*! Colores */
 :root {
-  --color-Celeste: #00b7ff;
-  --color-Celeste-Claro: #42c9ff;
-  --color-Marron-Oscuro-2: #8c4933;
-  --color-Marron-Oscuro: #76402e;
-  --color-Marron: #ad715c;
-  --color-Marron-Claro: #d1a284;
-  --color-Marron-Claro-2: #ffa858;
-  --color-Negro: #000;
-  --color-Negro-Claro-1: #111111f3;
-  --color-Negro-Claro-2: #111111d0;
-  --color-Gris-Claro-1: #b4b3b33d;
-  --color-Gris-Claro-2: #303440;
-  --color-Gris-Claro-3: #303440;
-  --color-Blanco: #fff;
-  --color-Blanco-Oscuro-1: #f6f8fa;
-  --color-Blanco-Oscuro-2: #8a8a8a;
-  --color-Blanco-Oscuro-2: #797979;
-  --color-Blanco-Gastado: #dcdde9;
-  --color-Negro: #000;
-  --color-Rojo-Super-Claro: rgb(255, 0, 0);
-  --color-Rojo-Claro: #ab0b0b;
-  --color-rojo-Oscuro: #550a0a;
-  --color-Rojo-Oscuro-2: #dc354540;
-  --color-Verde-Saturado: #3bc472;
+  --color-Blanco-1: #ffffff;
+  --color-Blanco-2: #f6f6f6;
+  --color-Blanco-3: #dddddd;
+
+  --color-Negro-1: #000000;
+  --color-Negro-2: #111111;
+  --color-Negro-3: #191919;
+
+  --color-Negro-Glass: #00000080;
+
+  --color-Azul-1: #212529;
+
+  --color-Gris-1: #8a8a8a;
+  --color-Gris-2: #797979;
+  --color-Gris-3: #b4b3b33d;
+  --color-Gris-4: #303440;
+  --color-Gris-5: #303440;
+
+  --color-Celeste-1: #00b7ff;
+  --color-Celeste-2: #42c9ff;
+
+  --color-Marron-1: #ad715c;
+  --color-Marron-2: #d1a284;
+  --color-Marron-3: #ffa858;
+  --color-Marron-4: #76402e;
+  --color-Marron-5: #8c4933;
+
+  --color-Rojo-1: #ff0000;
+  --color-Rojo-2: #ab0b0b;
+  --color-rojo-3: #550a0a;
+  --color-Rojo-4: #dc354540;
+
+  --color-Verde-1: #3bc472;
 }

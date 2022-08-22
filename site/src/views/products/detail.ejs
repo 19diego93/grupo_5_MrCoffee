@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/products/detail.css" />
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <main>
+      <section class="breadcrumb-content">
+        <article id="breadcrumb">
+          <div>
+            <a href="/">Inicio</a>
+            <span>|</span>
+            <a href="/products">Productos</a>
+            <span>|</span>
+            <span class="page-title"><%=product.name%></span>
+          </div>
+        </article>
+      </section>
+      <% if(product.stock == 0){ %>
+      <section>
+        <div class="producto-sin-stock">
+          <h2>Este producto se encuentra agotado.</h2>
+        </div>
+      </section>
+      <% } %>
+      <section class="section-detail">
+        <div class="container-detail-product">
+          <div class="detail-product">
+            <div class="detail-container-img">
+              <picture>
+                <img
+                  src="/img/products/<%=product.image%>"
+                  alt="Imagen ilustrativa del producto"
+                />
+              </picture>
+            </div>
+            <div class="detail-container-attributes">
+              <span class="detail-id">ID: <%=product.id%></span>
+              <h1 class="detail-name"><%=product.name%></h1>
+              <div class="container-detail-price">
+                <span>$<%=product.price%></span>
+              </div>
+              <p class="detail-description"><%=product.description%></p>
+              <div class="detail-addCart">
+                <input id="inputQuantity" type="num" value="1" />
+                <button type="button" id="addToCart">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if (locals.userLogged) { %> <% if
+        (locals.userLogged.dataValues.id_category_U == '1') { %>
+        <div class="container-buttons-detail">
+          <a
+            href="/admin/edit/<%=product.id%>"
+            class="button-edit button-design"
+          >
+            <p>Editar</p>
+          </a>
+          <form
+            action="/admin/<%=product.id%>?_method=DELETE"
+            method="POST"
+            class="button-delete"
+          >
+            <button type="submit" class="button-design">Eliminar</button>
+          </form>
+        </div>
+        <% } %> <% } %>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

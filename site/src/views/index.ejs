@@ -11,10 +11,9 @@
       <!--! Campaña -->
       <section class="Container-Campaign">
         <article class="campaña">
-          <h1>¡Conocé nuestras variedades!</h1>
-          <a href="/products" class="boton-descubrir">
-            <p>¡Descubrír!</p>
-          </a>
+          <h1>La mejor forma de empezar el día</h1>
+          <p>¡Conocé nuestros productos!</p>
+          <a href="/products" class="boton-descubrir">¡Descubrír!</a>
         </article>
         <article id="wave-effect">
           <svg viewBox="0 0 500 150" preserveAspectRatio="none">
@@ -26,7 +25,7 @@
       </section>
       <!--! Destacados -->
       <section class="conteiner-featured">
-        <article>
+        <article class="prueba">
           <h2>DESTACADOS</h2>
         </article>
         <div class="container-products-top">
@@ -47,8 +46,12 @@
                 </div>
                 <% if(coffee[i].rating > 0) { %>
                 <div class="product-rating">
-                  <% for(let e =0; e < coffee[i].rating; e++) { %>
+                  <% let rating = Math.round(coffee[i].rating) %> <% for(let e =
+                  0; e < rating ; e++) { %>
                   <i class="fas fa-star"></i>
+                  <% } %> <% let starOver = 5 - rating %> <% for(let a = 0; a <
+                  starOver; a++) { %>
+                  <i class="far fa-star"></i>
                   <% } %>
                 </div>
                 <% } %>
@@ -82,8 +85,12 @@
                 </div>
                 <% if(food[i].rating > 0) { %>
                 <div class="product-rating">
-                  <% for(let e =0; e < food[i].rating; e++) { %>
+                  <% let rating = Math.round(food[i].rating) %> <% for(let e =
+                  0; e < rating ; e++) { %>
                   <i class="fas fa-star"></i>
+                  <% } %> <% let starOver = 5 - rating %> <% for(let a = 0; a <
+                  starOver; a++) { %>
+                  <i class="far fa-star"></i>
                   <% } %>
                 </div>
                 <% } %>

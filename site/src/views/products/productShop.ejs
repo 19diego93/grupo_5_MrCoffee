@@ -191,13 +191,16 @@
                 <span class="product-Name"><%=products[i].name%></span>
                 <span class="product-Price">$ <%=products[i].price%></span>
               </div>
-              <% if(products[i].rating > 0)  { %>
                 <div class="product-rating">
-                  <% for(let e =0; e < products[i].rating; e++) { %>
+                  <% let rating = Math.round(products[i].rating) %>
+                  <% for(let e = 0; e < rating ; e++) { %>
                   <i class="fas fa-star"></i>
                   <% } %>
+                  <% let starOver = 5 - rating %>
+                  <% for(let a = 0; a < starOver; a++) { %>
+                  <i class="far fa-star"></i>
+                  <% } %>
                 </div>
-                <% } %>
               <div class="product-buttons">
                 <a href="/products/cart">
                 <button class="product-buy">Comprar</button>

@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap");
+/*   font-family: "Noto Sans", sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+/*   font-family: "Raleway", sans-serif; */
 /*! Footer */
 footer {
   background-color: #000;
-  margin-bottom: 50px;
+  padding-bottom: 80px;
 }
 .container-form {
   background-image: url(/img/campaña.webp);
@@ -209,7 +213,7 @@ footer h5 {
 @media (min-width: 768px) {
   /*! Laptops */
   footer {
-    margin-bottom: -40px;
+    padding-bottom: 0px;
   }
   .container-email #newsletter-input {
     width: 60%;

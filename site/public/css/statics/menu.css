@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap");
+/*   font-family: "Noto Sans", sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+/*   font-family: "Raleway", sans-serif; */
 .nav-menu {
   display: none;
   position: fixed;
@@ -8,51 +12,36 @@
   height: 100vh;
   transform: translateX(300px);
   transition: 0.6s;
+  font-family: "Noto Sans", sans-serif;
 }
-#close-menu {
-  position: absolute;
-  top: 100px;
-  right: 40px;
-  cursor: pointer;
-  color: var(--color-Marron-Oscuro);
-  list-style: none;
-  transition: 0.1s;
-}
-#close-menu:hover {
-  color: var(--color-Celeste);
-}
-#close-menu i {
-  font-size: 40px;
-}
+
 .nav__link-a {
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 1em;
-  color: var(--color-Marron-Oscuro);
+  color: var(--color-Negro-1);
   transition: 0.4s;
   width: 100%;
 }
 
 .nav__link {
-  color: var(--color-Gris-Claro-2);
+  color: var(--color-Gris-1);
   display: block;
   padding: 15px 0;
   text-decoration: none;
-  transition: 0.4s;
-}
-.nav__link--outside {
-  transition: 0.4s;
 }
 .nav__glow,
-.nav__link {
+.nav__link,
+.nav__link--outside {
   transition: 0.4s;
-  color: var(--color-Marron-Oscuro);
+  color: var(--color-Negro-1);
+  font-size: 16px;
 }
 .nav__glow:hover,
 .nav__glow:hover .nav__link,
 .nav__glow:hover .nav__link-a {
-  color: var(--color-Celeste);
+  color: var(--color-Celeste-1);
 }
 
 .nav__link--inside {
@@ -60,12 +49,12 @@
   text-align: left;
 }
 .nav__link--inside:hover {
-  background: var(--color-Gris-Claro-1);
-  color: var(--color-Celeste);
+  background: var(--color-Blanco-3);
+  color: var(--color-Celeste-1);
 }
 
 .nav__link--outside:hover {
-  background: var(--color-Blanco-Oscuro-1);
+  background: var(--color-Blanco-2);
 }
 .list {
   width: 100%;
@@ -73,7 +62,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: var(--color-Blanco);
+  background: var(--color-Blanco-1);
 }
 
 .list__item {
@@ -105,7 +94,7 @@
 .list__show {
   width: 80%;
   margin-left: auto;
-  border-left: 2px solid var(--color-Marron-Oscuro);
+  border-left: 2px solid var(--color-Negro-1);
   list-style: none;
   transition: height 0.4s;
   height: 0;

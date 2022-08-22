@@ -1,3 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap");
+/*   font-family: "Noto Sans", sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+/*   font-family: "Raleway", sans-serif; */
+/* ! Header */
+.Favorite a {
+  color: var(--color-Negro-1);
+}
+.Config button {
+  color: var(--color-Negro-1);
+}
+.nav ul li a {
+  color: var(--color-Negro-1);
+}
+
+/*!  */
+main {
+  background-color: var(--color-Blanco-2);
+  font-family: "Raleway", sans-serif;
+}
 #main-error {
   width: 100%;
   display: flex;
@@ -26,7 +46,7 @@
   font-size: 1.5rem;
   margin: 1rem 0;
   text-decoration: none;
-  color: var(--color-Negro);
+  color: var(--color-Negro-1);
 }
 @media (min-width: 460px) {
   /*! Tablets */

@@ -38,11 +38,13 @@
                   <span class="product-Price">$ <%= results[i].price%></span>
                 </div>
                 <div class="product-rating">
+                  <% let rating = Math.round(results[i].rating) %> <% for(let e
+                  = 0; e < rating ; e++) { %>
                   <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <% } %> <% let starOver = 5 - rating %> <% for(let a = 0; a <
+                  starOver; a++) { %>
+                  <i class="far fa-star"></i>
+                  <% } %>
                 </div>
                 <div class="product-buttons">
                   <button class="product-buy">Comprar</button>

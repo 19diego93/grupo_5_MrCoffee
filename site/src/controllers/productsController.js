@@ -27,7 +27,7 @@ const productsController = {
     try {
       let product = await Products.findByPk(req.params.id);
 
-      return res.render("products/productDetail", {
+      return res.render("products/detail", {
         product,
         title: `│ ${product.name}`,
       });

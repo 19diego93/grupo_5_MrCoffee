@@ -1,3 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap");
+/*   font-family: "Noto Sans", sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+/*   font-family: "Raleway", sans-serif; */
+/* ! Header */
+.Favorite a {
+  color: var(--color-Negro-1);
+}
+.Config button {
+  color: var(--color-Negro-1);
+}
+.nav ul li a {
+  color: var(--color-Negro-1);
+}
+/* ! */
+main {
+  background-color: var(--color-Blanco-2);
+  font-family: "Raleway", sans-serif;
+}
 main#main-error {
   width: 100%;
   display: flex;
@@ -18,14 +37,14 @@ main#main-error a {
   font-size: 1.5rem;
   margin: 1rem 0;
   text-decoration: none;
-  color: var(--color-Negro);
+  color: var(--color-Negro-1);
 }
 
 main#main-error a span {
-  color: var(--color-Celeste);
+  color: var(--color-Celeste-1);
   border-bottom: 0.1rem solid transparent;
   transition: 0.3s;
 }
 #main-error a:hover span {
-  color: var(--color-Celeste-Claro);
+  color: var(--color-Celeste-2);
 }
