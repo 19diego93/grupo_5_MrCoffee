@@ -33,7 +33,7 @@ DROP TABLE IF EXISTS `cart_item`;
 CREATE TABLE IF NOT EXISTS `cart_item` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `precio_venta` decimal(8,2) NOT NULL,
-  `cantidad` int(3) NOT NULL,
+  `cantidad` int(5) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `categoria` varchar(15) NOT NULL,
   `imagen` varchar(30) NOT NULL,

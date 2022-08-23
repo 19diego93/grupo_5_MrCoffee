@@ -1,5 +1,5 @@
-window.addEventListener("load", function () {
-  const formulario = document.getElementById("formulario");
+window.addEventListener("load", () => {
+  const formulario = document.querySelector("#formulario");
   const inputs = document.querySelectorAll("#formulario input");
 
   const expresiones = {
@@ -16,54 +16,50 @@ window.addEventListener("load", function () {
   };
 
   const campos = {
-    first_name: true,
-    last_name: true,
-    email: true,
-    oldPassword: false,
-    newPassword: true,
-    confirmNewPassword: true,
+    fname: false,
+    lname: false,
+    email: false,
+    passwd: false,
+    confirmPsw: false,
   };
 
   const validarFormulario = (e) => {
     switch (e.target.name) {
       case "fname":
-        validation(expresiones.nombre, e.target.value, "first_name", 3, 40);
+        validation(expresiones.nombre, e.target.value, "fname", 3, 40);
         break;
       case "lname":
-        validation(expresiones.nombre, e.target.value, "last_name", 3, 40);
+        validation(expresiones.nombre, e.target.value, "lname", 3, 40);
         break;
       case "email":
         validation(expresiones.correo, e.target.value, "email", 6, 100);
         break;
-      case "oldPassword":
-        validationPassword(expresiones.password, e.target, "oldPassword");
+      case "password":
+        validation_2(expresiones.password, e.target.value, "passwd", 8, 65);
+        validation_3();
         break;
-      case "newPassword":
-        validationPassword(expresiones.password, e.target, "newPassword");
-        validationPassword_2();
-        break;
-      case "confirmNewPassword":
-        validationPassword_2();
+      case "confirmPsw":
+        validation_3();
         break;
     }
   };
 
-  const validation = (expresion, value, campo, min, max) => {
+  function validation(expresion, value, campo, min, max) {
     const errorsMessage = document.querySelectorAll(`.${campo}Errors`);
     const inputColor = document.getElementById(`${campo}`);
 
-    if (value == "") {
+    if (value.length < 1) {
       errorsMessage.forEach((error) => {
         error.classList.remove("displayBlock");
         error.classList.add("displayNone");
       });
 
       document.querySelector(`.${campo}Vacio`).classList.add("displayBlock");
-
       inputColor.classList.remove("is-valid");
-      inputColor.classList.remove("is-valid-icon");
       inputColor.classList.add("is-invalid");
+      inputColor.classList.remove("is-valid-icon");
       inputColor.classList.add("is-invalid-icon");
+
       campos[campo] = false;
     } else if (value.length < min) {
       errorsMessage.forEach((error) => {
@@ -72,11 +68,11 @@ window.addEventListener("load", function () {
       });
 
       document.querySelector(`.${campo}Min`).classList.add("displayBlock");
-
       inputColor.classList.remove("is-valid");
-      inputColor.classList.remove("is-valid-icon");
       inputColor.classList.add("is-invalid");
+      inputColor.classList.remove("is-valid-icon");
       inputColor.classList.add("is-invalid-icon");
+
       campos[campo] = false;
     } else if (value.length > max) {
       errorsMessage.forEach((error) => {
@@ -85,11 +81,11 @@ window.addEventListener("load", function () {
       });
 
       document.querySelector(`.${campo}Max`).classList.add("displayBlock");
-
       inputColor.classList.remove("is-valid");
-      inputColor.classList.remove("is-valid-icon");
       inputColor.classList.add("is-invalid");
+      inputColor.classList.remove("is-valid-icon");
       inputColor.classList.add("is-invalid-icon");
+
       campos[campo] = false;
     } else if (!expresion.test(value)) {
       errorsMessage.forEach((error) => {
@@ -97,12 +93,14 @@ window.addEventListener("load", function () {
         error.classList.add("displayNone");
       });
 
-      document.querySelector(`.${campo}Num`).classList.add("displayBlock");
-
+      document
+        .querySelector(`.${campo}Caracters`)
+        .classList.add("displayBlock");
       inputColor.classList.remove("is-valid");
-      inputColor.classList.remove("is-valid-icon");
       inputColor.classList.add("is-invalid");
+      inputColor.classList.remove("is-valid-icon");
       inputColor.classList.add("is-invalid-icon");
+
       campos[campo] = false;
     } else {
       errorsMessage.forEach((error) => {
@@ -116,95 +114,52 @@ window.addEventListener("load", function () {
       inputColor.classList.add("is-valid-icon");
       campos[campo] = true;
     }
-  };
+  }
 
-  const validationPassword = (expresion, input, campo) => {
-    const inputPassword1 = document.getElementById("oldPassword");
-    const inputPassword2 = document.getElementById("newPassword");
-
+  function validation_2(expresion, value, campo, min, max) {
     const errorsMessage = document.querySelectorAll(`.${campo}Errors`);
     const inputColor = document.getElementById(`${campo}`);
 
-    if (input.value.length === 0) {
+    if (value.length < 1) {
       errorsMessage.forEach((error) => {
         error.classList.remove("displayBlock");
         error.classList.add("displayNone");
       });
 
-      if (campo === "newPassword") {
-        inputColor.classList.remove("is-invalid");
-        inputColor.classList.add("is-valid");
-        inputColor.classList.remove("is-invalid-icon");
-        inputColor.classList.add("is-valid-icon");
-
-        campos[campo] = true;
-      } else {
-        inputColor.classList.remove("is-valid");
-        inputColor.classList.add("is-invalid");
-        inputColor.classList.remove("is-valid-icon");
-        inputColor.classList.add("is-invalid-icon");
-
-        document.querySelector(`.${campo}Vacio`).classList.add("displayBlock");
-        campos[campo] = false;
-      }
-    } else if (
-      inputPassword2.value.length > 0 &&
-      inputPassword1.value.length === 0
-    ) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
-
-      document
-        .querySelector(`.newPasswordPass`)
-        .classList.remove("displayNone");
-      document.querySelector(`.newPasswordPass`).classList.add("displayBlock");
-      document
-        .querySelector(`.oldPasswordPass`)
-        .classList.remove("displayNone");
-      document.querySelector(`.oldPasswordPass`).classList.add("displayBlock");
-
-      inputPassword1.classList.remove("is-valid");
-      inputPassword1.classList.add("is-invalid");
-      inputPassword1.classList.remove("is-valid");
-      inputPassword1.classList.add("is-invalid");
-      campos["oldPassword"] = false;
-    } else if (input.value.length < 8) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
-      if (campo === "oldPassword") {
-        document.querySelector(`.newPasswordPass`).classList.add("displayNone");
-        document
-          .querySelector(`.newPasswordPass`)
-          .classList.remove("displayBlock");
-      }
-      console.log(expresion.lower);
-
-      document.querySelector(`.${campo}Min`).classList.add("displayBlock");
-
+      document.querySelector(`.${campo}Vacio`).classList.add("displayBlock");
       inputColor.classList.remove("is-valid");
       inputColor.classList.add("is-invalid");
       inputColor.classList.remove("is-valid-icon");
       inputColor.classList.add("is-invalid-icon");
+
       campos[campo] = false;
-    } else if (input.value.length > 65) {
+    } else if (value.length < min) {
+      errorsMessage.forEach((error) => {
+        error.classList.remove("displayBlock");
+        error.classList.add("displayNone");
+      });
+
+      document.querySelector(`.${campo}Min`).classList.add("displayBlock");
+      inputColor.classList.remove("is-valid");
+      inputColor.classList.add("is-invalid");
+      inputColor.classList.remove("is-valid-icon");
+      inputColor.classList.add("is-invalid-icon");
+
+      campos[campo] = false;
+    } else if (value.length > max) {
       errorsMessage.forEach((error) => {
         error.classList.remove("displayBlock");
         error.classList.add("displayNone");
       });
 
       document.querySelector(`.${campo}Max`).classList.add("displayBlock");
-
       inputColor.classList.remove("is-valid");
       inputColor.classList.add("is-invalid");
       inputColor.classList.remove("is-valid-icon");
       inputColor.classList.add("is-invalid-icon");
 
       campos[campo] = false;
-    } else if (!expresion.lower.test(input.value)) {
+    } else if (!expresion.lower.test(value)) {
       errorsMessage.forEach((error) => {
         error.classList.remove("displayBlock");
         error.classList.add("displayNone");
@@ -217,7 +172,7 @@ window.addEventListener("load", function () {
       inputColor.classList.add("is-invalid-icon");
 
       campos[campo] = false;
-    } else if (!expresion.upper.test(input.value)) {
+    } else if (!expresion.upper.test(value)) {
       errorsMessage.forEach((error) => {
         error.classList.remove("displayBlock");
         error.classList.add("displayNone");
@@ -230,7 +185,7 @@ window.addEventListener("load", function () {
       inputColor.classList.add("is-invalid-icon");
 
       campos[campo] = false;
-    } else if (!expresion.number.test(input.value)) {
+    } else if (!expresion.number.test(value)) {
       errorsMessage.forEach((error) => {
         error.classList.remove("displayBlock");
         error.classList.add("displayNone");
@@ -243,7 +198,7 @@ window.addEventListener("load", function () {
       inputColor.classList.add("is-invalid-icon");
 
       campos[campo] = false;
-    } else if (!expresion.special.test(input.value)) {
+    } else if (!expresion.special.test(value)) {
       errorsMessage.forEach((error) => {
         error.classList.remove("displayBlock");
         error.classList.add("displayNone");
@@ -263,98 +218,80 @@ window.addEventListener("load", function () {
       });
 
       inputColor.classList.remove("is-invalid");
-      inputColor.classList.add("is-valid");
       inputColor.classList.remove("is-invalid-icon");
+      inputColor.classList.add("is-valid");
       inputColor.classList.add("is-valid-icon");
       campos[campo] = true;
     }
-  };
+  }
 
-  const validationPassword_2 = () => {
-    const inputPassword1 = document.getElementById("newPassword");
-    const inputPassword2 = document.getElementById("confirmNewPassword");
+  const validation_3 = () => {
+    const inputPassword1 = document.getElementById("passwd");
+    const inputPassword2 = document.getElementById("confirmPsw");
 
-    if (inputPassword1.value !== inputPassword2.value) {
+    const errorsMessage = document.querySelectorAll(`.confirmPswErrors`);
+
+    if (inputPassword2.value == "") {
+      errorsMessage.forEach((error) => {
+        error.classList.remove("displayBlock");
+        error.classList.add("displayNone");
+      });
+
       inputPassword2.classList.remove("is-valid");
       inputPassword2.classList.add("is-invalid");
       inputPassword2.classList.remove("is-valid-icon");
       inputPassword2.classList.add("is-invalid-icon");
-      campos["confirmNewPassword"] = false;
+      campos["confirmPsw"] = false;
 
       document
-        .querySelector(".confirmNewPasswordEq")
+        .querySelector(".confirmPswVacio")
         .classList.remove("displayNone");
-      document
-        .querySelector(".confirmNewPasswordEq")
-        .classList.add("displayBlock");
+      document.querySelector(".confirmPswVacio").classList.add("displayBlock");
+    } else if (inputPassword1.value !== inputPassword2.value) {
+      errorsMessage.forEach((error) => {
+        error.classList.remove("displayBlock");
+        error.classList.add("displayNone");
+      });
+
+      inputPassword2.classList.remove("is-valid");
+      inputPassword2.classList.add("is-invalid");
+      inputPassword2.classList.remove("is-valid-icon");
+      inputPassword2.classList.add("is-invalid-icon");
+      campos["confirmPsw"] = false;
+
+      document.querySelector(".confirmPswEq").classList.remove("displayNone");
+      document.querySelector(".confirmPswEq").classList.add("displayBlock");
     } else {
+      errorsMessage.forEach((error) => {
+        error.classList.remove("displayBlock");
+        error.classList.add("displayNone");
+      });
+
       inputPassword2.classList.remove("is-invalid");
       inputPassword2.classList.add("is-valid");
       inputPassword2.classList.remove("is-invalid-icon");
       inputPassword2.classList.add("is-valid-icon");
-      campos["confirmNewPassword"] = true;
-
-      document
-        .querySelector(".confirmNewPasswordEq")
-        .classList.remove("displayBlock");
-      document
-        .querySelector(".confirmNewPasswordEq")
-        .classList.add("displayNone");
+      campos["confirmPsw"] = true;
     }
   };
 
-  // Traigo todos los input's
   inputs.forEach((input) => {
-    // Ejecuto las funcionas si presiona una tecla o sale del campo.
-    input.addEventListener("keyup", validarFormulario);
     input.addEventListener("blur", validarFormulario);
+    input.addEventListener("keyup", validarFormulario);
   });
 
-  // Si la variable <campos> se encuentra todo en true paso
   formulario.addEventListener("submit", (e) => {
-    let MessageAlert = document.getElementById("formulario__mensaje-alert");
-    let MessageError = document.getElementById("formulario__mensaje-error");
-
-    if (
-      campos.first_name &&
-      campos.last_name &&
-      campos.email &&
-      campos.oldPassword &&
-      campos.newPassword &&
-      campos.confirmNewPassword
-    ) {
+    if (campos.email && campos.passwd) {
       e.submit();
-    } else if (
-      campos.first_name &&
-      campos.last_name &&
-      campos.email &&
-      !campos.oldPassword &&
-      campos.newPassword &&
-      campos.confirmNewPassword
-    ) {
-      e.preventDefault();
-
-      MessageAlert.classList.remove("displayBlock");
-      MessageAlert.classList.add("displayNone");
-
-      MessageError.classList.remove("displayNone");
-      MessageError.classList.add("displayBlock");
-
-      const errorsMessage = document.querySelector(`.oldPasswordPass`);
-      errorsMessage.classList.remove("displayNone");
-      errorsMessage.classList.add("displayBlock");
-
-      const oldPassword = document.getElementById("oldPassword");
-      oldPassword.classList.remove("is-valid");
-      oldPassword.classList.add("is-invalid");
     } else {
       e.preventDefault();
 
-      MessageAlert.classList.remove("displayBlock");
-      MessageAlert.classList.add("displayNone");
-
-      MessageError.classList.remove("displayNone");
-      MessageError.classList.add("displayBlock");
+      inputs.forEach((input) => {
+        let a = {
+          target: { name: input.name, value: input.value },
+        };
+        validarFormulario(a);
+      });
     }
   });
 });

@@ -18,6 +18,7 @@ window.addEventListener("load", () => {
       let reader = new FileReader();
 
       reader.onload = function () {
+        console.log(reader);
         showImage.src = reader.result;
       };
 
