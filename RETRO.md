@@ -1,34 +1,33 @@
 # Comenzar a hacer:
 
 ```
- Tablero trello: https://trello.com/invite/b/GDl9UoXC/ed646b4005cf71990f59d68a718531bd/mrcoffee,
-```
-```
- Hacer llamada los lunes y miercoles 18:20 para revisar problemas de código
+
 ```
 
 # Hacer más:
 
 ```
- Pedir ayuda cuando estamos atascados o no entendemos.
-```
-```
- Dedicarle mas tiempo al proyecto
+ Hacer 1 reunión a la semana para mostrar por donde vamos y resolver conflictos si es que los hay.
 ```
 
 # Continuar haciendo:
 
 ```
- Seguir comunicándonos por slack/whatsapp.
+ Seguir comunicándonos por slack y whatsapp.
 ```
+
 ```
- Una reunion grupal por semana. (Weekly viernes)
+ Hacer llamada los lunes y miércoles 18:00.
+```
+
+```
+ Dedicarle el tiempo necesario para completar con las actividades propuestas.
 ```
 
 # Hacer menos:
 
 ```
- ...
+ Concentrarnos en las actividades a realizar en vez de querer implementar cosas que no se pidieron.
 ```
 
 # Dejar de hacer:
