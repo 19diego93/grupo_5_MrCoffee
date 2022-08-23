@@ -304,11 +304,11 @@ const usersController = {
     }
   },
 
-  logout: (req, res) => {
-    res.clearCookie("recordame");
-    req.session.destroy();
+  logout: async (req, res) => {
+    await res.clearCookie("recordame");
+    await req.session.destroy();
 
-    return res.redirect("/");
+    return res.redirect("/user/login");
   },
 };
 

@@ -58,8 +58,8 @@ INSERT INTO `user_category` (`id`, `name`) VALUES
 --
 
 INSERT INTO `usuario` (`id`, `first_name`, `last_name`, `image`, `email`, `password`, `id_category_U`) VALUES
-(1, 'Santiago', 'boquita', 'img-1660161772572.jpg', 'boquita@santiago.com', '$2a$10$w8D4Oo/PKv.06amR7M54uuaMyGe8AEO.J..FUC5q6ijb57mLcONGK', 1),
-(2, 'Jeremias', 'River', 'img-1660360317331.gif', 'river@jeremias.com', '$2a$10$GKqiBlH2rFKT0YrZEpEZPOT4jqGJ1MtmOsuA3N7yC4u4E74feCLd6', 2);
+(1, 'Santiago', 'boquita', 'img-1660161772572.jpg', 'boquita@santiago.com', '$2a$10$ytRPn.UZRL8V4ZzpIyEPuuG5uSjw4pwP/XoANqLqAuVQyIj8DncMC', 1),
+(2, 'Jeremias', 'River', 'img-1660360317331.gif', 'river@jeremias.com', '$2a$10$ytRPn.UZRL8V4ZzpIyEPuuG5uSjw4pwP/XoANqLqAuVQyIj8DncMC', 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

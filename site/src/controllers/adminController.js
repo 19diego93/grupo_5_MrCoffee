@@ -146,7 +146,7 @@ const adminController = {
           }
         );
 
-        res.redirect("/");
+        res.redirect(`/products/detail/${product.dataValues.id}`);
       } else {
         if (req.file) {
           let filePath = path.resolve(

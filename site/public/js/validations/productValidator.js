@@ -10,7 +10,6 @@ window.addEventListener("load", function () {
     category: /^[a-zA-Z]+$/,
   };
 
-
   const campos = {
     name: false,
     stock: false,
@@ -135,13 +134,10 @@ window.addEventListener("load", function () {
     // Ejecuto las funcionas si presiona una tecla o sale del campo.
     input.addEventListener("keyup", validarFormulario);
     input.addEventListener("blur", validarFormulario);
-    input.addEventListener("click", validarFormulario);
   });
   // Ejecuto las funcionas si presiona una tecla o sale del campo.
   select.addEventListener("change", validarFormulario);
-  select.addEventListener("click", validarFormulario);
   textarea.addEventListener("keyup", validarFormulario);
-  textarea.addEventListener("click", validarFormulario);
   textarea.addEventListener("blur", validarFormulario);
 
   formulario.addEventListener("submit", (e) => {
