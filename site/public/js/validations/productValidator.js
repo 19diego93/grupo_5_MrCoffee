@@ -137,6 +137,7 @@ window.addEventListener("load", function () {
   });
   // Ejecuto las funcionas si presiona una tecla o sale del campo.
   select.addEventListener("change", validarFormulario);
+  select.addEventListener("click", validarFormulario);
   textarea.addEventListener("keyup", validarFormulario);
   textarea.addEventListener("blur", validarFormulario);
 

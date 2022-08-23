@@ -178,7 +178,7 @@ window.addEventListener("load", () => {
         error.classList.add("displayNone");
       });
 
-      document.querySelector(`.${campo}Upper`).classList.add("displayBlock");
+      document.querySelector(`.${campo}upper`).classList.add("displayBlock");
       inputColor.classList.remove("is-valid");
       inputColor.classList.add("is-invalid");
       inputColor.classList.remove("is-valid-icon");
