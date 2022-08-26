@@ -24,92 +24,103 @@
         </article>
       </section>
       <!--! Destacados -->
-      <section class="conteiner-featured">
-        <article class="prueba">
-          <h2>DESTACADOS</h2>
-        </article>
-        <div class="container-products-top">
-          <div class="products">
-            <!--! Productos - CAFE -->
-            <% for(let i=0; i < coffee.length; i++){ %>
-            <article class="product-content">
-              <div class="details">
-                <div class="image">
-                  <img
-                    src="/img/products/<%= coffee[i].image%>"
-                    alt="imagen del producto"
-                  />
-                </div>
-                <div class="product-descriptions">
-                  <span class="product-Name"><%= coffee[i].name%></span>
-                  <span class="product-Price">$ <%= coffee[i].price%></span>
-                </div>
-                <% if(coffee[i].rating > 0) { %>
-                <div class="product-rating">
-                  <% let rating = Math.round(coffee[i].rating) %> <% for(let e =
-                  0; e < rating ; e++) { %>
-                  <i class="fas fa-star"></i>
-                  <% } %> <% let starOver = 5 - rating %> <% for(let a = 0; a <
-                  starOver; a++) { %>
-                  <i class="far fa-star"></i>
-                  <% } %>
-                </div>
-                <% } %>
-                <div class="product-buttons">
-                  <a href="/products/cart/<%= coffee[i].id%>">
-                    <button class="product-buy">Comprar</button>
-                  </a>
-                  <a
-                    class="product-info"
-                    href="/products/detail/<%= coffee[i].id%>"
-                  >
-                    Informacion
-                  </a>
-                </div>
-              </div>
-            </article>
-            <% }%>
-            <!--! Productos - Comida -->
-            <% for(let i=0; i < food.length; i++){ %>
-            <article class="product-content">
-              <div class="details">
-                <div class="image">
-                  <img
-                    src="/img/products/<%= food[i].image%>"
-                    alt="imagen del producto"
-                  />
-                </div>
-                <div class="product-descriptions">
-                  <span class="product-Name"><%= food[i].name%></span>
-                  <span class="product-Price">$<%= food[i].price%>0</span>
-                </div>
-                <% if(food[i].rating > 0) { %>
-                <div class="product-rating">
-                  <% let rating = Math.round(food[i].rating) %> <% for(let e =
-                  0; e < rating ; e++) { %>
-                  <i class="fas fa-star"></i>
-                  <% } %> <% let starOver = 5 - rating %> <% for(let a = 0; a <
-                  starOver; a++) { %>
-                  <i class="far fa-star"></i>
-                  <% } %>
-                </div>
-                <% } %>
-                <div class="product-buttons">
-                  <a href="/products/cart/<%= food[i].id%>">
-                    <button class="product-buy">Comprar</button>
-                  </a>
-                  <a
-                    class="product-info"
-                    href="/products/detail/<%= food[i].id%>"
-                  >
-                    Informacion
-                  </a>
-                </div>
-              </div>
-            </article>
-            <% }%>
-          </div>
+      <section class="section-products">
+        <div class="section-product-title">
+          <h3>DESTACADOS</h3>
         </div>
+        <% if(locals && locals.coffee) { %>
+        <div class="products">
+          <% coffee.forEach((product) => { %>
+          <article class="product-container">
+            <a href="/products/detail/<%=product.id%>">
+              <div class="product-image">
+                <picture>
+                  <img src="/img/products/<%= product.image %>" alt="" />
+                  <div class="product-stars">
+                    <% let rating = Math.round(product.rating) %> <% for(let e =
+                    0; e < rating ; e++) { %>
+                    <i class="fas fa-star"></i>
+                    <% } %> <% let starOver = 5 - rating %> <% for(let a = 0; a
+                    < starOver; a++) { %>
+                    <i class="far fa-star"></i>
+                    <% } %>
+                  </div>
+                </picture>
+              </div>
+              <div class="product-descriptions">
+                <span class="product-Name"><%=product.name%></span>
+                <% if(product.offer > 0) { %>
+                <div>
+                  <% let newPrice=((product.price * product.offer /
+                  100).toFixed(2))%>
+                  <span class="product-Price"
+                    >$<%=(product.price - newPrice).toFixed(2)%></span
+                  >
+                  <span class="product-offer"><%=product.offer%>%</span>
+                </div>
+                <% } else { %>
+                <span class="product-Price">$<%=product.price%></span>
+                <% } %>
+              </div>
+            </a>
+          </article>
+          <% }) %>
+        </div>
+        <% } else { %>
+        <div class="product-error">
+          <h2>No existen productos en la base de datos.</h2>
+        </div>
+        <% } %> <% if(locals && !locals.coffee.length > 0) { %>
+        <div class="product-error">
+          <h3>No hay productos que coincidan con esa búsqueda.</h3>
+        </div>
+        <% } %> <% if(locals && locals.food) { %>
+        <div class="products">
+          <% food.forEach((product) => { %>
+          <article class="product-container">
+            <a href="/products/detail/<%=product.id%>">
+              <div class="product-image">
+                <picture>
+                  <img src="/img/products/<%= product.image %>" alt="" />
+                  <div class="product-stars">
+                    <% let rating = Math.round(product.rating) %> <% for(let e =
+                    0; e < rating ; e++) { %>
+                    <i class="fas fa-star"></i>
+                    <% } %> <% let starOver = 5 - rating %> <% for(let a = 0; a
+                    < starOver; a++) { %>
+                    <i class="far fa-star"></i>
+                    <% } %>
+                  </div>
+                </picture>
+              </div>
+              <div class="product-descriptions">
+                <span class="product-Name"><%=product.name%></span>
+                <% if(product.offer > 0) { %>
+                <div>
+                  <% let newPrice=((product.price * product.offer /
+                  100).toFixed(2))%>
+                  <span class="product-Price"
+                    >$<%=(product.price - newPrice).toFixed(2)%></span
+                  >
+                  <span class="product-offer"><%=product.offer%>%</span>
+                </div>
+                <% } else { %>
+                <span class="product-Price">$<%=product.price%></span>
+                <% } %>
+              </div>
+            </a>
+          </article>
+          <% }) %>
+        </div>
+        <% } else { %>
+        <div class="product-error">
+          <h2>No existen productos en la base de datos.</h2>
+        </div>
+        <% } %> <% if(locals && !locals.food.length > 0) { %>
+        <div class="product-error">
+          <h3>No hay productos que coincidan con esa búsqueda.</h3>
+        </div>
+        <% } %>
       </section>
     </main>
     <%- include('./partials/footer') %>

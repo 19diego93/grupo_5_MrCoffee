@@ -8,6 +8,7 @@ window.addEventListener("load", function () {
     nombre: /^[a-zA-ZÀ-ÿ\s]+$/, // Letras y espacios, pueden llevar acentos.
     numero: /^[0-9]+$/, // Valido solo numeros.
     category: /^[a-zA-Z]+$/,
+    description: /^[^&{}*]+$/,
   };
 
   const campos = {
@@ -38,7 +39,13 @@ window.addEventListener("load", function () {
         validation(expresiones.category, e.target.value, "category", 1, 40);
         break;
       case "description":
-        validation(expresiones.nombre, e.target.value, "description", 20, 120);
+        validation(
+          expresiones.description,
+          e.target.value,
+          "description",
+          20,
+          120
+        );
         break;
     }
   };

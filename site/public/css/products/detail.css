@@ -59,14 +59,13 @@ main {
 .detail-container-img {
   flex-shrink: 0;
   width: 100%;
-  max-width: 100%;
   padding-right: calc(1.5rem * 0.5);
   padding-left: calc(1.5rem * 0.5);
 }
 .detail-container-img picture {
-  display: block;
   width: 100%;
   height: 100%;
+  display: block;
   overflow: hidden;
   position: relative;
   border-radius: 10px;
@@ -98,9 +97,16 @@ main {
   pointer-events: none;
 }
 .container-detail-price {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: 3rem;
   pointer-events: none;
+}
+.container-detail-price .offer {
+  color: var(--color-Verde-1);
+}
+.oldPrice {
+  font-size: 1rem;
+  text-decoration: line-through;
 }
 .detail-description {
   font-size: 16px;
@@ -206,8 +212,17 @@ main {
     flex: 0 0 auto;
     width: 50%;
   }
-  .detail-container-img img {
-    margin-bottom: 0;
+  .detail-container-img picture {
+    max-width: 400px;
+    max-height: 400px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .detail-container-img picture img {
+    margin-bottom: 0px;
   }
   .detail-container-attributes {
     flex: 0 0 auto;
