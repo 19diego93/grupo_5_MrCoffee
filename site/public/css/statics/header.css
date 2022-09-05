@@ -91,7 +91,6 @@ main {
   font-size: 24px;
 }
 .nav ul li a {
-  text-decoration: none;
   transition: 0.1s;
 }
 .nav ul li a:hover {
@@ -102,7 +101,6 @@ main {
 }
 #search {
   color: var(--color-Negro-1);
-  text-decoration: none;
   transition: 0.1s;
   border: none;
   background-color: transparent;

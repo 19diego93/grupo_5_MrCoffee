@@ -36,7 +36,6 @@ main#main-error figure img {
 main#main-error a {
   font-size: 1.5rem;
   margin: 1rem 0;
-  text-decoration: none;
   color: var(--color-Negro-1);
 }
 

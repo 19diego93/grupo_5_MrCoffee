@@ -43,7 +43,6 @@ main {
   margin: 20px 10px;
 }
 #breadcrumb div a {
-  text-decoration: none;
   color: #000;
 }
 .page-title,

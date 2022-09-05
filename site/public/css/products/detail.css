@@ -24,7 +24,6 @@ main {
   font-size: 14px;
 }
 #breadcrumb div a {
-  text-decoration: none;
   color: var(--color-Negro-1);
 }
 .page-title {

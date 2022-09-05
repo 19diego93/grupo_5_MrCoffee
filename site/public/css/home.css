@@ -74,7 +74,6 @@ main {
   margin-top: 20px;
   border: 2px solid var(--color-Blanco-1);
   color: var(--color-Blanco-1);
-  text-decoration: none;
 }
 .boton-descubrir:hover {
   background-color: var(--color-Marron-1);

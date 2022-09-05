@@ -34,43 +34,50 @@ footer {
   text-align: center;
 }
 .container-email {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 20px;
+  display: grid;
+  grid-template-columns: 70% 40px;
+  justify-content: center;
 }
-.container-email #newsletter-input {
+.inputEmail-Footer {
+  position: relative;
+  width: 100%;
+}
+#newsletter-input {
+  width: 100%;
+  padding: 5px 5px 5px 25px;
   border: none;
   outline: 0;
-  padding: 10px;
-  width: 60%;
   font-size: 1rem;
 }
-.email-icon {
-  background-color: #fff;
-  pointer-events: none;
-  border: none;
-  padding: 10px;
-}
-.email-icon i {
-  font-size: 1rem;
-}
-#email-send {
-  background-color: #76402e;
+.envelope-footer {
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  font-size: 20px;
   cursor: pointer;
-  border: none;
+  color: #000;
+}
+.button-submit-email {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  background-color: #76402e;
   padding: 11px;
 }
-#email-send:hover {
+.button-submit-email:hover {
   background-color: #4b2a1e;
 }
-#email-send input {
+.button-submit-email input {
   display: none;
   font-family: inherit;
   -webkit-appearance: none;
 }
-#email-send i {
-  font-size: 1rem;
+.paper-plane-footer {
+  position: absolute;
+  font-size: 20px;
+  color: #fff;
+  top: 5px;
 }
 .Container-Redes {
   display: flex;
@@ -138,7 +145,6 @@ footer h5 {
   margin-bottom: 15px;
 }
 .links li a {
-  text-decoration: none;
   color: #fff;
 }
 .Container-Buttons {
@@ -161,7 +167,6 @@ footer h5 {
   transition: 0.3s;
   display: flex;
   justify-content: center;
-  text-decoration: none;
 }
 .Container-Buttons a:hover {
   border: solid 1px #00b7ff;
@@ -190,7 +195,6 @@ footer h5 {
   pointer-events: none;
 }
 .Container-end p a {
-  text-decoration: none;
   color: #fff;
   transition: 0.3s;
 }
@@ -209,27 +213,24 @@ footer h5 {
   .recibi-noticias {
     font-size: 28px;
   }
+  #newsletter-input {
+    padding: 10px 10px 10px 30px;
+    font-size: 1.2rem;
+  }
+  .envelope-footer {
+    top: 8px;
+    font-size: 25px;
+  }
+  .paper-plane-footer {
+    font-size: 25px;
+    top: 8px;
+    left: 6px;
+  }
 }
 @media (min-width: 768px) {
   /*! Laptops */
   footer {
     padding-bottom: 0px;
-  }
-  .container-email #newsletter-input {
-    width: 60%;
-    font-size: 1.9rem;
-  }
-  .email-icon {
-    padding: 12px;
-  }
-  .email-icon i {
-    font-size: 2rem;
-  }
-  #email-send {
-    padding: 12px;
-  }
-  #email-send i {
-    font-size: 2rem;
   }
   .Container-links {
     width: 535px;
@@ -259,9 +260,6 @@ footer h5 {
 }
 @media (min-width: 1200px) {
   /*! PC */
-  .container-email #newsletter-input {
-    width: 50%;
-  }
   .Container-Buttons {
     flex-direction: column;
   }
@@ -272,5 +270,22 @@ footer h5 {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .container-email {
+    grid-template-columns: 50% 50px;
+  }
+  #newsletter-input {
+    padding: 15px 15px 15px 40px;
+    font-size: 1.2rem;
+  }
+  .envelope-footer {
+    top: 12px;
+    left: 8px;
+    font-size: 30px;
+  }
+  .paper-plane-footer {
+    top: 12px;
+    left: 10px;
+    font-size: 30px;
   }
 }

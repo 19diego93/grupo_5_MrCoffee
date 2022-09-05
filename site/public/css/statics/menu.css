@@ -16,7 +16,6 @@
 }
 
 .nav__link-a {
-  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 1em;
@@ -29,7 +28,6 @@
   color: var(--color-Gris-1);
   display: block;
   padding: 15px 0;
-  text-decoration: none;
 }
 .nav__glow,
 .nav__link,

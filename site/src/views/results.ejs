@@ -27,8 +27,8 @@
         <% if(locals && locals.results) { %>
         <div class="products">
           <% results.forEach((product) => { %>
-          <article class="product-container">
-            <a href="/products/detail/<%=product.id%>">
+          <a href="/products/detail/<%=product.id%>">
+            <article class="product-container">
               <div class="product-image">
                 <picture>
                   <img src="/img/products/<%= product.image %>" alt="" />
@@ -58,8 +58,8 @@
                 <span class="product-Price">$<%=product.price%></span>
                 <% } %>
               </div>
-            </a>
-          </article>
+            </article>
+          </a>
           <% }) %>
         </div>
         <% } else { %>

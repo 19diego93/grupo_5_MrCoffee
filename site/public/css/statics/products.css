@@ -26,6 +26,9 @@
   padding: 10px;
   border-radius: 10px;
 }
+.product-container:hover {
+  box-shadow: 1px 0px 10px 1px var(--color-Blanco-3);
+}
 .product-image {
   width: 100%;
 }
