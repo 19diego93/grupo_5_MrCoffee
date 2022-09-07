@@ -253,6 +253,19 @@ main {
   .nav ul li {
     font-size: 20px;
   }
+  .nav ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #urlCart {
+    position: relative;
+  }
+  #urlCart p {
+    position: absolute;
+    bottom: 10px;
+    left: 25px;
+  }
   .nav ul li a p {
     display: block;
   }
@@ -289,9 +302,6 @@ main {
     display: block;
   }
   .nav ul li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: var(--color-Negro-1);
   }
   #search {
@@ -302,7 +312,6 @@ main {
   }
   .nav ul li a i {
     display: flex;
-    margin-right: 10px;
   }
   #search i {
     display: flex;

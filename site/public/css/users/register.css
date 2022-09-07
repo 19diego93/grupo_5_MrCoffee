@@ -12,12 +12,12 @@
 .nav ul li a {
   color: var(--color-Negro-1);
 }
+
 /*! Main */
 .contenedor-register {
   display: block;
   width: 100%;
   background-color: var(--color-Blanco-2);
-  padding: 100px 0px;
 }
 /* !Contenedor de register y titulo */
 .contenedor-register-titulo {
@@ -58,7 +58,7 @@
 .img-perfil {
   width: 150px;
   height: 150px;
-  padding: 20px;
+  padding: 10px;
   background-color: #fff;
   border-radius: 50%;
 }
@@ -230,9 +230,6 @@
 }
 @media (min-width: 460px) {
   /*! Tablets */
-  .contenedor-register {
-    padding: 150px 0px;
-  }
   .contenedor-form-boton {
     max-width: 80%;
   }

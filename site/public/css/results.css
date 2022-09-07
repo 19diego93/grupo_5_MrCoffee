@@ -16,6 +16,12 @@ main {
 .nav ul li a {
   color: var(--color-Negro-1);
 }
+#urlHome {
+  color: var(--color-Negro-1);
+}
+#search {
+  color: var(--color-Marron-1);
+}
 /* ! */
 .products-title {
   color: var(--color-Rojo-1);

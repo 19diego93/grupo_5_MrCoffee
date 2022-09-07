@@ -3,30 +3,95 @@
   <head>
     <%- include('../partials/head') %>
     <!--! CSS Products -->
-    <link rel="stylesheet" href="/css/products/productCart.css" />
+    <link rel="stylesheet" href="/css/products/Cart.css" />
   </head>
   <body class="todo-carro">
     <%- include('../partials/header.ejs') %>
 
     <main class="contenedor-main-carrito">
-      <h1 class="titulo-pagina-carrito" style="pointer-events: none">
-        Carrito
-      </h1>
-      <div class="cart-section-flex">
-        <section>
-          <!-- producto -->
-
-          <!-- Checkout -->
-          <article class="checkout-total">
-            <form action="form-checkout">
-              <p class="text-total" style="pointer-events: none">Total: $200</p>
-              <button name="checkout" value="" style="cursor: pointer">
-                Página de pago
-              </button>
-            </form>
-          </article>
-        </section>
-      </div>
+      <section class="contenedor-cart pc-list-cart">
+        <!--! Cantidad de Artículos -->
+        <article class="cart-border-botom">
+          <h1>Resumen de compra</h1>
+        </article>
+        <!--! productos -->
+        <article class="datail-cart-product cart-border-botom">
+          <div class="container-detail-cart">
+            <div class="img-product-cart">
+              <picture>
+                <img src="/img/products/1.webp" alt="" />
+              </picture>
+            </div>
+            <div class="cart-name-price">
+              <span class="cart-product-name">Nombre</span>
+              <span class="cart-product-price">$0</span>
+            </div>
+          </div>
+          <div class="container-delete-quantity">
+            <button id="cart-borrar-producto">
+              <i class="fas fa-trash"></i>
+            </button>
+            <div class="container-quantity-cart">
+              <button><i class="fas fa-minus"></i></button>
+              <input type="number" value="11111" />
+              <button><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+        <article class="datail-cart-product cart-border-botom">
+          <div class="container-detail-cart">
+            <div class="img-product-cart">
+              <picture>
+                <img src="/img/products/1.webp" alt="" />
+              </picture>
+            </div>
+            <div class="cart-name-price">
+              <span class="cart-product-name">Nombre</span>
+              <span class="cart-product-price">$0</span>
+            </div>
+          </div>
+          <div class="container-delete-quantity">
+            <button id="cart-borrar-producto">
+              <i class="fas fa-trash"></i>
+            </button>
+            <div class="container-quantity-cart">
+              <button><i class="fas fa-minus"></i></button>
+              <input type="number" value="11111" />
+              <button><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </article>
+        <!--! Total -->
+        <article class="cart-total-amount">
+          <h2>Total:</h2>
+          <p>$0</p>
+        </article>
+      </section>
+      <section class="contenedor-cart pc-checkout">
+        <!-- Checkout -->
+        <article class="checkout-total">
+          <h3>Pantalla de compra</h3>
+          <form action="">
+            <div class="Metodos-de-pago">
+              <label for="Tarjeta-de-credito">
+                <input type="radio" name="TipoDePago" id="Tarjeta-de-credito" />
+                <p>Tarjeta de crédito</p>
+              </label>
+              <label for="Paypal">
+                <input type="radio" name="TipoDePago" id="Paypal" />
+                <p>Paypal</p>
+              </label>
+              <label for="Mercado-pago">
+                <input type="radio" name="TipoDePago" id="Mercado-pago" />
+                <p>Mercado pago</p>
+              </label>
+            </div>
+            <div class="form-checkout">
+              <input type="submit" class="payment" value="Continuar"></input>
+            </div>
+          </form>
+        </article>
+      </section>
     </main>
     <%- include('../partials/footer') %>
   </body>

@@ -30,7 +30,8 @@
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.16",
     "sequelize": "^6.21.3",
-    "sqlite3": "^5.0.10"
+    "sqlite3": "^5.0.10",
+    "toastr": "^2.1.4"
   },
   "devDependencies": {
     "prettier": "2.6.2"
