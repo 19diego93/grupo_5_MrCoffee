@@ -11,88 +11,59 @@
     <main class="contenedor-main-carrito">
       <section class="contenedor-cart pc-list-cart">
         <!--! Cantidad de Artículos -->
-        <article class="cart-border-botom">
+        <article class="title-cart">
           <h1>Resumen de compra</h1>
         </article>
-        <!--! productos -->
-        <article class="datail-cart-product cart-border-botom">
-          <div class="container-detail-cart">
-            <div class="img-product-cart">
-              <picture>
-                <img src="/img/products/1.webp" alt="" />
-              </picture>
-            </div>
-            <div class="cart-name-price">
-              <span class="cart-product-name">Nombre</span>
-              <span class="cart-product-price">$0</span>
-            </div>
-          </div>
-          <div class="container-delete-quantity">
-            <button id="cart-borrar-producto">
-              <i class="fas fa-trash"></i>
-            </button>
-            <div class="container-quantity-cart">
-              <button><i class="fas fa-minus"></i></button>
-              <input type="number" value="11111" />
-              <button><i class="fas fa-plus"></i></button>
-            </div>
-          </div>
-        </article>
-        <article class="datail-cart-product cart-border-botom">
-          <div class="container-detail-cart">
-            <div class="img-product-cart">
-              <picture>
-                <img src="/img/products/1.webp" alt="" />
-              </picture>
-            </div>
-            <div class="cart-name-price">
-              <span class="cart-product-name">Nombre</span>
-              <span class="cart-product-price">$0</span>
-            </div>
-          </div>
-          <div class="container-delete-quantity">
-            <button id="cart-borrar-producto">
-              <i class="fas fa-trash"></i>
-            </button>
-            <div class="container-quantity-cart">
-              <button><i class="fas fa-minus"></i></button>
-              <input type="number" value="11111" />
-              <button><i class="fas fa-plus"></i></button>
-            </div>
-          </div>
-        </article>
+        <!--! Listado de productos -->
+        <div id="cartRows"></div>
         <!--! Total -->
-        <article class="cart-total-amount">
-          <h2>Total:</h2>
-          <p>$0</p>
-        </article>
       </section>
-      <section class="contenedor-cart pc-checkout">
+      <section class="tablet-flex-end">
         <!-- Checkout -->
-        <article class="checkout-total">
-          <h3>Pantalla de compra</h3>
-          <form action="">
-            <div class="Metodos-de-pago">
-              <label for="Tarjeta-de-credito">
-                <input type="radio" name="TipoDePago" id="Tarjeta-de-credito" />
-                <p>Tarjeta de crédito</p>
-              </label>
-              <label for="Paypal">
-                <input type="radio" name="TipoDePago" id="Paypal" />
-                <p>Paypal</p>
-              </label>
-              <label for="Mercado-pago">
-                <input type="radio" name="TipoDePago" id="Mercado-pago" />
-                <p>Mercado pago</p>
-              </label>
-            </div>
+        <div class="contenedor-cart pc-checkout">
+          <article class="checkout-total">
+            <h3>Pantalla de compra</h3>
+            <form action="">
+              <div class="Metodos-de-pago">
+                <label for="Tarjeta-de-credito">
+                  <input
+                    type="radio"
+                    name="TipoDePago"
+                    id="Tarjeta-de-credito"
+                  />
+                  <p>Tarjeta de crédito</p>
+                </label>
+                <label for="Paypal">
+                  <input type="radio" name="TipoDePago" id="Paypal" required />
+                  <p>Paypal</p>
+                </label>
+                <label for="Mercado-pago">
+                  <input
+                    type="radio"
+                    name="TipoDePago"
+                    id="Mercado-pago"
+                    required
+                  />
+                  <p>Mercado pago</p>
+                </label>
+              </div>
+              <div class="cart-total-amount" id="totalAmount"></div>
+              <div class="form-checkout">
+                <input type="submit" class="payment" value="Comprar" required />
+              </div>
+            </form>
+          </article>
+        </div>
+        <div class="contenedor-cart pc-vaciar">
+          <article class="checkout-total">
             <div class="form-checkout">
-              <input type="submit" class="payment" value="Continuar"></input>
+              <button class="payment" id="VaciarCarrito">Vaciar carrito</button>
             </div>
-          </form>
-        </article>
+          </article>
+        </div>
       </section>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/carrito/cart.js"></script>
   </body>
 </html>

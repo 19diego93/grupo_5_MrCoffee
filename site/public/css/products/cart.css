@@ -18,7 +18,7 @@
 /*! Main */
 .contenedor-main-carrito {
   background-color: var(--color-Blanco-2);
-  padding: 4px;
+  padding: 40px 4px;
 }
 /* !contenedor products */
 .contenedor-cart {
@@ -33,15 +33,28 @@
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.4);
   border-bottom: 2px solid var(--color-Marron-2);
 }
+.ErrorCartRows {
+  margin: 25px 0px;
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  color: var(--color-Rojo-2);
+}
 .contenedor-cart article {
-  padding: 10px;
+  padding: 5px;
   width: 100%;
 }
 .cart-border-botom {
-  border-bottom: 1px solid #21252960;
-  font-size: 16px;
+  border-top: 1px solid #21252960;
+  font-size: 14px;
 }
-.cart-border-botom h1 {
+#cartRows {
+  width: 100%;
+}
+.title-cart {
+  font-size: 14px;
+}
+.title-cart h1 {
   pointer-events: none;
 }
 .datail-cart-product {
@@ -76,8 +89,14 @@
 }
 #cart-borrar-producto {
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 5px;
+  right: 5px;
+  color: var(--color-Blanco-1);
+  background-color: var(--color-Rojo-2);
+  transition: 0.2s;
+}
+#cart-borrar-producto:hover {
+  background-color: var(--color-Rojo-1);
 }
 .container-quantity-cart {
   border-radius: 50px;
@@ -112,24 +131,24 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: 0.2s;
 }
 .container-delete-quantity button:hover {
-  color: var(--color-Celeste-1);
+  color: var(--color-Blanco-1);
+  background-color: var(--color-Azul-1);
 }
 .cart-total-amount {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.cart-total-amount h2 {
-  font-size: 16px;
-  pointer-events: none;
+  margin: 20px 0px;
 }
 .cart-total-amount p {
   font-size: 16px;
   pointer-events: none;
 }
-.checkout-total h3 {
+.checkout-total h2 {
+  font-size: 18px;
   pointer-events: none;
 }
 .Metodos-de-pago {
@@ -139,10 +158,16 @@
   display: flex;
   align-items: center;
   margin: 10px 0px;
-  background-color: #f0f0f2;
+  color: var(--color-Azul-1);
+  background-color: var(--color-Blanco-3);
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
+  transition: 0.2s;
+}
+.Metodos-de-pago label:hover {
+  background-color: var(--color-Azul-1);
+  color: var(--color-Blanco-2);
 }
 .Metodos-de-pago label p {
   padding-left: 10px;
@@ -157,7 +182,6 @@
   line-height: 1.5;
   text-align: center;
   background-color: transparent;
-  margin-top: 20px;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   transition: 0.4s;
@@ -169,10 +193,27 @@
   background-color: var(--color-Azul-1);
   border-color: var(--color-Azul-1);
 }
+.pc-vaciar {
+  margin: 50px 0px;
+  padding-top: 0;
+}
+.pc-vaciar article div button {
+  background-color: var(--color-Rojo-2);
+  color: var(--color-Blanco-2);
+  transition: 0.2s;
+  border: none;
+}
+.pc-vaciar article div button:hover {
+  background-color: var(--color-Rojo-1);
+}
+
 @media (min-width: 460px) {
   /*! Tablets */
   .contenedor-main-carrito {
-    padding: 20px;
+    padding: 40px 20px;
+  }
+  .ErrorCartRows {
+    font-size: 18px;
   }
   .contenedor-cart article {
     padding: 15px;
@@ -223,9 +264,6 @@
     height: 44px;
     bottom: 10px;
   }
-  .cart-total-amount h2 {
-    font-size: 20px;
-  }
   .cart-total-amount p {
     font-size: 20px;
   }
@@ -238,11 +276,40 @@
     justify-content: center;
     align-items: center;
   }
+  .title-cart {
+    font-size: 20px;
+  }
+  .checkout-total {
+    font-size: 20px;
+  }
+  .contenedor-main-carrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .ErrorCartRows {
+    font-size: 22px;
+  }
+  .pc-list-cart {
+    width: 700px;
+  }
+  .tablet-flex-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pc-checkout {
+    width: 700px;
+  }
+  .pc-vaciar {
+    width: 300px;
+  }
   .payment {
     max-width: 400px;
-  }
-  .cart-total-amount h2 {
-    font-size: 28px;
+    font-size: 18px;
   }
   .cart-total-amount p {
     font-size: 28px;
@@ -255,6 +322,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
   }
   .pc-list-cart {
     width: 800px;
@@ -263,7 +332,10 @@
   }
   .pc-checkout {
     width: 300px;
-    height: 100%;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 20px;
+  }
+  .pc-vaciar {
+    width: 300px;
+    margin: 30px 0 0 20px;
   }
 }
