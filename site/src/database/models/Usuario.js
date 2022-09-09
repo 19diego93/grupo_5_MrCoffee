@@ -4,10 +4,9 @@ module.exports = (sequelize, dataTypes) => {
     id: {
       type: dataTypes.INTEGER(5),
       primaryKey: true,
-      allowNull: false,
       autoIncrement: true,
+      allowNull: false,
     },
-
     first_name: {
       type: dataTypes.STRING(40),
       allowNull: false,
@@ -29,11 +28,12 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     id_category_U:{
-      type: dataTypes.BIGINT(5),
-      allowNull: true,
+      type: dataTypes.INTEGER(5),
+      allowNull: false,
     },
   };
   let config = {
+    TableName: "Usuario",
     timestamps: false,
     freezeTableName: true,
   };
@@ -43,6 +43,11 @@ module.exports = (sequelize, dataTypes) => {
     Usuario.belongsTo(models.User_category, {
       as: "User_category",
       foreignKey: "id_category_U",
+    });
+
+    Usuario.hasMany(models.Venta, {
+      as: "Venta",
+      foreignKey: "user_id",
     });
   };
 

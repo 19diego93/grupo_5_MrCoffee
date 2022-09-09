@@ -23,18 +23,20 @@
         <div class="contenedor-cart pc-checkout">
           <article class="checkout-total">
             <h3>Pantalla de compra</h3>
-            <form action="">
-              <div class="Metodos-de-pago">
-                <label for="Tarjeta-de-credito">
+            <form id="checkoutCart">
+              <div class="Metodos-de-pago" id="MetodosPago" >
+                <label for="Tarjeta-de-credito" >
                   <input
                     type="radio"
                     name="TipoDePago"
                     id="Tarjeta-de-credito"
+                    value="TarjetaCredito"
+                    required
                   />
                   <p>Tarjeta de crédito</p>
                 </label>
                 <label for="Paypal">
-                  <input type="radio" name="TipoDePago" id="Paypal" required />
+                  <input type="radio" name="TipoDePago" id="Paypal" value="Paypal" required />
                   <p>Paypal</p>
                 </label>
                 <label for="Mercado-pago">
@@ -42,14 +44,25 @@
                     type="radio"
                     name="TipoDePago"
                     id="Mercado-pago"
+                    value="MercadoPago"
                     required
                   />
                   <p>Mercado pago</p>
                 </label>
+                <label for="Efectivo">
+                  <input
+                    type="radio"
+                    name="TipoDePago"
+                    id="Efectivo"
+                    value="Efectivo"
+                    required
+                  />
+                  <p>Efectivo</p>
+                </label>
               </div>
               <div class="cart-total-amount" id="totalAmount"></div>
               <div class="form-checkout">
-                <input type="submit" class="payment" value="Comprar" required />
+                <input type="submit" class="payment" value="Comprar" id="comprar" required />
               </div>
             </form>
           </article>

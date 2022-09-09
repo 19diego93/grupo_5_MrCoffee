@@ -40,6 +40,9 @@ const usersController = {
             req.session.userLogged = { ...user };
 
             delete req.session.userLogged.dataValues.password;
+            delete req.session.userLogged._previousDataValues.password;
+            req.session.cookie.expires = new Date(Date.now() + 3600000 * 5)
+            req.session.cookie.maxAge = 3600000 * 5
 
             if (req.body.recordame) {
               res.cookie("recordame", req.body.email, {

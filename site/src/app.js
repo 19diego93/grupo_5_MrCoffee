@@ -42,7 +42,7 @@ app.use("/", mainRouter);
 app.use(usersRouter);
 app.use(adminRouter);
 app.use("/products", productsRouter);
-app.use(ApiRouter);
+app.use("/api", ApiRouter);
 
 //! 404
 // app.use((req, res, next) => {

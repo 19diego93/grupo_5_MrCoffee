@@ -1,5 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
   let alias = "Product"; // esto debería estar en singular
+
   let cols = {
     id: {
       type: dataTypes.BIGINT(13),
@@ -7,7 +8,6 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
       autoIncrement: false,
     },
-
     name: {
       type: dataTypes.STRING(40),
       allowNull: false,
@@ -36,7 +36,12 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.DECIMAL(2, 1),
       allowNull: true,
     },
+    id_categoryP: {
+      type: dataTypes.INTEGER(5),
+      allowNull: false,
+    }
   };
+
   let config = {
     timestamps: false,
   };
@@ -47,6 +52,14 @@ module.exports = (sequelize, dataTypes) => {
       // models.Product_category -> Product_category es el valor de alias en Product_category.js
       as: "product_category",
       foreignKey: "id_categoryP",
+    });
+
+    Product.belongsToMany(models.Venta, {
+      as: "Venta",
+      through: "cart_item",
+      foreignKey: "product_id",
+      otherKey: "ventas_id",
+      timestamps: false,
     });
   };
 

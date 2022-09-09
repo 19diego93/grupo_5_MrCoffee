@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-08-2022 a las 03:01:38
+-- Tiempo de generación: 09-09-2022 a las 04:41:56
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -37,24 +37,11 @@ CREATE TABLE IF NOT EXISTS `cart_item` (
   `nombre` varchar(40) NOT NULL,
   `categoria` varchar(15) NOT NULL,
   `imagen` varchar(30) NOT NULL,
-  `product_id` int(13) DEFAULT NULL,
-  `ventas_id` int(5) DEFAULT NULL,
+  `product_id` int(13) NOT NULL,
+  `ventas_id` int(5) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `cart_item_product_id_foreign` (`product_id`),
   KEY `cart_item_ventas_id_foreign` (`ventas_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `product_category`
---
-
-DROP TABLE IF EXISTS `product_category`;
-CREATE TABLE IF NOT EXISTS `product_category` (
-  `id` int(5) NOT NULL AUTO_INCREMENT,
-  `name` varchar(15) NOT NULL,
-  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -76,6 +63,19 @@ CREATE TABLE IF NOT EXISTS `products` (
   `id_categoryP` int(5) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `product_id_categoryP_foreign` (`id_categoryP`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `product_category`
+--
+
+DROP TABLE IF EXISTS `product_category`;
+CREATE TABLE IF NOT EXISTS `product_category` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `name` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -113,17 +113,17 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ventas`
+-- Estructura de tabla para la tabla `venta`
 --
 
-DROP TABLE IF EXISTS `ventas`;
-CREATE TABLE IF NOT EXISTS `ventas` (
+DROP TABLE IF EXISTS `venta`;
+CREATE TABLE IF NOT EXISTS `venta` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
-  `fecha` datetime NOT NULL,
-  `estado` varchar(15) NOT NULL,
-  `total` decimal(12,2) NOT NULL,
-  `cobrado` datetime NOT NULL,
-  `user_id` int(5) DEFAULT NULL,
+  `cobrado` varchar(60) NOT NULL,
+  `cantidad` int(15) NOT NULL,
+  `total` decimal(14,2) NOT NULL,
+  `metodoDePago` varchar(25) NOT NULL,
+  `user_id` int(5) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `ventas_user_id_foreign` (`user_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `ventas` (
 --
 ALTER TABLE `cart_item`
   ADD CONSTRAINT `cart_item_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `cart_item_ibfk_2` FOREIGN KEY (`ventas_id`) REFERENCES `ventas` (`id`);
+  ADD CONSTRAINT `cart_item_ibfk_2` FOREIGN KEY (`ventas_id`) REFERENCES `venta` (`id`);
 
 --
 -- Filtros para la tabla `products`
@@ -152,10 +152,10 @@ ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id_category_U`) REFERENCES `user_category` (`id`);
 
 --
--- Filtros para la tabla `ventas`
+-- Filtros para la tabla `venta`
 --
-ALTER TABLE `ventas`
-  ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuario` (`id`);
+ALTER TABLE `venta`
+  ADD CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuario` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

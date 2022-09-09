@@ -64,7 +64,7 @@ window.addEventListener("load", () => {
   let carrito = JSON.parse(localStorage.carrito);
   let products = [];
 
-  carrito.forEach((item, index) => {
+  carrito.forEach((item) => {
     fetch(`/api/product/${item.id}`)
       .then((res) => res.json())
       .then((product) => {
@@ -99,10 +99,14 @@ window.addEventListener("load", () => {
         `;
           products.push({
             productId: product.id,
-            name: product.name,
             price: parseFloat(nuevoPrecio, 2),
-            stock: product.stock,
             quantity: item.quantity,
+            name: product.name,
+            categoria: product.id_categoryP,
+            imagen: product.image,
+            stock: product.stock,
+            originalPrice: product.price,
+            total: price,
           });
         }
       })
@@ -274,5 +278,55 @@ window.addEventListener("load", () => {
       });
   });
 
-  
+  let formCheckout = document.querySelector("#checkoutCart")
+
+  let writeDbCart_item = []
+
+  products.forEach(product => {
+    writeDbCart_item.push({
+      precio_venta: product.price,
+      articulos: product.quantity,
+      nombre: product.name,
+      categoria: product.categoria,
+      imagen: product.imagen,
+      product_id: product.productId,
+    })
+  })
+
+  formCheckout.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    const formData = {
+      writeDbCart_item: writeDbCart_item,
+      cobrado: new Date().toLocaleDateString('es-mx', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }),
+      cantidad: productosEnElCarrito(),
+      total: calcularTotal(products),
+      metodoDePago: formCheckout.TipoDePago.value,
+    };
+    
+    fetch("/api/checkout", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.ok) {
+        //borro el carrito
+        localStorage.removeItem("carrito");
+        products = [];
+        totalAmount.innerHTML = ``;
+        carritoVacio();
+        let cartNumber = document.querySelector("#urlCart p");
+        cartNumber.innerHTML = productosEnElCarrito();
+        // location.href = `/order/${data.order.id}?creado=true`;
+        toastr.success("Compra realizada");
+      } else {
+        toastr.error("No se pudo realizar la compra, intente mas tarde");
+      }
+    })
+    .catch((error) => console.log(error));
+  })
 });
