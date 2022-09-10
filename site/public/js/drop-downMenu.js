@@ -17,13 +17,11 @@ window.addEventListener("load", function () {
   btnShowMenu.addEventListener("click", function () {
     if (dropdown.style.transform != "translateX(0px)") {
       dropdown.style.transform = "translateX(0px)";
-      dropdown.style.display = "block";
       coverCloseSearch.style.display = "block";
       btnCloseMenu.style.display = "block";
       btnShowMenu.style.display = "none";
     } else {
       dropdown.style.transform = "translateX(500px)";
-      dropdown.style.display = "none";
       coverCloseSearch.style.display = "none";
       btnCloseMenu.style.display = "none";
       btnShowMenu.style.display = "block";
@@ -35,13 +33,11 @@ window.addEventListener("load", function () {
   btnShowMenu_2.addEventListener("click", function () {
     if (dropdown.style.transform != "translateX(0px)") {
       dropdown.style.transform = "translateX(0px)";
-      dropdown.style.display = "block";
       coverCloseSearch.style.display = "block";
       btnCloseMenu_2.style.display = "block";
       btnShowMenu_2.style.display = "none";
     } else {
       dropdown.style.transform = "translateX(500px)";
-      dropdown.style.display = "none";
       coverCloseSearch.style.display = "none";
       btnCloseMenu_2.style.display = "none";
       btnShowMenu_2.style.display = "block";
@@ -54,7 +50,6 @@ window.addEventListener("load", function () {
   //' Close Menu
   btnCloseMenu.addEventListener("click", function () {
     dropdown.style.transform = "translateX(500px)";
-    dropdown.style.display = "none";
     coverCloseSearch.style.display = "none";
     btnShowMenu.style.display = "block";
     btnCloseMenu.style.display = "none";
@@ -62,7 +57,6 @@ window.addEventListener("load", function () {
 
   btnCloseMenu_2.addEventListener("click", function () {
     dropdown.style.transform = "translateX(500px)";
-    dropdown.style.display = "none";
     coverCloseSearch.style.display = "none";
     btnShowMenu_2.style.display = "block";
     btnCloseMenu_2.style.display = "none";
@@ -70,7 +64,6 @@ window.addEventListener("load", function () {
 
   btnCloseMenu_3.addEventListener("click", function () {
     dropdown.style.transform = "translateX(500px)";
-    dropdown.style.display = "none";
     coverCloseSearch.style.display = "none";
     btnShowMenu.style.display = "block";
     btnShowMenu_2.style.display = "block";
@@ -80,7 +73,6 @@ window.addEventListener("load", function () {
 
   coverCloseSearch.addEventListener("click", function () {
     dropdown.style.transform = "translateX(500px)";
-    dropdown.style.display = "none";
     coverCloseSearch.style.display = "none";
     btnShowMenu.style.display = "block";
     btnShowMenu_2.style.display = "block";

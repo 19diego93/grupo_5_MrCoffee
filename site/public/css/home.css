@@ -27,29 +27,30 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 20px;
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 80vh;
   margin-bottom: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .Container-Campaign::before {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: var(--color-Negro-Glass);
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-Negro-Glass);
 }
 .campaña {
-  flex-direction: column;
+  width: 100%;
+  height: 70%;
+  position: absolute;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  position: relative;
   margin-bottom: 60px;
   color: var(--color-Blanco-1);
 }
@@ -65,10 +66,10 @@ main {
 }
 .boton-descubrir {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border-radius: 50px;
   transition: 0.4s;
   margin-top: 20px;
@@ -76,14 +77,14 @@ main {
   color: var(--color-Blanco-1);
 }
 .boton-descubrir:hover {
-  background-color: var(--color-Marron-1);
-  border: 2px solid var(--color-Marron-1);
+  background-color: var(--Primary-Dark);
+  border: 2px solid var(--Primary-Dark);
 }
 #wave-effect {
   position: absolute;
   width: 100%;
   height: 30%;
-  bottom: 0;
+  bottom: -5px;
   overflow: hidden;
 }
 #wave-effect svg {

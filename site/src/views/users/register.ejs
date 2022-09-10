@@ -2,202 +2,220 @@
 <html lang="en">
   <head>
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/users/register.css" />
+    <link href="/css/users/register.css" rel="stylesheet" />
   </head>
   <body>
     <%- include('../partials/header') %>
-    <main class="contenedor-register">
-      <div class="contenedor-register-titulo">
-        <div class="contenedor-form-boton">
-          <form
-            action="/user/register"
-            method="POST"
-            enctype="multipart/form-data"
-            id="formulario"
-          >
-            <div class="contenedor-img-perfil">
-              <div class="img-perfil">
-                <picture>
-                  <img
-                    id="view-new-upload-img"
-                    src="/img/avatar/defaultimg.jpg"
-                    alt="imagen de usuario"
-                  />
-                </picture>
-              </div>
-              <div class="boton-nueva-img">
-                <div>
-                  <label>
-                    <p>Subir archivo</p>
-                    <input
-                      type="file"
-                      name="image"
-                      id="file"
-                      accept="image/*"
+    <main class="container-main-users">
+      <section>
+        <article class="container-article">
+          <div class="container-form-register context">
+            <form
+              action="/user/register"
+              method="POST"
+              enctype="multipart/form-data"
+              id="formulario"
+            >
+              <div class="container-new-img">
+                <div class="new-img">
+                  <picture>
+                    <img
+                      id="view-new-upload-img"
+                      src="/img/avatar/defaultimg.gif"
+                      alt="imagen de usuario"
                     />
-                  </label>
+                  </picture>
                 </div>
-                <% if(locals.errors && errors.image){ %>
-                <p class="errors-t"><%= errors.image.msg %></p>
-                <% } %>
+                <div class="button-new-img">
+                    <label>
+                      <p>Subir archivo</p>
+                      <input
+                        type="file"
+                        name="image"
+                        id="file"
+                        accept="image/*"
+                      />
+                    </label>
+                  <% if(locals.errors && errors.image){ %>
+                  <p class="errors-t"><%= errors.image.msg %></p>
+                  <% } %>
+                  <p class="user-img-validation">Puedes subir jpg, png o gif. Tamaño máximo 1mb.</p>
+                </div>
               </div>
+              <div class="form-style">
+                <div class="contenedor-campo">
+                  <label for="fname">Nombre</label>
+                  <input
+                    type="fname"
+                    id="fname"
+                    name="fname"
+                    placeholder="Escribe tu nombre"
+                    value="<%= locals.oldData ? oldData.fname : null %>"
+                    class="<%= locals.errors && errors.fname ? 'is-invalid' : null %>"
+                  />
+                  <!-- Errores validación db -->
+                  <% if (locals.errors && errors.fname){ %>
+                  <div class="errors-t"><%= errors.fname.msg %></div>
+                  <% } %>
+                  <div class="errors-t fnameVacio displayNone fnameErrors">
+                    Este campo no puede estar vacío.
+                  </div>
+                  <div class="errors-t fnameMin displayNone fnameErrors">
+                    Escribe al menos 3 caracteres.
+                  </div>
+                  <div class="errors-t fnameMax displayNone fnameErrors">
+                    No puedes escribir más de 40 caracteres.
+                  </div>
+                  <div class="errors-t fnameCaracters displayNone fnameErrors">
+                    Caracteres invalidos.
+                  </div>
+                </div>
+  
+                <div class="contenedor-campo">
+                  <label for="lname">Apellido</label>
+                  <input
+                    type="lname"
+                    id="lname"
+                    name="lname"
+                    placeholder="Escribe tu apellido"
+                    value="<%= locals.oldData ? oldData.lname : null %>"
+                    class="<%= locals.errors && errors.lname ? 'is-invalid' : null %>"
+                  />
+                  <!-- Errores validación db -->
+                  <% if (locals.errors && errors.lname){ %>
+                  <div class="errors-t"><%= errors.lname.msg %></div>
+                  <% } %>
+                  <div class="errors-t lnameVacio displayNone lnameErrors">
+                    Este campo no puede estar vacío.
+                  </div>
+                  <div class="errors-t lnameMin displayNone lnameErrors">
+                    Escribe al menos 3 caracteres.
+                  </div>
+                  <div class="errors-t lnameMax displayNone lnameErrors">
+                    No puedes escribir más de 40 caracteres.
+                  </div>
+                  <div class="errors-t lnameCaracters displayNone lnameErrors">
+                    Caracteres invalidos.
+                  </div>
+                </div>
+  
+                <div class="contenedor-campo">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="superhero@MrCoffee.com"
+                    value="<%= locals.oldData ? oldData.email : null %>"
+                    class="<%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                  />
+                  <!-- Errores validación db -->
+                  <% if (locals.errors && errors.email){ %>
+                  <div class="errors-t"><%= errors.email.msg %></div>
+                  <% } %>
+                  <div class="errors-t emailVacio displayNone emailErrors">
+                    Este campo no puede estar vacío.
+                  </div>
+                  <div class="errors-t emailMin displayNone emailErrors">
+                    Escribe al menos 6 caracteres.
+                  </div>
+                  <div class="errors-t emailMax displayNone emailErrors">
+                    No puedes escribir más de 100 caracteres.
+                  </div>
+                  <div class="errors-t emailCaracters displayNone emailErrors">
+                    Caracteres invalidos.
+                  </div>
+                </div>
+  
+                <div class="contenedor-campo">
+                  <label for="passwd">Contraseña</label>
+                  <input
+                    type="password"
+                    id="passwd"
+                    name="password"
+                    placeholder="Contraseña"
+                    class="<%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                  />
+                  <!-- Errores validación db -->
+                  <% if (locals.errors && errors.password){ %>
+                  <div class="errors-t"><%= errors.password.msg %></div>
+                  <% } %>
+                  <div class="errors-t passwdVacio displayNone passwdErrors">
+                    Este campo no puede estar vacío.
+                  </div>
+                  <div class="errors-t passwdMin displayNone passwdErrors">
+                    Escribe al menos 8 caracteres.
+                  </div>
+                  <div class="errors-t passwdMax displayNone passwdErrors">
+                    No puedes escribir más de 65 caracteres.
+                  </div>
+                  <div class="errors-t passwdLower displayNone passwdErrors">
+                    Debe tener minimo 1 Minuscula
+                  </div>
+                  <div class="errors-t passwdupper displayNone passwdErrors">
+                    Debe tener minimo 1 Mayuscula
+                  </div>
+                  <div class="errors-t passwdNumber displayNone passwdErrors">
+                    Debe tener minimo 1 Numero
+                  </div>
+                  <div class="errors-t passwdSpecial displayNone passwdErrors">
+                    Debe tener minimo 1 Caracter especial
+                  </div>
+                </div>
+  
+                <div class="contenedor-campo">
+                  <label for="confirmPsw">Repite la Contraseña</label>
+                  <input
+                    type="password"
+                    id="confirmPsw"
+                    name="confirmPsw"
+                    placeholder="Repite tu Contraseña"
+                    class="<%= locals.errors && errors.confirmPsw ? 'is-invalid' : null %>"
+                  />
+                  <!-- Errores validación db -->
+                  <% if (locals.errors && errors.confirmPsw){ %>
+                  <div class="errors-t"><%= errors.confirmPsw.msg %></div>
+                  <% } %>
+                  <div
+                    class="errors-t confirmPswVacio confirmPswErrors displayNone"
+                  >
+                    Este campo no puede estar vacío.
+                  </div>
+                  <div class="errors-t confirmPswEq confirmPswErrors displayNone">
+                    Las contraseñas no coinciden.
+                  </div>
+                </div>
+              </div>
+  
+              <div class="container-button-dark">
+                <input type="submit" value="Registrar" class="button-dark" />
+              </div>
+            </form>
+            <div class="vinculos-users">
+              <a href="/user/login">
+                <p>Tengo una cuenta</p>
+              </a>
+              <a href="#">
+                <p>Políticas de Privacidad</p>
+              </a>
             </div>
-            <div class="form-register">
-              <div class="contenedor-campo">
-                <label for="fname">Nombre</label>
-                <input
-                  type="fname"
-                  id="fname"
-                  name="fname"
-                  placeholder="Escribe tu nombre"
-                  value="<%= locals.oldData ? oldData.fname : null %>"
-                  class="<%= locals.errors && errors.fname ? 'is-invalid' : null %>"
-                />
-                <!-- Errores validación db -->
-                <% if (locals.errors && errors.fname){ %>
-                <div class="errors-t"><%= errors.fname.msg %></div>
-                <% } %>
-                <div class="errors-t fnameVacio displayNone fnameErrors">
-                  Este campo no puede estar vacío.
-                </div>
-                <div class="errors-t fnameMin displayNone fnameErrors">
-                  Escribe al menos 3 caracteres.
-                </div>
-                <div class="errors-t fnameMax displayNone fnameErrors">
-                  No puedes escribir más de 40 caracteres.
-                </div>
-                <div class="errors-t fnameCaracters displayNone fnameErrors">
-                  Caracteres invalidos.
-                </div>
-              </div>
-
-              <div class="contenedor-campo">
-                <label for="lname">Apellido</label>
-                <input
-                  type="lname"
-                  id="lname"
-                  name="lname"
-                  placeholder="Escribe tu apellido"
-                  value="<%= locals.oldData ? oldData.lname : null %>"
-                  class="<%= locals.errors && errors.lname ? 'is-invalid' : null %>"
-                />
-                <!-- Errores validación db -->
-                <% if (locals.errors && errors.lname){ %>
-                <div class="errors-t"><%= errors.lname.msg %></div>
-                <% } %>
-                <div class="errors-t lnameVacio displayNone lnameErrors">
-                  Este campo no puede estar vacío.
-                </div>
-                <div class="errors-t lnameMin displayNone lnameErrors">
-                  Escribe al menos 3 caracteres.
-                </div>
-                <div class="errors-t lnameMax displayNone lnameErrors">
-                  No puedes escribir más de 40 caracteres.
-                </div>
-                <div class="errors-t lnameCaracters displayNone lnameErrors">
-                  Caracteres invalidos.
-                </div>
-              </div>
-
-              <div class="contenedor-campo">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="superhero@MrCoffee.com"
-                  value="<%= locals.oldData ? oldData.email : null %>"
-                  class="<%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                />
-                <!-- Errores validación db -->
-                <% if (locals.errors && errors.email){ %>
-                <div class="errors-t"><%= errors.email.msg %></div>
-                <% } %>
-                <div class="errors-t emailVacio displayNone emailErrors">
-                  Este campo no puede estar vacío.
-                </div>
-                <div class="errors-t emailMin displayNone emailErrors">
-                  Escribe al menos 6 caracteres.
-                </div>
-                <div class="errors-t emailMax displayNone emailErrors">
-                  No puedes escribir más de 100 caracteres.
-                </div>
-                <div class="errors-t emailCaracters displayNone emailErrors">
-                  Caracteres invalidos.
-                </div>
-              </div>
-
-              <div class="contenedor-campo">
-                <label for="passwd">Contraseña</label>
-                <input
-                  type="password"
-                  id="passwd"
-                  name="password"
-                  placeholder="Contraseña"
-                  class="<%= locals.errors && errors.password ? 'is-invalid' : null %>"
-                />
-                <!-- Errores validación db -->
-                <% if (locals.errors && errors.password){ %>
-                <div class="errors-t"><%= errors.password.msg %></div>
-                <% } %>
-                <div class="errors-t passwdVacio displayNone passwdErrors">
-                  Este campo no puede estar vacío.
-                </div>
-                <div class="errors-t passwdMin displayNone passwdErrors">
-                  Escribe al menos 8 caracteres.
-                </div>
-                <div class="errors-t passwdMax displayNone passwdErrors">
-                  No puedes escribir más de 65 caracteres.
-                </div>
-                <div class="errors-t passwdLower displayNone passwdErrors">
-                  Debe tener minimo 1 Minuscula
-                </div>
-                <div class="errors-t passwdupper displayNone passwdErrors">
-                  Debe tener minimo 1 Mayuscula
-                </div>
-                <div class="errors-t passwdNumber displayNone passwdErrors">
-                  Debe tener minimo 1 Numero
-                </div>
-                <div class="errors-t passwdSpecial displayNone passwdErrors">
-                  Debe tener minimo 1 Caracter especial
-                </div>
-              </div>
-
-              <div class="contenedor-campo">
-                <label for="confirmPsw">Repite tu Contraseña</label>
-                <input
-                  type="password"
-                  id="confirmPsw"
-                  name="confirmPsw"
-                  placeholder="Repite tu Contraseña"
-                  class="<%= locals.errors && errors.confirmPsw ? 'is-invalid' : null %>"
-                />
-                <!-- Errores validación db -->
-                <% if (locals.errors && errors.confirmPsw){ %>
-                <div class="errors-t"><%= errors.confirmPsw.msg %></div>
-                <% } %>
-                <div
-                  class="errors-t confirmPswVacio confirmPswErrors displayNone"
-                >
-                  Este campo no puede estar vacío.
-                </div>
-                <div class="errors-t confirmPswEq confirmPswErrors displayNone">
-                  Las contraseñas no coinciden.
-                </div>
-              </div>
-            </div>
-
-            <div class="contenedor-boton-registrar">
-              <input type="submit" value="Registrar" class="button-registrar" />
-            </div>
-          </form>
-          <div class="vinculos-register">
-            <a href="/user/login" class="politicas">Tengo una cuenta</a>
-            <br /><br />
-            <a href="" class="politicas">Políticas de Privacidad</a>
           </div>
-        </div>
-      </div>
+        </article>
+        <article class="area" >
+          <ul class="circles">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+          </ul>
+        </article >
+      </section>
     </main>
     <%- include('../partials/footer') %>
     <!--! JS -->

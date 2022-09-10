@@ -280,10 +280,10 @@ window.addEventListener("load", () => {
 
   let formCheckout = document.querySelector("#checkoutCart")
 
-  let writeDbCart_item = []
+  let writeDbVenta_detalle = []
 
   products.forEach(product => {
-    writeDbCart_item.push({
+    writeDbVenta_detalle.push({
       precio_venta: product.price,
       articulos: product.quantity,
       nombre: product.name,
@@ -297,7 +297,7 @@ window.addEventListener("load", () => {
     e.preventDefault();
     
     const formData = {
-      writeDbCart_item: writeDbCart_item,
+      Venta_detalle: writeDbVenta_detalle,
       cobrado: new Date().toLocaleDateString('es-mx', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }),
       cantidad: productosEnElCarrito(),
       total: calcularTotal(products),

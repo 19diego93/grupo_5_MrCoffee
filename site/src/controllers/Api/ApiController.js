@@ -6,7 +6,6 @@ const { Op } = require("sequelize");
 const Products = db.Product;
 const Usuarios = db.Usuario;
 const Ventas = db.Venta;
-const Items = db.cart_item;
 
 //!Controlador
 const controller = {
