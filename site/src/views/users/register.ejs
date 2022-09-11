@@ -53,22 +53,12 @@
                     value="<%= locals.oldData ? oldData.fname : null %>"
                     class="<%= locals.errors && errors.fname ? 'is-invalid' : null %>"
                   />
-                  <!-- Errores validación db -->
+                  <!-- Errores del Back -->
                   <% if (locals.errors && errors.fname){ %>
-                  <div class="errors-t"><%= errors.fname.msg %></div>
+                  <div class="errors-t fnameErrBack"><%= errors.fname.msg %></div>
                   <% } %>
-                  <div class="errors-t fnameVacio displayNone fnameErrors">
-                    Este campo no puede estar vacío.
-                  </div>
-                  <div class="errors-t fnameMin displayNone fnameErrors">
-                    Escribe al menos 3 caracteres.
-                  </div>
-                  <div class="errors-t fnameMax displayNone fnameErrors">
-                    No puedes escribir más de 40 caracteres.
-                  </div>
-                  <div class="errors-t fnameCaracters displayNone fnameErrors">
-                    Caracteres invalidos.
-                  </div>
+                  <!-- Errores del Front -->
+                  <div class="errors-t fnameErrors"></div>
                 </div>
   
                 <div class="contenedor-campo">
@@ -81,22 +71,12 @@
                     value="<%= locals.oldData ? oldData.lname : null %>"
                     class="<%= locals.errors && errors.lname ? 'is-invalid' : null %>"
                   />
-                  <!-- Errores validación db -->
+                  <!-- Errores del Back -->
                   <% if (locals.errors && errors.lname){ %>
-                  <div class="errors-t"><%= errors.lname.msg %></div>
+                  <div class="errors-t lnameErrBack"><%= errors.lname.msg %></div>
                   <% } %>
-                  <div class="errors-t lnameVacio displayNone lnameErrors">
-                    Este campo no puede estar vacío.
-                  </div>
-                  <div class="errors-t lnameMin displayNone lnameErrors">
-                    Escribe al menos 3 caracteres.
-                  </div>
-                  <div class="errors-t lnameMax displayNone lnameErrors">
-                    No puedes escribir más de 40 caracteres.
-                  </div>
-                  <div class="errors-t lnameCaracters displayNone lnameErrors">
-                    Caracteres invalidos.
-                  </div>
+                  <!-- Errores del Front -->
+                  <div class="errors-t lnameErrors"></div>
                 </div>
   
                 <div class="contenedor-campo">
@@ -109,22 +89,12 @@
                     value="<%= locals.oldData ? oldData.email : null %>"
                     class="<%= locals.errors && errors.email ? 'is-invalid' : null %>"
                   />
-                  <!-- Errores validación db -->
+                  <!-- Errores del Back -->
                   <% if (locals.errors && errors.email){ %>
-                  <div class="errors-t"><%= errors.email.msg %></div>
+                  <div class="errors-t emailErrBack"><%= errors.email.msg %></div>
                   <% } %>
-                  <div class="errors-t emailVacio displayNone emailErrors">
-                    Este campo no puede estar vacío.
-                  </div>
-                  <div class="errors-t emailMin displayNone emailErrors">
-                    Escribe al menos 6 caracteres.
-                  </div>
-                  <div class="errors-t emailMax displayNone emailErrors">
-                    No puedes escribir más de 100 caracteres.
-                  </div>
-                  <div class="errors-t emailCaracters displayNone emailErrors">
-                    Caracteres invalidos.
-                  </div>
+                  <!-- Errores del Front -->
+                  <div class="errors-t emailErrors"></div>
                 </div>
   
                 <div class="contenedor-campo">
@@ -136,31 +106,12 @@
                     placeholder="Contraseña"
                     class="<%= locals.errors && errors.password ? 'is-invalid' : null %>"
                   />
-                  <!-- Errores validación db -->
+                  <!-- Errores del Back -->
                   <% if (locals.errors && errors.password){ %>
-                  <div class="errors-t"><%= errors.password.msg %></div>
+                  <div class="errors-t passwdErrBack"><%= errors.password.msg %></div>
                   <% } %>
-                  <div class="errors-t passwdVacio displayNone passwdErrors">
-                    Este campo no puede estar vacío.
-                  </div>
-                  <div class="errors-t passwdMin displayNone passwdErrors">
-                    Escribe al menos 8 caracteres.
-                  </div>
-                  <div class="errors-t passwdMax displayNone passwdErrors">
-                    No puedes escribir más de 65 caracteres.
-                  </div>
-                  <div class="errors-t passwdLower displayNone passwdErrors">
-                    Debe tener minimo 1 Minuscula
-                  </div>
-                  <div class="errors-t passwdupper displayNone passwdErrors">
-                    Debe tener minimo 1 Mayuscula
-                  </div>
-                  <div class="errors-t passwdNumber displayNone passwdErrors">
-                    Debe tener minimo 1 Numero
-                  </div>
-                  <div class="errors-t passwdSpecial displayNone passwdErrors">
-                    Debe tener minimo 1 Caracter especial
-                  </div>
+                  <!-- Errores del Front -->
+                  <div class="errors-t passwdErrors"></div>
                 </div>
   
                 <div class="contenedor-campo">
@@ -172,21 +123,14 @@
                     placeholder="Repite tu Contraseña"
                     class="<%= locals.errors && errors.confirmPsw ? 'is-invalid' : null %>"
                   />
-                  <!-- Errores validación db -->
+                  <!-- Errores del Back -->
                   <% if (locals.errors && errors.confirmPsw){ %>
-                  <div class="errors-t"><%= errors.confirmPsw.msg %></div>
+                  <div class="errors-t confirmPswErrBack"><%= errors.confirmPsw.msg %></div>
                   <% } %>
-                  <div
-                    class="errors-t confirmPswVacio confirmPswErrors displayNone"
-                  >
-                    Este campo no puede estar vacío.
-                  </div>
-                  <div class="errors-t confirmPswEq confirmPswErrors displayNone">
-                    Las contraseñas no coinciden.
-                  </div>
+                  <!-- Errores del Front -->
+                  <div class="errors-t confirmPswErrors"></div>
                 </div>
               </div>
-  
               <div class="container-button-dark">
                 <input type="submit" value="Registrar" class="button-dark" />
               </div>

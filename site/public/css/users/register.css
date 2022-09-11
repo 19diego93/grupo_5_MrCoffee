@@ -4,13 +4,13 @@
 /*   font-family: "Raleway", sans-serif; */
 /* ! Header */
 .Favorite a {
-  color: var(--color-Negro-1);
+  color: var(--Primary-Dark);
 }
 .Config button {
-  color: var(--color-Negro-1);
+  color: var(--Primary-Dark);
 }
 .nav ul li a {
-  color: var(--color-Negro-1);
+  color: var(--Primary-Dark);
 }
 
 /* !contenedor form */
@@ -55,7 +55,7 @@
     margin-top: 20px;
   }
   .area{
-    height: 1000px;
+    height: 900px;
   }
 }
 @media (min-width: 1200px) {

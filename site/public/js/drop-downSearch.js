@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
       coverCloseSearch.style.display = "none";
       inputSearch.value = "";
     }
-    dropdown.style.transform = "translateX(300px)";
+    dropdown.style.transform = "translateX(500px)";
     btnShowMenu.style.display = "block";
     btnShowMenu_2.style.display = "block";
     btnCloseMenu_2.style.display = "none";

@@ -62,24 +62,25 @@
             </div>
           </div>
         </div>
-        <% if (locals.userLogged) { %> <% if
-        (locals.userLogged.dataValues.id_category_U == '1') { %>
-        <div class="container-buttons-detail">
-          <a
-            href="/admin/edit/<%=product.id%>"
-            class="button-edit button-design"
-          >
-            <p>Editar</p>
-          </a>
-          <form
-            action="/admin/<%=product.id%>?_method=DELETE"
-            method="POST"
-            class="button-delete"
-          >
-            <button type="submit" class="button-design">Eliminar</button>
-          </form>
-        </div>
-        <% } %> <% } %>
+        <% if (locals.userLogged) { %> 
+          <% if(locals.userLogged.User_category.name == 'Admin') { %>
+            <div class="container-buttons-detail">
+              <a
+                href="/admin/edit/<%=product.id%>"
+                class="button-edit button-design"
+              >
+                <p>Editar</p>
+              </a>
+              <form
+                action="/admin/<%=product.id%>?_method=DELETE"
+                method="POST"
+                class="button-delete"
+              >
+                <button type="submit" class="button-design">Eliminar</button>
+              </form>
+            </div>
+          <% } %> 
+        <% } %>
       </section>
     </main>
     <%- include('../partials/footer') %>

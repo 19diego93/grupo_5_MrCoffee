@@ -13,29 +13,39 @@ const login = require("./validations/validationsLogin");
 const register = require("./validations/validationsRegister");
 const profile = require("./validations/validationsProfile");
 
-router.get("/user/login", guestMiddleware, usersController.login);
+router.get("/login", guestMiddleware, usersController.login);
 
-router.post("/user/login", login, usersController.loginProcess);
+router.post("/login", login, usersController.loginProcess);
 
-router.get("/user/register", guestMiddleware, usersController.register);
+router.get("/register", guestMiddleware, usersController.register);
 
 router.post(
-  "/user/register",
+  "/register",
   upload.single("image"),
   register,
-  usersController.processRegister
+  usersController.registerProcess
 );
 
-router.get("/user/profile", authMiddleware, usersController.profile);
+router.get("/profile", authMiddleware, usersController.profile);
+
+router.get("/profile/edit", authMiddleware, usersController.edit);
 
 router.put(
-  "/user/profile",
-  authMiddleware,
+  "/profile/edit",
   upload.single("image"),
   profile,
   usersController.editProfile
 );
 
-router.get("/user/logout", usersController.logout);
+router.get("/profile/password", authMiddleware, usersController.password);
+
+router.put(
+  "/profile/password",
+  upload.single("image"),
+  profile,
+  usersController.editPassword
+);
+
+router.get("/logout", usersController.logout);
 
 module.exports = router;

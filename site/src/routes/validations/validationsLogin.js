@@ -2,7 +2,7 @@
 const { body } = require("express-validator");
 
 //! Validacion
-module.exports = [
+const validacion = [
   body("email")
     .notEmpty()
     .withMessage("Este campo no puede estar vacío.")
@@ -23,3 +23,5 @@ module.exports = [
     .isLength({ max: 65 })
     .withMessage("No puede escribir más de 65 caracteres."),
 ];
+
+module.exports = validacion;

@@ -50,36 +50,36 @@
           <a href="/user/profile" class="nav__link nav__link--inside">Perfil</a>
         </li>
         <li class="list__inside">
-          <a href="#" class="nav__link nav__link--inside">Favoritos</a>
+          <a href="/user/profile/edit" class="nav__link nav__link--inside">Editar Perfil</a>
         </li>
         <li class="list__inside">
-          <a href="#" class="nav__link nav__link--inside">Metodo de Pago</a>
+          <a href="/user/profile/password" class="nav__link nav__link--inside">Cambiar Contraseña</a>
         </li>
       </ul>
     </li>
-    <% if (locals.userLogged) { %> <% if
-    (locals.userLogged.dataValues.id_category_U == '1') { %>
-    <li class="list__item list__item--click nav__link--outside">
-      <div class="nav__glow list__button list__button--click">
-        <i class="fas fa-tools"></i>
-        <p class="nav__link">Admin</p>
-        <i class="fas fa-angle-down list__arrow"></i>
-      </div>
+    <% if(locals.userLogged) { %> 
+      <% if(locals.userLogged.User_category.name === 'Admin') { %>
+      <li class="list__item list__item--click nav__link--outside">
+        <div class="nav__glow list__button list__button--click">
+          <i class="fas fa-tools"></i>
+          <p class="nav__link">Admin</p>
+          <i class="fas fa-angle-down list__arrow"></i>
+        </div>
 
-      <ul class="list__show">
-        <li class="list__inside">
-          <a href="/admin/create" class="nav__link nav__link--inside"
-            >Crear producto</a
-          >
-        </li>
-        <li class="list__inside">
-          <a href="/admin/list" class="nav__link nav__link--inside"
-            >Productos agotados</a
-          >
-        </li>
-      </ul>
-    </li>
-    <% } %> <% } %>
+        <ul class="list__show">
+          <li class="list__inside">
+            <a href="/admin/create" class="nav__link nav__link--inside"
+              >Crear producto</a
+            >
+          </li>
+          <li class="list__inside">
+            <a href="/admin/list" class="nav__link nav__link--inside"
+              >Productos agotados</a
+            >
+          </li>
+        </ul>
+      </li>
+    <% } %><% } %>
     <li class="list__item list__item--click nav__link--outside">
       <div class="nav__glow list__button list__button--click">
         <i class="fa-solid fa-comment-dots"></i>

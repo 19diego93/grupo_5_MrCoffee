@@ -14,7 +14,7 @@
   color: var(--color-Negro-1);
 }
 #urlHome {
-  color: var(--color-Marron-1);
+  color: var(--Link);
 }
 
 /*! Section 1 - CAMPAÑA*/
@@ -77,8 +77,8 @@ main {
   color: var(--color-Blanco-1);
 }
 .boton-descubrir:hover {
-  background-color: var(--Primary-Dark);
-  border: 2px solid var(--Primary-Dark);
+  background-color: var(--Primary);
+  border: 2px solid var(--Primary);
 }
 #wave-effect {
   position: absolute;

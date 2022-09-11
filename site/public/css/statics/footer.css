@@ -26,7 +26,7 @@ footer {
 .formulario {
   position: relative;
   width: 100%;
-  padding-top: 40px;
+  padding: 20px 0px;
 }
 .recibi-noticias {
   display: block;
@@ -82,8 +82,9 @@ footer {
 }
 .Container-Redes {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  margin-top: 20px;
 }
 .Container-Redes a {
   margin: 0px;
@@ -227,6 +228,15 @@ footer h5 {
     top: 8px;
     left: 6px;
   }
+  .Container-Redes {
+    justify-content: center;
+  }
+  .Container-Redes a{
+    margin: 20px;
+  }
+  .Container-Redes a i {
+    font-size: 2.5rem;
+  }
 }
 @media (min-width: 768px) {
   /*! Laptops */
@@ -244,12 +254,6 @@ footer h5 {
   }
   .Container-Buttons a {
     width: 250px;
-  }
-  .Container-Redes a{
-    margin: 20px;
-  }
-  .Container-Redes a i {
-    font-size: 2.5rem;
   }
   .Container-end {
     flex-direction: row;

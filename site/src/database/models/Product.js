@@ -1,6 +1,8 @@
 module.exports = (sequelize, dataTypes) => {
+  /* Creating an alias */
   let alias = "Product"; // esto debería estar en singular
 
+  /* Creating the columns of the table. */
   let cols = {
     id: {
       type: dataTypes.BIGINT(13),
@@ -39,18 +41,21 @@ module.exports = (sequelize, dataTypes) => {
     id_categoryP: {
       type: dataTypes.INTEGER(5),
       allowNull: false,
-    }
+    },
   };
 
+  /* Telling Sequelize to not create the createdAt and updatedAt columns. */
   let config = {
     timestamps: false,
   };
+
+  /* Creating a table in the database. */
   const Product = sequelize.define(alias, cols, config);
 
+  /* Creating a relationship between the tables. */
   Product.associate = function (models) {
     Product.belongsTo(models.Product_category, {
-      // models.Product_category -> Product_category es el valor de alias en Product_category.js
-      as: "product_category",
+      as: "Product_category",
       foreignKey: "id_categoryP",
     });
 
@@ -63,5 +68,6 @@ module.exports = (sequelize, dataTypes) => {
     });
   };
 
+  /* Returning the table. */
   return Product;
 };

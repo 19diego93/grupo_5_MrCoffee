@@ -10,8 +10,7 @@ window.addEventListener("load", () => {
       lower: new RegExp("(?=.*[a-z])"),
       upper: new RegExp("(?=.*[A-Z])"),
       number: new RegExp("(?=.*[0-9])"),
-      special: new RegExp("(?=.*[@#$%^&*])"),
-      specialError: new RegExp("(?=.*[!-])"),
+      special: new RegExp("(?=.*[!@#$%^&*])"),
     },
   };
 
@@ -35,26 +34,26 @@ window.addEventListener("load", () => {
         validation(expresiones.correo, e.target.value, "email", 6, 100);
         break;
       case "password":
-        validation_2(expresiones.password, e.target.value, "passwd", 8, 65);
-        validation_3();
+        validation(expresiones.password, e.target.value, "passwd", 8, 65);
+        validation_2();
         break;
       case "confirmPsw":
-        validation_3();
+        validation_2();
         break;
     }
   };
 
   function validation(expresion, value, campo, min, max) {
-    const errorsMessage = document.querySelectorAll(`.${campo}Errors`);
+    const errorsMessageBack = document.querySelector(`.${campo}ErrBack`);
+    if(errorsMessageBack){
+      errorsMessageBack.innerHTML = ""
+    }
+
+    const errorsMessage = document.querySelector(`.${campo}Errors`);
     const inputColor = document.getElementById(`${campo}`);
-
     if (value.length < 1) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
+      errorsMessage.innerHTML = "Este campo no puede estar vacío."
 
-      document.querySelector(`.${campo}Vacio`).classList.add("displayBlock");
       inputColor.classList.remove("is-valid");
       inputColor.classList.add("is-invalid");
       inputColor.classList.remove("is-valid-icon");
@@ -62,12 +61,8 @@ window.addEventListener("load", () => {
 
       campos[campo] = false;
     } else if (value.length < min) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
+      errorsMessage.innerHTML = `Escribe al menos ${min} caracteres.`
 
-      document.querySelector(`.${campo}Min`).classList.add("displayBlock");
       inputColor.classList.remove("is-valid");
       inputColor.classList.add("is-invalid");
       inputColor.classList.remove("is-valid-icon");
@@ -75,197 +70,125 @@ window.addEventListener("load", () => {
 
       campos[campo] = false;
     } else if (value.length > max) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
+      errorsMessage.innerHTML = `No puedes escribir más de ${max} caracteres.`
 
-      document.querySelector(`.${campo}Max`).classList.add("displayBlock");
       inputColor.classList.remove("is-valid");
       inputColor.classList.add("is-invalid");
       inputColor.classList.remove("is-valid-icon");
       inputColor.classList.add("is-invalid-icon");
 
       campos[campo] = false;
-    } else if (!expresion.test(value)) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
+    } else if(campo != "passwd"){
+      if (!expresion.test(value)) {
+        errorsMessage.innerHTML = `Caracteres invalidos.`
+  
+        inputColor.classList.remove("is-valid");
+        inputColor.classList.add("is-invalid");
+        inputColor.classList.remove("is-valid-icon");
+        inputColor.classList.add("is-invalid-icon");
+  
+        campos[campo] = false;
+      } else {
+        errorsMessage.innerHTML = ""
+  
+        inputColor.classList.remove("is-invalid");
+        inputColor.classList.remove("is-invalid-icon");
+        inputColor.classList.add("is-valid");
+        inputColor.classList.add("is-valid-icon");
+  
+        campos[campo] = true;
+      }
+    } else if (campo == "passwd") {
+      if (!expresion.lower.test(value)) {
+        errorsMessage.innerHTML = `Debe tener mínimo una Minúscula. [a-z]`
 
-      document
-        .querySelector(`.${campo}Caracters`)
-        .classList.add("displayBlock");
-      inputColor.classList.remove("is-valid");
-      inputColor.classList.add("is-invalid");
-      inputColor.classList.remove("is-valid-icon");
-      inputColor.classList.add("is-invalid-icon");
+        inputColor.classList.remove("is-valid");
+        inputColor.classList.add("is-invalid");
+        inputColor.classList.remove("is-valid-icon");
+        inputColor.classList.add("is-invalid-icon");
 
-      campos[campo] = false;
-    } else {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
+        campos[campo] = false;
+      } else if (!expresion.upper.test(value)) {
+        errorsMessage.innerHTML = `Debe tener mínimo una Mayúscula. [A-Z]`
 
-      inputColor.classList.remove("is-invalid");
-      inputColor.classList.remove("is-invalid-icon");
-      inputColor.classList.add("is-valid");
-      inputColor.classList.add("is-valid-icon");
-      campos[campo] = true;
+        inputColor.classList.remove("is-valid");
+        inputColor.classList.add("is-invalid");
+        inputColor.classList.remove("is-valid-icon");
+        inputColor.classList.add("is-invalid-icon");
+
+        campos[campo] = false;
+      } else if (!expresion.number.test(value)) {
+        errorsMessage.innerHTML = `Debe tener mínimo un Número. [0-9]`
+
+        inputColor.classList.remove("is-valid");
+        inputColor.classList.add("is-invalid");
+        inputColor.classList.remove("is-valid-icon");
+        inputColor.classList.add("is-invalid-icon");
+
+        campos[campo] = false;
+      } else if (!expresion.special.test(value)) {
+        errorsMessage.innerHTML = `Debe tener mínimo un Carácter especial. [!@#$%^&*]`
+
+        inputColor.classList.remove("is-valid");
+        inputColor.classList.add("is-invalid");
+        inputColor.classList.remove("is-valid-icon");
+        inputColor.classList.add("is-invalid-icon");
+
+        campos[campo] = false;
+      } else {
+        let ValidaEspacios = value.indexOf(" ")
+        if(ValidaEspacios == -1){
+          errorsMessage.innerHTML = ""
+
+          inputColor.classList.remove("is-invalid");
+          inputColor.classList.remove("is-invalid-icon");
+          inputColor.classList.add("is-valid");
+          inputColor.classList.add("is-valid-icon");
+          campos[campo] = true;
+        }else{
+          errorsMessage.innerHTML = "La contraseña no puede contener espacios en blanco."
+
+          inputColor.classList.remove("is-valid");
+          inputColor.classList.add("is-invalid");
+          inputColor.classList.remove("is-valid-icon");
+          inputColor.classList.add("is-invalid-icon");
+
+          campos[campo] = false;
+        }
+      }
     }
   }
 
-  function validation_2(expresion, value, campo, min, max) {
-    const errorsMessage = document.querySelectorAll(`.${campo}Errors`);
-    const inputColor = document.getElementById(`${campo}`);
-
-    if (value.length < 1) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
-
-      document.querySelector(`.${campo}Vacio`).classList.add("displayBlock");
-      inputColor.classList.remove("is-valid");
-      inputColor.classList.add("is-invalid");
-      inputColor.classList.remove("is-valid-icon");
-      inputColor.classList.add("is-invalid-icon");
-
-      campos[campo] = false;
-    } else if (value.length < min) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
-
-      document.querySelector(`.${campo}Min`).classList.add("displayBlock");
-      inputColor.classList.remove("is-valid");
-      inputColor.classList.add("is-invalid");
-      inputColor.classList.remove("is-valid-icon");
-      inputColor.classList.add("is-invalid-icon");
-
-      campos[campo] = false;
-    } else if (value.length > max) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
-
-      document.querySelector(`.${campo}Max`).classList.add("displayBlock");
-      inputColor.classList.remove("is-valid");
-      inputColor.classList.add("is-invalid");
-      inputColor.classList.remove("is-valid-icon");
-      inputColor.classList.add("is-invalid-icon");
-
-      campos[campo] = false;
-    } else if (!expresion.lower.test(value)) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
-
-      document.querySelector(`.${campo}Lower`).classList.add("displayBlock");
-      inputColor.classList.remove("is-valid");
-      inputColor.classList.add("is-invalid");
-      inputColor.classList.remove("is-valid-icon");
-      inputColor.classList.add("is-invalid-icon");
-
-      campos[campo] = false;
-    } else if (!expresion.upper.test(value)) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
-
-      document.querySelector(`.${campo}upper`).classList.add("displayBlock");
-      inputColor.classList.remove("is-valid");
-      inputColor.classList.add("is-invalid");
-      inputColor.classList.remove("is-valid-icon");
-      inputColor.classList.add("is-invalid-icon");
-
-      campos[campo] = false;
-    } else if (!expresion.number.test(value)) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
-
-      document.querySelector(`.${campo}Number`).classList.add("displayBlock");
-      inputColor.classList.remove("is-valid");
-      inputColor.classList.add("is-invalid");
-      inputColor.classList.remove("is-valid-icon");
-      inputColor.classList.add("is-invalid-icon");
-
-      campos[campo] = false;
-    } else if (!expresion.special.test(value)) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
-
-      document.querySelector(`.${campo}Special`).classList.add("displayBlock");
-      inputColor.classList.remove("is-valid");
-      inputColor.classList.add("is-invalid");
-      inputColor.classList.remove("is-valid-icon");
-      inputColor.classList.add("is-invalid-icon");
-
-      campos[campo] = false;
-    } else {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
-
-      inputColor.classList.remove("is-invalid");
-      inputColor.classList.remove("is-invalid-icon");
-      inputColor.classList.add("is-valid");
-      inputColor.classList.add("is-valid-icon");
-      campos[campo] = true;
+  const validation_2 = () => {
+    const errorsMessageBack = document.querySelector('.confirmPswErrBack');
+    if(errorsMessageBack){
+      errorsMessageBack.innerHTML = ""
     }
-  }
 
-  const validation_3 = () => {
     const inputPassword1 = document.getElementById("passwd");
     const inputPassword2 = document.getElementById("confirmPsw");
-
-    const errorsMessage = document.querySelectorAll(`.confirmPswErrors`);
+    const errorsMessage = document.querySelector(`.confirmPswErrors`);
 
     if (inputPassword2.value == "") {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
+      errorsMessage.innerHTML = "Este campo no puede estar vacío."
 
       inputPassword2.classList.remove("is-valid");
       inputPassword2.classList.add("is-invalid");
       inputPassword2.classList.remove("is-valid-icon");
       inputPassword2.classList.add("is-invalid-icon");
-      campos["confirmPsw"] = false;
 
-      document
-        .querySelector(".confirmPswVacio")
-        .classList.remove("displayNone");
-      document.querySelector(".confirmPswVacio").classList.add("displayBlock");
+      campos["confirmPsw"] = false;
     } else if (inputPassword1.value !== inputPassword2.value) {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
+      errorsMessage.innerHTML = "Las contraseñas no coinciden."
 
       inputPassword2.classList.remove("is-valid");
       inputPassword2.classList.add("is-invalid");
       inputPassword2.classList.remove("is-valid-icon");
       inputPassword2.classList.add("is-invalid-icon");
-      campos["confirmPsw"] = false;
 
-      document.querySelector(".confirmPswEq").classList.remove("displayNone");
-      document.querySelector(".confirmPswEq").classList.add("displayBlock");
+      campos["confirmPsw"] = false;
     } else {
-      errorsMessage.forEach((error) => {
-        error.classList.remove("displayBlock");
-        error.classList.add("displayNone");
-      });
+      errorsMessage.innerHTML = ""
 
       inputPassword2.classList.remove("is-invalid");
       inputPassword2.classList.add("is-valid");
@@ -281,16 +204,16 @@ window.addEventListener("load", () => {
   });
 
   formulario.addEventListener("submit", (e) => {
-    if (campos.email && campos.passwd) {
+    if (campos.fname && campos.lname && campos.email && campos.passwd && campos.confirmPsw) {
       e.submit();
     } else {
       e.preventDefault();
 
       inputs.forEach((input) => {
-        let a = {
+        let values = {
           target: { name: input.name, value: input.value },
         };
-        validarFormulario(a);
+        validarFormulario(values);
       });
     }
   });

@@ -1,5 +1,8 @@
 module.exports = (sequelize, dataTypes) => {
-  let alias = "Usuario"; // esto debería estar en singular
+  /* Creating an alias */
+  let alias = "Usuario";
+
+  /* Creating the columns of the table. */
   let cols = {
     id: {
       type: dataTypes.INTEGER(5),
@@ -27,18 +30,23 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(65),
       allowNull: false,
     },
-    id_category_U:{
+    id_category_U: {
       type: dataTypes.INTEGER(5),
       allowNull: false,
     },
   };
+
+  /* Telling Sequelize to not create the createdAt and updatedAt columns. */
   let config = {
     TableName: "Usuario",
     timestamps: false,
     freezeTableName: true,
   };
+
+  /* Creating a table in the database. */
   const Usuario = sequelize.define(alias, cols, config);
 
+  /* Creating a relationship between the tables. */
   Usuario.associate = function (models) {
     Usuario.belongsTo(models.User_category, {
       as: "User_category",
@@ -51,5 +59,6 @@ module.exports = (sequelize, dataTypes) => {
     });
   };
 
+  /* Returning the table. */
   return Usuario;
 };

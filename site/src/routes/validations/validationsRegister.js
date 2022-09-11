@@ -1,7 +1,7 @@
 const { body } = require("express-validator");
 const path = require("path");
 
-module.exports = [
+const validacion = [
   body("fname")
     .notEmpty()
     .withMessage("Este campo no puede estar vacío.")
@@ -24,7 +24,6 @@ module.exports = [
 
   body("image").custom((value, { req }) => {
     let file = req.file;
-
     if (file) {
       let acceptedExtensions = [".png", ".jpg", ".jpeg", ".gif"];
       let fileExtension = path.extname(file.originalname);
@@ -93,3 +92,5 @@ module.exports = [
     })
     .withMessage("Las contraseñas no coinciden."),
 ];
+
+module.exports = validacion;

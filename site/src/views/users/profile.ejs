@@ -1,334 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/users/profile.css" />
-  </head>
-  <body>
-    <%- include('../partials/header') %>
-    <main>
-      <div class="contenedor-perfil">
-        <div class="titulo-perfil">
-          <h2>Configuraciones</h2>
-          <div class="configs">
-            <a href="/user/profile" class="profile-user">Perfil</a>
-            <a href="" class="profile-favorite">Favoritos</a>
-            <a href="" class="profile-pay-method">Metodo de pago</a>
-          </div>
-        </div>
 
-        <form
-          action="/user/profile?_method=PUT"
-          method="POST"
-          enctype="multipart/form-data"
-          id="formulario"
-        >
-          <div class="formulario-perfil">
-            <div class="contenedor-img-perfil">
-              <div class="img-perfil">
+<head>
+  <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/users/styles.css" />
+    <link rel="stylesheet" href="/css/users/profile.css" />
+</head>
+
+<body>
+  <%- include('../partials/header') %>
+    <main>
+      <section class="contenedor-perfil">
+        <article class="elem_1">
+          <div class="Container-Config">
+            <button class="content-button" id="button-config">
+              <i class="fas fa-cog" aria-hidden="true"></i>
+              <p>Configuración</p>
+              <i class="fas fa-angle-down list_arrow" aria-hidden="true"></i>
+            </button>
+            <ul class="list_show">
+              <li>
+                <a href="/user/profile" class="nav_link nav_link--inside select-url">Mi Perfil</a>
+              </li>
+              <li>
+                <a href="/user/profile/edit" class="nav_link nav_link--inside">Editar Perfil</a>
+              </li>
+              <li>
+                <a href="/user/profile/password" class="nav_link nav_link--inside">Cambiar Contraseña</a>
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article class="card">
+          <img src="/img/bg-pattern-card.svg" alt="imagen header card" class="card-header">
+          <div class="card-body">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/109.svg" alt="imagen de vitoko" class="card-body-img">
+              <h1 class="card-body-title">koffing <span>40hp</span></h1>
+              <p class="card-body-text">68 exp</p>
+          </div>
+          <div class="card-footer">
+              <div class="card-footer-social">
+                  <h3>65K</h3>
+                  <p>Ataque</p>
+              </div>
+              <div class="card-footer-social">
+                  <h3>60K</h3>
+                  <p>Ataque Especial</p>
+              </div>
+              <div class="card-footer-social">
+                  <h3>95K</h3>
+                  <p>Defensa</p>
+              </div>
+          </div>
+      </article>
+        <!-- <article class="container-card">
+          <div class="card">
+            <div class="container-new-img">
+              <div class="new-img">
                 <picture>
-                  <img
-                    id="view-new-upload-img"
-                    src="/img/avatar/<%= user.image %>"
-                    alt="imagen de usuario"
-                  />
+                  <img id="view-new-upload-img" src="/img/avatar/defaultimg.gif" alt="imagen de usuario" />
                 </picture>
               </div>
-              <div class="boton-nueva-img">
-                <div>
-                  <label>
-                    <p>Subir archivo</p>
-                    <input
-                      type="file"
-                      name="image"
-                      id="file"
-                      accept="image/*"
-                    />
-                  </label>
-                </div>
-                <% if(locals.errors && errors.image){ %>
-                <p class="errors-t"><%= errors.image.msg %></p>
-                <% } %>
-              </div>
             </div>
-            <div class="contenedor-input-perfil">
-              <div class="estilos-input">
-                <label for="first_name">Nombre</label>
-                <input
-                  placeholder="Introduzca su nombre"
-                  id="first_name"
-                  name="fname"
-                  type="text"
-                  class="<%= locals.errors && errors.fname ? 'is-invalid' : null %>"
-                  value="<%= locals.oldData && oldData.fname ? oldData.fname : user.first_name %>"
-                />
-                <% if(locals.errors && errors.fname){ %>
-                <div class="errors-t"><%= errors.fname.msg %></div>
-                <% } %>
-                <div
-                  class="errors-t first_nameVacio displayNone first_nameErrors"
-                >
-                  Este campo no puede estar vacío.
+            <div class="content">
+              <div class="details">
+                <div class="name">
+                  <p><%=user.first_name%> <%=user.last_name%></p>
                 </div>
-                <div
-                  class="errors-t first_nameNum displayNone first_nameErrors"
-                >
-                  Caracteres invalidos.
+                <div class="email">
+                  <span>@<%=user.email%></span>
                 </div>
-                <div
-                  class="errors-t first_nameMin displayNone first_nameErrors"
-                >
-                  Escribe al menos 3 caracteres.
-                </div>
-                <div
-                  class="errors-t first_nameMax displayNone first_nameErrors"
-                >
-                  No puedes escribir más de 40 caracteres.
-                </div>
-              </div>
-
-              <div class="estilos-input">
-                <label for="last_name">Apellido</label>
-                <input
-                  placeholder="Introduzca su apellido"
-                  id="last_name"
-                  name="lname"
-                  type="text"
-                  class="<%= locals.errors && errors.lname ? 'is-invalid' : null %>"
-                  value="<%= locals.oldData && oldData.lname ? oldData.lname : user.last_name %>"
-                />
-                <% if(locals.errors && errors.lname){ %>
-                <div class="errors-t"><%= errors.lname.msg %></div>
-                <% } %>
-                <div
-                  class="errors-t last_nameVacio displayNone last_nameErrors"
-                >
-                  Este campo no puede estar vacío.
-                </div>
-                <div class="errors-t last_nameNum displayNone last_nameErrors">
-                  Caracteres invalidos.
-                </div>
-                <div class="errors-t last_nameMin displayNone last_nameErrors">
-                  Escribe al menos 3 caracteres.
-                </div>
-                <div class="errors-t last_nameMax displayNone last_nameErrors">
-                  No puedes escribir más de 40 caracteres.
-                </div>
-              </div>
-
-              <div class="estilos-input">
-                <label for="email">Email</label>
-                <input
-                  placeholder="Introduzca su email"
-                  id="email"
-                  name="email"
-                  type="email"
-                  class="<%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                  value="<%= locals.oldData && oldData.email ? oldData.email : user.email %>"
-                />
-                <% if(locals.errors && errors.email){ %>
-                <div class="errors-t"><%= errors.email.msg %></div>
-                <% } %>
-                <div class="errors-t emailVacio displayNone emailErrors">
-                  Este campo no puede estar vacío.
-                </div>
-                <div class="errors-t emailNum displayNone emailErrors">
-                  Caracteres invalidos.
-                </div>
-                <div class="errors-t emailMin displayNone emailErrors">
-                  Escribe al menos 6 caracteres.
-                </div>
-                <div class="errors-t emailMax displayNone emailErrors">
-                  No puedes escribir más de 100 caracteres.
-                </div>
-              </div>
-
-              <div class="estilos-input">
-                <label for="oldPassword">Contraseña actual</label>
-                <input
-                  placeholder="Introduzca su contraseña actual"
-                  id="oldPassword"
-                  name="oldPassword"
-                  type="password"
-                  class="<%= locals.errors && errors.oldPassword ? 'is-invalid' : null %>"
-                />
-                <% if(locals.errors && errors.oldPassword){ %>
-                <div class="errors-t"><%= errors.oldPassword.msg %></div>
-                <% } %>
-                <div
-                  class="errors-t oldPasswordPass displayNone oldPasswordErrors"
-                >
-                  Introduce tu contraseña actual
-                </div>
-                <div
-                  class="errors-t oldPasswordVacio displayNone oldPasswordErrors"
-                >
-                  Este campo no puede estar vacío.
-                </div>
-                <div
-                  class="errors-t oldPasswordMin displayNone oldPasswordErrors"
-                >
-                  Escribe al menos 8 caracteres.
-                </div>
-                <div
-                  class="errors-t oldPasswordMax displayNone oldPasswordErrors"
-                >
-                  No puedes escribir más de 65 caracteres.
-                </div>
-                <div
-                  class="errors-t oldPasswordLower displayNone oldPasswordErrors"
-                >
-                  Debe tener minimo 1 Minuscula
-                </div>
-                <div
-                  class="errors-t oldPasswordupper displayNone oldPasswordErrors"
-                >
-                  Debe tener minimo 1 Mayuscula
-                </div>
-                <div
-                  class="errors-t oldPasswordNumber displayNone oldPasswordErrors"
-                >
-                  Debe tener minimo 1 Numero
-                </div>
-                <div
-                  class="errors-t oldPasswordSpecial displayNone oldPasswordErrors"
-                >
-                  Debe tener minimo 1 Caracter especial
-                </div>
-                <div
-                  class="errors-t newPasswordSpecialError displayNone newPasswordErrors"
-                >
-                  No se permiten caracteres (!), (-), ([])
-                </div>
-              </div>
-
-              <div class="estilos-input">
-                <label for="newPassword">Nueva contraseña</label>
-                <input
-                  placeholder="Introduzca su nueva contraseña"
-                  id="newPassword"
-                  name="newPassword"
-                  type="password"
-                  class="<%= locals.errors && errors.newPassword ? 'is-invalid' : null %>"
-                />
-                <% if(locals.errors && errors.newPassword){ %>
-                <div class="errors-t"><%= errors.newPassword.msg %></div>
-                <% } %>
-                <div
-                  class="errors-t newPasswordPass displayNone newPasswordErrors"
-                >
-                  Introduce tu contraseña actual
-                </div>
-                <div
-                  class="errors-t newPasswordVacio displayNone newPasswordErrors"
-                >
-                  Este campo no puede estar vacío.
-                </div>
-                <div
-                  class="errors-t newPasswordMin displayNone newPasswordErrors"
-                >
-                  Escribe al menos 8 caracteres.
-                </div>
-                <div
-                  class="errors-t newPasswordMax displayNone newPasswordErrors"
-                >
-                  No puedes escribir más de 65 caracteres.
-                </div>
-                <div
-                  class="errors-t newPasswordLower displayNone newPasswordErrors"
-                >
-                  Debe tener minimo 1 Minuscula
-                </div>
-                <div
-                  class="errors-t newPasswordupper displayNone newPasswordErrors"
-                >
-                  Debe tener minimo 1 Mayuscula
-                </div>
-                <div
-                  class="errors-t newPasswordNumber displayNone newPasswordErrors"
-                >
-                  Debe tener minimo 1 Numero
-                </div>
-                <div
-                  class="errors-t newPasswordSpecial displayNone newPasswordErrors"
-                >
-                  Debe tener minimo 1 Caracter especial
-                </div>
-                <div
-                  class="errors-t newPasswordSpecialError displayNone newPasswordErrors"
-                >
-                  No se permiten caracteres (!), (-), ([])
-                </div>
-              </div>
-
-              <div class="estilos-input">
-                <label for="confirmNewPassword">Repite la contraseña</label>
-                <input
-                  placeholder="Repita su nueva contraseña"
-                  id="confirmNewPassword"
-                  name="confirmNewPassword"
-                  type="password"
-                  class="<%= locals.errors && errors.confirmNewPassword ? 'is-invalid' : null %>"
-                />
-                <% if(locals.errors && errors.confirmNewPassword){ %>
-                <div class="errors-t"><%= errors.confirmNewPassword.msg %></div>
-                <% } %>
-                <div
-                  class="errors-t confirmNewPasswordEq displayNone confirmNewPasswordErrors"
-                >
-                  Las contraseñas no coinciden.
+                <div class="data">
+                  <h3>#0<span>Productos Comprados</span></h3>
+                  <h3>#0<span>Favoritos</span></h3>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="container-message-form">
-            <div
-              class="formulario__mensaje-alert displayBlock"
-              id="formulario__mensaje-alert"
-            >
-              <p>
-                <i class="fas fa-exclamation-triangle"></i>
-                <b>Atencion:</b>
-                No es necesario rellenar los campos de
-                <b>Nueva Contraseña</b> para modificar su nombre, apellido o
-                email.
-              </p>
-            </div>
-
-            <div
-              class="formulario__mensaje-error displayNone"
-              id="formulario__mensaje-error"
-            >
-              <p>
-                <i class="fas fa-exclamation-triangle"></i>
-                <b>Error:</b>
-                Por favor rellena el formulario correctamente.
-              </p>
-            </div>
-          </div>
-
-          <div class="contenedor-botones">
-            <div class="perfil-input-submit">
-              <input type="submit" value="Guardar" class="guardar-datos" />
-            </div>
-
-            <div class="perfil-input-submit">
-              <input
-                type="reset"
-                value="restablecer"
-                class="restablecer-datos"
-              />
-            </div>
-          </div>
-        </form>
-      </div>
+        </article> -->
+      </section>
     </main>
     <%- include('../partials/footer') %>
-    <script src="/js/img-preview.js" type="text/javascript"></script>
-    <script
-      src="/js/validations/userProfile.js"
-      type="text/javascript"
-    ></script>
-  </body>
+      <script src="/js/drop-downProfile.js" type="text/javascript"></script>
+</body>
+
 </html>

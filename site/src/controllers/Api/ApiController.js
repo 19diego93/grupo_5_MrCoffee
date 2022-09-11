@@ -17,7 +17,7 @@ const controller = {
   checkout: async (req, res) => {
     // const date = (Date.now() * new Date().getMilliseconds())
 
-    await Ventas.create({ ...req.body, user_id: req.session.userLogged.dataValues.id },{
+    await Ventas.create({ ...req.body, user_id: req.session.userLogged.id },{
       include: [
         {association: "Product"}
       ],

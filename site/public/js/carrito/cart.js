@@ -298,7 +298,7 @@ window.addEventListener("load", () => {
     
     const formData = {
       Venta_detalle: writeDbVenta_detalle,
-      cobrado: new Date().toLocaleDateString('es-mx', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }),
+      cobrado: new Date().toLocaleDateString('es-ar', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }),
       cantidad: productosEnElCarrito(),
       total: calcularTotal(products),
       metodoDePago: formCheckout.TipoDePago.value,

@@ -1,5 +1,8 @@
 module.exports = (sequelize, dataTypes) => {
-  let alias = "Venta"; // esto debería estar en singular
+  /* Creating an alias */
+  let alias = "Venta";
+
+  /* Creating the columns of the table. */
   let cols = {
     id: {
       type: dataTypes.INTEGER(11),
@@ -28,14 +31,18 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
   };
+
+  /* Telling Sequelize to not create the createdAt and updatedAt columns. */
   let config = {
     TableName: "Venta",
     timestamps: false,
     freezeTableName: true,
-    
   };
+
+  /* Creating a table in the database. */
   const Venta = sequelize.define(alias, cols, config);
 
+  /* Creating a relationship between the tables. */
   Venta.associate = (models) => {
     Venta.belongsTo(models.Usuario, {
       as: "Usuario",
@@ -51,6 +58,6 @@ module.exports = (sequelize, dataTypes) => {
     });
   };
 
+  /* Returning the table. */
   return Venta;
 };
-  

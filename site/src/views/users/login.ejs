@@ -11,7 +11,6 @@
         <article class="container-article">
           <div class="container-form-login context">
             <p class="login-text">Ingresa</p>
-            <!--Formulario de registro sin servidor aún-->
             <form action="/user/login" method="POST" class="form-style">
               <div class="contenedor-campo">
                 <label for="email">Email</label>
@@ -23,22 +22,12 @@
                   value="<%= locals.oldData ? oldData.email : null %>"
                   class="<%= locals.errors && errors.email ? 'is-invalid' : null %>"
                 />
-                <!-- Errores validación db -->
+                <!-- Errores del Back -->
                 <% if (locals.errors && errors.email){ %>
-                <div class="errors-t"><%= errors.email.msg %></div>
+                <div class="errors-t emailErrBack"><%= errors.email.msg %></div>
                 <% } %>
-                <div class="errors-t emailVacio displayNone emailErrors">
-                  Este campo no puede estar vacío.
-                </div>
-                <div class="errors-t emailMin displayNone emailErrors">
-                  Escribe al menos 6 caracteres.
-                </div>
-                <div class="errors-t emailMax displayNone emailErrors">
-                  No puedes escribir más de 100 caracteres.
-                </div>
-                <div class="errors-t emailCaracters displayNone emailErrors">
-                  El email ingresado no es válido.
-                </div>
+                <!-- Errores del Front -->
+                <div class="errors-t emailErrors"></div>
               </div>
   
               <div class="contenedor-campo">
@@ -50,31 +39,12 @@
                   placeholder="Contraseña"
                   class="<%= locals.errors && errors.password ? 'is-invalid' : null %>"
                 />
-                <!-- Errores validación db -->
+                <!-- Errores del Back -->
                 <% if (locals.errors && errors.password){ %>
-                <div class="errors-t"><%= errors.password.msg %></div>
+                <div class="errors-t passwdErrBack"><%= errors.password.msg %></div>
                 <% } %>
-                <div class="errors-t passwdVacio displayNone passwdErrors">
-                  Este campo no puede estar vacío.
-                </div>
-                <div class="errors-t passwdMin displayNone passwdErrors">
-                  Escribe al menos 8 caracteres.
-                </div>
-                <div class="errors-t passwdMax displayNone passwdErrors">
-                  No puedes escribir más de 65 caracteres.
-                </div>
-                <div class="errors-t passwdLower displayNone passwdErrors">
-                  Debe tener minimo 1 Minuscula
-                </div>
-                <div class="errors-t passwdUpper displayNone passwdErrors">
-                  Debe tener minimo 1 Mayuscula
-                </div>
-                <div class="errors-t passwdNumber displayNone passwdErrors">
-                  Debe tener minimo 1 Numero
-                </div>
-                <div class="errors-t passwdSpecial displayNone passwdErrors">
-                  Debe tener minimo 1 Caracter especial
-                </div>
+                <!-- Errores del Front -->
+                <div class="errors-t passwdErrors"></div>
               </div>
   
               <div class="login-recordarme">
@@ -105,6 +75,7 @@
             </div>
           </div>
         </article>
+        <!-- Fondo Animado -->
         <article class="area" >
           <ul class="circles">
               <li></li>
