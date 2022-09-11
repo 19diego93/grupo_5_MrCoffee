@@ -10,6 +10,7 @@ const { Op } = require("sequelize");
 
 //!Modelos
 const Usuarios = db.Usuario;
+const Ventas = db.Venta;
 
 //! Controlador
 const usersController = {
@@ -173,9 +174,16 @@ const usersController = {
   },
 
   /* Representación de la página de perfil. */
-  profile: (req, res) => {
+  profile: async (req, res) => {
+    let acquiring = await Ventas.findAll({
+      where:{
+        user_id: { [Op.eq]: req.session.userLogged.id },
+      },
+    })
+
     return res.render("users/profile", {
       user: req.session.userLogged,
+      acquiring: acquiring,
       title: "│ Perfil",
     });
   },

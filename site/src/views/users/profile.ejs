@@ -31,53 +31,37 @@
             </ul>
           </div>
         </article>
-        <article class="card">
-          <img src="/img/bg-pattern-card.svg" alt="imagen header card" class="card-header">
-          <div class="card-body">
-              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/109.svg" alt="imagen de vitoko" class="card-body-img">
-              <h1 class="card-body-title">koffing <span>40hp</span></h1>
-              <p class="card-body-text">68 exp</p>
-          </div>
-          <div class="card-footer">
-              <div class="card-footer-social">
-                  <h3>65K</h3>
-                  <p>Ataque</p>
-              </div>
-              <div class="card-footer-social">
-                  <h3>60K</h3>
-                  <p>Ataque Especial</p>
-              </div>
-              <div class="card-footer-social">
-                  <h3>95K</h3>
-                  <p>Defensa</p>
-              </div>
-          </div>
-      </article>
-        <!-- <article class="container-card">
-          <div class="card">
-            <div class="container-new-img">
-              <div class="new-img">
-                <picture>
-                  <img id="view-new-upload-img" src="/img/avatar/defaultimg.gif" alt="imagen de usuario" />
-                </picture>
-              </div>
-            </div>
-            <div class="content">
-              <div class="details">
-                <div class="name">
-                  <p><%=user.first_name%> <%=user.last_name%></p>
+        <article class="elem_2">
+          <div class="container-card-pc">
+            <div class="card">
+              <img src="/img/bg-pattern-card.svg" alt="imagen header card" class="card-header">
+              <div class="card-body">
+                <div class="new-img">
+                  <picture>
+                    <img src="/img/avatar/<%=user.image%>" alt="imagen de usuario" class="card-body-img">
+                  </picture>
                 </div>
-                <div class="email">
-                  <span>@<%=user.email%></span>
+                <h2 class="card-body-name">
+                  <%=user.first_name%>
+                    <%=user.last_name%>
+                </h2>
+                <h3 class="card-body-email">
+                  <%=user.email%>
+                </h3>
+                <!-- <p class="card-body-text">68 exp</p> -->
+              </div>
+              <div class="card-footer">
+                <div class="card-footer-social">
+                  <h3><%=acquiring.length%></h3>
+                  <p>Compras</p>
                 </div>
-                <div class="data">
-                  <h3>#0<span>Productos Comprados</span></h3>
-                  <h3>#0<span>Favoritos</span></h3>
+                <div class="card-footer-social">
+                  <h3>0</h3>
+                  <p>Favoritos</p>
                 </div>
               </div>
             </div>
           </div>
-        </article> -->
       </section>
     </main>
     <%- include('../partials/footer') %>
