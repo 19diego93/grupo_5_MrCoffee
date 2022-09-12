@@ -11,7 +11,7 @@ const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const login = require("./validations/validationsLogin");
 const register = require("./validations/validationsRegister");
-const profile = require("./validations/validationsProfile");
+const profile = require("./validations/editProfile");
 const changePassw = require("./validations/changePassword");
 
 router.get("/login", guestMiddleware, usersController.login);
