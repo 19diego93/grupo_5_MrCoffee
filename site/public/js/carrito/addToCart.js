@@ -43,6 +43,12 @@ window.addEventListener("load", () => {
       if (quantity.value > stock) {
         return toastr.error(`El stock de este producto es de ${stock}`);
       }
+      if (quantity.value <= 0) {
+        return toastr.error("Picarón, tenes que elegir un número positivo!");
+      }
+      if (isNaN(quantity.value)) {
+        return toastr.error("Picarón, no entendí tu pedido, probá con números!");
+      }
 
       if (!localStorage.carrito) {
         localStorage.setItem(
