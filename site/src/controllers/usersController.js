@@ -196,135 +196,88 @@ const usersController = {
   },
 
   editProfile: async (req, res) => {
-    
+    let errors = validationResult(req);
 
+    if (!errors.isEmpty()) {
+      return res.render("users/edit", {
+        errors: errors.mapped(),
+        title: "│ Perfil",
+      });
+    }
 
+    if (errors.isEmpty()) {
+      let User = await Usuarios.findOne({
+        where: {
+          id: { [Op.eq]: req.session.userLogged.id },
+        },
+        include: [{ association: "User_category" }],
+      });
 
-    try {
-      let errors = validationResult(req);
+      let newEmail = req.body.email;
+      let oldEmail = User.email;
 
-      if (errors.isEmpty()) {
-        let User = await Usuarios.findOne({
+      let userInDb;
+      if (oldEmail == newEmail) {
+        userInDb = false;
+      } else {
+        let checkEmail = await Usuarios.findOne({
           where: {
-            id: { [Op.eq]: req.session.userLogged.id },
+            email: { [Op.eq]: newEmail },
           },
           include: [{ association: "User_category" }],
         });
-
-        let newEmail = req.body.email;
-        let oldEmail = User.email;
-
-        let userInDb;
-        if (oldEmail == newEmail) {
-          userInDb = false;
+        if (checkEmail) {
+          userInDb = true;
         } else {
-          let checkEmail = await Usuarios.findOne({
-            where: {
-              email: { [Op.eq]: newEmail },
-            },
-            include: [{ association: "User_category" }],
-          });
-          if (checkEmail) {
-            userInDb = true;
-          } else {
-            userInDb = false;
-          }
+          userInDb = false;
         }
+      }
+      if (!userInDb) {
+        let image;
+        if (req.file) {
+          image = req.file.filename;
 
-        if (userInDb != true) {
-          let isOkPassword = bcryptjs.compareSync(
-            req.body.oldPassword,
-            User.password
-          );
-
-          if (isOkPassword) {
-            let image;
-            if (req.file) {
-              image = req.file.filename;
-
-              if (User.image != "defaultimg.jpg") {
-                try {
-                  let filePath = path.resolve(
-                    __dirname,
-                    "../../public/img/avatar/" + User.dataValues.image
-                  );
-                  fs.unlinkSync(filePath);
-                } catch (e) {
-                  console.log(e);
-                }
-              }
-            } else {
-              image = User.image;
-            }
-
-            let newPassword;
-
-            if (req.body.newPassword.length > 0) {
-              newPassword = bcryptjs.hashSync(req.body.newPassword, 10);
-            } else {
-              newPassword = User.password;
-            }
-
-            let userEdit = {
-              id: User.id,
-              first_name: req.body.fname,
-              last_name: req.body.lname,
-              image: image,
-              email: req.body.email,
-              password: newPassword,
-              id_category_U: User.id_category_U,
-            };
-
-            await Usuarios.update(userEdit, {
-              where: { id: User.id },
-            });
-
-            req.session.userLogged = { ...userEdit };
-
-            delete req.session.userLogged.password;
-
-            res.redirect("/");
-          } else {
-            if (req.file) {
+          if (User.image != "defaultimg.gif") {
+            try {
               let filePath = path.resolve(
                 __dirname,
-                "../../public/img/avatar/" + req.file.filename
+                "../../public/img/avatar/" + User.dataValues.image
               );
               fs.unlinkSync(filePath);
+            } catch (e) {
+              console.log(e);
             }
-
-            return res.render("users/profile", {
-              errors: {
-                oldPassword: {
-                  msg: "La contraseña es incorrecta.",
-                },
-              },
-              user: req.session.userLogged,
-              oldData: req.body,
-              title: "│ Perfil",
-            });
           }
         } else {
-          if (req.file) {
-            let filePath = path.resolve(
-              __dirname,
-              "../../public/img/avatar/" + req.file.filename
-            );
-
-            fs.unlinkSync(filePath);
-          }
-
-          return res.render("users/profile", {
-            errors: {
-              email: {
-                msg: "Este email ya está registrado.",
-              },
-            },
-            user: req.session.userLogged,
-            oldData: req.body,
-            title: "│ Perfil",
-          });
+          image = User.image;
         }
+
+        await Usuarios.update(
+          {
+            ...User,
+            first_name: req.body.fname,
+            last_name: req.body.lname,
+            image: image,
+            email: req.body.email,
+          },
+          {
+            where: { id: User.id },
+          }
+        );
+        let newUser = {
+          id: User.id,
+          first_name: req.body.fname,
+          last_name: req.body.lname,
+          image: image,
+          email: req.body.email,
+          User_category: User.User_category,
+        };
+
+        req.session.userLogged = { ...newUser };
+
+        // delete req.session.userLogged.password;
+
+        res.redirect("/user/profile");
       } else {
         if (req.file) {
           let filePath = path.resolve(
@@ -335,14 +288,16 @@ const usersController = {
         }
 
         return res.render("users/profile", {
-          errors: errors.mapped(),
+          errors: {
+            oldPassword: {
+              msg: "La contraseña es incorrecta.",
+            },
+          },
           user: req.session.userLogged,
           oldData: req.body,
           title: "│ Perfil",
         });
       }
-    } catch (e) {
-      console.log("Hubo un error: ", e);
     }
   },
 
