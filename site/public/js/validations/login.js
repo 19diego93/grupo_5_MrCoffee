@@ -31,14 +31,14 @@ window.addEventListener("load", () => {
 
   function validation(expresion, value, campo, min, max) {
     const errorsMessageBack = document.querySelector(`.${campo}ErrBack`);
-    if(errorsMessageBack){
-      errorsMessageBack.innerHTML = ""
+    if (errorsMessageBack) {
+      errorsMessageBack.innerHTML = "";
     }
 
     const errorsMessage = document.querySelector(`.${campo}Errors`);
     const inputColor = document.getElementById(`${campo}`);
     if (value.length < 1) {
-      errorsMessage.innerHTML = "Este campo no puede estar vacío."
+      errorsMessage.innerHTML = "Este campo no puede estar vacío.";
 
       inputColor.classList.remove("is-valid");
       inputColor.classList.add("is-invalid");
@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
 
       campos[campo] = false;
     } else if (value.length < min) {
-      errorsMessage.innerHTML = `Escribe al menos ${min} caracteres.`
+      errorsMessage.innerHTML = `Escribe al menos ${min} caracteres.`;
 
       inputColor.classList.remove("is-valid");
       inputColor.classList.add("is-invalid");
@@ -56,7 +56,7 @@ window.addEventListener("load", () => {
 
       campos[campo] = false;
     } else if (value.length > max) {
-      errorsMessage.innerHTML = `No puedes escribir más de ${max} caracteres.`
+      errorsMessage.innerHTML = `No puedes escribir más de ${max} caracteres.`;
 
       inputColor.classList.remove("is-valid");
       inputColor.classList.add("is-invalid");
@@ -66,7 +66,7 @@ window.addEventListener("load", () => {
       campos[campo] = false;
     } else if (campo == "email") {
       if (!expresion.test(value)) {
-        errorsMessage.innerHTML = `El email ingresado no es válido.`
+        errorsMessage.innerHTML = `El email ingresado no es válido.`;
 
         inputColor.classList.remove("is-valid");
         inputColor.classList.add("is-invalid");
@@ -75,18 +75,18 @@ window.addEventListener("load", () => {
 
         campos[campo] = false;
       } else {
-        errorsMessage.innerHTML = ""
+        errorsMessage.innerHTML = "";
 
         inputColor.classList.remove("is-invalid");
         inputColor.classList.remove("is-invalid-icon");
         inputColor.classList.add("is-valid");
         inputColor.classList.add("is-valid-icon");
-        
+
         campos[campo] = true;
       }
     } else if (campo == "passwd") {
       if (!expresion.lower.test(value)) {
-        errorsMessage.innerHTML = `Debe tener mínimo una Minúscula. [a-z]`
+        errorsMessage.innerHTML = `Debe tener mínimo una Minúscula. [a-z]`;
 
         inputColor.classList.remove("is-valid");
         inputColor.classList.add("is-invalid");
@@ -95,7 +95,7 @@ window.addEventListener("load", () => {
 
         campos[campo] = false;
       } else if (!expresion.upper.test(value)) {
-        errorsMessage.innerHTML = `Debe tener mínimo una Mayúscula. [A-Z]`
+        errorsMessage.innerHTML = `Debe tener mínimo una Mayúscula. [A-Z]`;
 
         inputColor.classList.remove("is-valid");
         inputColor.classList.add("is-invalid");
@@ -104,7 +104,7 @@ window.addEventListener("load", () => {
 
         campos[campo] = false;
       } else if (!expresion.number.test(value)) {
-        errorsMessage.innerHTML = `Debe tener mínimo un Número. [0-9]`
+        errorsMessage.innerHTML = `Debe tener mínimo un Número. [0-9]`;
 
         inputColor.classList.remove("is-valid");
         inputColor.classList.add("is-invalid");
@@ -113,7 +113,7 @@ window.addEventListener("load", () => {
 
         campos[campo] = false;
       } else if (!expresion.special.test(value)) {
-        errorsMessage.innerHTML = `Debe tener mínimo un Carácter especial. [!@#$%^&*]`
+        errorsMessage.innerHTML = `Debe tener mínimo un Carácter especial. [!@#$%^&*]`;
 
         inputColor.classList.remove("is-valid");
         inputColor.classList.add("is-invalid");
@@ -122,17 +122,18 @@ window.addEventListener("load", () => {
 
         campos[campo] = false;
       } else {
-        let ValidaEspacios = value.indexOf(" ")
-        if(ValidaEspacios == -1){
-          errorsMessage.innerHTML = ""
+        let ValidaEspacios = value.indexOf(" ");
+        if (ValidaEspacios == -1) {
+          errorsMessage.innerHTML = "";
 
           inputColor.classList.remove("is-invalid");
           inputColor.classList.remove("is-invalid-icon");
           inputColor.classList.add("is-valid");
           inputColor.classList.add("is-valid-icon");
           campos[campo] = true;
-        }else{
-          errorsMessage.innerHTML = "La contraseña no puede contener espacios en blanco."
+        } else {
+          errorsMessage.innerHTML =
+            "La contraseña no puede contener espacios en blanco.";
 
           inputColor.classList.remove("is-valid");
           inputColor.classList.add("is-invalid");

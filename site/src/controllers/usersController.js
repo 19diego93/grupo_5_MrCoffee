@@ -176,10 +176,10 @@ const usersController = {
   /* Representación de la página de perfil. */
   profile: async (req, res) => {
     let acquiring = await Ventas.findAll({
-      where:{
+      where: {
         user_id: { [Op.eq]: req.session.userLogged.id },
       },
-    })
+    });
 
     return res.render("users/profile", {
       user: req.session.userLogged,
@@ -349,11 +349,52 @@ const usersController = {
     });
   },
 
-  editPassword: (req, res) => {
-    return res.render("users/editPassword", {
-      user: req.session.userLogged,
-      title: "│ Perfil",
+  editPassword: async (req, res) => {
+    let errors = validationResult(req);
+    console.log(errors);
+    if (!errors.isEmpty()) {
+      return res.render("users/editPassword", {
+        errors: errors.mapped(),
+        title: "│ Perfil",
+      });
+    }
+
+    let userInDb = await Usuarios.findOne({
+      where: {
+        id: { [Op.eq]: req.session.userLogged.id },
+      },
+      include: [{ association: "User_category" }],
     });
+    let User = userInDb.dataValues;
+    let oldPassword = req.body.oldPassword;
+    let passwDb = User.password;
+
+    let isOkPassword = bcryptjs.compareSync(oldPassword, passwDb);
+    if (!isOkPassword) {
+      return res.render("users/editPassword", {
+        errors: {
+          oldPassword: {
+            msg: "La contraseña es incorrecta.",
+          },
+        },
+        title: "│ Perfil",
+      });
+    }
+    let newPassw = req.body.newPassword;
+    newPassw = bcryptjs.hashSync(req.body.newPassword, 10);
+
+    await Usuarios.update(
+      { ...User, password: newPassw },
+      {
+        where: { id: User.id },
+      }
+    );
+
+    req.session.userLogged = { ...User };
+
+    delete req.session.userLogged.password;
+    console.log(req.session.userLogged);
+    return res.redirect("/user/profile");
   },
 
   logout: async (req, res) => {

@@ -12,6 +12,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 const login = require("./validations/validationsLogin");
 const register = require("./validations/validationsRegister");
 const profile = require("./validations/validationsProfile");
+const changePassw = require("./validations/changePassword");
 
 router.get("/login", guestMiddleware, usersController.login);
 
@@ -42,7 +43,7 @@ router.get("/profile/password", authMiddleware, usersController.password);
 router.put(
   "/profile/password",
   upload.single("image"),
-  profile,
+  changePassw,
   usersController.editPassword
 );
 
