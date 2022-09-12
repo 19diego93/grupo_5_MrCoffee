@@ -1,0 +1,130 @@
+.contenedor-edit {
+  background-color: var(--BoxShadow-Checked);
+  background-image: url(/img/bg-pattern-top.svg),
+    url(/img/bg-pattern-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+}
+.cardEdit {
+  background-color: var(--Secondary);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.card-headerEdit {
+  width: 100%;
+  height: 100px;
+  display: block;
+  object-fit: cover;
+}
+.new-img picture img {
+  border-style: none;
+}
+.new-img {
+  margin-top: calc(-60px);
+}
+.new-img {
+  width: 100px;
+  height: 100px;
+}
+.card-bodyEdit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid var(--BoxShadow);
+  padding: 20px;
+}
+.card-body-nameEdit {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+.card-body-emailEdit {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  overflow: auto;
+}
+.card-body-textEdit {
+  color: var(--Tertiary);
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+.card-footerEdit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-footer-socialEdit {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.card-footer-socialEdit p {
+  letter-spacing: 1px;
+}
+/* !Form */
+.container-form-Edit {
+  margin-top: 35px;
+  width: 100%;
+  text-align: center;
+    background-color: var(--Secondary);
+}
+.user-img-validationEdit {
+  pointer-events: none;
+}
+
+@media (min-width: 460px) {
+    .new-img {
+        margin-top: calc(-100px - 5px);
+    }
+    .new-img {
+        width: 200px;
+        height: 200px;
+    }
+  .card-headerEdit {
+    height: 150px;
+  }
+  .card-body-nameEdit {
+    font-size: 1.6rem;
+  }
+  .card-body-emailEdit {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  .card-footerEdit {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 768px) {
+  .card-footerEdit {
+    justify-content: center;
+  }
+  .card-footer-socialEdit {
+    padding: 0px 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-card-pcEdit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+  }
+ 
+  .card-body-nameEdit {
+    margin: 5px;
+  }
+  .cardEdit {
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .card-headerEdit {
+    height: 150px;
+  }
+}
