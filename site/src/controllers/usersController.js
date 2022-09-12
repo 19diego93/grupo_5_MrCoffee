@@ -175,7 +175,7 @@ const usersController = {
 
   /* Representación de la página de perfil. */
   profile: async (req, res) => {
-    let acquiring = await Ventas.findAll({
+    let acquirers = await Ventas.findAll({
       where: {
         user_id: { [Op.eq]: req.session.userLogged.id },
       },
@@ -183,7 +183,7 @@ const usersController = {
 
     return res.render("users/profile", {
       user: req.session.userLogged,
-      acquiring: acquiring,
+      acquirers: acquirers,
       title: "│ Perfil",
     });
   },
@@ -196,6 +196,10 @@ const usersController = {
   },
 
   editProfile: async (req, res) => {
+    
+
+
+
     try {
       let errors = validationResult(req);
 
@@ -350,8 +354,10 @@ const usersController = {
   },
 
   editPassword: async (req, res) => {
+    /* El código anterior usa el método validationResult() para verificar si hay algún error en la solicitud. */
     let errors = validationResult(req);
-    console.log(errors);
+
+    /* Comprobando si hay algún error en el formulario. Si los hay, devolverá el formulario con los errores. */
     if (!errors.isEmpty()) {
       return res.render("users/editPassword", {
         errors: errors.mapped(),
@@ -359,17 +365,26 @@ const usersController = {
       });
     }
 
+    /* Encontrar un usuario en la base de datos con la identificación del usuario que inició sesión. */
     let userInDb = await Usuarios.findOne({
       where: {
         id: { [Op.eq]: req.session.userLogged.id },
       },
       include: [{ association: "User_category" }],
     });
+
+    /* Creando una variable llamada Usuario y asignándole el valor de userInDb.dataValues. */
     let User = userInDb.dataValues;
+
+    /* Asignando el valor del campo oldPassword a la variable oldPassword. */
     let oldPassword = req.body.oldPassword;
+    /* Obtener la contraseña de la base de datos y almacenarla en una variable. */
     let passwDb = User.password;
 
+    /* Comparando la contraseña anterior con la contraseña en la base de datos. */
     let isOkPassword = bcryptjs.compareSync(oldPassword, passwDb);
+
+    /* Comprobando si la contraseña NO es correcta. */
     if (!isOkPassword) {
       return res.render("users/editPassword", {
         errors: {
@@ -380,9 +395,13 @@ const usersController = {
         title: "│ Perfil",
       });
     }
+
+    /* Crear una variable llamada newPassw y asignarle el valor del campo newPassword en el cuerpo de la solicitud. */
     let newPassw = req.body.newPassword;
+    /* Hashing de la nueva contraseña. */
     newPassw = bcryptjs.hashSync(req.body.newPassword, 10);
 
+    /* Actualización de la contraseña del usuario. */
     await Usuarios.update(
       { ...User, password: newPassw },
       {
@@ -390,10 +409,13 @@ const usersController = {
       }
     );
 
+    /* Copiar los datos del objeto de usuario y crea una sesión. (express-session) */
     req.session.userLogged = { ...User };
 
+    /* Eliminación de la contraseña de la sesión. */
     delete req.session.userLogged.password;
-    console.log(req.session.userLogged);
+
+    /* Redirigir al usuario a la página de perfil. */
     return res.redirect("/user/profile");
   },
 

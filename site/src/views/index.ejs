@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('./partials/head') %>
+
+<head>
+  <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/home.css" />
     <link rel="stylesheet" href="/css/statics/products.css" />
-  </head>
-  <body>
-    <%- include('./partials/header') %>
+    <link rel="stylesheet" href="/css/firefly.css">
+</head>
+
+<body>
+  <%- include('./partials/header') %>
     <main>
       <!--! Campaña -->
       <section class="Container-Campaign">
@@ -15,11 +18,26 @@
           <p>¡Conocé nuestros productos!</p>
           <a href="/products" class="boton-descubrir">¡Descubrír!</a>
         </article>
+        <article class="container-firefly">
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+          <div class="firefly"></div>
+        </article>
         <article id="wave-effect">
           <svg viewBox="0 0 500 150" preserveAspectRatio="none">
-            <path
-              d="M-7.77,66.63 C149.99,150.22 349.21,-50.06 514.81,77.49 L500.00,150.22 L0.00,150.22 Z"
-            ></path>
+            <path d="M-7.77,66.63 C149.99,150.22 349.21,-50.06 514.81,77.49 L500.00,150.22 L0.00,150.22 Z"></path>
           </svg>
         </article>
       </section>
@@ -29,100 +47,108 @@
           <h3>DESTACADOS</h3>
         </div>
         <% if(locals && locals.coffee) { %>
-        <div class="products">
-          <% coffee.forEach((product) => { %>
-          <a href="/products/detail/<%=product.id%>">
-            <article class="product-container">
-              <div class="product-image">
-                <picture>
-                  <img src="/img/products/<%= product.image %>" alt="" />
-                  <div class="product-stars">
-                    <% let rating = Math.round(product.rating) %> <% for(let e =
-                    0; e < rating ; e++) { %>
-                    <i class="fas fa-star"></i>
-                    <% } %> <% let starOver = 5 - rating %> <% for(let a = 0; a
-                    < starOver; a++) { %>
-                    <i class="far fa-star"></i>
-                    <% } %>
+          <div class="products">
+            <% coffee.forEach((product)=> { %>
+              <a href="/products/detail/<%=product.id%>">
+                <article class="product-container">
+                  <div class="product-image">
+                    <picture>
+                      <img src="/img/products/<%= product.image %>" alt="" />
+                      <div class="product-stars">
+                        <% let rating=Math.round(product.rating) %>
+                          <% for(let e=0; e < rating ; e++) { %>
+                            <i class="fas fa-star"></i>
+                            <% } %>
+                              <% let starOver=5 - rating %>
+                                <% for(let a=0; a < starOver; a++) { %>
+                                  <i class="far fa-star"></i>
+                                  <% } %>
+                      </div>
+                    </picture>
                   </div>
-                </picture>
-              </div>
-              <div class="product-descriptions">
-                <span class="product-Name"><%=product.name%></span>
-                <% if(product.offer > 0) { %>
-                <div>
-                  <% let newPrice=((product.price * product.offer /
-                  100).toFixed(2))%>
-                  <span class="product-Price"
-                    >$<%=(product.price - newPrice).toFixed(2)%></span
-                  >
-                  <span class="product-offer"><%=product.offer%>%</span>
-                </div>
-                <% } else { %>
-                <span class="product-Price">$<%=product.price%></span>
-                <% } %>
-              </div>
-            </article>
-          </a>
-          <% }) %>
-        </div>
-        <% } else { %>
-        <div class="product-error">
-          <h2>No existen productos en la base de datos.</h2>
-        </div>
-        <% } %> <% if(locals && !locals.coffee.length > 0) { %>
-        <div class="product-error">
-          <h3>No hay productos que coincidan con esa búsqueda.</h3>
-        </div>
-        <% } %> <% if(locals && locals.food) { %>
-        <div class="products">
-          <% food.forEach((product) => { %>
-          <a href="/products/detail/<%=product.id%>">
-            <article class="product-container">
-              <div class="product-image">
-                <picture>
-                  <img src="/img/products/<%= product.image %>" alt="" />
-                  <div class="product-stars">
-                    <% let rating = Math.round(product.rating) %> <% for(let e =
-                    0; e < rating ; e++) { %>
-                    <i class="fas fa-star"></i>
-                    <% } %> <% let starOver = 5 - rating %> <% for(let a = 0; a
-                    < starOver; a++) { %>
-                    <i class="far fa-star"></i>
-                    <% } %>
+                  <div class="product-descriptions">
+                    <span class="product-Name">
+                      <%=product.name%>
+                    </span>
+                    <% if(product.offer> 0) { %>
+                      <div>
+                        <% let newPrice=((product.price * product.offer / 100).toFixed(2))%>
+                          <span class="product-Price">$<%=(product.price - newPrice).toFixed(2)%></span>
+                          <span class="product-offer">
+                            <%=product.offer%>%
+                          </span>
+                      </div>
+                      <% } else { %>
+                        <span class="product-Price">$<%=product.price%></span>
+                        <% } %>
                   </div>
-                </picture>
-              </div>
-              <div class="product-descriptions">
-                <span class="product-Name"><%=product.name%></span>
-                <% if(product.offer > 0) { %>
-                <div>
-                  <% let newPrice=((product.price * product.offer /
-                  100).toFixed(2))%>
-                  <span class="product-Price"
-                    >$<%=(product.price - newPrice).toFixed(2)%></span
-                  >
-                  <span class="product-offer"><%=product.offer%>%</span>
+                </article>
+              </a>
+              <% }) %>
+          </div>
+          <% } else { %>
+            <div class="product-error">
+              <h2>No existen productos en la base de datos.</h2>
+            </div>
+            <% } %>
+              <% if(locals && !locals.coffee.length> 0) { %>
+                <div class="product-error">
+                  <h3>No hay productos que coincidan con esa búsqueda.</h3>
                 </div>
-                <% } else { %>
-                <span class="product-Price">$<%=product.price%></span>
                 <% } %>
-              </div>
-            </article>
-          </a>
-          <% }) %>
-        </div>
-        <% } else { %>
-        <div class="product-error">
-          <h2>No existen productos en la base de datos.</h2>
-        </div>
-        <% } %> <% if(locals && !locals.food.length > 0) { %>
-        <div class="product-error">
-          <h3>No hay productos que coincidan con esa búsqueda.</h3>
-        </div>
-        <% } %>
+                  <% if(locals && locals.food) { %>
+                    <div class="products">
+                      <% food.forEach((product)=> { %>
+                        <a href="/products/detail/<%=product.id%>">
+                          <article class="product-container">
+                            <div class="product-image">
+                              <picture>
+                                <img src="/img/products/<%= product.image %>" alt="" />
+                                <div class="product-stars">
+                                  <% let rating=Math.round(product.rating) %>
+                                    <% for(let e=0; e < rating ; e++) { %>
+                                      <i class="fas fa-star"></i>
+                                      <% } %>
+                                        <% let starOver=5 - rating %>
+                                          <% for(let a=0; a < starOver; a++) { %>
+                                            <i class="far fa-star"></i>
+                                            <% } %>
+                                </div>
+                              </picture>
+                            </div>
+                            <div class="product-descriptions">
+                              <span class="product-Name">
+                                <%=product.name%>
+                              </span>
+                              <% if(product.offer> 0) { %>
+                                <div>
+                                  <% let newPrice=((product.price * product.offer / 100).toFixed(2))%>
+                                    <span class="product-Price">$<%=(product.price - newPrice).toFixed(2)%></span>
+                                    <span class="product-offer">
+                                      <%=product.offer%>%
+                                    </span>
+                                </div>
+                                <% } else { %>
+                                  <span class="product-Price">$<%=product.price%></span>
+                                  <% } %>
+                            </div>
+                          </article>
+                        </a>
+                        <% }) %>
+                    </div>
+                    <% } else { %>
+                      <div class="product-error">
+                        <h2>No existen productos en la base de datos.</h2>
+                      </div>
+                      <% } %>
+                        <% if(locals && !locals.food.length> 0) { %>
+                          <div class="product-error">
+                            <h3>No hay productos que coincidan con esa búsqueda.</h3>
+                          </div>
+                          <% } %>
       </section>
     </main>
     <%- include('./partials/footer') %>
-  </body>
+</body>
+
 </html>

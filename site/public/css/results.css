@@ -20,9 +20,12 @@ main {
   color: var(--color-Negro-1);
 }
 #search {
-  color: var(--color-Marron-1);
+  color: var(--Link);
 }
 /* ! */
+.Container-Campaign{
+  height: 40vh;
+}
 .products-title {
   color: var(--color-Rojo-1);
   text-align: center;

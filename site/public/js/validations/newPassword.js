@@ -175,7 +175,7 @@ window.addEventListener("load", function () {
       e.submit();
     } else {
       e.preventDefault();
-      toastr.error("Complete los campos del formulario.");
+      toastr.error("La información ingresada no es válida.");
     }
   });
 });

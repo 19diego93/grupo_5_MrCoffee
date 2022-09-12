@@ -40,6 +40,8 @@ a {
   --Tertiary: #000;
   --Tertiary-Light: #1d1d1d;
 
+  --Quaternary: #3bc472;
+
   --BoxShadow: rgba(0, 0, 0, 0.4);
   --BoxShadow-Error: rgba(255, 0, 0, 0.4);
   --BoxShadow-Checked: rgba(90, 210, 240, 0.4);

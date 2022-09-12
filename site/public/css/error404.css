@@ -20,18 +20,20 @@ main {
 main#main-error {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-flow: row wrap;
+  text-align: center;
   padding-top: 5vh;
 }
 main#main-error figure {
-  width: 90%;
-  height: 50vh;
+
 }
 main#main-error figure img {
   width: 100%;
-  height: 100%;
+  height: 150px;
+  display: block;
+  object-fit: cover;
 }
 main#main-error a {
   font-size: 1.5rem;
@@ -46,4 +48,17 @@ main#main-error a span {
 }
 #main-error a:hover span {
   color: var(--color-Celeste-2);
+}
+@media (min-width: 460px) {
+  main#main-error figure img {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+@media (min-width: 768px) {
+  main#main-error figure img {
+    width: 100%;
+    height: 300px;
+  }
 }

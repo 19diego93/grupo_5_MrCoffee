@@ -25,4 +25,16 @@ window.addEventListener("load", function () {
       menu.style.height = `${height}px`;
     });
   });
+
+  // Boton cerrar sesion
+  let logout = document.querySelector("#logoutUser");
+  let cartNumber = document.querySelector("#urlCart p");
+
+  if (logout) {
+    logout.addEventListener("click", () => {
+      localStorage.removeItem("carrito");
+      cartNumber.innerHTML = "0";
+    });
+  }
+
 });
