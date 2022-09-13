@@ -57,7 +57,12 @@ window.addEventListener("load", () => {
     }
   });
 
+  let formCheckout = document.querySelector("#checkoutCart")
+
   if (!localStorage.carrito || localStorage.carrito == "[]") {
+    formCheckout.addEventListener("submit", (e) => {
+      e.preventDefault();
+    })
     return carritoVacio();
   }
 
@@ -67,8 +72,10 @@ window.addEventListener("load", () => {
   carrito.forEach((item) => {
     fetch(`/api/product/${item.id}`)
       .then((res) => res.json())
-      .then((product) => {
-        if (product) {
+      .then((data) => {
+        if (data) {
+          let product = data.product
+
           let porcentaje = ((product.price * product.offer) / 100).toFixed(2);
           let nuevoPrecio = (product.price - porcentaje).toFixed(2);
           let price = parseFloat(nuevoPrecio * item.quantity, 2).toFixed(2);
@@ -278,8 +285,6 @@ window.addEventListener("load", () => {
       });
   });
 
-  let formCheckout = document.querySelector("#checkoutCart")
-
   let writeDbVenta_detalle = []
 
   products.forEach(product => {
@@ -303,30 +308,32 @@ window.addEventListener("load", () => {
       total: calcularTotal(products),
       metodoDePago: formCheckout.TipoDePago.value,
     };
-    
-    fetch("/api/checkout", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8'
-      },
-      body: JSON.stringify(formData)
-    })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.ok) {
-        //borro el carrito
-        localStorage.removeItem("carrito");
-        products = [];
-        totalAmount.innerHTML = ``;
-        carritoVacio();
-        let cartNumber = document.querySelector("#urlCart p");
-        cartNumber.innerHTML = productosEnElCarrito();
-        // location.href = `/order/${data.order.id}?creado=true`;
-        toastr.success("Compra realizada");
-      } else {
-        toastr.error("No se pudo realizar la compra, intente mas tarde");
-      }
-    })
-    .catch((error) => console.log(error));
+
+    if (localStorage.carrito) {
+      fetch("/api/checkout", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.ok) {
+          //borro el carrito
+          localStorage.removeItem("carrito");
+          products = [];
+          totalAmount.innerHTML = ``;
+          carritoVacio();
+          let cartNumber = document.querySelector("#urlCart p");
+          cartNumber.innerHTML = productosEnElCarrito();
+          // location.href = `/order/${data.order.id}?creado=true`;
+          toastr.success("Compra realizada");
+        } else {
+          toastr.error("No se pudo realizar la compra, intente mas tarde");
+        }
+      })
+      .catch((error) => console.log(error));
+    }
   })
 });

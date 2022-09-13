@@ -196,89 +196,41 @@ const usersController = {
   },
 
   editProfile: async (req, res) => {
+    /* Validando el formulario. */
     let errors = validationResult(req);
 
+    /* Comprobando si hay algún error en el formulario. Si los hay, devolverá el formulario con los errores. */
     if (!errors.isEmpty()) {
       return res.render("users/edit", {
         errors: errors.mapped(),
+        user: req.session.userLogged,
         title: "│ Perfil",
       });
     }
 
-    if (errors.isEmpty()) {
-      let User = await Usuarios.findOne({
+    /* Encontrar el usuario en la base de datos con la identificación del usuario que está conectado. */
+    let User = await Usuarios.findOne({
+      where: {
+        id: { [Op.eq]: req.session.userLogged.id },
+      },
+      include: [{ association: "User_category" }],
+    });
+
+    /* Comparando el correo antiguo con el nuevo correo electrónico. */
+    let newEmail = req.body.email;
+    let oldEmail = User.email;
+
+    if (oldEmail != newEmail) {
+      /* Comprobando si el correo electrónico ya está en la base de datos. */
+      let checkEmail = await Usuarios.findOne({
         where: {
-          id: { [Op.eq]: req.session.userLogged.id },
+          email: { [Op.eq]: newEmail },
         },
         include: [{ association: "User_category" }],
       });
-
-      let newEmail = req.body.email;
-      let oldEmail = User.email;
-
-      let userInDb;
-      if (oldEmail == newEmail) {
-        userInDb = false;
-      } else {
-        let checkEmail = await Usuarios.findOne({
-          where: {
-            email: { [Op.eq]: newEmail },
-          },
-          include: [{ association: "User_category" }],
-        });
-        if (checkEmail) {
-          userInDb = true;
-        } else {
-          userInDb = false;
-        }
-      }
-      if (!userInDb) {
-        let image;
-        if (req.file) {
-          image = req.file.filename;
-
-          if (User.image != "defaultimg.gif") {
-            try {
-              let filePath = path.resolve(
-                __dirname,
-                "../../public/img/avatar/" + User.dataValues.image
-              );
-              fs.unlinkSync(filePath);
-            } catch (e) {
-              console.log(e);
-            }
-          }
-        } else {
-          image = User.image;
-        }
-
-        await Usuarios.update(
-          {
-            ...User,
-            first_name: req.body.fname,
-            last_name: req.body.lname,
-            image: image,
-            email: req.body.email,
-          },
-          {
-            where: { id: User.id },
-          }
-        );
-        let newUser = {
-          id: User.id,
-          first_name: req.body.fname,
-          last_name: req.body.lname,
-          image: image,
-          email: req.body.email,
-          User_category: User.User_category,
-        };
-
-        req.session.userLogged = { ...newUser };
-
-        // delete req.session.userLogged.password;
-
-        res.redirect("/user/profile");
-      } else {
+      /* Si el correo electrónico ya está registrado. */
+      if (checkEmail) {
+        /* Eliminando el archivo del servidor. */
         if (req.file) {
           let filePath = path.resolve(
             __dirname,
@@ -287,10 +239,11 @@ const usersController = {
           fs.unlinkSync(filePath);
         }
 
+        /* Renderizando la página con el mensaje de error. */
         return res.render("users/profile", {
           errors: {
-            oldPassword: {
-              msg: "La contraseña es incorrecta.",
+            email: {
+              msg: "Este email ya está registrado.",
             },
           },
           user: req.session.userLogged,
@@ -299,9 +252,52 @@ const usersController = {
         });
       }
     }
+
+    /* Comprobando si el usuario ha subido una imagen o no. Si el usuario NO ha subido una imagen, se utilizará la imagen predeterminada. Si el usuario ha subido una imagen, se utilizará la imagen que haya subido. */
+    let image = User.image;
+    if (req.file) {
+      image = req.file.filename;
+
+      if (User.image != "defaultimg.gif") {
+        let filePath = path.resolve(
+          __dirname,
+          "../../public/img/avatar/" + User.dataValues.image
+        );
+        fs.unlinkSync(filePath);
+      }
+    }
+
+    /* Crear un nuevo objeto con las mismas propiedades que el objeto Usuario. */
+    let newUser = {
+      id: User.id,
+      first_name: req.body.fname,
+      last_name: req.body.lname,
+      image: image,
+      email: req.body.email,
+      password: User.password,
+      id_category_U: User.id_category_U,
+    };
+
+    /* Actualización del usuario con los nuevos datos del usuario. */
+    await Usuarios.update(
+      { ...newUser },
+      {
+        where: { id: User.id },
+      }
+    );
+
+    /* Crear un nuevo objeto con el objeto newUser y la propiedad User_category del objeto User. */
+    req.session.userLogged = { ...newUser, User_category: User.User_category };
+
+    /* Eliminación de la contraseña del objeto de sesión. */
+    delete req.session.userLogged.password;
+
+    /* Redirigir al usuario a la página de perfil. */
+    res.redirect("/user/profile");
   },
 
   password: (req, res) => {
+    /* Renderizando el archivo editPassword.ejs. */
     return res.render("users/editPassword", {
       user: req.session.userLogged,
       title: "│ Perfil",

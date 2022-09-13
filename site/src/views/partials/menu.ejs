@@ -37,7 +37,7 @@
         </a>
       </div>
     </li>
-
+    <% if (locals.isLogged) { %>
     <li class="list__item list__item--click nav__link--outside">
       <div class="nav__glow list__button list__button--click">
         <i class="fas fa-cog"></i>
@@ -57,6 +57,7 @@
         </li>
       </ul>
     </li>
+    <% } %>
     <% if(locals.userLogged) { %> 
       <% if(locals.userLogged.User_category.name == 'Admin') { %>
       <li class="list__item list__item--click nav__link--outside">

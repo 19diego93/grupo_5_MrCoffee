@@ -33,7 +33,6 @@
   align-items: center;
   text-align: center;
   border-bottom: 1px solid var(--BoxShadow);
-  padding: 20px;
 }
 .card-body-nameEdit {
   margin-top: 2rem;
@@ -45,6 +44,32 @@
   font-size: 0.8rem;
   text-transform: capitalize;
   overflow: auto;
+}
+.button-new-img {
+  padding-top: 10px;
+  padding-left: 0px;
+}
+.button-new-img label {
+  width: 100%;
+  border: none;
+  height: 44px;
+  margin-top: 8px;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 0.1s;
+  box-shadow: 0 0 0 0.1rem var(--Secondary-Dark);
+  text-align: center;
+}
+.button-new-img label:hover {
+  background-color: var(--Primary);
+  color: var(--Secondary);
+}
+.button-new-img label input {
+  display: none;
+  font-family: inherit;
+  -webkit-appearance: none;
 }
 .card-body-textEdit {
   color: var(--Tertiary);
@@ -75,7 +100,13 @@
 .user-img-validationEdit {
   pointer-events: none;
 }
-
+.container-button{
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  padding: 0px 5px;
+  margin: 20px auto;
+}
 @media (min-width: 460px) {
     .new-img {
         margin-top: calc(-100px - 5px);
@@ -108,23 +139,36 @@
   }
 }
 @media (min-width: 1200px) {
+  .card-headerEdit {
+    height: 150px;
+  }
+  .contenedor-edit{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0px;
+  }
+  .contenedor-edit .elem_2 {
+    grid-column: 2/6;
+  }
   .container-card-pcEdit {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px;
+    margin-top: 50px;
   }
- 
   .card-body-nameEdit {
     margin: 5px;
   }
   .cardEdit {
-    width: 500px;
+    width: 700px;
     height: auto;
     border-radius: 20px;
     overflow: hidden;
+    margin-bottom: 50px;
   }
-  .card-headerEdit {
-    height: 150px;
+  .form-style{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 }

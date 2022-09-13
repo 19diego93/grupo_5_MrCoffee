@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
     fetch(`/api/product/${buttonAdd.dataset.id}`)
       .then((res) => res.json())
       .then((data) => {
-        return (stock = data.stock);
+        return (stock = data.product.stock);
       });
 
     buttonAdd.addEventListener("click", () => {
@@ -36,15 +36,11 @@ window.addEventListener("load", () => {
         showMethod: "slideDown",
       };
 
-      if (stock == 0) {
+      if (stock <= 0) {
         return toastr.error("Este producto se encuentra agotado");
       }
-
       if (quantity.value > stock) {
         return toastr.error(`El stock de este producto es de ${stock}`);
-      }
-      if (quantity.value <= 0) {
-        return toastr.error("Picarón, tenes que elegir un número positivo!");
       }
       if (isNaN(quantity.value)) {
         return toastr.error("Picarón, no entendí tu pedido, probá con números!");

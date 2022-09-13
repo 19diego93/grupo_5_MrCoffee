@@ -1,11 +1,21 @@
 window.addEventListener("load", () => {
+  //! Configuracion del toastr
+  toastr.options = {
+    positionClass: "toast-bottom-right",
+    fadeIn: 300,
+    fadeOut: 1000,
+    timeOut: 3000,
+    extendedTimeOut: 1000,
+    showMethod: "slideDown",
+  };
+
   const formulario = document.querySelector("#formulario");
   const inputs = document.querySelectorAll("#formulario input");
 
   const expresiones = {
-    nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
+    nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
     correo:
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, // correo valido
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     password: {
       lower: new RegExp("(?=.*[a-z])"),
       upper: new RegExp("(?=.*[A-Z])"),
@@ -18,8 +28,30 @@ window.addEventListener("load", () => {
     fname: false,
     lname: false,
     email: false,
-    passwd: false,
+    password: false,
     confirmPsw: false,
+  };
+
+  const invalid = (errFront, messageErr, inputStyle, campo) => {
+    errFront.innerHTML = `${messageErr}`;
+
+    inputStyle.classList.remove("is-valid");
+    inputStyle.classList.remove("is-valid-icon");
+    inputStyle.classList.add("is-invalid");
+    inputStyle.classList.add("is-invalid-icon");
+
+    campos[campo] = false;
+  };
+
+  const valid = (errFront, messageErr, inputStyle, campo) => {
+    errFront.innerHTML = `${messageErr}`;
+
+    inputStyle.classList.remove("is-invalid");
+    inputStyle.classList.remove("is-invalid-icon");
+    inputStyle.classList.add("is-valid");
+    inputStyle.classList.add("is-valid-icon");
+
+    campos[campo] = true;
   };
 
   const validarFormulario = (e) => {
@@ -34,169 +66,109 @@ window.addEventListener("load", () => {
         validation(expresiones.correo, e.target.value, "email", 6, 100);
         break;
       case "password":
-        validation(expresiones.password, e.target.value, "passwd", 8, 65);
-        validation_2();
+        validation(expresiones.password, e.target.value, "password", 8, 65);
         break;
       case "confirmPsw":
-        validation_2();
+        validation(expresiones.password, e.target.value, "confirmPsw", 8, 65);
         break;
     }
   };
 
   function validation(expresion, value, campo, min, max) {
-    const errorsMessageBack = document.querySelector(`.${campo}ErrBack`);
-    if(errorsMessageBack){
-      errorsMessageBack.innerHTML = ""
+    const errBackEnd = document.querySelector(`.${campo}ErrBack`);
+    if (errBackEnd) {
+      errBackEnd.innerHTML = "";
     }
 
-    const errorsMessage = document.querySelector(`.${campo}Errors`);
-    const inputColor = document.getElementById(`${campo}`);
+    const errFront = document.querySelector(`.${campo}Errors`);
+    const inputStyle = document.getElementById(`${campo}`);
     if (value.length < 1) {
-      errorsMessage.innerHTML = "Este campo no puede estar vacío."
-
-      inputColor.classList.remove("is-valid");
-      inputColor.classList.add("is-invalid");
-      inputColor.classList.remove("is-valid-icon");
-      inputColor.classList.add("is-invalid-icon");
-
-      campos[campo] = false;
+      invalid(errFront, "Este campo no puede estar vacío.", inputStyle, campo);
     } else if (value.length < min) {
-      errorsMessage.innerHTML = `Escribe al menos ${min} caracteres.`
-
-      inputColor.classList.remove("is-valid");
-      inputColor.classList.add("is-invalid");
-      inputColor.classList.remove("is-valid-icon");
-      inputColor.classList.add("is-invalid-icon");
-
-      campos[campo] = false;
+      invalid(
+        errFront,
+        `Escribe al menos ${min} caracteres.`,
+        inputStyle,
+        campo
+      );
     } else if (value.length > max) {
-      errorsMessage.innerHTML = `No puedes escribir más de ${max} caracteres.`
-
-      inputColor.classList.remove("is-valid");
-      inputColor.classList.add("is-invalid");
-      inputColor.classList.remove("is-valid-icon");
-      inputColor.classList.add("is-invalid-icon");
-
-      campos[campo] = false;
-    } else if(campo != "passwd"){
+      invalid(
+        errFront,
+        `No puedes escribir más de ${max} caracteres.`,
+        inputStyle,
+        campo
+      );
+    } else if (campo == "fname" || campo == "lname" || campo == "email") {
       if (!expresion.test(value)) {
-        errorsMessage.innerHTML = `Caracteres invalidos.`
-  
-        inputColor.classList.remove("is-valid");
-        inputColor.classList.add("is-invalid");
-        inputColor.classList.remove("is-valid-icon");
-        inputColor.classList.add("is-invalid-icon");
-  
-        campos[campo] = false;
+        invalid(errFront, `Caracteres invalidos.`, inputStyle, campo);
       } else {
-        errorsMessage.innerHTML = ""
-  
-        inputColor.classList.remove("is-invalid");
-        inputColor.classList.remove("is-invalid-icon");
-        inputColor.classList.add("is-valid");
-        inputColor.classList.add("is-valid-icon");
-  
-        campos[campo] = true;
+        valid(errFront, "", inputStyle, campo);
       }
-    } else if (campo == "passwd") {
+    } else if (campo == "password" || campo == "confirmPsw") {
       if (!expresion.lower.test(value)) {
-        errorsMessage.innerHTML = `Debe tener mínimo una Minúscula. [a-z]`
-
-        inputColor.classList.remove("is-valid");
-        inputColor.classList.add("is-invalid");
-        inputColor.classList.remove("is-valid-icon");
-        inputColor.classList.add("is-invalid-icon");
-
-        campos[campo] = false;
+        invalid(
+          errFront,
+          `Debe tener mínimo una Minúscula. [a-z]`,
+          inputStyle,
+          campo
+        );
       } else if (!expresion.upper.test(value)) {
-        errorsMessage.innerHTML = `Debe tener mínimo una Mayúscula. [A-Z]`
-
-        inputColor.classList.remove("is-valid");
-        inputColor.classList.add("is-invalid");
-        inputColor.classList.remove("is-valid-icon");
-        inputColor.classList.add("is-invalid-icon");
-
-        campos[campo] = false;
+        invalid(
+          errFront,
+          `Debe tener mínimo una Mayúscula. [A-Z]`,
+          inputStyle,
+          campo
+        );
       } else if (!expresion.number.test(value)) {
-        errorsMessage.innerHTML = `Debe tener mínimo un Número. [0-9]`
-
-        inputColor.classList.remove("is-valid");
-        inputColor.classList.add("is-invalid");
-        inputColor.classList.remove("is-valid-icon");
-        inputColor.classList.add("is-invalid-icon");
-
-        campos[campo] = false;
+        invalid(
+          errFront,
+          `Debe tener mínimo un Número. [0-9]`,
+          inputStyle,
+          campo
+        );
       } else if (!expresion.special.test(value)) {
-        errorsMessage.innerHTML = `Debe tener mínimo un Carácter especial. [!@#$%^&*]`
-
-        inputColor.classList.remove("is-valid");
-        inputColor.classList.add("is-invalid");
-        inputColor.classList.remove("is-valid-icon");
-        inputColor.classList.add("is-invalid-icon");
-
-        campos[campo] = false;
-      } else {
-        let ValidaEspacios = value.indexOf(" ")
-        if(ValidaEspacios == -1){
-          errorsMessage.innerHTML = ""
-
-          inputColor.classList.remove("is-invalid");
-          inputColor.classList.remove("is-invalid-icon");
-          inputColor.classList.add("is-valid");
-          inputColor.classList.add("is-valid-icon");
-          campos[campo] = true;
-        }else{
-          errorsMessage.innerHTML = "La contraseña no puede contener espacios en blanco."
-
-          inputColor.classList.remove("is-valid");
-          inputColor.classList.add("is-invalid");
-          inputColor.classList.remove("is-valid-icon");
-          inputColor.classList.add("is-invalid-icon");
-
-          campos[campo] = false;
+        invalid(
+          errFront,
+          `Debe tener mínimo un Carácter especial. [!@#$%^&*]`,
+          inputStyle,
+          campo
+        );
+      } else if (value.indexOf(" ") != -1) {
+        invalid(
+          errFront,
+          "La contraseña no puede contener espacios en blanco.",
+          inputStyle,
+          campo
+        );
+      } else if (campo == "password" || campo == "confirmPsw") {
+        const inputPassword1 = document.getElementById("password");
+        const inputPassword2 = document.getElementById("confirmPsw");
+  
+        const errFront1 = document.querySelector(`.passwordErrors`);
+        const errFront2 = document.querySelector(`.confirmPswErrors`);
+  
+        if (inputPassword1.value !== inputPassword2.value) {
+          invalid(
+              errFront1,
+            "Las contraseñas no coinciden.",
+            inputPassword1,
+            "password"
+          );
+          invalid(
+              errFront2,
+            "Las contraseñas no coinciden.",
+            inputPassword2,
+            "confirmPsw"
+          );
+        } else {
+          valid(errFront1, "", inputPassword1, "password");
+          valid(errFront2, "", inputPassword2, "confirmPsw");
         }
+      } else {
+        valid(errFront, "", inputStyle, campo);
       }
     }
   }
-
-  const validation_2 = () => {
-    const errorsMessageBack = document.querySelector('.confirmPswErrBack');
-    if(errorsMessageBack){
-      errorsMessageBack.innerHTML = ""
-    }
-
-    const inputPassword1 = document.getElementById("passwd");
-    const inputPassword2 = document.getElementById("confirmPsw");
-    const errorsMessage = document.querySelector(`.confirmPswErrors`);
-
-    if (inputPassword2.value == "") {
-      errorsMessage.innerHTML = "Este campo no puede estar vacío."
-
-      inputPassword2.classList.remove("is-valid");
-      inputPassword2.classList.add("is-invalid");
-      inputPassword2.classList.remove("is-valid-icon");
-      inputPassword2.classList.add("is-invalid-icon");
-
-      campos["confirmPsw"] = false;
-    } else if (inputPassword1.value !== inputPassword2.value) {
-      errorsMessage.innerHTML = "Las contraseñas no coinciden."
-
-      inputPassword2.classList.remove("is-valid");
-      inputPassword2.classList.add("is-invalid");
-      inputPassword2.classList.remove("is-valid-icon");
-      inputPassword2.classList.add("is-invalid-icon");
-
-      campos["confirmPsw"] = false;
-    } else {
-      errorsMessage.innerHTML = ""
-
-      inputPassword2.classList.remove("is-invalid");
-      inputPassword2.classList.add("is-valid");
-      inputPassword2.classList.remove("is-invalid-icon");
-      inputPassword2.classList.add("is-valid-icon");
-      campos["confirmPsw"] = true;
-    }
-  };
 
   inputs.forEach((input) => {
     input.addEventListener("blur", validarFormulario);
@@ -204,7 +176,13 @@ window.addEventListener("load", () => {
   });
 
   formulario.addEventListener("submit", (e) => {
-    if (campos.fname && campos.lname && campos.email && campos.passwd && campos.confirmPsw) {
+    if (
+      campos.fname &&
+      campos.lname &&
+      campos.email &&
+      campos.password &&
+      campos.confirmPsw
+    ) {
       e.submit();
     } else {
       e.preventDefault();
@@ -215,6 +193,8 @@ window.addEventListener("load", () => {
         };
         validarFormulario(values);
       });
+
+      toastr.error("La información ingresada no es válida.");
     }
   });
 });

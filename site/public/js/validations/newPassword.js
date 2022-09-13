@@ -27,24 +27,24 @@ window.addEventListener("load", function () {
     confirmNewPassword: false,
   };
 
-  const invalid = (inputErr, messageErr, inputColor, campo) => {
-    inputErr.innerHTML = `${messageErr}`;
+  const invalid = (errFront, messageErr, inputStyle, campo) => {
+    errFront.innerHTML = `${messageErr}`;
 
-    inputColor.classList.remove("is-valid");
-    inputColor.classList.remove("is-valid-icon");
-    inputColor.classList.add("is-invalid");
-    inputColor.classList.add("is-invalid-icon");
+    inputStyle.classList.remove("is-valid");
+    inputStyle.classList.remove("is-valid-icon");
+    inputStyle.classList.add("is-invalid");
+    inputStyle.classList.add("is-invalid-icon");
 
     campos[campo] = false;
   };
 
-  const valid = (inputErr, messageErr, inputColor, campo) => {
-    inputErr.innerHTML = `${messageErr}`;
+  const valid = (errFront, messageErr, inputStyle, campo) => {
+    errFront.innerHTML = `${messageErr}`;
 
-    inputColor.classList.remove("is-invalid");
-    inputColor.classList.remove("is-invalid-icon");
-    inputColor.classList.add("is-valid");
-    inputColor.classList.add("is-valid-icon");
+    inputStyle.classList.remove("is-invalid");
+    inputStyle.classList.remove("is-invalid-icon");
+    inputStyle.classList.add("is-valid");
+    inputStyle.classList.add("is-valid-icon");
 
     campos[campo] = true;
   };
@@ -70,96 +70,96 @@ window.addEventListener("load", function () {
   };
 
   const validation = (expresion, value, campo, min, max) => {
-    const errorsMessageBack = document.querySelector(`.${campo}ErrBack`);
-    if (errorsMessageBack) {
-      errorsMessageBack.innerHTML = "";
+    const errBackEnd = document.querySelector(`.${campo}ErrBack`);
+    if (errBackEnd) {
+      errBackEnd.innerHTML = "";
     }
 
-    const errorsMessage = document.querySelector(`.${campo}Errors`);
-    const inputColor = document.getElementById(`${campo}`);
+    const errFront = document.querySelector(`.${campo}Errors`);
+    const inputStyle = document.getElementById(`${campo}`);
 
     if (value.length < 1) {
       invalid(
-        errorsMessage,
+        errFront,
         "Este campo no puede estar vacío.",
-        inputColor,
+        inputStyle,
         campo
       );
     } else if (value.length < min) {
       invalid(
-        errorsMessage,
+        errFront,
         `Escribe al menos ${min} caracteres.`,
-        inputColor,
+        inputStyle,
         campo
       );
     } else if (value.length > max) {
       invalid(
-        errorsMessage,
+        errFront,
         `No puedes escribir más de ${max} caracteres.`,
-        inputColor,
+        inputStyle,
         campo
       );
     } else if (!expresion.lower.test(value)) {
       invalid(
-        errorsMessage,
+        errFront,
         "Debe tener mínimo una Minúscula. [a-z]",
-        inputColor,
+        inputStyle,
         campo
       );
     } else if (!expresion.upper.test(value)) {
       invalid(
-        errorsMessage,
+        errFront,
         `Debe tener mínimo una Mayúscula. [A-Z]`,
-        inputColor,
+        inputStyle,
         campo
       );
     } else if (!expresion.number.test(value)) {
       invalid(
-        errorsMessage,
+        errFront,
         `Debe tener mínimo un Número. [0-9]`,
-        inputColor,
+        inputStyle,
         campo
       );
     } else if (!expresion.special.test(value)) {
       invalid(
-        errorsMessage,
+        errFront,
         `Debe tener mínimo un Carácter especial. [!@#$%^&*]`,
-        inputColor,
+        inputStyle,
         campo
       );
     } else if (value.indexOf(" ") != -1) {
       invalid(
-        errorsMessage,
+        errFront,
         "La contraseña no puede contener espacios en blanco.",
-        inputColor,
+        inputStyle,
         campo
       );
     } else if (campo == "confirmNewPassword" || campo == "newPassword") {
       const inputPassword1 = document.getElementById("newPassword");
       const inputPassword2 = document.getElementById("confirmNewPassword");
 
-      const errorsMessage1 = document.querySelector(`.newPasswordErrors`);
-      const errorsMessage2 = document.querySelector(`.confirmNewPasswordErrors`);
+      const errFront1 = document.querySelector(`.newPasswordErrors`);
+      const errFront2 = document.querySelector(`.confirmNewPasswordErrors`);
 
       if (inputPassword1.value !== inputPassword2.value) {
         invalid(
-            errorsMessage1,
+            errFront1,
           "Las contraseñas no coinciden.",
           inputPassword1,
           "newPassword"
         );
         invalid(
-            errorsMessage2,
+            errFront2,
           "Las contraseñas no coinciden.",
           inputPassword2,
           "confirmNewPassword"
         );
       } else {
-        valid(errorsMessage1, "", inputPassword1, "newPassword");
-        valid(errorsMessage2, "", inputPassword2, "confirmNewPassword");
+        valid(errFront1, "", inputPassword1, "newPassword");
+        valid(errFront2, "", inputPassword2, "confirmNewPassword");
       }
     } else {
-      valid(errorsMessage, "", inputColor, campo);
+      valid(errFront, "", inputStyle, campo);
     }
   };
 
@@ -175,6 +175,14 @@ window.addEventListener("load", function () {
       e.submit();
     } else {
       e.preventDefault();
+      
+      inputs.forEach((input) => {
+        let values = {
+          target: { name: input.name, value: input.value },
+        };
+        validarFormulario(values);
+      });
+
       toastr.error("La información ingresada no es válida.");
     }
   });

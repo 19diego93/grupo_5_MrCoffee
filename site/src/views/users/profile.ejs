@@ -48,11 +48,15 @@
                 <h3 class="card-body-email">
                   <%=user.email%>
                 </h3>
-                <p class="card-body-text"><%=user.User_category.name%></p>
+                <p class="card-body-text">
+                  <%=user.User_category.name%>
+                </p>
               </div>
               <div class="card-footer">
                 <div class="card-footer-social">
-                  <span><%=acquirers.length%></span>
+                  <span>
+                    <%=acquirers.length%>
+                  </span>
                   <p>Compras</p>
                 </div>
                 <div class="card-footer-social">
@@ -62,6 +66,7 @@
               </div>
             </div>
           </div>
+        </article>
       </section>
     </main>
     <%- include('../partials/footer') %>

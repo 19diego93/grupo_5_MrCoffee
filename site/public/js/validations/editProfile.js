@@ -1,4 +1,14 @@
 window.addEventListener("load", function () {
+  //! Configuracion del toastr
+  toastr.options = {
+    positionClass: "toast-bottom-right",
+    fadeIn: 300,
+    fadeOut: 1000,
+    timeOut: 3000,
+    extendedTimeOut: 1000,
+    showMethod: "slideDown",
+  };
+
   const formulario = document.getElementById("formulario");
   const inputs = document.querySelectorAll("#formulario input");
 
@@ -11,9 +21,9 @@ window.addEventListener("load", function () {
   };
 
   const campos = {
-    fname: true,
-    lname: true,
-    email: true,
+    fname: false,
+    lname: false,
+    email: false,
   };
 
   const invalid = (errFront, messageErr, inputStyle, campo) => {
@@ -64,11 +74,26 @@ window.addEventListener("load", function () {
     if (value.length <= 0) {
       invalid(errFront, "Este campo no puede estar vacío.", inputStyle, campo);
     } else if (value.length < min) {
-      invalid(errFront, `Escribe al menos ${min} caracteres.`, inputStyle, campo);
+      invalid(
+        errFront,
+        `Escribe al menos ${min} caracteres.`,
+        inputStyle,
+        campo
+      );
     } else if (value.length > max) {
-      invalid(errFront, `No puedes escribir más de ${max} caracteres.`, inputStyle, campo);
+      invalid(
+        errFront,
+        `No puedes escribir más de ${max} caracteres.`,
+        inputStyle,
+        campo
+      );
     } else if (!expresion.test(value)) {
-      invalid(errFront, "Los caracteres ingresados no son válidos.", inputStyle, campo);
+      invalid(
+        errFront,
+        "Los caracteres ingresados no son válidos.",
+        inputStyle,
+        campo
+      );
     } else {
       valid(errFront, "", inputStyle, campo);
     }
@@ -87,6 +112,14 @@ window.addEventListener("load", function () {
       e.submit();
     } else {
       e.preventDefault();
+
+      inputs.forEach((input) => {
+        let values = {
+          target: { name: input.name, value: input.value },
+        };
+        validarFormulario(values);
+      });
+
       toastr.error("La información ingresada no es válida.");
     }
   });

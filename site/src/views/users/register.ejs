@@ -98,20 +98,20 @@
                 </div>
   
                 <div class="contenedor-campo">
-                  <label for="passwd">Contraseña</label>
+                  <label for="password">Contraseña</label>
                   <input
                     type="password"
-                    id="passwd"
+                    id="password"
                     name="password"
                     placeholder="Contraseña"
                     class="<%= locals.errors && errors.password ? 'is-invalid' : null %>"
                   />
                   <!-- Errores del Back -->
                   <% if (locals.errors && errors.password){ %>
-                  <div class="errors-t passwdErrBack"><%= errors.password.msg %></div>
+                  <div class="errors-t passwordErrBack"><%= errors.password.msg %></div>
                   <% } %>
                   <!-- Errores del Front -->
-                  <div class="errors-t passwdErrors"></div>
+                  <div class="errors-t passwordErrors"></div>
                 </div>
   
                 <div class="contenedor-campo">

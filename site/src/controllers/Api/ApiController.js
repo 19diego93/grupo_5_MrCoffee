@@ -11,7 +11,7 @@ const Ventas = db.Venta;
 const controller = {
   product: async (req, res) => {
     let product = await Products.findByPk(req.params.id);
-    return res.json(product);
+    return res.json({ ok: true, status: 200, product: product });
   },
 
   checkout: async (req, res) => {
@@ -19,7 +19,7 @@ const controller = {
 
     await Ventas.create({ ...req.body, user_id: req.session.userLogged.id },{
       include: [
-        {association: "Product"}
+        {association: "Usuario"}
       ],
     })
 
