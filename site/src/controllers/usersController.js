@@ -16,7 +16,7 @@ const Ventas = db.Venta;
 const usersController = {
   /* Esta es una función que representa la página de inicio de sesión. */
   login: (req, res) => {
-    return res.render("users/login", { title: "│ Inicia sesion" });
+    return res.render("users/login", { title: "│ Inicia sesión" });
   },
 
   /* Este es el proceso de inicio de sesión. */
@@ -30,7 +30,7 @@ const usersController = {
       return res.render("users/login", {
         errors: errors.mapped(),
         oldData: req.body,
-        title: "│ Inicia sesion",
+        title: "│ Inicia sesión",
       });
     }
 
@@ -50,7 +50,7 @@ const usersController = {
           email: { msg: "Esta cuenta no existe." },
         },
         oldData: req.body,
-        title: "│ Inicia sesion",
+        title: "│ Inicia sesión",
       });
     }
 
@@ -71,7 +71,7 @@ const usersController = {
           password: { msg: "La contraseña es incorrecta." },
         },
         oldData: req.body,
-        title: "│ Inicia sesion",
+        title: "│ Inicia sesión",
       });
     }
 
@@ -191,7 +191,7 @@ const usersController = {
   edit: (req, res) => {
     return res.render("users/edit", {
       user: req.session.userLogged,
-      title: "│ Perfil",
+      title: "│ Editando perfil",
     });
   },
 
@@ -204,7 +204,7 @@ const usersController = {
       return res.render("users/edit", {
         errors: errors.mapped(),
         user: req.session.userLogged,
-        title: "│ Perfil",
+        title: "│ Editando perfil",
       });
     }
 
@@ -248,7 +248,7 @@ const usersController = {
           },
           user: req.session.userLogged,
           oldData: req.body,
-          title: "│ Perfil",
+          title: "│ Editando perfil",
         });
       }
     }
@@ -300,7 +300,7 @@ const usersController = {
     /* Renderizando el archivo editPassword.ejs. */
     return res.render("users/editPassword", {
       user: req.session.userLogged,
-      title: "│ Perfil",
+      title: "│ Editando contraseña",
     });
   },
 
@@ -312,7 +312,7 @@ const usersController = {
     if (!errors.isEmpty()) {
       return res.render("users/editPassword", {
         errors: errors.mapped(),
-        title: "│ Perfil",
+        title: "│ Editando contraseña",
       });
     }
 
@@ -343,7 +343,7 @@ const usersController = {
             msg: "La contraseña es incorrecta.",
           },
         },
-        title: "│ Perfil",
+        title: "│ Editando contraseña",
       });
     }
 
@@ -368,6 +368,10 @@ const usersController = {
 
     /* Redirigir al usuario a la página de perfil. */
     return res.redirect("/user/profile");
+  },
+
+  orders: async(req, res) => {
+    return res.render("users/orders", {title: "│ Página de pedidos",});
   },
 
   logout: async (req, res) => {

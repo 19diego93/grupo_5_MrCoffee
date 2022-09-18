@@ -109,7 +109,7 @@ DROP TABLE IF EXISTS `venta_detalle`;
 CREATE TABLE `venta_detalle` (
   `id` int(5) NOT NULL,
   `precio_venta` decimal(8,2) NOT NULL,
-  `cantidad` int(5) NOT NULL,
+  `articulos` int(5) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `categoria` varchar(15) NOT NULL,
   `imagen` varchar(30) NOT NULL,

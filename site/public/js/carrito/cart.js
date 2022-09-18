@@ -57,12 +57,13 @@ window.addEventListener("load", () => {
     }
   });
 
-  let formCheckout = document.querySelector("#checkoutCart")
+  let formCheckout = document.querySelector("#checkoutCart");
 
   if (!localStorage.carrito || localStorage.carrito == "[]") {
     formCheckout.addEventListener("submit", (e) => {
       e.preventDefault();
-    })
+      toastr.error('No tienes productos en el carrito.');
+    });
     return carritoVacio();
   }
 
@@ -74,7 +75,7 @@ window.addEventListener("load", () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          let product = data.product
+          let product = data.product;
 
           let porcentaje = ((product.price * product.offer) / 100).toFixed(2);
           let nuevoPrecio = (product.price - porcentaje).toFixed(2);
@@ -159,7 +160,7 @@ window.addEventListener("load", () => {
             //! Resto cantidad en el array de products
             products.forEach((element) => {
               if (element.productId == producto.productId) {
-                element.quantity -= 1
+                element.quantity -= 1;
               }
             });
 
@@ -216,7 +217,7 @@ window.addEventListener("load", () => {
             //! Sumo cantidad en el array de products
             products.forEach((element) => {
               if (element.productId == producto.productId) {
-                element.quantity += 1
+                element.quantity += 1;
               }
             });
 
@@ -285,41 +286,53 @@ window.addEventListener("load", () => {
       });
   });
 
-  let writeDbVenta_detalle = []
-
-  products.forEach(product => {
-    writeDbVenta_detalle.push({
-      precio_venta: product.price,
-      articulos: product.quantity,
-      nombre: product.name,
-      categoria: product.categoria,
-      imagen: product.imagen,
-      product_id: product.productId,
-    })
-  })
+  let writeDbVenta_detalle = [];
 
   formCheckout.addEventListener("submit", (e) => {
     e.preventDefault();
-    
+
+    products.forEach((product) => {
+      writeDbVenta_detalle.push({
+        precio_venta: product.price,
+        articulos: product.quantity,
+        nombre: product.name,
+        categoria: product.categoria,
+        imagen: product.imagen,
+        product_id: product.productId,
+      });
+    });
+
     const formData = {
       Venta_detalle: writeDbVenta_detalle,
-      cobrado: new Date().toLocaleDateString('es-ar', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }),
+      cobrado: new Date().toLocaleDateString("es-ar", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+      }),
       cantidad: productosEnElCarrito(),
       total: calcularTotal(products),
       metodoDePago: formCheckout.TipoDePago.value,
     };
+    if (!localStorage.carrito || localStorage.carrito == '[]') {
+      return toastr.error('No tienes productos en el carrito.');
+    }
 
     if (localStorage.carrito) {
       fetch("/api/checkout", {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json;charset=utf-8'
+          "Content-Type": "application/json;charset=utf-8",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.ok) {
+        .then((res) => res.json())
+        .then((data) => {
+          if (!data.ok) {
+            return toastr.error(`${data.response}`);
+          }
           //borro el carrito
           localStorage.removeItem("carrito");
           products = [];
@@ -329,11 +342,8 @@ window.addEventListener("load", () => {
           cartNumber.innerHTML = productosEnElCarrito();
           // location.href = `/order/${data.order.id}?creado=true`;
           toastr.success("Compra realizada");
-        } else {
-          toastr.error("No se pudo realizar la compra, intente mas tarde");
-        }
-      })
-      .catch((error) => console.log(error));
+        })
+        .catch((error) => console.log(error));
     }
-  })
+  });
 });

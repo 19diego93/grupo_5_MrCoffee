@@ -6,6 +6,8 @@ const app = express();
 const cookies = require("cookie-parser");
 const methodOverride = require("method-override");
 const session = require("express-session");
+// .ENV
+require("dotenv").config();
 
 //! Ejs
 /* Setting the views folder and the view engine. */
@@ -51,13 +53,14 @@ app.use("/products", productsRouter);
 app.use("/api", ApiRouter);
 
 //! 404
-/* A middleware that is used to render a 404 page when the user tries to access a page that does not exist. */
+/* A middleware that is used to render a '404' page when the user tries to access a page that does not exist. */
 app.use((req, res, next) => {
   res.status(404).render("not-found", { title: "│ Pagina no encontrada" });
 });
 
 //! localhost
-/* Telling the app to listen to the port 3000. */
-app.listen(3000, () => {
-  console.log(`MrCoffee listening at http://localhost:3000`);
+/* Telling the app to listen to the port 'process.env.APP_PORT' or '3000'. */
+let port = process.env.APP_PORT || 3000
+app.listen(port, () => {
+  console.log(`MrCoffee listening at http://localhost:${port}`);
 });

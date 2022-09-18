@@ -4,7 +4,6 @@ const { Op } = require("sequelize");
 
 //!Modelos
 const Products = db.Product;
-const Usuarios = db.Usuario;
 const Ventas = db.Venta;
 
 //!Controlador
@@ -15,42 +14,45 @@ const controller = {
   },
 
   checkout: async (req, res) => {
-    // const date = (Date.now() * new Date().getMilliseconds())
+    if (!req.session || !req.session.userLogged) {
+      return res.json({
+        ok: false,
+        status: 401,
+        response: "Por favor inicie sesión.",
+      });
+    }
 
-    await Ventas.create({ ...req.body, user_id: req.session.userLogged.id },{
-      include: [
-        {association: "Usuario"}
-      ],
-    })
+    let newSales = await Ventas.create({
+      ...req.body,
+      user_id: req.session.userLogged.id,
+    });
 
-    res.json({ ok: true, status: 200 });
+    req.body.Venta_detalle.forEach((Element) => {
+      console.log(Element);
+      newSales.addDetail(Element.product_id, { through: { ...Element } });
+    });
+
+    res.json({ ok: true, status: 201 });
   },
 
-  Ventas: async (req, res) => {
-    let ventas = await Ventas.findAll({
-      include: [
-        {association: "Usuario"}
-      ],
-    })
-    console.log("--------------");
-    // ventas.forEach(element => {
-    //   console.log(element.dataValues); 
-    // });
-    console.log("--------------");
+  orders: async (req, res) => {
+    if (!req.session || !req.session.userLogged) {
+      return res.json({
+        ok: false,
+        status: 401,
+        response: "Por favor inicie sesión.",
+      });
+    }
 
-    let usuarios = await Usuarios.findAll({
-      include: [
-        {association: "Venta"}
-      ],
-    })
-    console.log("--------------");
-    // usuarios.forEach(element => {
-    //   console.log(element.dataValues); 
-    // });
-    console.log("--------------");
+    let sales = await Ventas.findAll({
+      where: {
+        user_id: { [Op.eq]: req.session.userLogged.id },
+      },
+      include: [{ association: "Detail" }],
+    });
 
-    return res.render("api/pruebas", { ventas, usuarios });
-  }
+    res.json({ ok: true, status: 201, sales });
+  },
 };
 
 module.exports = controller;

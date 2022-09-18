@@ -66,7 +66,10 @@ main {
   border-left: 2px solid var(--Primary-Dark);
   overflow: hidden;
   transition: height 0.4s;
-  height: 0;
+  height: 0px;
+}
+.list_height{
+  height: 188px;
 }
 .nav_link {
   color: var(--Primary-Dark);
@@ -102,6 +105,9 @@ main {
   .nav_link {
     font-size: 16px;
   }
+  .list_height{
+    height: 208px;
+  }
 
   /*! Article 2 */
 }
@@ -113,6 +119,9 @@ main {
   }
   .nav_link {
     font-size: 18px;
+  }
+  .list_height{
+    height: 218px;
   }
 }
 
@@ -141,8 +150,11 @@ main {
     color: unset;
   }
   .list_show {
-    height: 200px;
+    height: 300px;
     border: none;
+  }
+  .list_height{
+    height: 300px;
   }
   .nav_link--inside {
     border-radius: 10px;

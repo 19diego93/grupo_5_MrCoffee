@@ -5,13 +5,13 @@ module.exports = (sequelize, dataTypes) => {
   /* Creating the columns of the table. */
   let cols = {
     id: {
-      type: dataTypes.INTEGER(11),
+      type: dataTypes.INTEGER(5),
       primaryKey: true,
       autoIncrement: true,
       allowNull: false,
     },
     cobrado: {
-      type: dataTypes.STRING(15),
+      type: dataTypes.STRING(60),
       allowNull: false,
     },
     cantidad: {
@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     total: {
-      type: dataTypes.DECIMAL(10, 2),
+      type: dataTypes.DECIMAL(14, 2),
       allowNull: false,
     },
     metodoDePago: {
@@ -50,7 +50,7 @@ module.exports = (sequelize, dataTypes) => {
     });
 
     Venta.belongsToMany(models.Product, {
-      as: "Product",
+      as: "Detail",
       through: "venta_detalle",
       foreignKey: "ventas_id",
       otherKey: "product_id",
