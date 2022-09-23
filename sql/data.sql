@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-09-2022 a las 04:43:42
+-- Tiempo de generación: 23-09-2022 a las 23:35:27
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -38,7 +38,7 @@ INSERT INTO `products` (`id`, `name`, `image`, `description`, `stock`, `price`, 
 (14250254, 'Lemon Pie', '14.webp', 'Base de masa sablee, crema de limón y merengue italiano. Lingote de 5 x 10 cm.', 234, '928.00', 5, '3.0', 2),
 (14343245, 'Brownie Merengue', '15.webp', 'Brownie húmedo, dulce de leche repostero, mousse de chocolate con leche y merengue italiano. Lingote de 4 x 10 cm.', 0, '928.00', 0, '5.0', 2),
 (14623347, 'Croissant', '17.webp', 'Croissant de masa de hojaldre.', 42, '500.00', 30, '4.7', 2),
-(15638763, 'Cheesecake', '13.webp', 'Pastel de crema de queso con arandanos frescos y gelatina de frambuesa.', 100, '928.00', 10, '3.5', 2),
+(15638763, 'Cheesecake', '13.webp', 'Pastel de crema de queso con arandanos frescos y gelatina de frambuesa.', 32, '928.00', 10, '3.5', 2),
 (17650579, 'Alfajor de Nuez', '19.webp', 'Tapas de masa de nuez, relleno de dulce de leche y nuez partida.', 864, '400.00', 10, '3.4', 2),
 (18653562, 'Crumble de Manzana', '12.webp', 'Base de masa sable, relleno de compota de manzanas granny smith y streussel crocante.', 0, '928.00', 20, '4.0', 2),
 (23557594, 'Café Doble', '1.webp', 'Café 350 ml.', 100, '670.00', 15, '5.0', 1),
@@ -70,7 +70,33 @@ INSERT INTO `user_category` (`id`, `name`) VALUES
 INSERT INTO `usuario` (`id`, `first_name`, `last_name`, `image`, `email`, `password`, `id_category_U`) VALUES
 (1, 'Santiago', 'boquita', 'img-1660161772572.jpg', 'boquita@santiago.com', '$2a$10$ytRPn.UZRL8V4ZzpIyEPuuG5uSjw4pwP/XoANqLqAuVQyIj8DncMC', 1),
 (2, 'Jeremias', 'River', 'img-1660360317331.gif', 'river@jeremias.com', '$2a$10$ytRPn.UZRL8V4ZzpIyEPuuG5uSjw4pwP/XoANqLqAuVQyIj8DncMC', 2);
+
+--
+-- Volcado de datos para la tabla `venta_estado`
+--
+
+INSERT INTO `venta_estado` (`id`, `estado`) VALUES
+(1, 'procesando'),
+(2, 'completado'),
+(3, 'cancelado');
 COMMIT;
+
+--
+-- Volcado de datos para la tabla `venta`
+--
+
+INSERT INTO `venta` (`id`, `cobrado`, `cantidad`, `total`, `metodoDePago`, `estado_id`, `user_id`) VALUES
+(145, 'viernes, 23 de septiembre de 2022, 18:02', 1, '835.20', 'Efectivo', 1, 2),
+(146, 'viernes, 23 de septiembre de 2022, 18:12', 2, '1195.20', 'Efectivo', 1, 2);
+
+--
+-- Volcado de datos para la tabla `venta_detalle`
+--
+
+INSERT INTO `venta_detalle` (`id`, `precio_venta`, `articulos`, `nombre`, `categoria`, `product_id`, `ventas_id`) VALUES
+(105, '835.20', 1, 'Cheesecake', '2', 15638763, 145),
+(106, '360.00', 1, 'Alfajor de Nuez', '2', 17650579, 146),
+(107, '835.20', 1, 'Cheesecake', '2', 15638763, 146);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

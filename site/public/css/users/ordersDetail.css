@@ -1,0 +1,6 @@
+.table-head tr {
+  grid-template-columns: repeat(4, 1fr);
+}
+.orders-content tr {
+  grid-template-columns: repeat(4, 1fr);
+}

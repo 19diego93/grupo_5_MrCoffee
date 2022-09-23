@@ -49,6 +49,8 @@ router.put(
 );
 /* Una ruta que va a la página de pedidos. */
 router.get("/profile/orders", authMiddleware, usersController.orders)
+/* Una ruta que va a la página del detalle de los pedidos. */
+router.get("/profile/orders/:id", authMiddleware, usersController.ordersDetail)
 /* Una ruta que se utiliza para cerrar la sesión. */
 router.get("/logout", usersController.logout);
 

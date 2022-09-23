@@ -370,8 +370,29 @@ const usersController = {
     return res.redirect("/user/profile");
   },
 
-  orders: async(req, res) => {
-    return res.render("users/orders", {title: "│ Página de pedidos",});
+  orders: async (req, res) => {
+    return res.render("users/orders", { title: "│ Página de pedidos" });
+  },
+
+  ordersDetail: async (req, res) => {
+    /*La consulta busca un orden específico por el id y el user_id.*/
+    let order = await Ventas.findOne({
+      where: {
+        id: { [Op.eq]: req.params.id },
+        user_id: { [Op.eq]: req.session.userLogged.id },
+      },
+    });
+
+    /*Si no se encuentra el pedido, se redirige al usuario a la página de pedidos.*/
+    if (!order) {
+      return res.redirect("/user/profile/orders")
+    }
+
+    /*Si se encuentra el pedido, se redirige al usuario a la página de detalles de pedidos.*/
+    return res.render("users/ordersDetail", {
+      title: "│ Página de detalle de los pedidos",
+      orderID: `${req.params.id}`
+    });
   },
 
   logout: async (req, res) => {

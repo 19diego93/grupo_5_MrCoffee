@@ -39,23 +39,12 @@
     </li>
     <% if (locals.isLogged) { %>
     <li class="list__item list__item--click nav__link--outside">
-      <div class="nav__glow list__button list__button--click">
-        <i class="fas fa-cog"></i>
-        <p class="nav__link">Usuario</p>
-        <i class="fas fa-angle-down list__arrow"></i>
+      <div class="list__button nav__glow">
+        <a href="/user/profile" class="nav__link-a">
+          <i class="fas fa-cog"></i>
+          <p class="nav__link">Usuario</p>
+        </a>
       </div>
-
-      <ul class="list__show">
-        <li class="list__inside">
-          <a href="/user/profile" class="nav__link nav__link--inside">Perfil</a>
-        </li>
-        <li class="list__inside">
-          <a href="/user/profile/edit" class="nav__link nav__link--inside">Editar Perfil</a>
-        </li>
-        <li class="list__inside">
-          <a href="/user/profile/password" class="nav__link nav__link--inside">Cambiar Contraseña</a>
-        </li>
-      </ul>
     </li>
     <% } %>
     <% if(locals.userLogged) { %> 

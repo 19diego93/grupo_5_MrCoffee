@@ -26,6 +26,10 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(25),
       allowNull: false,
     },
+    estado_id: {
+      type: dataTypes.INTEGER(5),
+      allowNull: false,
+    },
     user_id: {
       type: dataTypes.INTEGER(5),
       allowNull: false,
@@ -47,6 +51,11 @@ module.exports = (sequelize, dataTypes) => {
     Venta.belongsTo(models.Usuario, {
       as: "Usuario",
       foreignKey: "user_id",
+    });
+
+    Venta.belongsTo(models.Venta_estado, {
+      as: "Venta_estado",
+      foreignKey: "estado_id",
     });
 
     Venta.belongsToMany(models.Product, {

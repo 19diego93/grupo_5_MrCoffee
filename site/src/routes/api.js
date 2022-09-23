@@ -12,4 +12,6 @@ router.get("/product/:id", controller.product);
 router.post("/checkout", controller.checkout);
 /* Es una ruta que se utilizará para obtener las órdenes de un usuario. */
 router.get("/orders", controller.orders)
+/* Una ruta que se utilizará para obtener el detalle de los pedidos de un usuario. */
+router.get("/orders/:id", controller.ordersDetail)
 module.exports = router;

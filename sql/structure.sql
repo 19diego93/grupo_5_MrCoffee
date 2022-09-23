@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-09-2022 a las 10:06:34
+-- Tiempo de generación: 23-09-2022 a las 22:51:41
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -30,7 +30,7 @@ USE `mrcoffeedb`;
 --
 
 DROP TABLE IF EXISTS `products`;
-CREATE TABLE `products` (
+CREATE TABLE IF NOT EXISTS `products` (
   `id` int(13) NOT NULL,
   `name` varchar(40) NOT NULL,
   `image` varchar(30) DEFAULT 'default-image.png',
@@ -39,7 +39,9 @@ CREATE TABLE `products` (
   `price` decimal(8,2) NOT NULL,
   `offer` int(2) DEFAULT 0,
   `rating` decimal(2,1) DEFAULT 0.0,
-  `id_categoryP` int(5) NOT NULL
+  `id_categoryP` int(5) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `product_id_categoryP_foreign` (`id_categoryP`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -49,9 +51,10 @@ CREATE TABLE `products` (
 --
 
 DROP TABLE IF EXISTS `product_category`;
-CREATE TABLE `product_category` (
-  `id` int(5) NOT NULL,
-  `name` varchar(15) NOT NULL
+CREATE TABLE IF NOT EXISTS `product_category` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `name` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -61,9 +64,10 @@ CREATE TABLE `product_category` (
 --
 
 DROP TABLE IF EXISTS `user_category`;
-CREATE TABLE `user_category` (
-  `id` int(5) NOT NULL,
-  `name` varchar(15) NOT NULL
+CREATE TABLE IF NOT EXISTS `user_category` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `name` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -73,14 +77,16 @@ CREATE TABLE `user_category` (
 --
 
 DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE `usuario` (
-  `id` int(5) NOT NULL,
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(40) NOT NULL,
   `last_name` varchar(40) NOT NULL,
   `image` varchar(30) DEFAULT 'defaultimg.jpg',
   `email` varchar(100) NOT NULL,
   `password` varchar(80) NOT NULL,
-  `id_category_U` int(5) NOT NULL
+  `id_category_U` int(5) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `usuarios_id_category_U_foreign` (`id_category_U`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -90,13 +96,17 @@ CREATE TABLE `usuario` (
 --
 
 DROP TABLE IF EXISTS `venta`;
-CREATE TABLE `venta` (
-  `id` int(5) NOT NULL,
+CREATE TABLE IF NOT EXISTS `venta` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
   `cobrado` varchar(60) NOT NULL,
   `cantidad` int(15) NOT NULL,
   `total` decimal(14,2) NOT NULL,
   `metodoDePago` varchar(25) NOT NULL,
-  `user_id` int(5) NOT NULL
+  `estado_id` int(5) NOT NULL,
+  `user_id` int(5) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ventas_user_id_foreign` (`user_id`) USING BTREE,
+  KEY `estado_ibfk_2` (`estado_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -106,95 +116,31 @@ CREATE TABLE `venta` (
 --
 
 DROP TABLE IF EXISTS `venta_detalle`;
-CREATE TABLE `venta_detalle` (
-  `id` int(5) NOT NULL,
+CREATE TABLE IF NOT EXISTS `venta_detalle` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
   `precio_venta` decimal(8,2) NOT NULL,
   `articulos` int(5) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `categoria` varchar(15) NOT NULL,
-  `imagen` varchar(30) NOT NULL,
   `product_id` int(13) NOT NULL,
-  `ventas_id` int(5) NOT NULL
+  `ventas_id` int(5) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `cart_item_product_id_foreign` (`product_id`),
+  KEY `cart_item_ventas_id_foreign` (`ventas_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Índices para tablas volcadas
---
+-- --------------------------------------------------------
 
 --
--- Indices de la tabla `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `product_id_categoryP_foreign` (`id_categoryP`) USING BTREE;
-
---
--- Indices de la tabla `product_category`
---
-ALTER TABLE `product_category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `user_category`
---
-ALTER TABLE `user_category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `usuarios_id_category_U_foreign` (`id_category_U`) USING BTREE;
-
---
--- Indices de la tabla `venta`
---
-ALTER TABLE `venta`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `ventas_user_id_foreign` (`user_id`) USING BTREE;
-
---
--- Indices de la tabla `venta_detalle`
---
-ALTER TABLE `venta_detalle`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `cart_item_product_id_foreign` (`product_id`),
-  ADD KEY `cart_item_ventas_id_foreign` (`ventas_id`) USING BTREE;
-
---
--- AUTO_INCREMENT de las tablas volcadas
+-- Estructura de tabla para la tabla `venta_estado`
 --
 
---
--- AUTO_INCREMENT de la tabla `product_category`
---
-ALTER TABLE `product_category`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `user_category`
---
-ALTER TABLE `user_category`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `venta`
---
-ALTER TABLE `venta`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `venta_detalle`
---
-ALTER TABLE `venta_detalle`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+DROP TABLE IF EXISTS `venta_estado`;
+CREATE TABLE IF NOT EXISTS `venta_estado` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `estado` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Restricciones para tablas volcadas
@@ -216,6 +162,7 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `venta`
 --
 ALTER TABLE `venta`
+  ADD CONSTRAINT `estado_ibfk_2` FOREIGN KEY (`estado_id`) REFERENCES `venta_estado` (`id`),
   ADD CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuario` (`id`);
 
 --

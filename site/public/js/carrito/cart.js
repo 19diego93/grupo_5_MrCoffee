@@ -287,7 +287,7 @@ window.addEventListener("load", () => {
   });
 
   let writeDbVenta_detalle = [];
-
+  console.log(products);
   formCheckout.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -297,7 +297,6 @@ window.addEventListener("load", () => {
         articulos: product.quantity,
         nombre: product.name,
         categoria: product.categoria,
-        imagen: product.imagen,
         product_id: product.productId,
       });
     });
