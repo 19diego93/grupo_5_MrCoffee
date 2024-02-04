@@ -1,7 +1,7 @@
 # Mr.Coffee - Grupo 5
 
 ## Temática del sitio
-##### MrCoffee es una sucursal enfocada en la venta de café y alimentos, los clientes tienen la opción de pagar los productos y recogerlos en las tiendas más cercanas o pagar su envío. El sitio web también está diseñado para que puedan ordenar desde computadoras en las tiendas, de esta manera, las ventas serán más eficientes.
+##### MrCoffee: Un e-commerce especializado en café y alimentos de alta calidad. Es un sitio web diseñado para todas las plataformas. Se ofrece a los clientes la opción de pago en línea y recolección en tienda.
 
 ## [Trello](https://trello.com/b/GDl9UoXC/mrcoffee)
 
@@ -31,7 +31,7 @@ npm start
 
 ## Autores ✒️
 
-#### - [Marcelo Sebastian Suarez](https://github.com/sebastianszz)
+#### - [Marcelo Sebastian Suarez](https://github.com/rysted)
 
 #### - [Diego Vallejo](https://github.com/19diego93)
 
