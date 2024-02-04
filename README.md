@@ -31,7 +31,7 @@ npm start
 
 ## Autores ✒️
 
-#### - [Marcelo Sebastian Suarez](https://github.com/sebastianszz)
+#### - [Marcelo Sebastian Suarez](https://github.com/rysted)
 
 #### - [Diego Vallejo](https://github.com/19diego93)
 
