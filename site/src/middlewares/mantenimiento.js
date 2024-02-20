@@ -11,10 +11,7 @@
 function mantenimiento(req, res, next) {
   let enMantenimiento = false;
   if (enMantenimiento == true) {
-    return res.render(
-      "mantenimiento", 
-    { title: "│ Pagina en mantenimiento" }
-    );
+    return res.render("mantenimiento", { title: "│ Pagina en mantenimiento" });
   }
   next();
 }
