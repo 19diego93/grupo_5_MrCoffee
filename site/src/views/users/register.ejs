@@ -27,19 +27,21 @@
                   </picture>
                 </div>
                 <div class="button-new-img">
-                    <label>
-                      <p>Subir archivo</p>
-                      <input
-                        type="file"
-                        name="image"
-                        id="file"
-                        accept="image/*"
-                      />
-                    </label>
+                  <label>
+                    <p>Subir archivo</p>
+                    <input
+                      type="file"
+                      name="image"
+                      id="file"
+                      accept="image/*"
+                    />
+                  </label>
                   <% if(locals.errors && errors.image){ %>
                   <p class="errors-t"><%= errors.image.msg %></p>
                   <% } %>
-                  <p class="user-img-validation">Puedes subir jpg, png o gif. Tamaño máximo 1mb.</p>
+                  <p class="user-img-validation">
+                    Puedes subir jpg, png o gif. Tamaño máximo 1mb.
+                  </p>
                 </div>
               </div>
               <div class="form-style">
@@ -55,12 +57,14 @@
                   />
                   <!-- Errores del Back -->
                   <% if (locals.errors && errors.fname){ %>
-                  <div class="errors-t fnameErrBack"><%= errors.fname.msg %></div>
+                  <div class="errors-t fnameErrBack">
+                    <%= errors.fname.msg %>
+                  </div>
                   <% } %>
                   <!-- Errores del Front -->
                   <div class="errors-t fnameErrors"></div>
                 </div>
-  
+
                 <div class="contenedor-campo">
                   <label for="lname">Apellido</label>
                   <input
@@ -73,12 +77,14 @@
                   />
                   <!-- Errores del Back -->
                   <% if (locals.errors && errors.lname){ %>
-                  <div class="errors-t lnameErrBack"><%= errors.lname.msg %></div>
+                  <div class="errors-t lnameErrBack">
+                    <%= errors.lname.msg %>
+                  </div>
                   <% } %>
                   <!-- Errores del Front -->
                   <div class="errors-t lnameErrors"></div>
                 </div>
-  
+
                 <div class="contenedor-campo">
                   <label for="email">Email</label>
                   <input
@@ -91,12 +97,14 @@
                   />
                   <!-- Errores del Back -->
                   <% if (locals.errors && errors.email){ %>
-                  <div class="errors-t emailErrBack"><%= errors.email.msg %></div>
+                  <div class="errors-t emailErrBack">
+                    <%= errors.email.msg %>
+                  </div>
                   <% } %>
                   <!-- Errores del Front -->
                   <div class="errors-t emailErrors"></div>
                 </div>
-  
+
                 <div class="contenedor-campo">
                   <label for="password">Contraseña</label>
                   <input
@@ -108,12 +116,14 @@
                   />
                   <!-- Errores del Back -->
                   <% if (locals.errors && errors.password){ %>
-                  <div class="errors-t passwordErrBack"><%= errors.password.msg %></div>
+                  <div class="errors-t passwordErrBack">
+                    <%= errors.password.msg %>
+                  </div>
                   <% } %>
                   <!-- Errores del Front -->
                   <div class="errors-t passwordErrors"></div>
                 </div>
-  
+
                 <div class="contenedor-campo">
                   <label for="confirmPsw">Repite la Contraseña</label>
                   <input
@@ -125,7 +135,9 @@
                   />
                   <!-- Errores del Back -->
                   <% if (locals.errors && errors.confirmPsw){ %>
-                  <div class="errors-t confirmPswErrBack"><%= errors.confirmPsw.msg %></div>
+                  <div class="errors-t confirmPswErrBack">
+                    <%= errors.confirmPsw.msg %>
+                  </div>
                   <% } %>
                   <!-- Errores del Front -->
                   <div class="errors-t confirmPswErrors"></div>
@@ -145,20 +157,20 @@
             </div>
           </div>
         </article>
-        <article class="area" >
+        <article class="area">
           <ul class="circles">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
           </ul>
-        </article >
+        </article>
       </section>
     </main>
     <%- include('../partials/footer') %>
